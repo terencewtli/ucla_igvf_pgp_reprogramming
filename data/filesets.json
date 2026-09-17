@@ -1,0 +1,4279 @@
+{
+  "generated": "2026-09-17",
+  "donors": [
+    "IGVFDO0351NYZH",
+    "IGVFDO2328XGNY",
+    "IGVFDO3565PTIO",
+    "IGVFDO3754NCBP",
+    "IGVFDO4068JJIT"
+  ],
+  "donor_meta": {
+    "IGVFDO0351NYZH": {
+      "accession": "IGVFDO0351NYZH",
+      "name": "C37",
+      "sex": "male",
+      "efficiency": "inefficient",
+      "note": "",
+      "portal": "https://data.igvf.org/human-donors/IGVFDO0351NYZH/"
+    },
+    "IGVFDO2328XGNY": {
+      "accession": "IGVFDO2328XGNY",
+      "name": "C38",
+      "sex": "male",
+      "efficiency": "inefficient",
+      "note": "profiled in all five modalities",
+      "portal": "https://data.igvf.org/human-donors/IGVFDO2328XGNY/"
+    },
+    "IGVFDO3754NCBP": {
+      "accession": "IGVFDO3754NCBP",
+      "name": "C29",
+      "sex": "male",
+      "efficiency": "efficient",
+      "note": "profiled in all five modalities",
+      "portal": "https://data.igvf.org/human-donors/IGVFDO3754NCBP/"
+    },
+    "IGVFDO4068JJIT": {
+      "accession": "IGVFDO4068JJIT",
+      "name": "C39",
+      "sex": "female",
+      "efficiency": "efficient",
+      "note": "",
+      "portal": "https://data.igvf.org/human-donors/IGVFDO4068JJIT/"
+    },
+    "IGVFDO3565PTIO": {
+      "accession": "IGVFDO3565PTIO",
+      "name": "A8",
+      "sex": "female",
+      "efficiency": "not in manuscript",
+      "note": "pilot spatial runs only",
+      "portal": "https://data.igvf.org/human-donors/IGVFDO3565PTIO/"
+    }
+  },
+  "sets": [
+    {
+      "accession": "IGVFDS3268OMJN",
+      "label": "10x Multiome",
+      "sublabel": "snRNA + snATAC",
+      "order": 1,
+      "summary": "single-nucleus ATAC-seq (10x multiome), single-nucleus RNA sequencing assay (10x multiome) (genetically multiplexed)",
+      "description": "This is the principal analysis set consisting of files relevant to the 10X Multiome component of a fibroblast-to-iPSC reprogramming trajectory profiling four individuals from the Personal Genomes Project (PGP), as part of the Luo award in the Networks group. Files include final QC of snRNA/snATAC data with downstream analyses such as differential genes, peaks, and cell annotations.",
+      "assay_titles": [
+        "single-nucleus ATAC-seq",
+        "single-nucleus RNA sequencing assay"
+      ],
+      "preferred_assay_titles": [
+        "10x multiome"
+      ],
+      "lab": "Kathrin Plath, UCLA",
+      "doi": "10.65695/IGVFDS3268OMJN",
+      "portal": "https://data.igvf.org/analysis-sets/IGVFDS3268OMJN/",
+      "status": "released",
+      "controlled_access": false,
+      "sample_summary": "human multiplexed sample of fibroblast, multiplexed sample of fibroblast from donor(s) IGVFDO0351NYZH, IGVFDO2328XGNY and 2 more",
+      "donors": [
+        "IGVFDO0351NYZH",
+        "IGVFDO2328XGNY",
+        "IGVFDO3754NCBP",
+        "IGVFDO4068JJIT"
+      ],
+      "n_samples": 10,
+      "workflows": [
+        "Luo PGP RNA Workflow",
+        "Luo PGP ATAC Workflow"
+      ],
+      "files": [
+        {
+          "accession": "IGVFFI6911IUTB",
+          "content_type": "alignments",
+          "file_format": "bam",
+          "href": "/alignment-files/IGVFFI6911IUTB/",
+          "download": "https://api.data.igvf.org/alignment-files/IGVFFI6911IUTB/@@download/IGVFFI6911IUTB.bam",
+          "s3_uri": "s3://igvf-public/2026/07/30/38ea3d5a-f18d-4921-b91c-2f25dc85b2bf/IGVFFI6911IUTB.bam",
+          "size": 113780131924,
+          "md5": "baa055c45dcc657cb8eab06bdea2ccba",
+          "summary": "GRCh38 GENCODE 44 unfiltered alignments",
+          "assembly": "GRCh38",
+          "alias": "pgp_multiome_principal_atac_bam",
+          "filename": "atac_merged.bam",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS3268OMJN",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": true
+        },
+        {
+          "accession": "IGVFFI9023NKZM",
+          "content_type": "cell annotations",
+          "file_format": "tsv",
+          "href": "/tabular-files/IGVFFI9023NKZM/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI9023NKZM/@@download/IGVFFI9023NKZM.tsv.gz",
+          "s3_uri": "s3://igvf-public/2026/07/15/2f26b8f2-b5fe-4c1f-8057-533c5baf657d/IGVFFI9023NKZM.csv.gz",
+          "size": 2650678,
+          "md5": "9b1ea6f0d6a90bb47483ea10563cc085",
+          "summary": "cell annotations",
+          "assembly": null,
+          "alias": "pgp_multiome_principal_cell_annot",
+          "filename": "pgp_multiome_prinpical_cell_annot.tsv",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS3268OMJN",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": true
+        },
+        {
+          "accession": "IGVFFI5043FWMC",
+          "content_type": "cell by gene matrix",
+          "file_format": "h5ad",
+          "href": "/matrix-files/IGVFFI5043FWMC/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI5043FWMC/@@download/IGVFFI5043FWMC.h5ad",
+          "s3_uri": "s3://igvf-public/2026/07/15/81c9b5ff-382d-4fe6-a40c-618d7308c483/IGVFFI5043FWMC.h5ad",
+          "size": 609867045,
+          "md5": "cfc8a5b2c789971d8eb679b80f98c788",
+          "summary": "cell by gene matrix",
+          "assembly": "GRCh38",
+          "alias": "pgp_multiome_principal_rna_h5ad",
+          "filename": "intersect_atac.h5ad",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS3268OMJN",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": true
+        },
+        {
+          "accession": "IGVFFI1051YIEC",
+          "content_type": "cell by peak matrix",
+          "file_format": "rds",
+          "href": "/matrix-files/IGVFFI1051YIEC/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI1051YIEC/@@download/IGVFFI1051YIEC.rds",
+          "s3_uri": "s3://igvf-public/2026/07/15/9219de5a-1753-4e4f-9e79-72236f23e6b0/IGVFFI1051YIEC.rds",
+          "size": 201752561,
+          "md5": "2960a58d59cb4386f63bd193de1e63c7",
+          "summary": "cell by peak matrix",
+          "assembly": "GRCh38",
+          "alias": "pgp_multiome_principal_atac_rds",
+          "filename": "intersect_rna_archr_peak_matrix.rds",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS3268OMJN",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": true
+        },
+        {
+          "accession": "IGVFFI8639CFWZ",
+          "content_type": "fragments",
+          "file_format": "tsv",
+          "href": "/tabular-files/IGVFFI8639CFWZ/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI8639CFWZ/@@download/IGVFFI8639CFWZ.tsv.gz",
+          "s3_uri": "s3://igvf-public/2026/07/27/da847a5f-bfd8-448a-a868-7f5d23614ba3/IGVFFI8639CFWZ.tsv.gz",
+          "size": 10871507954,
+          "md5": "6dc0ff0c03ac52df671dcc2fa2973373",
+          "summary": "GRCh38 fragments",
+          "assembly": "GRCh38",
+          "alias": "pgp_multiome_principal_fragments",
+          "filename": "pgp_multiome_principal_fragments.tsv.gz",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS3268OMJN",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": true
+        },
+        {
+          "accession": "IGVFFI3605GXMQ",
+          "content_type": "marker genes",
+          "file_format": "tsv",
+          "href": "/tabular-files/IGVFFI3605GXMQ/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI3605GXMQ/@@download/IGVFFI3605GXMQ.tsv.gz",
+          "s3_uri": "s3://igvf-public/2026/07/22/0e844e95-0cff-430d-b089-bb8c521c38e7/IGVFFI3605GXMQ.tsv.gz",
+          "size": 1780343,
+          "md5": "3e1574f06f9b5fe12862675a1c475176",
+          "summary": "GRCh38 GENCODE 44 marker genes",
+          "assembly": "GRCh38",
+          "alias": "pgp_multiome_principal_degs",
+          "filename": "justin_degs_v7.tsv",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS3268OMJN",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": true
+        },
+        {
+          "accession": "IGVFFI7116YAJZ",
+          "content_type": "peaks",
+          "file_format": "bed",
+          "href": "/tabular-files/IGVFFI7116YAJZ/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI7116YAJZ/@@download/IGVFFI7116YAJZ.bed.gz",
+          "s3_uri": "s3://igvf-public/2026/07/16/9ecf6ff3-5219-4879-86f6-bbbd008728e8/IGVFFI7116YAJZ.bed.gz",
+          "size": 4765845,
+          "md5": "76e912177aa2fc784a613b2ee643c7cf",
+          "summary": "GRCh38 peaks",
+          "assembly": "GRCh38",
+          "alias": "pgp_multiome_principal_peaks",
+          "filename": "justin.chromhmm.bed.gz",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS3268OMJN",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": true
+        }
+      ],
+      "bytes": 125472456350,
+      "files_search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3268OMJN",
+      "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS3268OMJN",
+      "types": [
+        {
+          "content_type": "alignments",
+          "file_format": "bam",
+          "n": 1,
+          "bytes": 113780131924,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3268OMJN&content_type=alignments",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS3268OMJN&files.content_type=alignments"
+        },
+        {
+          "content_type": "cell annotations",
+          "file_format": "tsv",
+          "n": 1,
+          "bytes": 2650678,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3268OMJN&content_type=cell+annotations",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS3268OMJN&files.content_type=cell+annotations"
+        },
+        {
+          "content_type": "cell by gene matrix",
+          "file_format": "h5ad",
+          "n": 1,
+          "bytes": 609867045,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3268OMJN&content_type=cell+by+gene+matrix",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS3268OMJN&files.content_type=cell+by+gene+matrix"
+        },
+        {
+          "content_type": "cell by peak matrix",
+          "file_format": "rds",
+          "n": 1,
+          "bytes": 201752561,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3268OMJN&content_type=cell+by+peak+matrix",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS3268OMJN&files.content_type=cell+by+peak+matrix"
+        },
+        {
+          "content_type": "fragments",
+          "file_format": "tsv",
+          "n": 1,
+          "bytes": 10871507954,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3268OMJN&content_type=fragments",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS3268OMJN&files.content_type=fragments"
+        },
+        {
+          "content_type": "marker genes",
+          "file_format": "tsv",
+          "n": 1,
+          "bytes": 1780343,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3268OMJN&content_type=marker+genes",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS3268OMJN&files.content_type=marker+genes"
+        },
+        {
+          "content_type": "peaks",
+          "file_format": "bed",
+          "n": 1,
+          "bytes": 4765845,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3268OMJN&content_type=peaks",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS3268OMJN&files.content_type=peaks"
+        }
+      ],
+      "manifest_file": "data/manifests/IGVFDS3268OMJN-analysis-ready.tsv",
+      "intermediate": {
+        "n_sets": 10,
+        "n_files": 80,
+        "bytes": 820494934052,
+        "accessions": [
+          "IGVFDS6943WIWV",
+          "IGVFDS3769GULF",
+          "IGVFDS2992KDOL",
+          "IGVFDS5463QTZA",
+          "IGVFDS6719YSZA",
+          "IGVFDS6656MSZZ",
+          "IGVFDS3077GQOG",
+          "IGVFDS7261GSJZ",
+          "IGVFDS3826NTFN",
+          "IGVFDS3278JRYW"
+        ],
+        "files_search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS6943WIWV&file_set.accession=IGVFDS3769GULF&file_set.accession=IGVFDS2992KDOL&file_set.accession=IGVFDS5463QTZA&file_set.accession=IGVFDS6719YSZA&file_set.accession=IGVFDS6656MSZZ&file_set.accession=IGVFDS3077GQOG&file_set.accession=IGVFDS7261GSJZ&file_set.accession=IGVFDS3826NTFN&file_set.accession=IGVFDS3278JRYW",
+        "sets_search": "https://data.igvf.org/search/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS3268OMJN%2F",
+        "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS3268OMJN%2F",
+        "manifest_file": "data/manifests/IGVFDS3268OMJN-processed.tsv",
+        "types": [
+          {
+            "content_type": "alignments",
+            "file_format": "bam",
+            "n": 20,
+            "bytes": 786459226434,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS6943WIWV&file_set.accession=IGVFDS3769GULF&file_set.accession=IGVFDS2992KDOL&file_set.accession=IGVFDS5463QTZA&file_set.accession=IGVFDS6719YSZA&file_set.accession=IGVFDS6656MSZZ&file_set.accession=IGVFDS3077GQOG&file_set.accession=IGVFDS7261GSJZ&file_set.accession=IGVFDS3826NTFN&file_set.accession=IGVFDS3278JRYW&content_type=alignments",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS3268OMJN%2F&files.content_type=alignments"
+          },
+          {
+            "content_type": "barcode to donor mapping",
+            "file_format": "tsv",
+            "n": 10,
+            "bytes": 47643291,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS6943WIWV&file_set.accession=IGVFDS3769GULF&file_set.accession=IGVFDS2992KDOL&file_set.accession=IGVFDS5463QTZA&file_set.accession=IGVFDS6719YSZA&file_set.accession=IGVFDS6656MSZZ&file_set.accession=IGVFDS3077GQOG&file_set.accession=IGVFDS7261GSJZ&file_set.accession=IGVFDS3826NTFN&file_set.accession=IGVFDS3278JRYW&content_type=barcode+to+donor+mapping",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS3268OMJN%2F&files.content_type=barcode+to+donor+mapping"
+          },
+          {
+            "content_type": "cell by gene matrix",
+            "file_format": "hdf5",
+            "n": 10,
+            "bytes": 2111292030,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS6943WIWV&file_set.accession=IGVFDS3769GULF&file_set.accession=IGVFDS2992KDOL&file_set.accession=IGVFDS5463QTZA&file_set.accession=IGVFDS6719YSZA&file_set.accession=IGVFDS6656MSZZ&file_set.accession=IGVFDS3077GQOG&file_set.accession=IGVFDS7261GSJZ&file_set.accession=IGVFDS3826NTFN&file_set.accession=IGVFDS3278JRYW&content_type=cell+by+gene+matrix",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS3268OMJN%2F&files.content_type=cell+by+gene+matrix"
+          },
+          {
+            "content_type": "fragments",
+            "file_format": "tsv",
+            "n": 10,
+            "bytes": 31652827845,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS6943WIWV&file_set.accession=IGVFDS3769GULF&file_set.accession=IGVFDS2992KDOL&file_set.accession=IGVFDS5463QTZA&file_set.accession=IGVFDS6719YSZA&file_set.accession=IGVFDS6656MSZZ&file_set.accession=IGVFDS3077GQOG&file_set.accession=IGVFDS7261GSJZ&file_set.accession=IGVFDS3826NTFN&file_set.accession=IGVFDS3278JRYW&content_type=fragments",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS3268OMJN%2F&files.content_type=fragments"
+          },
+          {
+            "content_type": "index",
+            "file_format": "tbi",
+            "n": 10,
+            "bytes": 13366227,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS6943WIWV&file_set.accession=IGVFDS3769GULF&file_set.accession=IGVFDS2992KDOL&file_set.accession=IGVFDS5463QTZA&file_set.accession=IGVFDS6719YSZA&file_set.accession=IGVFDS6656MSZZ&file_set.accession=IGVFDS3077GQOG&file_set.accession=IGVFDS7261GSJZ&file_set.accession=IGVFDS3826NTFN&file_set.accession=IGVFDS3278JRYW&content_type=index",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS3268OMJN%2F&files.content_type=index"
+          },
+          {
+            "content_type": "peaks",
+            "file_format": "bed",
+            "n": 10,
+            "bytes": 19516945,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS6943WIWV&file_set.accession=IGVFDS3769GULF&file_set.accession=IGVFDS2992KDOL&file_set.accession=IGVFDS5463QTZA&file_set.accession=IGVFDS6719YSZA&file_set.accession=IGVFDS6656MSZZ&file_set.accession=IGVFDS3077GQOG&file_set.accession=IGVFDS7261GSJZ&file_set.accession=IGVFDS3826NTFN&file_set.accession=IGVFDS3278JRYW&content_type=peaks",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS3268OMJN%2F&files.content_type=peaks"
+          },
+          {
+            "content_type": "per-barcode quality report",
+            "file_format": "tsv",
+            "n": 10,
+            "bytes": 191061280,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS6943WIWV&file_set.accession=IGVFDS3769GULF&file_set.accession=IGVFDS2992KDOL&file_set.accession=IGVFDS5463QTZA&file_set.accession=IGVFDS6719YSZA&file_set.accession=IGVFDS6656MSZZ&file_set.accession=IGVFDS3077GQOG&file_set.accession=IGVFDS7261GSJZ&file_set.accession=IGVFDS3826NTFN&file_set.accession=IGVFDS3278JRYW&content_type=per-barcode+quality+report",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS3268OMJN%2F&files.content_type=per-barcode+quality+report"
+          }
+        ],
+        "groups": [
+          {
+            "accession": "IGVFDS3826NTFN",
+            "alias": "pgp_ys3a_analysis_set",
+            "code": "ys3a",
+            "label": "ys3a \u00b7 4 donors \u00b7 days 0, 1, 3, 5",
+            "donors": [
+              "C29",
+              "C37",
+              "C38",
+              "C39"
+            ],
+            "days": [
+              0,
+              1,
+              3,
+              5
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 0
+              },
+              {
+                "donor": "C37",
+                "day": 1
+              },
+              {
+                "donor": "C38",
+                "day": 3
+              },
+              {
+                "donor": "C39",
+                "day": 5
+              }
+            ],
+            "multiplexed": true,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 66093331864,
+            "raw_files": 17,
+            "raw_bytes": 89806278318,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS3826NTFN/"
+          },
+          {
+            "accession": "IGVFDS3278JRYW",
+            "alias": "pgp_ys3b_analysis_set",
+            "code": "ys3b",
+            "label": "ys3b \u00b7 4 donors \u00b7 days 0, 1, 3, 7",
+            "donors": [
+              "C29",
+              "C37",
+              "C38",
+              "C39"
+            ],
+            "days": [
+              0,
+              1,
+              3,
+              7
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 7
+              },
+              {
+                "donor": "C37",
+                "day": 0
+              },
+              {
+                "donor": "C38",
+                "day": 1
+              },
+              {
+                "donor": "C39",
+                "day": 3
+              }
+            ],
+            "multiplexed": true,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 82195450013,
+            "raw_files": 17,
+            "raw_bytes": 109839578104,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS3278JRYW/"
+          },
+          {
+            "accession": "IGVFDS2992KDOL",
+            "alias": "pgp_ys3c_analysis_set",
+            "code": "ys3c",
+            "label": "ys3c \u00b7 4 donors \u00b7 days 0, 1, 5, 7",
+            "donors": [
+              "C29",
+              "C37",
+              "C38",
+              "C39"
+            ],
+            "days": [
+              0,
+              1,
+              5,
+              7
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 5
+              },
+              {
+                "donor": "C37",
+                "day": 7
+              },
+              {
+                "donor": "C38",
+                "day": 0
+              },
+              {
+                "donor": "C39",
+                "day": 1
+              }
+            ],
+            "multiplexed": true,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 71180812318,
+            "raw_files": 17,
+            "raw_bytes": 99004692504,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS2992KDOL/"
+          },
+          {
+            "accession": "IGVFDS6656MSZZ",
+            "alias": "pgp_ys3d_analysis_set",
+            "code": "ys3d",
+            "label": "ys3d \u00b7 4 donors \u00b7 days 0, 3, 5, 7",
+            "donors": [
+              "C29",
+              "C37",
+              "C38",
+              "C39"
+            ],
+            "days": [
+              0,
+              3,
+              5,
+              7
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 3
+              },
+              {
+                "donor": "C37",
+                "day": 5
+              },
+              {
+                "donor": "C38",
+                "day": 7
+              },
+              {
+                "donor": "C39",
+                "day": 0
+              }
+            ],
+            "multiplexed": true,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 81077149689,
+            "raw_files": 17,
+            "raw_bytes": 109807146356,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS6656MSZZ/"
+          },
+          {
+            "accession": "IGVFDS6719YSZA",
+            "alias": "pgp_ys3e_analysis_set",
+            "code": "ys3e",
+            "label": "ys3e \u00b7 4 donors \u00b7 days 1, 3, 5, 7",
+            "donors": [
+              "C29",
+              "C37",
+              "C38",
+              "C39"
+            ],
+            "days": [
+              1,
+              3,
+              5,
+              7
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 1
+              },
+              {
+                "donor": "C37",
+                "day": 3
+              },
+              {
+                "donor": "C38",
+                "day": 5
+              },
+              {
+                "donor": "C39",
+                "day": 7
+              }
+            ],
+            "multiplexed": true,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 84012770048,
+            "raw_files": 17,
+            "raw_bytes": 110641734110,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS6719YSZA/"
+          },
+          {
+            "accession": "IGVFDS3077GQOG",
+            "alias": "pgp_ys3f_analysis_set",
+            "code": "ys3f",
+            "label": "ys3f \u00b7 4 donors \u00b7 days 9, 12, 14, 16",
+            "donors": [
+              "C29",
+              "C37",
+              "C38",
+              "C39"
+            ],
+            "days": [
+              9,
+              12,
+              14,
+              16
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 9
+              },
+              {
+                "donor": "C37",
+                "day": 12
+              },
+              {
+                "donor": "C38",
+                "day": 14
+              },
+              {
+                "donor": "C39",
+                "day": 16
+              }
+            ],
+            "multiplexed": true,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 77847283970,
+            "raw_files": 17,
+            "raw_bytes": 100659678381,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS3077GQOG/"
+          },
+          {
+            "accession": "IGVFDS3769GULF",
+            "alias": "pgp_ys3g_analysis_set",
+            "code": "ys3g",
+            "label": "ys3g \u00b7 4 donors \u00b7 days 9, 12, 14, 18",
+            "donors": [
+              "C29",
+              "C37",
+              "C38",
+              "C39"
+            ],
+            "days": [
+              9,
+              12,
+              14,
+              18
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 18
+              },
+              {
+                "donor": "C37",
+                "day": 9
+              },
+              {
+                "donor": "C38",
+                "day": 12
+              },
+              {
+                "donor": "C39",
+                "day": 14
+              }
+            ],
+            "multiplexed": true,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 90762046850,
+            "raw_files": 17,
+            "raw_bytes": 118162941372,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS3769GULF/"
+          },
+          {
+            "accession": "IGVFDS7261GSJZ",
+            "alias": "pgp_ys3h_analysis_set",
+            "code": "ys3h",
+            "label": "ys3h \u00b7 4 donors \u00b7 days 9, 12, 16, 18",
+            "donors": [
+              "C29",
+              "C37",
+              "C38",
+              "C39"
+            ],
+            "days": [
+              9,
+              12,
+              16,
+              18
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 16
+              },
+              {
+                "donor": "C37",
+                "day": 18
+              },
+              {
+                "donor": "C38",
+                "day": 9
+              },
+              {
+                "donor": "C39",
+                "day": 12
+              }
+            ],
+            "multiplexed": true,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 97803320868,
+            "raw_files": 17,
+            "raw_bytes": 126282643227,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS7261GSJZ/"
+          },
+          {
+            "accession": "IGVFDS6943WIWV",
+            "alias": "pgp_ys3i_analysis_set",
+            "code": "ys3i",
+            "label": "ys3i \u00b7 4 donors \u00b7 days 9, 14, 16, 18",
+            "donors": [
+              "C29",
+              "C37",
+              "C38",
+              "C39"
+            ],
+            "days": [
+              9,
+              14,
+              16,
+              18
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 14
+              },
+              {
+                "donor": "C37",
+                "day": 16
+              },
+              {
+                "donor": "C38",
+                "day": 18
+              },
+              {
+                "donor": "C39",
+                "day": 9
+              }
+            ],
+            "multiplexed": true,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 82973638101,
+            "raw_files": 17,
+            "raw_bytes": 108204841463,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS6943WIWV/"
+          },
+          {
+            "accession": "IGVFDS5463QTZA",
+            "alias": "pgp_ys3j_analysis_set",
+            "code": "ys3j",
+            "label": "ys3j \u00b7 4 donors \u00b7 days 12, 14, 16, 18",
+            "donors": [
+              "C29",
+              "C37",
+              "C38",
+              "C39"
+            ],
+            "days": [
+              12,
+              14,
+              16,
+              18
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 12
+              },
+              {
+                "donor": "C37",
+                "day": 14
+              },
+              {
+                "donor": "C38",
+                "day": 16
+              },
+              {
+                "donor": "C39",
+                "day": 18
+              }
+            ],
+            "multiplexed": true,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 86549130331,
+            "raw_files": 17,
+            "raw_bytes": 114242338654,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5463QTZA/"
+          }
+        ]
+      },
+      "measurement": {
+        "n_sets": 20,
+        "n_files": 170,
+        "bytes": 1086651872489,
+        "accessions": [
+          "IGVFDS2539NGEA",
+          "IGVFDS1708HBUM",
+          "IGVFDS9374IPYD",
+          "IGVFDS4275VNMS",
+          "IGVFDS8008ALDH",
+          "IGVFDS6282JZAK",
+          "IGVFDS0328BSUV",
+          "IGVFDS8199DMOG",
+          "IGVFDS4458BDLN",
+          "IGVFDS2231YIUR",
+          "IGVFDS1744AXNS",
+          "IGVFDS9237LVHW",
+          "IGVFDS8285DFYN",
+          "IGVFDS3717ZQOY",
+          "IGVFDS4662AALG",
+          "IGVFDS9564UMAZ",
+          "IGVFDS3063GOYX",
+          "IGVFDS1459GLSU",
+          "IGVFDS1157ISDS",
+          "IGVFDS3441CZQC"
+        ],
+        "files_search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS2539NGEA&file_set.accession=IGVFDS1708HBUM&file_set.accession=IGVFDS9374IPYD&file_set.accession=IGVFDS4275VNMS&file_set.accession=IGVFDS8008ALDH&file_set.accession=IGVFDS6282JZAK&file_set.accession=IGVFDS0328BSUV&file_set.accession=IGVFDS8199DMOG&file_set.accession=IGVFDS4458BDLN&file_set.accession=IGVFDS2231YIUR&file_set.accession=IGVFDS1744AXNS&file_set.accession=IGVFDS9237LVHW&file_set.accession=IGVFDS8285DFYN&file_set.accession=IGVFDS3717ZQOY&file_set.accession=IGVFDS4662AALG&file_set.accession=IGVFDS9564UMAZ&file_set.accession=IGVFDS3063GOYX&file_set.accession=IGVFDS1459GLSU&file_set.accession=IGVFDS1157ISDS&file_set.accession=IGVFDS3441CZQC",
+        "sets_search": "https://data.igvf.org/search/?type=MeasurementSet&accession=IGVFDS2539NGEA&accession=IGVFDS1708HBUM&accession=IGVFDS9374IPYD&accession=IGVFDS4275VNMS&accession=IGVFDS8008ALDH&accession=IGVFDS6282JZAK&accession=IGVFDS0328BSUV&accession=IGVFDS8199DMOG&accession=IGVFDS4458BDLN&accession=IGVFDS2231YIUR&accession=IGVFDS1744AXNS&accession=IGVFDS9237LVHW&accession=IGVFDS8285DFYN&accession=IGVFDS3717ZQOY&accession=IGVFDS4662AALG&accession=IGVFDS9564UMAZ&accession=IGVFDS3063GOYX&accession=IGVFDS1459GLSU&accession=IGVFDS1157ISDS&accession=IGVFDS3441CZQC",
+        "manifest": "https://api.data.igvf.org/metadata/?type=MeasurementSet&accession=IGVFDS2539NGEA&accession=IGVFDS1708HBUM&accession=IGVFDS9374IPYD&accession=IGVFDS4275VNMS&accession=IGVFDS8008ALDH&accession=IGVFDS6282JZAK&accession=IGVFDS0328BSUV&accession=IGVFDS8199DMOG&accession=IGVFDS4458BDLN&accession=IGVFDS2231YIUR&accession=IGVFDS1744AXNS&accession=IGVFDS9237LVHW&accession=IGVFDS8285DFYN&accession=IGVFDS3717ZQOY&accession=IGVFDS4662AALG&accession=IGVFDS9564UMAZ&accession=IGVFDS3063GOYX&accession=IGVFDS1459GLSU&accession=IGVFDS1157ISDS&accession=IGVFDS3441CZQC",
+        "manifest_file": "data/manifests/IGVFDS3268OMJN-raw.tsv",
+        "types": [
+          {
+            "content_type": "reads",
+            "file_format": "fastq",
+            "n": 100,
+            "bytes": 1086651779106,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS2539NGEA&file_set.accession=IGVFDS1708HBUM&file_set.accession=IGVFDS9374IPYD&file_set.accession=IGVFDS4275VNMS&file_set.accession=IGVFDS8008ALDH&file_set.accession=IGVFDS6282JZAK&file_set.accession=IGVFDS0328BSUV&file_set.accession=IGVFDS8199DMOG&file_set.accession=IGVFDS4458BDLN&file_set.accession=IGVFDS2231YIUR&file_set.accession=IGVFDS1744AXNS&file_set.accession=IGVFDS9237LVHW&file_set.accession=IGVFDS8285DFYN&file_set.accession=IGVFDS3717ZQOY&file_set.accession=IGVFDS4662AALG&file_set.accession=IGVFDS9564UMAZ&file_set.accession=IGVFDS3063GOYX&file_set.accession=IGVFDS1459GLSU&file_set.accession=IGVFDS1157ISDS&file_set.accession=IGVFDS3441CZQC&content_type=reads",
+            "manifest": "https://api.data.igvf.org/metadata/?type=MeasurementSet&accession=IGVFDS2539NGEA&accession=IGVFDS1708HBUM&accession=IGVFDS9374IPYD&accession=IGVFDS4275VNMS&accession=IGVFDS8008ALDH&accession=IGVFDS6282JZAK&accession=IGVFDS0328BSUV&accession=IGVFDS8199DMOG&accession=IGVFDS4458BDLN&accession=IGVFDS2231YIUR&accession=IGVFDS1744AXNS&accession=IGVFDS9237LVHW&accession=IGVFDS8285DFYN&accession=IGVFDS3717ZQOY&accession=IGVFDS4662AALG&accession=IGVFDS9564UMAZ&accession=IGVFDS3063GOYX&accession=IGVFDS1459GLSU&accession=IGVFDS1157ISDS&accession=IGVFDS3441CZQC&files.content_type=reads"
+          },
+          {
+            "content_type": "seqspec",
+            "file_format": "yaml",
+            "n": 70,
+            "bytes": 93383,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS2539NGEA&file_set.accession=IGVFDS1708HBUM&file_set.accession=IGVFDS9374IPYD&file_set.accession=IGVFDS4275VNMS&file_set.accession=IGVFDS8008ALDH&file_set.accession=IGVFDS6282JZAK&file_set.accession=IGVFDS0328BSUV&file_set.accession=IGVFDS8199DMOG&file_set.accession=IGVFDS4458BDLN&file_set.accession=IGVFDS2231YIUR&file_set.accession=IGVFDS1744AXNS&file_set.accession=IGVFDS9237LVHW&file_set.accession=IGVFDS8285DFYN&file_set.accession=IGVFDS3717ZQOY&file_set.accession=IGVFDS4662AALG&file_set.accession=IGVFDS9564UMAZ&file_set.accession=IGVFDS3063GOYX&file_set.accession=IGVFDS1459GLSU&file_set.accession=IGVFDS1157ISDS&file_set.accession=IGVFDS3441CZQC&content_type=seqspec",
+            "manifest": "https://api.data.igvf.org/metadata/?type=MeasurementSet&accession=IGVFDS2539NGEA&accession=IGVFDS1708HBUM&accession=IGVFDS9374IPYD&accession=IGVFDS4275VNMS&accession=IGVFDS8008ALDH&accession=IGVFDS6282JZAK&accession=IGVFDS0328BSUV&accession=IGVFDS8199DMOG&accession=IGVFDS4458BDLN&accession=IGVFDS2231YIUR&accession=IGVFDS1744AXNS&accession=IGVFDS9237LVHW&accession=IGVFDS8285DFYN&accession=IGVFDS3717ZQOY&accession=IGVFDS4662AALG&accession=IGVFDS9564UMAZ&accession=IGVFDS3063GOYX&accession=IGVFDS1459GLSU&accession=IGVFDS1157ISDS&accession=IGVFDS3441CZQC&files.content_type=seqspec"
+          }
+        ]
+      }
+    },
+    {
+      "accession": "IGVFDS9439VWMI",
+      "label": "snMCT-seq",
+      "sublabel": "snRNA + mC",
+      "order": 2,
+      "summary": "snMCT-seq",
+      "description": "This is the principal analysis set consisting of files relevant to the snmCT-seq component of a fibroblast-to-iPSC reprogramming trajectory profiling four individuals from the Personal Genomes Project (PGP), as part of the Luo award in the Networks group. Files include final QC of snRNA/snMethylation data, such as cell annotations and cells by features matrices.",
+      "assay_titles": [
+        "single-nucleus methylcytosine and transcriptome sequencing assay"
+      ],
+      "preferred_assay_titles": [
+        "snMCT-seq"
+      ],
+      "lab": "Chongyuan Luo, UCLA",
+      "doi": "10.65695/IGVFDS9439VWMI",
+      "portal": "https://data.igvf.org/analysis-sets/IGVFDS9439VWMI/",
+      "status": "released",
+      "controlled_access": false,
+      "sample_summary": "human fibroblast primary cell, fibroblast reprogrammed cell specimen induced to induced pluripotent stem cell at 1 day, 3 day, 5 day, 7 day, 9 day, 12 day, 14 day, 16 day, 18 day(s) post change from donor(s) IGVFDO0351NYZH, IGVFDO2328XGNY and 2 more",
+      "donors": [
+        "IGVFDO0351NYZH",
+        "IGVFDO2328XGNY",
+        "IGVFDO3754NCBP",
+        "IGVFDO4068JJIT"
+      ],
+      "n_samples": 34,
+      "workflows": [
+        "Luo PGP RNA Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "files": [
+        {
+          "accession": "IGVFFI1246WERI",
+          "content_type": "cell annotations",
+          "file_format": "tsv",
+          "href": "/tabular-files/IGVFFI1246WERI/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI1246WERI/@@download/IGVFFI1246WERI.tsv.gz",
+          "s3_uri": "s3://igvf-public/2026/07/17/e66fdad8-86d6-4b07-b3ea-83b6f23d0555/IGVFFI1246WERI.tsv.gz",
+          "size": 666008,
+          "md5": "59fd44b9bcb234439a981f575f0a0ac6",
+          "summary": "cell annotations",
+          "assembly": null,
+          "alias": "pgp_snmct_principal_cell_annot",
+          "filename": "pgp_snmct_principal_cell_annot.tsv",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS9439VWMI",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": false
+        },
+        {
+          "accession": "IGVFFI1302NBKA",
+          "content_type": "cell by bin methylation count matrix",
+          "file_format": "h5ad",
+          "href": "/matrix-files/IGVFFI1302NBKA/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI1302NBKA/@@download/IGVFFI1302NBKA.h5ad",
+          "s3_uri": "s3://igvf-public/2026/07/17/8645eb31-211b-4fe0-963a-2751d282727a/IGVFFI1302NBKA.h5ad",
+          "size": 396939809,
+          "md5": "277d91f0fc4a05c1eb341943635d9a99",
+          "summary": "cell by bin methylation count matrix",
+          "assembly": "GRCh38",
+          "alias": "pgp_snmct_principal_mcg_chrom100k_matrix",
+          "filename": "principal.h5ad",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS9439VWMI",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": false
+        },
+        {
+          "accession": "IGVFFI5791QURW",
+          "content_type": "cell by gene matrix",
+          "file_format": "h5ad",
+          "href": "/matrix-files/IGVFFI5791QURW/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI5791QURW/@@download/IGVFFI5791QURW.h5ad",
+          "s3_uri": "s3://igvf-public/2026/07/17/78cf3445-dac3-444e-9b26-50c274c21a6d/IGVFFI5791QURW.h5ad",
+          "size": 1174327796,
+          "md5": "c6e8618df676f5da846c6ce668074380",
+          "summary": "cell by gene matrix",
+          "assembly": "GRCh38",
+          "alias": "pgp_snmct_principal_rna_adata",
+          "filename": "mct.filter.h5ad",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS9439VWMI",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": false
+        },
+        {
+          "accession": "IGVFFI2486XATY",
+          "content_type": "cell by position methylation count matrix",
+          "file_format": "h5ad",
+          "href": "/matrix-files/IGVFFI2486XATY/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI2486XATY/@@download/IGVFFI2486XATY.h5ad",
+          "s3_uri": "s3://igvf-public/2026/07/27/25c5312a-f63e-4b25-ab43-e8ced84fbba4/IGVFFI2486XATY.h5ad",
+          "size": 339847248872,
+          "md5": "2f6240a097b4b5082ab1d08a7965ac2f",
+          "summary": "cell by position methylation count matrix",
+          "assembly": "GRCh38",
+          "alias": "pgp_snmct_principal_mcg_cpg_matrix",
+          "filename": "principal.h5ad",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS9439VWMI",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": false
+        },
+        {
+          "accession": "IGVFFI2162MFZO",
+          "content_type": "methylation regions",
+          "file_format": "bed",
+          "href": "/tabular-files/IGVFFI2162MFZO/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI2162MFZO/@@download/IGVFFI2162MFZO.bed.gz",
+          "s3_uri": "s3://igvf-public/2026/07/17/458e332f-7631-4a26-a8de-48433c361ab3/IGVFFI2162MFZO.bed.gz",
+          "size": 14586,
+          "md5": "b3795fdbf786b630c12248a19695f1d7",
+          "summary": "GRCh38 GENCODE 44 methylation regions",
+          "assembly": "GRCh38",
+          "alias": "pgp_snmct_principal_pmds",
+          "filename": "start_merged.filt_mcg.sorted.bed",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS9439VWMI",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": false
+        }
+      ],
+      "bytes": 341419197071,
+      "files_search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS9439VWMI",
+      "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS9439VWMI",
+      "types": [
+        {
+          "content_type": "cell annotations",
+          "file_format": "tsv",
+          "n": 1,
+          "bytes": 666008,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS9439VWMI&content_type=cell+annotations",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS9439VWMI&files.content_type=cell+annotations"
+        },
+        {
+          "content_type": "cell by bin methylation count matrix",
+          "file_format": "h5ad",
+          "n": 1,
+          "bytes": 396939809,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS9439VWMI&content_type=cell+by+bin+methylation+count+matrix",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS9439VWMI&files.content_type=cell+by+bin+methylation+count+matrix"
+        },
+        {
+          "content_type": "cell by gene matrix",
+          "file_format": "h5ad",
+          "n": 1,
+          "bytes": 1174327796,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS9439VWMI&content_type=cell+by+gene+matrix",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS9439VWMI&files.content_type=cell+by+gene+matrix"
+        },
+        {
+          "content_type": "cell by position methylation count matrix",
+          "file_format": "h5ad",
+          "n": 1,
+          "bytes": 339847248872,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS9439VWMI&content_type=cell+by+position+methylation+count+matrix",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS9439VWMI&files.content_type=cell+by+position+methylation+count+matrix"
+        },
+        {
+          "content_type": "methylation regions",
+          "file_format": "bed",
+          "n": 1,
+          "bytes": 14586,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS9439VWMI&content_type=methylation+regions",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS9439VWMI&files.content_type=methylation+regions"
+        }
+      ],
+      "manifest_file": "data/manifests/IGVFDS9439VWMI-analysis-ready.tsv",
+      "intermediate": {
+        "n_sets": 34,
+        "n_files": 238,
+        "bytes": 2034962687110,
+        "accessions": [
+          "IGVFDS5076PIWR",
+          "IGVFDS8836DLQV",
+          "IGVFDS9484BLBL",
+          "IGVFDS4203PZOT",
+          "IGVFDS5336OSRG",
+          "IGVFDS5629RAMC",
+          "IGVFDS5790CRPV",
+          "IGVFDS5697ZEJD",
+          "IGVFDS5404QHJZ",
+          "IGVFDS2964JMRV",
+          "IGVFDS7602EINC",
+          "IGVFDS9888FLFE",
+          "IGVFDS7988ENHI",
+          "IGVFDS7766XEPS",
+          "IGVFDS5460CIPC",
+          "IGVFDS8582PUWV",
+          "IGVFDS2598SWSV",
+          "IGVFDS8787ULTU",
+          "IGVFDS7824ICDV",
+          "IGVFDS0905MHBK",
+          "IGVFDS6093QULG",
+          "IGVFDS3991XFOI",
+          "IGVFDS7069MXHH",
+          "IGVFDS9671SLOU",
+          "IGVFDS3132OBKA",
+          "IGVFDS4368TXEB",
+          "IGVFDS1519DIBO",
+          "IGVFDS9271IEUD",
+          "IGVFDS2417QOAI",
+          "IGVFDS5065NYGN",
+          "IGVFDS5772TRJZ",
+          "IGVFDS1282YVCS",
+          "IGVFDS6740HVHW",
+          "IGVFDS1997CBJO"
+        ],
+        "files_search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS5076PIWR&file_set.accession=IGVFDS8836DLQV&file_set.accession=IGVFDS9484BLBL&file_set.accession=IGVFDS4203PZOT&file_set.accession=IGVFDS5336OSRG&file_set.accession=IGVFDS5629RAMC&file_set.accession=IGVFDS5790CRPV&file_set.accession=IGVFDS5697ZEJD&file_set.accession=IGVFDS5404QHJZ&file_set.accession=IGVFDS2964JMRV&file_set.accession=IGVFDS7602EINC&file_set.accession=IGVFDS9888FLFE&file_set.accession=IGVFDS7988ENHI&file_set.accession=IGVFDS7766XEPS&file_set.accession=IGVFDS5460CIPC&file_set.accession=IGVFDS8582PUWV&file_set.accession=IGVFDS2598SWSV&file_set.accession=IGVFDS8787ULTU&file_set.accession=IGVFDS7824ICDV&file_set.accession=IGVFDS0905MHBK&file_set.accession=IGVFDS6093QULG&file_set.accession=IGVFDS3991XFOI&file_set.accession=IGVFDS7069MXHH&file_set.accession=IGVFDS9671SLOU&file_set.accession=IGVFDS3132OBKA&file_set.accession=IGVFDS4368TXEB&file_set.accession=IGVFDS1519DIBO&file_set.accession=IGVFDS9271IEUD&file_set.accession=IGVFDS2417QOAI&file_set.accession=IGVFDS5065NYGN&file_set.accession=IGVFDS5772TRJZ&file_set.accession=IGVFDS1282YVCS&file_set.accession=IGVFDS6740HVHW&file_set.accession=IGVFDS1997CBJO",
+        "sets_search": "https://data.igvf.org/search/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS9439VWMI%2F",
+        "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS9439VWMI%2F",
+        "manifest_file": "data/manifests/IGVFDS9439VWMI-processed.tsv",
+        "types": [
+          {
+            "content_type": "alignments",
+            "file_format": "bam",
+            "n": 68,
+            "bytes": 1671866807760,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS5076PIWR&file_set.accession=IGVFDS8836DLQV&file_set.accession=IGVFDS9484BLBL&file_set.accession=IGVFDS4203PZOT&file_set.accession=IGVFDS5336OSRG&file_set.accession=IGVFDS5629RAMC&file_set.accession=IGVFDS5790CRPV&file_set.accession=IGVFDS5697ZEJD&file_set.accession=IGVFDS5404QHJZ&file_set.accession=IGVFDS2964JMRV&file_set.accession=IGVFDS7602EINC&file_set.accession=IGVFDS9888FLFE&file_set.accession=IGVFDS7988ENHI&file_set.accession=IGVFDS7766XEPS&file_set.accession=IGVFDS5460CIPC&file_set.accession=IGVFDS8582PUWV&file_set.accession=IGVFDS2598SWSV&file_set.accession=IGVFDS8787ULTU&file_set.accession=IGVFDS7824ICDV&file_set.accession=IGVFDS0905MHBK&file_set.accession=IGVFDS6093QULG&file_set.accession=IGVFDS3991XFOI&file_set.accession=IGVFDS7069MXHH&file_set.accession=IGVFDS9671SLOU&file_set.accession=IGVFDS3132OBKA&file_set.accession=IGVFDS4368TXEB&file_set.accession=IGVFDS1519DIBO&file_set.accession=IGVFDS9271IEUD&file_set.accession=IGVFDS2417QOAI&file_set.accession=IGVFDS5065NYGN&file_set.accession=IGVFDS5772TRJZ&file_set.accession=IGVFDS1282YVCS&file_set.accession=IGVFDS6740HVHW&file_set.accession=IGVFDS1997CBJO&content_type=alignments",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS9439VWMI%2F&files.content_type=alignments"
+          },
+          {
+            "content_type": "cell by bin methylation count matrix",
+            "file_format": "h5ad",
+            "n": 34,
+            "bytes": 2201523808,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS5076PIWR&file_set.accession=IGVFDS8836DLQV&file_set.accession=IGVFDS9484BLBL&file_set.accession=IGVFDS4203PZOT&file_set.accession=IGVFDS5336OSRG&file_set.accession=IGVFDS5629RAMC&file_set.accession=IGVFDS5790CRPV&file_set.accession=IGVFDS5697ZEJD&file_set.accession=IGVFDS5404QHJZ&file_set.accession=IGVFDS2964JMRV&file_set.accession=IGVFDS7602EINC&file_set.accession=IGVFDS9888FLFE&file_set.accession=IGVFDS7988ENHI&file_set.accession=IGVFDS7766XEPS&file_set.accession=IGVFDS5460CIPC&file_set.accession=IGVFDS8582PUWV&file_set.accession=IGVFDS2598SWSV&file_set.accession=IGVFDS8787ULTU&file_set.accession=IGVFDS7824ICDV&file_set.accession=IGVFDS0905MHBK&file_set.accession=IGVFDS6093QULG&file_set.accession=IGVFDS3991XFOI&file_set.accession=IGVFDS7069MXHH&file_set.accession=IGVFDS9671SLOU&file_set.accession=IGVFDS3132OBKA&file_set.accession=IGVFDS4368TXEB&file_set.accession=IGVFDS1519DIBO&file_set.accession=IGVFDS9271IEUD&file_set.accession=IGVFDS2417QOAI&file_set.accession=IGVFDS5065NYGN&file_set.accession=IGVFDS5772TRJZ&file_set.accession=IGVFDS1282YVCS&file_set.accession=IGVFDS6740HVHW&file_set.accession=IGVFDS1997CBJO&content_type=cell+by+bin+methylation+count+matrix",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS9439VWMI%2F&files.content_type=cell+by+bin+methylation+count+matrix"
+          },
+          {
+            "content_type": "cell by gene matrix",
+            "file_format": "h5ad",
+            "n": 34,
+            "bytes": 1434279504,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS5076PIWR&file_set.accession=IGVFDS8836DLQV&file_set.accession=IGVFDS9484BLBL&file_set.accession=IGVFDS4203PZOT&file_set.accession=IGVFDS5336OSRG&file_set.accession=IGVFDS5629RAMC&file_set.accession=IGVFDS5790CRPV&file_set.accession=IGVFDS5697ZEJD&file_set.accession=IGVFDS5404QHJZ&file_set.accession=IGVFDS2964JMRV&file_set.accession=IGVFDS7602EINC&file_set.accession=IGVFDS9888FLFE&file_set.accession=IGVFDS7988ENHI&file_set.accession=IGVFDS7766XEPS&file_set.accession=IGVFDS5460CIPC&file_set.accession=IGVFDS8582PUWV&file_set.accession=IGVFDS2598SWSV&file_set.accession=IGVFDS8787ULTU&file_set.accession=IGVFDS7824ICDV&file_set.accession=IGVFDS0905MHBK&file_set.accession=IGVFDS6093QULG&file_set.accession=IGVFDS3991XFOI&file_set.accession=IGVFDS7069MXHH&file_set.accession=IGVFDS9671SLOU&file_set.accession=IGVFDS3132OBKA&file_set.accession=IGVFDS4368TXEB&file_set.accession=IGVFDS1519DIBO&file_set.accession=IGVFDS9271IEUD&file_set.accession=IGVFDS2417QOAI&file_set.accession=IGVFDS5065NYGN&file_set.accession=IGVFDS5772TRJZ&file_set.accession=IGVFDS1282YVCS&file_set.accession=IGVFDS6740HVHW&file_set.accession=IGVFDS1997CBJO&content_type=cell+by+gene+matrix",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS9439VWMI%2F&files.content_type=cell+by+gene+matrix"
+          },
+          {
+            "content_type": "cell by position methylation count matrix",
+            "file_format": "h5ad",
+            "n": 34,
+            "bytes": 354330825864,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS5076PIWR&file_set.accession=IGVFDS8836DLQV&file_set.accession=IGVFDS9484BLBL&file_set.accession=IGVFDS4203PZOT&file_set.accession=IGVFDS5336OSRG&file_set.accession=IGVFDS5629RAMC&file_set.accession=IGVFDS5790CRPV&file_set.accession=IGVFDS5697ZEJD&file_set.accession=IGVFDS5404QHJZ&file_set.accession=IGVFDS2964JMRV&file_set.accession=IGVFDS7602EINC&file_set.accession=IGVFDS9888FLFE&file_set.accession=IGVFDS7988ENHI&file_set.accession=IGVFDS7766XEPS&file_set.accession=IGVFDS5460CIPC&file_set.accession=IGVFDS8582PUWV&file_set.accession=IGVFDS2598SWSV&file_set.accession=IGVFDS8787ULTU&file_set.accession=IGVFDS7824ICDV&file_set.accession=IGVFDS0905MHBK&file_set.accession=IGVFDS6093QULG&file_set.accession=IGVFDS3991XFOI&file_set.accession=IGVFDS7069MXHH&file_set.accession=IGVFDS9671SLOU&file_set.accession=IGVFDS3132OBKA&file_set.accession=IGVFDS4368TXEB&file_set.accession=IGVFDS1519DIBO&file_set.accession=IGVFDS9271IEUD&file_set.accession=IGVFDS2417QOAI&file_set.accession=IGVFDS5065NYGN&file_set.accession=IGVFDS5772TRJZ&file_set.accession=IGVFDS1282YVCS&file_set.accession=IGVFDS6740HVHW&file_set.accession=IGVFDS1997CBJO&content_type=cell+by+position+methylation+count+matrix",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS9439VWMI%2F&files.content_type=cell+by+position+methylation+count+matrix"
+          },
+          {
+            "content_type": "methylation counts",
+            "file_format": "tsv",
+            "n": 34,
+            "bytes": 5103582842,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS5076PIWR&file_set.accession=IGVFDS8836DLQV&file_set.accession=IGVFDS9484BLBL&file_set.accession=IGVFDS4203PZOT&file_set.accession=IGVFDS5336OSRG&file_set.accession=IGVFDS5629RAMC&file_set.accession=IGVFDS5790CRPV&file_set.accession=IGVFDS5697ZEJD&file_set.accession=IGVFDS5404QHJZ&file_set.accession=IGVFDS2964JMRV&file_set.accession=IGVFDS7602EINC&file_set.accession=IGVFDS9888FLFE&file_set.accession=IGVFDS7988ENHI&file_set.accession=IGVFDS7766XEPS&file_set.accession=IGVFDS5460CIPC&file_set.accession=IGVFDS8582PUWV&file_set.accession=IGVFDS2598SWSV&file_set.accession=IGVFDS8787ULTU&file_set.accession=IGVFDS7824ICDV&file_set.accession=IGVFDS0905MHBK&file_set.accession=IGVFDS6093QULG&file_set.accession=IGVFDS3991XFOI&file_set.accession=IGVFDS7069MXHH&file_set.accession=IGVFDS9671SLOU&file_set.accession=IGVFDS3132OBKA&file_set.accession=IGVFDS4368TXEB&file_set.accession=IGVFDS1519DIBO&file_set.accession=IGVFDS9271IEUD&file_set.accession=IGVFDS2417QOAI&file_set.accession=IGVFDS5065NYGN&file_set.accession=IGVFDS5772TRJZ&file_set.accession=IGVFDS1282YVCS&file_set.accession=IGVFDS6740HVHW&file_set.accession=IGVFDS1997CBJO&content_type=methylation+counts",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS9439VWMI%2F&files.content_type=methylation+counts"
+          },
+          {
+            "content_type": "per-cell quality report",
+            "file_format": "tsv",
+            "n": 34,
+            "bytes": 25667332,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS5076PIWR&file_set.accession=IGVFDS8836DLQV&file_set.accession=IGVFDS9484BLBL&file_set.accession=IGVFDS4203PZOT&file_set.accession=IGVFDS5336OSRG&file_set.accession=IGVFDS5629RAMC&file_set.accession=IGVFDS5790CRPV&file_set.accession=IGVFDS5697ZEJD&file_set.accession=IGVFDS5404QHJZ&file_set.accession=IGVFDS2964JMRV&file_set.accession=IGVFDS7602EINC&file_set.accession=IGVFDS9888FLFE&file_set.accession=IGVFDS7988ENHI&file_set.accession=IGVFDS7766XEPS&file_set.accession=IGVFDS5460CIPC&file_set.accession=IGVFDS8582PUWV&file_set.accession=IGVFDS2598SWSV&file_set.accession=IGVFDS8787ULTU&file_set.accession=IGVFDS7824ICDV&file_set.accession=IGVFDS0905MHBK&file_set.accession=IGVFDS6093QULG&file_set.accession=IGVFDS3991XFOI&file_set.accession=IGVFDS7069MXHH&file_set.accession=IGVFDS9671SLOU&file_set.accession=IGVFDS3132OBKA&file_set.accession=IGVFDS4368TXEB&file_set.accession=IGVFDS1519DIBO&file_set.accession=IGVFDS9271IEUD&file_set.accession=IGVFDS2417QOAI&file_set.accession=IGVFDS5065NYGN&file_set.accession=IGVFDS5772TRJZ&file_set.accession=IGVFDS1282YVCS&file_set.accession=IGVFDS6740HVHW&file_set.accession=IGVFDS1997CBJO&content_type=per-cell+quality+report",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS9439VWMI%2F&files.content_type=per-cell+quality+report"
+          }
+        ],
+        "groups": [
+          {
+            "accession": "IGVFDS5076PIWR",
+            "alias": "pgp_C29_D0_snmct_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 0",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              0
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 0
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 53825349422,
+            "raw_files": 8,
+            "raw_bytes": 45706519817,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5076PIWR/"
+          },
+          {
+            "accession": "IGVFDS7602EINC",
+            "alias": "pgp_C37_D0_snmct_analysis_set",
+            "code": null,
+            "label": "C37 \u00b7 day 0",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              0
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 0
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 58819326688,
+            "raw_files": 8,
+            "raw_bytes": 46807904432,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS7602EINC/"
+          },
+          {
+            "accession": "IGVFDS8787ULTU",
+            "alias": "pgp_C38_D0_snmct_analysis_set",
+            "code": null,
+            "label": "C38 \u00b7 day 0",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              0
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 0
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 64829997165,
+            "raw_files": 8,
+            "raw_bytes": 46963126507,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS8787ULTU/"
+          },
+          {
+            "accession": "IGVFDS3132OBKA",
+            "alias": "pgp_C39_D0_snmct_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 0",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              0
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 0
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 52107933371,
+            "raw_files": 8,
+            "raw_bytes": 36926089930,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS3132OBKA/"
+          },
+          {
+            "accession": "IGVFDS5629RAMC",
+            "alias": "pgp_C29_D1_snmct_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 1",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              1
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 1
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 58051350323,
+            "raw_files": 8,
+            "raw_bytes": 50571333394,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5629RAMC/"
+          },
+          {
+            "accession": "IGVFDS7988ENHI",
+            "alias": "pgp_C37_D1_snmct_analysis_set",
+            "code": null,
+            "label": "C37 \u00b7 day 1",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              1
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 1
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 65500550198,
+            "raw_files": 8,
+            "raw_bytes": 48444072303,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS7988ENHI/"
+          },
+          {
+            "accession": "IGVFDS0905MHBK",
+            "alias": "pgp_C38_D1_snmct_analysis_set",
+            "code": null,
+            "label": "C38 \u00b7 day 1",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              1
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 1
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 52579301048,
+            "raw_files": 8,
+            "raw_bytes": 47177222898,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS0905MHBK/"
+          },
+          {
+            "accession": "IGVFDS5065NYGN",
+            "alias": "pgp_C39_D1_snmct_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 1",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              1
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 1
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 62201923227,
+            "raw_files": 8,
+            "raw_bytes": 47265132818,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5065NYGN/"
+          },
+          {
+            "accession": "IGVFDS5790CRPV",
+            "alias": "pgp_C29_D3_snmct_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 3",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              3
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 3
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 67399554449,
+            "raw_files": 8,
+            "raw_bytes": 52095912579,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5790CRPV/"
+          },
+          {
+            "accession": "IGVFDS7766XEPS",
+            "alias": "pgp_C37_D3_snmct_analysis_set",
+            "code": null,
+            "label": "C37 \u00b7 day 3",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              3
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 3
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 66529689439,
+            "raw_files": 8,
+            "raw_bytes": 54970718185,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS7766XEPS/"
+          },
+          {
+            "accession": "IGVFDS6093QULG",
+            "alias": "pgp_C38_D3_snmct_analysis_set",
+            "code": null,
+            "label": "C38 \u00b7 day 3",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              3
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 3
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 62797081430,
+            "raw_files": 8,
+            "raw_bytes": 42154490403,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS6093QULG/"
+          },
+          {
+            "accession": "IGVFDS5772TRJZ",
+            "alias": "pgp_C39_D3_snmct_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 3",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              3
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 3
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 63082577608,
+            "raw_files": 8,
+            "raw_bytes": 52952155005,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5772TRJZ/"
+          },
+          {
+            "accession": "IGVFDS5697ZEJD",
+            "alias": "pgp_C29_D5_snmct_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 5",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              5
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 5
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 55711105249,
+            "raw_files": 8,
+            "raw_bytes": 45998057558,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5697ZEJD/"
+          },
+          {
+            "accession": "IGVFDS5460CIPC",
+            "alias": "pgp_C37_D5_snmct_analysis_set",
+            "code": null,
+            "label": "C37 \u00b7 day 5",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              5
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 5
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 55925581916,
+            "raw_files": 8,
+            "raw_bytes": 46600791409,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5460CIPC/"
+          },
+          {
+            "accession": "IGVFDS3991XFOI",
+            "alias": "pgp_C38_D5_snmct_analysis_set",
+            "code": null,
+            "label": "C38 \u00b7 day 5",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              5
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 5
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 48735740554,
+            "raw_files": 8,
+            "raw_bytes": 42460071553,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS3991XFOI/"
+          },
+          {
+            "accession": "IGVFDS1282YVCS",
+            "alias": "pgp_C39_D5_snmct_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 5",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              5
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 5
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 58213418409,
+            "raw_files": 8,
+            "raw_bytes": 48887501108,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS1282YVCS/"
+          },
+          {
+            "accession": "IGVFDS5404QHJZ",
+            "alias": "pgp_C29_D7_snmct_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 7",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              7
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 7
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 66160894886,
+            "raw_files": 8,
+            "raw_bytes": 59369537404,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5404QHJZ/"
+          },
+          {
+            "accession": "IGVFDS8582PUWV",
+            "alias": "pgp_C37_D7_snmct_analysis_set",
+            "code": null,
+            "label": "C37 \u00b7 day 7",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              7
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 7
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 64723061762,
+            "raw_files": 8,
+            "raw_bytes": 50900467394,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS8582PUWV/"
+          },
+          {
+            "accession": "IGVFDS7069MXHH",
+            "alias": "pgp_C38_D7_snmct_analysis_set",
+            "code": null,
+            "label": "C38 \u00b7 day 7",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              7
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 7
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 63017798874,
+            "raw_files": 8,
+            "raw_bytes": 45405285738,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS7069MXHH/"
+          },
+          {
+            "accession": "IGVFDS6740HVHW",
+            "alias": "pgp_C39_D7_snmct_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 7",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              7
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 7
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 62019623652,
+            "raw_files": 8,
+            "raw_bytes": 44310247040,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS6740HVHW/"
+          },
+          {
+            "accession": "IGVFDS2964JMRV",
+            "alias": "pgp_C29_D9_snmct_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 9",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              9
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 9
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 56313461843,
+            "raw_files": 8,
+            "raw_bytes": 49990578582,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS2964JMRV/"
+          },
+          {
+            "accession": "IGVFDS2598SWSV",
+            "alias": "pgp_C37_D9_snmct_analysis_set",
+            "code": null,
+            "label": "C37 \u00b7 day 9",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              9
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 9
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 64885260521,
+            "raw_files": 8,
+            "raw_bytes": 48807827363,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS2598SWSV/"
+          },
+          {
+            "accession": "IGVFDS9671SLOU",
+            "alias": "pgp_C38_D9_snmct_analysis_set",
+            "code": null,
+            "label": "C38 \u00b7 day 9",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              9
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 9
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 54005887349,
+            "raw_files": 8,
+            "raw_bytes": 37318016285,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS9671SLOU/"
+          },
+          {
+            "accession": "IGVFDS1997CBJO",
+            "alias": "pgp_C39_D9_snmct_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 9",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              9
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 9
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 47756966373,
+            "raw_files": 8,
+            "raw_bytes": 48677974515,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS1997CBJO/"
+          },
+          {
+            "accession": "IGVFDS8836DLQV",
+            "alias": "pgp_C29_D12_snmct_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 12",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              12
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 12
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 60213727265,
+            "raw_files": 8,
+            "raw_bytes": 42273341060,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS8836DLQV/"
+          },
+          {
+            "accession": "IGVFDS9888FLFE",
+            "alias": "pgp_C37_D12_snmct_analysis_set",
+            "code": null,
+            "label": "C37 \u00b7 day 12",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              12
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 12
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 54002521984,
+            "raw_files": 8,
+            "raw_bytes": 45921800349,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS9888FLFE/"
+          },
+          {
+            "accession": "IGVFDS7824ICDV",
+            "alias": "pgp_C38_D12_snmct_analysis_set",
+            "code": null,
+            "label": "C38 \u00b7 day 12",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              12
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 12
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 59086916049,
+            "raw_files": 8,
+            "raw_bytes": 49448309501,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS7824ICDV/"
+          },
+          {
+            "accession": "IGVFDS4368TXEB",
+            "alias": "pgp_C39_D12_snmct_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 12",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              12
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 12
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 67993293694,
+            "raw_files": 8,
+            "raw_bytes": 62231780002,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS4368TXEB/"
+          },
+          {
+            "accession": "IGVFDS9484BLBL",
+            "alias": "pgp_C29_D14_snmct_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 14",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              14
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 14
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 51845763461,
+            "raw_files": 8,
+            "raw_bytes": 43000900872,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS9484BLBL/"
+          },
+          {
+            "accession": "IGVFDS1519DIBO",
+            "alias": "pgp_C39_D14_snmct_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 14",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              14
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 14
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 61041354587,
+            "raw_files": 8,
+            "raw_bytes": 46056741972,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS1519DIBO/"
+          },
+          {
+            "accession": "IGVFDS4203PZOT",
+            "alias": "pgp_C29_D16_snmct_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 16",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              16
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 16
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 67629227718,
+            "raw_files": 8,
+            "raw_bytes": 55680573424,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS4203PZOT/"
+          },
+          {
+            "accession": "IGVFDS9271IEUD",
+            "alias": "pgp_C39_D16_snmct_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 16",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              16
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 16
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 58681271876,
+            "raw_files": 8,
+            "raw_bytes": 48109342195,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS9271IEUD/"
+          },
+          {
+            "accession": "IGVFDS5336OSRG",
+            "alias": "pgp_C29_D18_snmct_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 18",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              18
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 18
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 70061082270,
+            "raw_files": 8,
+            "raw_bytes": 47416045388,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5336OSRG/"
+          },
+          {
+            "accession": "IGVFDS2417QOAI",
+            "alias": "pgp_C39_D18_snmct_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 18",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              18
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 18
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 7,
+            "bytes": 59214092450,
+            "raw_files": 8,
+            "raw_bytes": 43730767546,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS2417QOAI/"
+          }
+        ]
+      },
+      "measurement": {
+        "n_sets": 34,
+        "n_files": 272,
+        "bytes": 1624630636529,
+        "accessions": [
+          "IGVFDS8144USAL",
+          "IGVFDS5782BLYM",
+          "IGVFDS2660YHFN",
+          "IGVFDS9519MTBB",
+          "IGVFDS2571VVCI",
+          "IGVFDS4826YNLK",
+          "IGVFDS0174SXAX",
+          "IGVFDS4753QHJH",
+          "IGVFDS6095UGQM",
+          "IGVFDS3795XIJK",
+          "IGVFDS6281FISI",
+          "IGVFDS0527PPHQ",
+          "IGVFDS9857AQIO",
+          "IGVFDS3304YLTM",
+          "IGVFDS0268SPTG",
+          "IGVFDS5116RXOC",
+          "IGVFDS9193ENEI",
+          "IGVFDS0606THGC",
+          "IGVFDS5179UOKT",
+          "IGVFDS8365ZNKH",
+          "IGVFDS0017MVPN",
+          "IGVFDS9238PCPJ",
+          "IGVFDS4090VRQX",
+          "IGVFDS1293SYJM",
+          "IGVFDS2552IDIF",
+          "IGVFDS2186PCOF",
+          "IGVFDS8308NSRV",
+          "IGVFDS6555BIHA",
+          "IGVFDS7181HIBH",
+          "IGVFDS4550ZOKS",
+          "IGVFDS7889GEQS",
+          "IGVFDS8414QFVF",
+          "IGVFDS5388FFIX",
+          "IGVFDS2095EPAX"
+        ],
+        "files_search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS8144USAL&file_set.accession=IGVFDS5782BLYM&file_set.accession=IGVFDS2660YHFN&file_set.accession=IGVFDS9519MTBB&file_set.accession=IGVFDS2571VVCI&file_set.accession=IGVFDS4826YNLK&file_set.accession=IGVFDS0174SXAX&file_set.accession=IGVFDS4753QHJH&file_set.accession=IGVFDS6095UGQM&file_set.accession=IGVFDS3795XIJK&file_set.accession=IGVFDS6281FISI&file_set.accession=IGVFDS0527PPHQ&file_set.accession=IGVFDS9857AQIO&file_set.accession=IGVFDS3304YLTM&file_set.accession=IGVFDS0268SPTG&file_set.accession=IGVFDS5116RXOC&file_set.accession=IGVFDS9193ENEI&file_set.accession=IGVFDS0606THGC&file_set.accession=IGVFDS5179UOKT&file_set.accession=IGVFDS8365ZNKH&file_set.accession=IGVFDS0017MVPN&file_set.accession=IGVFDS9238PCPJ&file_set.accession=IGVFDS4090VRQX&file_set.accession=IGVFDS1293SYJM&file_set.accession=IGVFDS2552IDIF&file_set.accession=IGVFDS2186PCOF&file_set.accession=IGVFDS8308NSRV&file_set.accession=IGVFDS6555BIHA&file_set.accession=IGVFDS7181HIBH&file_set.accession=IGVFDS4550ZOKS&file_set.accession=IGVFDS7889GEQS&file_set.accession=IGVFDS8414QFVF&file_set.accession=IGVFDS5388FFIX&file_set.accession=IGVFDS2095EPAX",
+        "sets_search": "https://data.igvf.org/search/?type=MeasurementSet&accession=IGVFDS8144USAL&accession=IGVFDS5782BLYM&accession=IGVFDS2660YHFN&accession=IGVFDS9519MTBB&accession=IGVFDS2571VVCI&accession=IGVFDS4826YNLK&accession=IGVFDS0174SXAX&accession=IGVFDS4753QHJH&accession=IGVFDS6095UGQM&accession=IGVFDS3795XIJK&accession=IGVFDS6281FISI&accession=IGVFDS0527PPHQ&accession=IGVFDS9857AQIO&accession=IGVFDS3304YLTM&accession=IGVFDS0268SPTG&accession=IGVFDS5116RXOC&accession=IGVFDS9193ENEI&accession=IGVFDS0606THGC&accession=IGVFDS5179UOKT&accession=IGVFDS8365ZNKH&accession=IGVFDS0017MVPN&accession=IGVFDS9238PCPJ&accession=IGVFDS4090VRQX&accession=IGVFDS1293SYJM&accession=IGVFDS2552IDIF&accession=IGVFDS2186PCOF&accession=IGVFDS8308NSRV&accession=IGVFDS6555BIHA&accession=IGVFDS7181HIBH&accession=IGVFDS4550ZOKS&accession=IGVFDS7889GEQS&accession=IGVFDS8414QFVF&accession=IGVFDS5388FFIX&accession=IGVFDS2095EPAX",
+        "manifest": "https://api.data.igvf.org/metadata/?type=MeasurementSet&accession=IGVFDS8144USAL&accession=IGVFDS5782BLYM&accession=IGVFDS2660YHFN&accession=IGVFDS9519MTBB&accession=IGVFDS2571VVCI&accession=IGVFDS4826YNLK&accession=IGVFDS0174SXAX&accession=IGVFDS4753QHJH&accession=IGVFDS6095UGQM&accession=IGVFDS3795XIJK&accession=IGVFDS6281FISI&accession=IGVFDS0527PPHQ&accession=IGVFDS9857AQIO&accession=IGVFDS3304YLTM&accession=IGVFDS0268SPTG&accession=IGVFDS5116RXOC&accession=IGVFDS9193ENEI&accession=IGVFDS0606THGC&accession=IGVFDS5179UOKT&accession=IGVFDS8365ZNKH&accession=IGVFDS0017MVPN&accession=IGVFDS9238PCPJ&accession=IGVFDS4090VRQX&accession=IGVFDS1293SYJM&accession=IGVFDS2552IDIF&accession=IGVFDS2186PCOF&accession=IGVFDS8308NSRV&accession=IGVFDS6555BIHA&accession=IGVFDS7181HIBH&accession=IGVFDS4550ZOKS&accession=IGVFDS7889GEQS&accession=IGVFDS8414QFVF&accession=IGVFDS5388FFIX&accession=IGVFDS2095EPAX",
+        "manifest_file": "data/manifests/IGVFDS9439VWMI-raw.tsv",
+        "types": [
+          {
+            "content_type": "reads",
+            "file_format": "fastq",
+            "n": 272,
+            "bytes": 1624630636529,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS8144USAL&file_set.accession=IGVFDS5782BLYM&file_set.accession=IGVFDS2660YHFN&file_set.accession=IGVFDS9519MTBB&file_set.accession=IGVFDS2571VVCI&file_set.accession=IGVFDS4826YNLK&file_set.accession=IGVFDS0174SXAX&file_set.accession=IGVFDS4753QHJH&file_set.accession=IGVFDS6095UGQM&file_set.accession=IGVFDS3795XIJK&file_set.accession=IGVFDS6281FISI&file_set.accession=IGVFDS0527PPHQ&file_set.accession=IGVFDS9857AQIO&file_set.accession=IGVFDS3304YLTM&file_set.accession=IGVFDS0268SPTG&file_set.accession=IGVFDS5116RXOC&file_set.accession=IGVFDS9193ENEI&file_set.accession=IGVFDS0606THGC&file_set.accession=IGVFDS5179UOKT&file_set.accession=IGVFDS8365ZNKH&file_set.accession=IGVFDS0017MVPN&file_set.accession=IGVFDS9238PCPJ&file_set.accession=IGVFDS4090VRQX&file_set.accession=IGVFDS1293SYJM&file_set.accession=IGVFDS2552IDIF&file_set.accession=IGVFDS2186PCOF&file_set.accession=IGVFDS8308NSRV&file_set.accession=IGVFDS6555BIHA&file_set.accession=IGVFDS7181HIBH&file_set.accession=IGVFDS4550ZOKS&file_set.accession=IGVFDS7889GEQS&file_set.accession=IGVFDS8414QFVF&file_set.accession=IGVFDS5388FFIX&file_set.accession=IGVFDS2095EPAX&content_type=reads",
+            "manifest": "https://api.data.igvf.org/metadata/?type=MeasurementSet&accession=IGVFDS8144USAL&accession=IGVFDS5782BLYM&accession=IGVFDS2660YHFN&accession=IGVFDS9519MTBB&accession=IGVFDS2571VVCI&accession=IGVFDS4826YNLK&accession=IGVFDS0174SXAX&accession=IGVFDS4753QHJH&accession=IGVFDS6095UGQM&accession=IGVFDS3795XIJK&accession=IGVFDS6281FISI&accession=IGVFDS0527PPHQ&accession=IGVFDS9857AQIO&accession=IGVFDS3304YLTM&accession=IGVFDS0268SPTG&accession=IGVFDS5116RXOC&accession=IGVFDS9193ENEI&accession=IGVFDS0606THGC&accession=IGVFDS5179UOKT&accession=IGVFDS8365ZNKH&accession=IGVFDS0017MVPN&accession=IGVFDS9238PCPJ&accession=IGVFDS4090VRQX&accession=IGVFDS1293SYJM&accession=IGVFDS2552IDIF&accession=IGVFDS2186PCOF&accession=IGVFDS8308NSRV&accession=IGVFDS6555BIHA&accession=IGVFDS7181HIBH&accession=IGVFDS4550ZOKS&accession=IGVFDS7889GEQS&accession=IGVFDS8414QFVF&accession=IGVFDS5388FFIX&accession=IGVFDS2095EPAX&files.content_type=reads"
+          }
+        ]
+      }
+    },
+    {
+      "accession": "IGVFDS8004ZFOL",
+      "label": "snM3C-seq",
+      "sublabel": "mC + 3C",
+      "order": 3,
+      "summary": "snM3C-seq",
+      "description": "This is the principal analysis set consisting of files relevant to the snm3C-seq component of a fibroblast-to-iPSC reprogramming trajectory profiling four individuals from the Personal Genomes Project (PGP), as part of the Luo award in the Networks group. Files include final QC of snMethylation data/sn3C, such as cell annotations and cells by features matrices.",
+      "assay_titles": [
+        "single nucleus methylation and chromatin conformation capture sequencing"
+      ],
+      "preferred_assay_titles": [
+        "snM3C-seq"
+      ],
+      "lab": "Chongyuan Luo, UCLA",
+      "doi": "10.65695/IGVFDS8004ZFOL",
+      "portal": "https://data.igvf.org/analysis-sets/IGVFDS8004ZFOL/",
+      "status": "released",
+      "controlled_access": false,
+      "sample_summary": "human fibroblast primary cell, fibroblast reprogrammed cell specimen induced to induced pluripotent stem cell at 1 day, 3 day, 5 day, 7 day, 9 day, 12 day, 14 day, 16 day, 18 day(s) post change from donor(s) IGVFDO0351NYZH, IGVFDO2328XGNY and 2 more",
+      "donors": [
+        "IGVFDO0351NYZH",
+        "IGVFDO2328XGNY",
+        "IGVFDO3754NCBP",
+        "IGVFDO4068JJIT"
+      ],
+      "n_samples": 36,
+      "workflows": [
+        "Luo PGP HiC Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "files": [
+        {
+          "accession": "IGVFFI9980PISA",
+          "content_type": "cell annotations",
+          "file_format": "tsv",
+          "href": "/tabular-files/IGVFFI9980PISA/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI9980PISA/@@download/IGVFFI9980PISA.tsv.gz",
+          "s3_uri": "s3://igvf-public/2026/07/17/b84412fd-5799-4952-8af7-944e6b4b73f7/IGVFFI9980PISA.tsv.gz",
+          "size": 643882,
+          "md5": "84eef11b4e1b3b9b04d38f56a7c774cf",
+          "summary": "cell annotations",
+          "assembly": null,
+          "alias": "pgp_snm3c_principal_cell_annot",
+          "filename": "pgp_snm3c_principal_cell_annot.tsv",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS8004ZFOL",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": false
+        },
+        {
+          "accession": "IGVFFI4105CJEZ",
+          "content_type": "cell by bin methylation count matrix",
+          "file_format": "h5ad",
+          "href": "/matrix-files/IGVFFI4105CJEZ/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI4105CJEZ/@@download/IGVFFI4105CJEZ.h5ad",
+          "s3_uri": "s3://igvf-public/2026/07/17/af87f71c-c39b-420a-bc06-31a70e869b5b/IGVFFI4105CJEZ.h5ad",
+          "size": 3200017153,
+          "md5": "3e32b6aa68e432fb0a8356232c96a7bb",
+          "summary": "cell by bin methylation count matrix",
+          "assembly": "GRCh38",
+          "alias": "pgp_snm3c_principal_mcg_chrom100k_matrix",
+          "filename": "merged.processed.h5ad",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS8004ZFOL",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": false
+        },
+        {
+          "accession": "IGVFFI1143UADW",
+          "content_type": "cell by position methylation count matrix",
+          "file_format": "h5ad",
+          "href": "/matrix-files/IGVFFI1143UADW/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI1143UADW/@@download/IGVFFI1143UADW.h5ad",
+          "s3_uri": "s3://igvf-public/2026/07/27/ed834b62-eb83-4497-b164-3bea39427cf9/IGVFFI1143UADW.h5ad",
+          "size": 448764725832,
+          "md5": "cf1a4b63d56dba55299024c174cfeb59",
+          "summary": "cell by position methylation count matrix",
+          "assembly": "GRCh38",
+          "alias": "pgp_snm3c_principal_mcg_cpgs_matrix",
+          "filename": "principal.h5ad",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS8004ZFOL",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": false
+        },
+        {
+          "accession": "IGVFFI0080SQKN",
+          "content_type": "chromatin contact quantifications",
+          "file_format": "bedpe",
+          "href": "/tabular-files/IGVFFI0080SQKN/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI0080SQKN/@@download/IGVFFI0080SQKN.bedpe.gz",
+          "s3_uri": "s3://igvf-public/2026/07/27/50f5fb49-c9ba-40c9-bb84-99863f886048/IGVFFI0080SQKN.bedpe.gz",
+          "size": 173637477277,
+          "md5": "047b89b92f01ca4b7b92bb2d6147f245",
+          "summary": "GRCh38 chromatin contact quantifications",
+          "assembly": "GRCh38",
+          "alias": "pgp_snm3c_principal_chromatin_contacts",
+          "filename": "pgp_snm3c_chromatin_contacts.tsv.gz",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS8004ZFOL",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            9,
+            12,
+            14,
+            16,
+            18
+          ],
+          "mux": false
+        }
+      ],
+      "bytes": 625602864144,
+      "files_search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS8004ZFOL",
+      "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS8004ZFOL",
+      "types": [
+        {
+          "content_type": "cell annotations",
+          "file_format": "tsv",
+          "n": 1,
+          "bytes": 643882,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS8004ZFOL&content_type=cell+annotations",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS8004ZFOL&files.content_type=cell+annotations"
+        },
+        {
+          "content_type": "cell by bin methylation count matrix",
+          "file_format": "h5ad",
+          "n": 1,
+          "bytes": 3200017153,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS8004ZFOL&content_type=cell+by+bin+methylation+count+matrix",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS8004ZFOL&files.content_type=cell+by+bin+methylation+count+matrix"
+        },
+        {
+          "content_type": "cell by position methylation count matrix",
+          "file_format": "h5ad",
+          "n": 1,
+          "bytes": 448764725832,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS8004ZFOL&content_type=cell+by+position+methylation+count+matrix",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS8004ZFOL&files.content_type=cell+by+position+methylation+count+matrix"
+        },
+        {
+          "content_type": "chromatin contact quantifications",
+          "file_format": "bedpe",
+          "n": 1,
+          "bytes": 173637477277,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS8004ZFOL&content_type=chromatin+contact+quantifications",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS8004ZFOL&files.content_type=chromatin+contact+quantifications"
+        }
+      ],
+      "manifest_file": "data/manifests/IGVFDS8004ZFOL-analysis-ready.tsv",
+      "intermediate": {
+        "n_sets": 36,
+        "n_files": 288,
+        "bytes": 2681335288676,
+        "accessions": [
+          "IGVFDS3780JQPT",
+          "IGVFDS4948YCMD",
+          "IGVFDS3747OWHA",
+          "IGVFDS4577MAYO",
+          "IGVFDS3650LFPH",
+          "IGVFDS6958TXDE",
+          "IGVFDS6744LXZM",
+          "IGVFDS5710IVCX",
+          "IGVFDS4586KNJA",
+          "IGVFDS2283KAIN",
+          "IGVFDS1059GKTV",
+          "IGVFDS4809FUEM",
+          "IGVFDS8307IHSZ",
+          "IGVFDS5878ILAJ",
+          "IGVFDS9551UYBE",
+          "IGVFDS8031QCDA",
+          "IGVFDS1815HRAY",
+          "IGVFDS0537ZNOZ",
+          "IGVFDS7180OQIN",
+          "IGVFDS3033QDGY",
+          "IGVFDS6644XMIF",
+          "IGVFDS3263QXPN",
+          "IGVFDS5099GDWA",
+          "IGVFDS3848GJOJ",
+          "IGVFDS3824DKDI",
+          "IGVFDS5022RJMW",
+          "IGVFDS5927RLRJ",
+          "IGVFDS7034ETJG",
+          "IGVFDS3785PRPT",
+          "IGVFDS8816OJRX",
+          "IGVFDS9271QBLR",
+          "IGVFDS5183RDLF",
+          "IGVFDS0434GDID",
+          "IGVFDS1041RNOK",
+          "IGVFDS9168JZPK",
+          "IGVFDS3335QAOG"
+        ],
+        "files_search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3780JQPT&file_set.accession=IGVFDS4948YCMD&file_set.accession=IGVFDS3747OWHA&file_set.accession=IGVFDS4577MAYO&file_set.accession=IGVFDS3650LFPH&file_set.accession=IGVFDS6958TXDE&file_set.accession=IGVFDS6744LXZM&file_set.accession=IGVFDS5710IVCX&file_set.accession=IGVFDS4586KNJA&file_set.accession=IGVFDS2283KAIN&file_set.accession=IGVFDS1059GKTV&file_set.accession=IGVFDS4809FUEM&file_set.accession=IGVFDS8307IHSZ&file_set.accession=IGVFDS5878ILAJ&file_set.accession=IGVFDS9551UYBE&file_set.accession=IGVFDS8031QCDA&file_set.accession=IGVFDS1815HRAY&file_set.accession=IGVFDS0537ZNOZ&file_set.accession=IGVFDS7180OQIN&file_set.accession=IGVFDS3033QDGY&file_set.accession=IGVFDS6644XMIF&file_set.accession=IGVFDS3263QXPN&file_set.accession=IGVFDS5099GDWA&file_set.accession=IGVFDS3848GJOJ&file_set.accession=IGVFDS3824DKDI&file_set.accession=IGVFDS5022RJMW&file_set.accession=IGVFDS5927RLRJ&file_set.accession=IGVFDS7034ETJG&file_set.accession=IGVFDS3785PRPT&file_set.accession=IGVFDS8816OJRX&file_set.accession=IGVFDS9271QBLR&file_set.accession=IGVFDS5183RDLF&file_set.accession=IGVFDS0434GDID&file_set.accession=IGVFDS1041RNOK&file_set.accession=IGVFDS9168JZPK&file_set.accession=IGVFDS3335QAOG",
+        "sets_search": "https://data.igvf.org/search/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS8004ZFOL%2F",
+        "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS8004ZFOL%2F",
+        "manifest_file": "data/manifests/IGVFDS8004ZFOL-processed.tsv",
+        "types": [
+          {
+            "content_type": "alignments",
+            "file_format": "bam",
+            "n": 36,
+            "bytes": 2103325125449,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3780JQPT&file_set.accession=IGVFDS4948YCMD&file_set.accession=IGVFDS3747OWHA&file_set.accession=IGVFDS4577MAYO&file_set.accession=IGVFDS3650LFPH&file_set.accession=IGVFDS6958TXDE&file_set.accession=IGVFDS6744LXZM&file_set.accession=IGVFDS5710IVCX&file_set.accession=IGVFDS4586KNJA&file_set.accession=IGVFDS2283KAIN&file_set.accession=IGVFDS1059GKTV&file_set.accession=IGVFDS4809FUEM&file_set.accession=IGVFDS8307IHSZ&file_set.accession=IGVFDS5878ILAJ&file_set.accession=IGVFDS9551UYBE&file_set.accession=IGVFDS8031QCDA&file_set.accession=IGVFDS1815HRAY&file_set.accession=IGVFDS0537ZNOZ&file_set.accession=IGVFDS7180OQIN&file_set.accession=IGVFDS3033QDGY&file_set.accession=IGVFDS6644XMIF&file_set.accession=IGVFDS3263QXPN&file_set.accession=IGVFDS5099GDWA&file_set.accession=IGVFDS3848GJOJ&file_set.accession=IGVFDS3824DKDI&file_set.accession=IGVFDS5022RJMW&file_set.accession=IGVFDS5927RLRJ&file_set.accession=IGVFDS7034ETJG&file_set.accession=IGVFDS3785PRPT&file_set.accession=IGVFDS8816OJRX&file_set.accession=IGVFDS9271QBLR&file_set.accession=IGVFDS5183RDLF&file_set.accession=IGVFDS0434GDID&file_set.accession=IGVFDS1041RNOK&file_set.accession=IGVFDS9168JZPK&file_set.accession=IGVFDS3335QAOG&content_type=alignments",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS8004ZFOL%2F&files.content_type=alignments"
+          },
+          {
+            "content_type": "cell by bin contact matrix",
+            "file_format": "mcool",
+            "n": 36,
+            "bytes": 5371900896,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3780JQPT&file_set.accession=IGVFDS4948YCMD&file_set.accession=IGVFDS3747OWHA&file_set.accession=IGVFDS4577MAYO&file_set.accession=IGVFDS3650LFPH&file_set.accession=IGVFDS6958TXDE&file_set.accession=IGVFDS6744LXZM&file_set.accession=IGVFDS5710IVCX&file_set.accession=IGVFDS4586KNJA&file_set.accession=IGVFDS2283KAIN&file_set.accession=IGVFDS1059GKTV&file_set.accession=IGVFDS4809FUEM&file_set.accession=IGVFDS8307IHSZ&file_set.accession=IGVFDS5878ILAJ&file_set.accession=IGVFDS9551UYBE&file_set.accession=IGVFDS8031QCDA&file_set.accession=IGVFDS1815HRAY&file_set.accession=IGVFDS0537ZNOZ&file_set.accession=IGVFDS7180OQIN&file_set.accession=IGVFDS3033QDGY&file_set.accession=IGVFDS6644XMIF&file_set.accession=IGVFDS3263QXPN&file_set.accession=IGVFDS5099GDWA&file_set.accession=IGVFDS3848GJOJ&file_set.accession=IGVFDS3824DKDI&file_set.accession=IGVFDS5022RJMW&file_set.accession=IGVFDS5927RLRJ&file_set.accession=IGVFDS7034ETJG&file_set.accession=IGVFDS3785PRPT&file_set.accession=IGVFDS8816OJRX&file_set.accession=IGVFDS9271QBLR&file_set.accession=IGVFDS5183RDLF&file_set.accession=IGVFDS0434GDID&file_set.accession=IGVFDS1041RNOK&file_set.accession=IGVFDS9168JZPK&file_set.accession=IGVFDS3335QAOG&content_type=cell+by+bin+contact+matrix",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS8004ZFOL%2F&files.content_type=cell+by+bin+contact+matrix"
+          },
+          {
+            "content_type": "cell by bin methylation count matrix",
+            "file_format": "h5ad",
+            "n": 36,
+            "bytes": 3622275336,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3780JQPT&file_set.accession=IGVFDS4948YCMD&file_set.accession=IGVFDS3747OWHA&file_set.accession=IGVFDS4577MAYO&file_set.accession=IGVFDS3650LFPH&file_set.accession=IGVFDS6958TXDE&file_set.accession=IGVFDS6744LXZM&file_set.accession=IGVFDS5710IVCX&file_set.accession=IGVFDS4586KNJA&file_set.accession=IGVFDS2283KAIN&file_set.accession=IGVFDS1059GKTV&file_set.accession=IGVFDS4809FUEM&file_set.accession=IGVFDS8307IHSZ&file_set.accession=IGVFDS5878ILAJ&file_set.accession=IGVFDS9551UYBE&file_set.accession=IGVFDS8031QCDA&file_set.accession=IGVFDS1815HRAY&file_set.accession=IGVFDS0537ZNOZ&file_set.accession=IGVFDS7180OQIN&file_set.accession=IGVFDS3033QDGY&file_set.accession=IGVFDS6644XMIF&file_set.accession=IGVFDS3263QXPN&file_set.accession=IGVFDS5099GDWA&file_set.accession=IGVFDS3848GJOJ&file_set.accession=IGVFDS3824DKDI&file_set.accession=IGVFDS5022RJMW&file_set.accession=IGVFDS5927RLRJ&file_set.accession=IGVFDS7034ETJG&file_set.accession=IGVFDS3785PRPT&file_set.accession=IGVFDS8816OJRX&file_set.accession=IGVFDS9271QBLR&file_set.accession=IGVFDS5183RDLF&file_set.accession=IGVFDS0434GDID&file_set.accession=IGVFDS1041RNOK&file_set.accession=IGVFDS9168JZPK&file_set.accession=IGVFDS3335QAOG&content_type=cell+by+bin+methylation+count+matrix",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS8004ZFOL%2F&files.content_type=cell+by+bin+methylation+count+matrix"
+          },
+          {
+            "content_type": "cell by position methylation count matrix",
+            "file_format": "h5ad",
+            "n": 36,
+            "bytes": 407359353072,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3780JQPT&file_set.accession=IGVFDS4948YCMD&file_set.accession=IGVFDS3747OWHA&file_set.accession=IGVFDS4577MAYO&file_set.accession=IGVFDS3650LFPH&file_set.accession=IGVFDS6958TXDE&file_set.accession=IGVFDS6744LXZM&file_set.accession=IGVFDS5710IVCX&file_set.accession=IGVFDS4586KNJA&file_set.accession=IGVFDS2283KAIN&file_set.accession=IGVFDS1059GKTV&file_set.accession=IGVFDS4809FUEM&file_set.accession=IGVFDS8307IHSZ&file_set.accession=IGVFDS5878ILAJ&file_set.accession=IGVFDS9551UYBE&file_set.accession=IGVFDS8031QCDA&file_set.accession=IGVFDS1815HRAY&file_set.accession=IGVFDS0537ZNOZ&file_set.accession=IGVFDS7180OQIN&file_set.accession=IGVFDS3033QDGY&file_set.accession=IGVFDS6644XMIF&file_set.accession=IGVFDS3263QXPN&file_set.accession=IGVFDS5099GDWA&file_set.accession=IGVFDS3848GJOJ&file_set.accession=IGVFDS3824DKDI&file_set.accession=IGVFDS5022RJMW&file_set.accession=IGVFDS5927RLRJ&file_set.accession=IGVFDS7034ETJG&file_set.accession=IGVFDS3785PRPT&file_set.accession=IGVFDS8816OJRX&file_set.accession=IGVFDS9271QBLR&file_set.accession=IGVFDS5183RDLF&file_set.accession=IGVFDS0434GDID&file_set.accession=IGVFDS1041RNOK&file_set.accession=IGVFDS9168JZPK&file_set.accession=IGVFDS3335QAOG&content_type=cell+by+position+methylation+count+matrix",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS8004ZFOL%2F&files.content_type=cell+by+position+methylation+count+matrix"
+          },
+          {
+            "content_type": "chromatin contact quantifications",
+            "file_format": "bedpe",
+            "n": 36,
+            "bytes": 155933824539,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3780JQPT&file_set.accession=IGVFDS4948YCMD&file_set.accession=IGVFDS3747OWHA&file_set.accession=IGVFDS4577MAYO&file_set.accession=IGVFDS3650LFPH&file_set.accession=IGVFDS6958TXDE&file_set.accession=IGVFDS6744LXZM&file_set.accession=IGVFDS5710IVCX&file_set.accession=IGVFDS4586KNJA&file_set.accession=IGVFDS2283KAIN&file_set.accession=IGVFDS1059GKTV&file_set.accession=IGVFDS4809FUEM&file_set.accession=IGVFDS8307IHSZ&file_set.accession=IGVFDS5878ILAJ&file_set.accession=IGVFDS9551UYBE&file_set.accession=IGVFDS8031QCDA&file_set.accession=IGVFDS1815HRAY&file_set.accession=IGVFDS0537ZNOZ&file_set.accession=IGVFDS7180OQIN&file_set.accession=IGVFDS3033QDGY&file_set.accession=IGVFDS6644XMIF&file_set.accession=IGVFDS3263QXPN&file_set.accession=IGVFDS5099GDWA&file_set.accession=IGVFDS3848GJOJ&file_set.accession=IGVFDS3824DKDI&file_set.accession=IGVFDS5022RJMW&file_set.accession=IGVFDS5927RLRJ&file_set.accession=IGVFDS7034ETJG&file_set.accession=IGVFDS3785PRPT&file_set.accession=IGVFDS8816OJRX&file_set.accession=IGVFDS9271QBLR&file_set.accession=IGVFDS5183RDLF&file_set.accession=IGVFDS0434GDID&file_set.accession=IGVFDS1041RNOK&file_set.accession=IGVFDS9168JZPK&file_set.accession=IGVFDS3335QAOG&content_type=chromatin+contact+quantifications",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS8004ZFOL%2F&files.content_type=chromatin+contact+quantifications"
+          },
+          {
+            "content_type": "index",
+            "file_format": "tbi",
+            "n": 36,
+            "bytes": 79584933,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3780JQPT&file_set.accession=IGVFDS4948YCMD&file_set.accession=IGVFDS3747OWHA&file_set.accession=IGVFDS4577MAYO&file_set.accession=IGVFDS3650LFPH&file_set.accession=IGVFDS6958TXDE&file_set.accession=IGVFDS6744LXZM&file_set.accession=IGVFDS5710IVCX&file_set.accession=IGVFDS4586KNJA&file_set.accession=IGVFDS2283KAIN&file_set.accession=IGVFDS1059GKTV&file_set.accession=IGVFDS4809FUEM&file_set.accession=IGVFDS8307IHSZ&file_set.accession=IGVFDS5878ILAJ&file_set.accession=IGVFDS9551UYBE&file_set.accession=IGVFDS8031QCDA&file_set.accession=IGVFDS1815HRAY&file_set.accession=IGVFDS0537ZNOZ&file_set.accession=IGVFDS7180OQIN&file_set.accession=IGVFDS3033QDGY&file_set.accession=IGVFDS6644XMIF&file_set.accession=IGVFDS3263QXPN&file_set.accession=IGVFDS5099GDWA&file_set.accession=IGVFDS3848GJOJ&file_set.accession=IGVFDS3824DKDI&file_set.accession=IGVFDS5022RJMW&file_set.accession=IGVFDS5927RLRJ&file_set.accession=IGVFDS7034ETJG&file_set.accession=IGVFDS3785PRPT&file_set.accession=IGVFDS8816OJRX&file_set.accession=IGVFDS9271QBLR&file_set.accession=IGVFDS5183RDLF&file_set.accession=IGVFDS0434GDID&file_set.accession=IGVFDS1041RNOK&file_set.accession=IGVFDS9168JZPK&file_set.accession=IGVFDS3335QAOG&content_type=index",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS8004ZFOL%2F&files.content_type=index"
+          },
+          {
+            "content_type": "methylation counts",
+            "file_format": "tsv",
+            "n": 36,
+            "bytes": 5631239885,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3780JQPT&file_set.accession=IGVFDS4948YCMD&file_set.accession=IGVFDS3747OWHA&file_set.accession=IGVFDS4577MAYO&file_set.accession=IGVFDS3650LFPH&file_set.accession=IGVFDS6958TXDE&file_set.accession=IGVFDS6744LXZM&file_set.accession=IGVFDS5710IVCX&file_set.accession=IGVFDS4586KNJA&file_set.accession=IGVFDS2283KAIN&file_set.accession=IGVFDS1059GKTV&file_set.accession=IGVFDS4809FUEM&file_set.accession=IGVFDS8307IHSZ&file_set.accession=IGVFDS5878ILAJ&file_set.accession=IGVFDS9551UYBE&file_set.accession=IGVFDS8031QCDA&file_set.accession=IGVFDS1815HRAY&file_set.accession=IGVFDS0537ZNOZ&file_set.accession=IGVFDS7180OQIN&file_set.accession=IGVFDS3033QDGY&file_set.accession=IGVFDS6644XMIF&file_set.accession=IGVFDS3263QXPN&file_set.accession=IGVFDS5099GDWA&file_set.accession=IGVFDS3848GJOJ&file_set.accession=IGVFDS3824DKDI&file_set.accession=IGVFDS5022RJMW&file_set.accession=IGVFDS5927RLRJ&file_set.accession=IGVFDS7034ETJG&file_set.accession=IGVFDS3785PRPT&file_set.accession=IGVFDS8816OJRX&file_set.accession=IGVFDS9271QBLR&file_set.accession=IGVFDS5183RDLF&file_set.accession=IGVFDS0434GDID&file_set.accession=IGVFDS1041RNOK&file_set.accession=IGVFDS9168JZPK&file_set.accession=IGVFDS3335QAOG&content_type=methylation+counts",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS8004ZFOL%2F&files.content_type=methylation+counts"
+          },
+          {
+            "content_type": "per-cell quality report",
+            "file_format": "tsv",
+            "n": 36,
+            "bytes": 11984566,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3780JQPT&file_set.accession=IGVFDS4948YCMD&file_set.accession=IGVFDS3747OWHA&file_set.accession=IGVFDS4577MAYO&file_set.accession=IGVFDS3650LFPH&file_set.accession=IGVFDS6958TXDE&file_set.accession=IGVFDS6744LXZM&file_set.accession=IGVFDS5710IVCX&file_set.accession=IGVFDS4586KNJA&file_set.accession=IGVFDS2283KAIN&file_set.accession=IGVFDS1059GKTV&file_set.accession=IGVFDS4809FUEM&file_set.accession=IGVFDS8307IHSZ&file_set.accession=IGVFDS5878ILAJ&file_set.accession=IGVFDS9551UYBE&file_set.accession=IGVFDS8031QCDA&file_set.accession=IGVFDS1815HRAY&file_set.accession=IGVFDS0537ZNOZ&file_set.accession=IGVFDS7180OQIN&file_set.accession=IGVFDS3033QDGY&file_set.accession=IGVFDS6644XMIF&file_set.accession=IGVFDS3263QXPN&file_set.accession=IGVFDS5099GDWA&file_set.accession=IGVFDS3848GJOJ&file_set.accession=IGVFDS3824DKDI&file_set.accession=IGVFDS5022RJMW&file_set.accession=IGVFDS5927RLRJ&file_set.accession=IGVFDS7034ETJG&file_set.accession=IGVFDS3785PRPT&file_set.accession=IGVFDS8816OJRX&file_set.accession=IGVFDS9271QBLR&file_set.accession=IGVFDS5183RDLF&file_set.accession=IGVFDS0434GDID&file_set.accession=IGVFDS1041RNOK&file_set.accession=IGVFDS9168JZPK&file_set.accession=IGVFDS3335QAOG&content_type=per-cell+quality+report",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS8004ZFOL%2F&files.content_type=per-cell+quality+report"
+          }
+        ],
+        "groups": [
+          {
+            "accession": "IGVFDS3780JQPT",
+            "alias": "pgp_C29_D0_snm3c_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 0",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              0
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 0
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 73183026881,
+            "raw_files": 16,
+            "raw_bytes": 37402689520,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS3780JQPT/"
+          },
+          {
+            "accession": "IGVFDS1059GKTV",
+            "alias": "pgp_C37_D0_snm3c_analysis_set",
+            "code": null,
+            "label": "C37 \u00b7 day 0",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              0
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 0
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 78813821458,
+            "raw_files": 16,
+            "raw_bytes": 41202103815,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS1059GKTV/"
+          },
+          {
+            "accession": "IGVFDS7180OQIN",
+            "alias": "pgp_C38_D0_snm3c_analysis_set",
+            "code": null,
+            "label": "C38 \u00b7 day 0",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              0
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 0
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 62565327909,
+            "raw_files": 16,
+            "raw_bytes": 42698422827,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS7180OQIN/"
+          },
+          {
+            "accession": "IGVFDS5927RLRJ",
+            "alias": "pgp_C39_D0_snm3c_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 0",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              0
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 0
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 78487757274,
+            "raw_files": 16,
+            "raw_bytes": 53639155673,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5927RLRJ/"
+          },
+          {
+            "accession": "IGVFDS6958TXDE",
+            "alias": "pgp_C29_D1_snm3c_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 1",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              1
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 1
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 73388701547,
+            "raw_files": 16,
+            "raw_bytes": 47630150356,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS6958TXDE/"
+          },
+          {
+            "accession": "IGVFDS5878ILAJ",
+            "alias": "pgp_C37_D1_snm3c_analysis_set",
+            "code": null,
+            "label": "C37 \u00b7 day 1",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              1
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 1
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 82355129506,
+            "raw_files": 16,
+            "raw_bytes": 52907666618,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5878ILAJ/"
+          },
+          {
+            "accession": "IGVFDS3263QXPN",
+            "alias": "pgp_C38_D1_snm3c_analysis_set",
+            "code": null,
+            "label": "C38 \u00b7 day 1",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              1
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 1
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 71036817783,
+            "raw_files": 16,
+            "raw_bytes": 55634815565,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS3263QXPN/"
+          },
+          {
+            "accession": "IGVFDS5183RDLF",
+            "alias": "pgp_C39_D1_snm3c_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 1",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              1
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 1
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 66993732564,
+            "raw_files": 16,
+            "raw_bytes": 44796732049,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5183RDLF/"
+          },
+          {
+            "accession": "IGVFDS6744LXZM",
+            "alias": "pgp_C29_D3_snm3c_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 3",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              3
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 3
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 68306992633,
+            "raw_files": 16,
+            "raw_bytes": 50933409687,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS6744LXZM/"
+          },
+          {
+            "accession": "IGVFDS9551UYBE",
+            "alias": "pgp_C37_D3_snm3c_analysis_set",
+            "code": null,
+            "label": "C37 \u00b7 day 3",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              3
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 3
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 69142191508,
+            "raw_files": 16,
+            "raw_bytes": 51403428892,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS9551UYBE/"
+          },
+          {
+            "accession": "IGVFDS5099GDWA",
+            "alias": "pgp_C38_D3_snm3c_analysis_set",
+            "code": null,
+            "label": "C38 \u00b7 day 3",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              3
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 3
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 78454740199,
+            "raw_files": 16,
+            "raw_bytes": 41560368218,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5099GDWA/"
+          },
+          {
+            "accession": "IGVFDS0434GDID",
+            "alias": "pgp_C39_D3_snm3c_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 3",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              3
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 3
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 74476715559,
+            "raw_files": 16,
+            "raw_bytes": 41559761804,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS0434GDID/"
+          },
+          {
+            "accession": "IGVFDS5710IVCX",
+            "alias": "pgp_C29_D5_snm3c_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 5",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              5
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 5
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 68868033082,
+            "raw_files": 16,
+            "raw_bytes": 52877171794,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5710IVCX/"
+          },
+          {
+            "accession": "IGVFDS8031QCDA",
+            "alias": "pgp_C37_D5_snm3c_analysis_set",
+            "code": null,
+            "label": "C37 \u00b7 day 5",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              5
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 5
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 77269947413,
+            "raw_files": 16,
+            "raw_bytes": 55769197991,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS8031QCDA/"
+          },
+          {
+            "accession": "IGVFDS3848GJOJ",
+            "alias": "pgp_C38_D5_snm3c_analysis_set",
+            "code": null,
+            "label": "C38 \u00b7 day 5",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              5
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 5
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 68403921717,
+            "raw_files": 16,
+            "raw_bytes": 43380314512,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS3848GJOJ/"
+          },
+          {
+            "accession": "IGVFDS1041RNOK",
+            "alias": "pgp_C39_D5_snm3c_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 5",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              5
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 5
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 125634926334,
+            "raw_files": 16,
+            "raw_bytes": 31762048307,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS1041RNOK/"
+          },
+          {
+            "accession": "IGVFDS4586KNJA",
+            "alias": "pgp_C29_D7_snm3c_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 7",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              7
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 7
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 83212533531,
+            "raw_files": 16,
+            "raw_bytes": 39790577173,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS4586KNJA/"
+          },
+          {
+            "accession": "IGVFDS1815HRAY",
+            "alias": "pgp_C37_D7_snm3c_analysis_set",
+            "code": null,
+            "label": "C37 \u00b7 day 7",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              7
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 7
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 73342629254,
+            "raw_files": 16,
+            "raw_bytes": 47407889296,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS1815HRAY/"
+          },
+          {
+            "accession": "IGVFDS3824DKDI",
+            "alias": "pgp_C38_D7_snm3c_analysis_set",
+            "code": null,
+            "label": "C38 \u00b7 day 7",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              7
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 7
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 78517155325,
+            "raw_files": 16,
+            "raw_bytes": 42257348764,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS3824DKDI/"
+          },
+          {
+            "accession": "IGVFDS9168JZPK",
+            "alias": "pgp_C39_D7_snm3c_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 7",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              7
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 7
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 65581914250,
+            "raw_files": 16,
+            "raw_bytes": 45277140630,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS9168JZPK/"
+          },
+          {
+            "accession": "IGVFDS2283KAIN",
+            "alias": "pgp_C29_D9_snm3c_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 9",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              9
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 9
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 63550242783,
+            "raw_files": 16,
+            "raw_bytes": 40786473237,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS2283KAIN/"
+          },
+          {
+            "accession": "IGVFDS0537ZNOZ",
+            "alias": "pgp_C37_D9_snm3c_analysis_set",
+            "code": null,
+            "label": "C37 \u00b7 day 9",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              9
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 9
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 61146023750,
+            "raw_files": 16,
+            "raw_bytes": 37908872308,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS0537ZNOZ/"
+          },
+          {
+            "accession": "IGVFDS5022RJMW",
+            "alias": "pgp_C38_D9_snm3c_analysis_set",
+            "code": null,
+            "label": "C38 \u00b7 day 9",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              9
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 9
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 66601859228,
+            "raw_files": 16,
+            "raw_bytes": 53061607392,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5022RJMW/"
+          },
+          {
+            "accession": "IGVFDS3335QAOG",
+            "alias": "pgp_C39_D9_snm3c_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 9",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              9
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 9
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 77956633425,
+            "raw_files": 16,
+            "raw_bytes": 55173580798,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS3335QAOG/"
+          },
+          {
+            "accession": "IGVFDS4948YCMD",
+            "alias": "pgp_C29_D12_snm3c_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 12",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              12
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 12
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 64604836691,
+            "raw_files": 16,
+            "raw_bytes": 45229612294,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS4948YCMD/"
+          },
+          {
+            "accession": "IGVFDS4809FUEM",
+            "alias": "pgp_C37_D12_snm3c_analysis_set",
+            "code": null,
+            "label": "C37 \u00b7 day 12",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              12
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 12
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 66695746966,
+            "raw_files": 16,
+            "raw_bytes": 52262325658,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS4809FUEM/"
+          },
+          {
+            "accession": "IGVFDS3033QDGY",
+            "alias": "pgp_C38_D12_snm3c_analysis_set",
+            "code": null,
+            "label": "C38 \u00b7 day 12",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              12
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 12
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 75842325597,
+            "raw_files": 16,
+            "raw_bytes": 50731481741,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS3033QDGY/"
+          },
+          {
+            "accession": "IGVFDS7034ETJG",
+            "alias": "pgp_C39_D12_snm3c_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 12",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              12
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 12
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 76964846517,
+            "raw_files": 16,
+            "raw_bytes": 50460296928,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS7034ETJG/"
+          },
+          {
+            "accession": "IGVFDS3747OWHA",
+            "alias": "pgp_C29_D14_snm3c_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 14",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              14
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 14
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 82939496688,
+            "raw_files": 16,
+            "raw_bytes": 47519024519,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS3747OWHA/"
+          },
+          {
+            "accession": "IGVFDS8307IHSZ",
+            "alias": "pgp_C37_D14_snm3c_analysis_set",
+            "code": null,
+            "label": "C37 \u00b7 day 14",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              14
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 14
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 87064417734,
+            "raw_files": 16,
+            "raw_bytes": 47880985009,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS8307IHSZ/"
+          },
+          {
+            "accession": "IGVFDS6644XMIF",
+            "alias": "pgp_C38_D14_snm3c_analysis_set",
+            "code": null,
+            "label": "C38 \u00b7 day 14",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              14
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 14
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 66130534003,
+            "raw_files": 16,
+            "raw_bytes": 43204350839,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS6644XMIF/"
+          },
+          {
+            "accession": "IGVFDS3785PRPT",
+            "alias": "pgp_C39_D14_snm3c_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 14",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              14
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 14
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 70050649573,
+            "raw_files": 16,
+            "raw_bytes": 45959848999,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS3785PRPT/"
+          },
+          {
+            "accession": "IGVFDS4577MAYO",
+            "alias": "pgp_C29_D16_snm3c_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 16",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              16
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 16
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 72673605127,
+            "raw_files": 16,
+            "raw_bytes": 45958759922,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS4577MAYO/"
+          },
+          {
+            "accession": "IGVFDS8816OJRX",
+            "alias": "pgp_C39_D16_snm3c_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 16",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              16
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 16
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 88391898493,
+            "raw_files": 16,
+            "raw_bytes": 43259232442,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS8816OJRX/"
+          },
+          {
+            "accession": "IGVFDS3650LFPH",
+            "alias": "pgp_C29_D18_snm3c_analysis_set",
+            "code": null,
+            "label": "C29 \u00b7 day 18",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              18
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 18
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 70084681985,
+            "raw_files": 16,
+            "raw_bytes": 39416254676,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS3650LFPH/"
+          },
+          {
+            "accession": "IGVFDS9271QBLR",
+            "alias": "pgp_C39_D18_snm3c_analysis_set",
+            "code": null,
+            "label": "C39 \u00b7 day 18",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              18
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 18
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 8,
+            "bytes": 72601474389,
+            "raw_files": 16,
+            "raw_bytes": 53259156143,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS9271QBLR/"
+          }
+        ]
+      },
+      "measurement": {
+        "n_sets": 36,
+        "n_files": 576,
+        "bytes": 1671962256396,
+        "accessions": [
+          "IGVFDS3330GATY",
+          "IGVFDS7289ZOYE",
+          "IGVFDS6752GRBU",
+          "IGVFDS9131TLJM",
+          "IGVFDS7377KJJR",
+          "IGVFDS0357HJRR",
+          "IGVFDS0964QENG",
+          "IGVFDS1011YMSG",
+          "IGVFDS9901QUGC",
+          "IGVFDS8972AAEC",
+          "IGVFDS3755JEOE",
+          "IGVFDS3086GMBH",
+          "IGVFDS5995LBLA",
+          "IGVFDS5502HMZW",
+          "IGVFDS6255OZNL",
+          "IGVFDS7371DIJR",
+          "IGVFDS3140XYDB",
+          "IGVFDS6481RUDF",
+          "IGVFDS5562PVFA",
+          "IGVFDS6022TZAV",
+          "IGVFDS4538IFHF",
+          "IGVFDS7395LBWF",
+          "IGVFDS1989TSQP",
+          "IGVFDS1811BKZP",
+          "IGVFDS4954EITX",
+          "IGVFDS8293KTMP",
+          "IGVFDS8729LTAJ",
+          "IGVFDS4429VWLZ",
+          "IGVFDS7606ECSX",
+          "IGVFDS0635LULZ",
+          "IGVFDS1180HGHV",
+          "IGVFDS4418VLDF",
+          "IGVFDS3823QNVI",
+          "IGVFDS2160BCQF",
+          "IGVFDS4922GNDX",
+          "IGVFDS9196PDRB"
+        ],
+        "files_search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3330GATY&file_set.accession=IGVFDS7289ZOYE&file_set.accession=IGVFDS6752GRBU&file_set.accession=IGVFDS9131TLJM&file_set.accession=IGVFDS7377KJJR&file_set.accession=IGVFDS0357HJRR&file_set.accession=IGVFDS0964QENG&file_set.accession=IGVFDS1011YMSG&file_set.accession=IGVFDS9901QUGC&file_set.accession=IGVFDS8972AAEC&file_set.accession=IGVFDS3755JEOE&file_set.accession=IGVFDS3086GMBH&file_set.accession=IGVFDS5995LBLA&file_set.accession=IGVFDS5502HMZW&file_set.accession=IGVFDS6255OZNL&file_set.accession=IGVFDS7371DIJR&file_set.accession=IGVFDS3140XYDB&file_set.accession=IGVFDS6481RUDF&file_set.accession=IGVFDS5562PVFA&file_set.accession=IGVFDS6022TZAV&file_set.accession=IGVFDS4538IFHF&file_set.accession=IGVFDS7395LBWF&file_set.accession=IGVFDS1989TSQP&file_set.accession=IGVFDS1811BKZP&file_set.accession=IGVFDS4954EITX&file_set.accession=IGVFDS8293KTMP&file_set.accession=IGVFDS8729LTAJ&file_set.accession=IGVFDS4429VWLZ&file_set.accession=IGVFDS7606ECSX&file_set.accession=IGVFDS0635LULZ&file_set.accession=IGVFDS1180HGHV&file_set.accession=IGVFDS4418VLDF&file_set.accession=IGVFDS3823QNVI&file_set.accession=IGVFDS2160BCQF&file_set.accession=IGVFDS4922GNDX&file_set.accession=IGVFDS9196PDRB",
+        "sets_search": "https://data.igvf.org/search/?type=MeasurementSet&accession=IGVFDS3330GATY&accession=IGVFDS7289ZOYE&accession=IGVFDS6752GRBU&accession=IGVFDS9131TLJM&accession=IGVFDS7377KJJR&accession=IGVFDS0357HJRR&accession=IGVFDS0964QENG&accession=IGVFDS1011YMSG&accession=IGVFDS9901QUGC&accession=IGVFDS8972AAEC&accession=IGVFDS3755JEOE&accession=IGVFDS3086GMBH&accession=IGVFDS5995LBLA&accession=IGVFDS5502HMZW&accession=IGVFDS6255OZNL&accession=IGVFDS7371DIJR&accession=IGVFDS3140XYDB&accession=IGVFDS6481RUDF&accession=IGVFDS5562PVFA&accession=IGVFDS6022TZAV&accession=IGVFDS4538IFHF&accession=IGVFDS7395LBWF&accession=IGVFDS1989TSQP&accession=IGVFDS1811BKZP&accession=IGVFDS4954EITX&accession=IGVFDS8293KTMP&accession=IGVFDS8729LTAJ&accession=IGVFDS4429VWLZ&accession=IGVFDS7606ECSX&accession=IGVFDS0635LULZ&accession=IGVFDS1180HGHV&accession=IGVFDS4418VLDF&accession=IGVFDS3823QNVI&accession=IGVFDS2160BCQF&accession=IGVFDS4922GNDX&accession=IGVFDS9196PDRB",
+        "manifest": "https://api.data.igvf.org/metadata/?type=MeasurementSet&accession=IGVFDS3330GATY&accession=IGVFDS7289ZOYE&accession=IGVFDS6752GRBU&accession=IGVFDS9131TLJM&accession=IGVFDS7377KJJR&accession=IGVFDS0357HJRR&accession=IGVFDS0964QENG&accession=IGVFDS1011YMSG&accession=IGVFDS9901QUGC&accession=IGVFDS8972AAEC&accession=IGVFDS3755JEOE&accession=IGVFDS3086GMBH&accession=IGVFDS5995LBLA&accession=IGVFDS5502HMZW&accession=IGVFDS6255OZNL&accession=IGVFDS7371DIJR&accession=IGVFDS3140XYDB&accession=IGVFDS6481RUDF&accession=IGVFDS5562PVFA&accession=IGVFDS6022TZAV&accession=IGVFDS4538IFHF&accession=IGVFDS7395LBWF&accession=IGVFDS1989TSQP&accession=IGVFDS1811BKZP&accession=IGVFDS4954EITX&accession=IGVFDS8293KTMP&accession=IGVFDS8729LTAJ&accession=IGVFDS4429VWLZ&accession=IGVFDS7606ECSX&accession=IGVFDS0635LULZ&accession=IGVFDS1180HGHV&accession=IGVFDS4418VLDF&accession=IGVFDS3823QNVI&accession=IGVFDS2160BCQF&accession=IGVFDS4922GNDX&accession=IGVFDS9196PDRB",
+        "manifest_file": "data/manifests/IGVFDS8004ZFOL-raw.tsv",
+        "types": [
+          {
+            "content_type": "reads",
+            "file_format": "fastq",
+            "n": 576,
+            "bytes": 1671962256396,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS3330GATY&file_set.accession=IGVFDS7289ZOYE&file_set.accession=IGVFDS6752GRBU&file_set.accession=IGVFDS9131TLJM&file_set.accession=IGVFDS7377KJJR&file_set.accession=IGVFDS0357HJRR&file_set.accession=IGVFDS0964QENG&file_set.accession=IGVFDS1011YMSG&file_set.accession=IGVFDS9901QUGC&file_set.accession=IGVFDS8972AAEC&file_set.accession=IGVFDS3755JEOE&file_set.accession=IGVFDS3086GMBH&file_set.accession=IGVFDS5995LBLA&file_set.accession=IGVFDS5502HMZW&file_set.accession=IGVFDS6255OZNL&file_set.accession=IGVFDS7371DIJR&file_set.accession=IGVFDS3140XYDB&file_set.accession=IGVFDS6481RUDF&file_set.accession=IGVFDS5562PVFA&file_set.accession=IGVFDS6022TZAV&file_set.accession=IGVFDS4538IFHF&file_set.accession=IGVFDS7395LBWF&file_set.accession=IGVFDS1989TSQP&file_set.accession=IGVFDS1811BKZP&file_set.accession=IGVFDS4954EITX&file_set.accession=IGVFDS8293KTMP&file_set.accession=IGVFDS8729LTAJ&file_set.accession=IGVFDS4429VWLZ&file_set.accession=IGVFDS7606ECSX&file_set.accession=IGVFDS0635LULZ&file_set.accession=IGVFDS1180HGHV&file_set.accession=IGVFDS4418VLDF&file_set.accession=IGVFDS3823QNVI&file_set.accession=IGVFDS2160BCQF&file_set.accession=IGVFDS4922GNDX&file_set.accession=IGVFDS9196PDRB&content_type=reads",
+            "manifest": "https://api.data.igvf.org/metadata/?type=MeasurementSet&accession=IGVFDS3330GATY&accession=IGVFDS7289ZOYE&accession=IGVFDS6752GRBU&accession=IGVFDS9131TLJM&accession=IGVFDS7377KJJR&accession=IGVFDS0357HJRR&accession=IGVFDS0964QENG&accession=IGVFDS1011YMSG&accession=IGVFDS9901QUGC&accession=IGVFDS8972AAEC&accession=IGVFDS3755JEOE&accession=IGVFDS3086GMBH&accession=IGVFDS5995LBLA&accession=IGVFDS5502HMZW&accession=IGVFDS6255OZNL&accession=IGVFDS7371DIJR&accession=IGVFDS3140XYDB&accession=IGVFDS6481RUDF&accession=IGVFDS5562PVFA&accession=IGVFDS6022TZAV&accession=IGVFDS4538IFHF&accession=IGVFDS7395LBWF&accession=IGVFDS1989TSQP&accession=IGVFDS1811BKZP&accession=IGVFDS4954EITX&accession=IGVFDS8293KTMP&accession=IGVFDS8729LTAJ&accession=IGVFDS4429VWLZ&accession=IGVFDS7606ECSX&accession=IGVFDS0635LULZ&accession=IGVFDS1180HGHV&accession=IGVFDS4418VLDF&accession=IGVFDS3823QNVI&accession=IGVFDS2160BCQF&accession=IGVFDS4922GNDX&accession=IGVFDS9196PDRB&files.content_type=reads"
+          }
+        ]
+      }
+    },
+    {
+      "accession": "IGVFDS6501PVZQ",
+      "label": "Spatial (CosMx)",
+      "sublabel": "in situ RNA",
+      "order": 4,
+      "summary": "Spatial transcriptomics",
+      "description": "This is the principal analysis set consisting of files relevant to the spatial RNA component of a fibroblast-to-iPSC reprogramming trajectory profiling four individuals from the Personal Genomes Project (PGP), as part of the Luo award in the Networks group. Files include final QC of three separate spatial RNA experiments (IGVFFI2804FOOR, IGVFFI3564FUQJ, and IGVFFI9846GOMO). IGVFFI2804FOOR and IGVFFI3564FUQJ are pilot spatial experiments used for orthogonal validation (identifying spatial RNA specific fibroblast/iPSC relevant genes used for trajectory scoring), while IGVFFI9846GOMO represents the main spatial RNA data used in the manuscript (individuals C29/C38); the cell annotations reflect cells from that set.",
+      "assay_titles": [
+        "spatial transcriptomics"
+      ],
+      "preferred_assay_titles": [
+        "Spatial transcriptomics"
+      ],
+      "lab": "Chongyuan Luo, UCLA",
+      "doi": "10.65695/IGVFDS6501PVZQ",
+      "portal": "https://data.igvf.org/analysis-sets/IGVFDS6501PVZQ/",
+      "status": "released",
+      "controlled_access": false,
+      "sample_summary": "human fibroblast pooled reprogrammed cell specimen induced to induced pluripotent stem cell at 6 day, 13 day, 30 day(s) post change from donor(s) IGVFDO2328XGNY, IGVFDO3565PTIO and 1 more",
+      "donors": [
+        "IGVFDO2328XGNY",
+        "IGVFDO3565PTIO",
+        "IGVFDO3754NCBP"
+      ],
+      "n_samples": 3,
+      "workflows": [
+        "Luo IGVF Spatial RNA Pipeline"
+      ],
+      "files": [
+        {
+          "accession": "IGVFFI0412JJWO",
+          "content_type": "cell annotations",
+          "file_format": "tsv",
+          "href": "/tabular-files/IGVFFI0412JJWO/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI0412JJWO/@@download/IGVFFI0412JJWO.tsv.gz",
+          "s3_uri": "s3://igvf-public/2026/07/23/5112df2c-5f7e-4d5b-8a7a-4d927b4cf9ba/IGVFFI0412JJWO.csv.gz",
+          "size": 485646,
+          "md5": "1a620951e7ce5c17c25537b4f38b3b18",
+          "summary": "cell annotations",
+          "assembly": null,
+          "alias": "pgp_spatial_principal_cell_annot",
+          "filename": "pgp_spatial_principal_cell_annot.tsv",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS6501PVZQ",
+          "donors": [
+            "A8",
+            "C29",
+            "C38"
+          ],
+          "days": [
+            6,
+            13,
+            30
+          ],
+          "mux": false
+        },
+        {
+          "accession": "IGVFFI2804FOOR",
+          "content_type": "cell by gene matrix",
+          "file_format": "h5ad",
+          "href": "/matrix-files/IGVFFI2804FOOR/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI2804FOOR/@@download/IGVFFI2804FOOR.h5ad",
+          "s3_uri": "s3://igvf-public/2026/07/23/dd521eb5-2289-455e-a2b9-6c74afe5df8d/IGVFFI2804FOOR.h5ad",
+          "size": 236100424,
+          "md5": "76051c35d55538ed95c4150705c9abf0",
+          "summary": "cell by gene matrix",
+          "assembly": "GRCh38",
+          "alias": "pgp_spatial_principal_slide_1_2_rna_h5ad",
+          "filename": "slide12-qc.h5ad",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS6501PVZQ",
+          "donors": [
+            "A8",
+            "C29",
+            "C38"
+          ],
+          "days": [
+            6,
+            13,
+            30
+          ],
+          "mux": false
+        },
+        {
+          "accession": "IGVFFI3564FUQJ",
+          "content_type": "cell by gene matrix",
+          "file_format": "h5ad",
+          "href": "/matrix-files/IGVFFI3564FUQJ/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI3564FUQJ/@@download/IGVFFI3564FUQJ.h5ad",
+          "s3_uri": "s3://igvf-public/2026/07/23/f79286f5-aeed-4e2c-aaba-d86a104d1f8f/IGVFFI3564FUQJ.h5ad",
+          "size": 608294323,
+          "md5": "e7a48259aecbba91212a8f3394e8d56f",
+          "summary": "cell by gene matrix",
+          "assembly": "GRCh38",
+          "alias": "pgp_spatial_principal_slide_3_4_rna_h5ad",
+          "filename": "slide34-qc.h5ad",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS6501PVZQ",
+          "donors": [
+            "A8",
+            "C29",
+            "C38"
+          ],
+          "days": [
+            6,
+            13,
+            30
+          ],
+          "mux": false
+        },
+        {
+          "accession": "IGVFFI9846GOMO",
+          "content_type": "cell by gene matrix",
+          "file_format": "h5ad",
+          "href": "/matrix-files/IGVFFI9846GOMO/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI9846GOMO/@@download/IGVFFI9846GOMO.h5ad",
+          "s3_uri": "s3://igvf-public/2026/07/23/9b42e5a7-0ddb-4ebe-8f5a-6a52fdc82d5a/IGVFFI9846GOMO.h5ad",
+          "size": 5538687155,
+          "md5": "7e22cec235c4ef18ee627ccf6153e90a",
+          "summary": "cell by gene matrix",
+          "assembly": "GRCh38",
+          "alias": "pgp_spatial_principal_slide_5_6_rna_h5ad",
+          "filename": "slide56-qc.h5ad",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS6501PVZQ",
+          "donors": [
+            "A8",
+            "C29",
+            "C38"
+          ],
+          "days": [
+            6,
+            13,
+            30
+          ],
+          "mux": false
+        }
+      ],
+      "bytes": 6383567548,
+      "files_search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS6501PVZQ",
+      "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS6501PVZQ",
+      "types": [
+        {
+          "content_type": "cell by gene matrix",
+          "file_format": "h5ad",
+          "n": 3,
+          "bytes": 6383081902,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS6501PVZQ&content_type=cell+by+gene+matrix",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS6501PVZQ&files.content_type=cell+by+gene+matrix"
+        },
+        {
+          "content_type": "cell annotations",
+          "file_format": "tsv",
+          "n": 1,
+          "bytes": 485646,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS6501PVZQ&content_type=cell+annotations",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS6501PVZQ&files.content_type=cell+annotations"
+        }
+      ],
+      "manifest_file": "data/manifests/IGVFDS6501PVZQ-analysis-ready.tsv",
+      "intermediate": {
+        "n_sets": 6,
+        "n_files": 30,
+        "bytes": 33308426811,
+        "accessions": [
+          "IGVFDS2554EAVT",
+          "IGVFDS9028YESM",
+          "IGVFDS5719MCCP",
+          "IGVFDS1602JMXG",
+          "IGVFDS0554SOFJ",
+          "IGVFDS5238AJCW"
+        ],
+        "files_search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS2554EAVT&file_set.accession=IGVFDS9028YESM&file_set.accession=IGVFDS5719MCCP&file_set.accession=IGVFDS1602JMXG&file_set.accession=IGVFDS0554SOFJ&file_set.accession=IGVFDS5238AJCW",
+        "sets_search": "https://data.igvf.org/search/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS6501PVZQ%2F",
+        "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS6501PVZQ%2F",
+        "manifest_file": "data/manifests/IGVFDS6501PVZQ-processed.tsv",
+        "types": [
+          {
+            "content_type": "cell by gene matrix",
+            "file_format": "h5ad",
+            "n": 6,
+            "bytes": 1330131852,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS2554EAVT&file_set.accession=IGVFDS9028YESM&file_set.accession=IGVFDS5719MCCP&file_set.accession=IGVFDS1602JMXG&file_set.accession=IGVFDS0554SOFJ&file_set.accession=IGVFDS5238AJCW&content_type=cell+by+gene+matrix",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS6501PVZQ%2F&files.content_type=cell+by+gene+matrix"
+          },
+          {
+            "content_type": "post-segmentation transcript and cell locations",
+            "file_format": "csv",
+            "n": 6,
+            "bytes": 30988,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS2554EAVT&file_set.accession=IGVFDS9028YESM&file_set.accession=IGVFDS5719MCCP&file_set.accession=IGVFDS1602JMXG&file_set.accession=IGVFDS0554SOFJ&file_set.accession=IGVFDS5238AJCW&content_type=post-segmentation+transcript+and+cell+locations",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS6501PVZQ%2F&files.content_type=post-segmentation+transcript+and+cell+locations"
+          },
+          {
+            "content_type": "spatial transcriptomics cell metadata",
+            "file_format": "csv",
+            "n": 6,
+            "bytes": 41457576,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS2554EAVT&file_set.accession=IGVFDS9028YESM&file_set.accession=IGVFDS5719MCCP&file_set.accession=IGVFDS1602JMXG&file_set.accession=IGVFDS0554SOFJ&file_set.accession=IGVFDS5238AJCW&content_type=spatial+transcriptomics+cell+metadata",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS6501PVZQ%2F&files.content_type=spatial+transcriptomics+cell+metadata"
+          },
+          {
+            "content_type": "spatial transcriptomics slide-level cell boundaries",
+            "file_format": "csv",
+            "n": 6,
+            "bytes": 129490121,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS2554EAVT&file_set.accession=IGVFDS9028YESM&file_set.accession=IGVFDS5719MCCP&file_set.accession=IGVFDS1602JMXG&file_set.accession=IGVFDS0554SOFJ&file_set.accession=IGVFDS5238AJCW&content_type=spatial+transcriptomics+slide-level+cell+boundaries",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS6501PVZQ%2F&files.content_type=spatial+transcriptomics+slide-level+cell+boundaries"
+          },
+          {
+            "content_type": "spatial transcriptomics slide-level transcripts",
+            "file_format": "csv",
+            "n": 6,
+            "bytes": 31807316274,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS2554EAVT&file_set.accession=IGVFDS9028YESM&file_set.accession=IGVFDS5719MCCP&file_set.accession=IGVFDS1602JMXG&file_set.accession=IGVFDS0554SOFJ&file_set.accession=IGVFDS5238AJCW&content_type=spatial+transcriptomics+slide-level+transcripts",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS6501PVZQ%2F&files.content_type=spatial+transcriptomics+slide-level+transcripts"
+          }
+        ],
+        "groups": [
+          {
+            "accession": "IGVFDS2554EAVT",
+            "alias": "pgp_spatial_slide1_aset",
+            "code": null,
+            "label": "slide 1 \u00b7 A8 \u00b7 day 30",
+            "donors": [
+              "A8"
+            ],
+            "days": [
+              30
+            ],
+            "donor_days": [
+              {
+                "donor": "A8",
+                "day": 30
+              }
+            ],
+            "multiplexed": false,
+            "slide": 1,
+            "n_files": 5,
+            "bytes": 1110932740,
+            "raw_files": 1,
+            "raw_bytes": 28463221684,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS2554EAVT/"
+          },
+          {
+            "accession": "IGVFDS9028YESM",
+            "alias": "pgp_spatial_slide2_aset",
+            "code": null,
+            "label": "slide 2 \u00b7 A8 \u00b7 day 30",
+            "donors": [
+              "A8"
+            ],
+            "days": [
+              30
+            ],
+            "donor_days": [
+              {
+                "donor": "A8",
+                "day": 30
+              }
+            ],
+            "multiplexed": false,
+            "slide": 2,
+            "n_files": 5,
+            "bytes": 1236951082,
+            "raw_files": 1,
+            "raw_bytes": 28972061119,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS9028YESM/"
+          },
+          {
+            "accession": "IGVFDS5719MCCP",
+            "alias": "pgp_spatial_slide3_aset",
+            "code": null,
+            "label": "slide 3 \u00b7 C29, C38 \u00b7 day 6",
+            "donors": [
+              "C29",
+              "C38"
+            ],
+            "days": [
+              6
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 6
+              },
+              {
+                "donor": "C38",
+                "day": 6
+              }
+            ],
+            "multiplexed": false,
+            "slide": 3,
+            "n_files": 5,
+            "bytes": 4156630701,
+            "raw_files": 1,
+            "raw_bytes": 85574228244,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5719MCCP/"
+          },
+          {
+            "accession": "IGVFDS1602JMXG",
+            "alias": "pgp_spatial_slide4_aset",
+            "code": null,
+            "label": "slide 4 \u00b7 C29, C38 \u00b7 day 13",
+            "donors": [
+              "C29",
+              "C38"
+            ],
+            "days": [
+              13
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 13
+              },
+              {
+                "donor": "C38",
+                "day": 13
+              }
+            ],
+            "multiplexed": false,
+            "slide": 4,
+            "n_files": 5,
+            "bytes": 5897489566,
+            "raw_files": 1,
+            "raw_bytes": 92990435801,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS1602JMXG/"
+          },
+          {
+            "accession": "IGVFDS0554SOFJ",
+            "alias": "pgp_spatial_slide5_aset",
+            "code": null,
+            "label": "slide 5 \u00b7 C29, C38 \u00b7 day 6",
+            "donors": [
+              "C29",
+              "C38"
+            ],
+            "days": [
+              6
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 6
+              },
+              {
+                "donor": "C38",
+                "day": 6
+              }
+            ],
+            "multiplexed": false,
+            "slide": 5,
+            "n_files": 5,
+            "bytes": 10722348128,
+            "raw_files": 1,
+            "raw_bytes": 112229242971,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS0554SOFJ/"
+          },
+          {
+            "accession": "IGVFDS5238AJCW",
+            "alias": "pgp_spatial_slide6_aset",
+            "code": null,
+            "label": "slide 6 \u00b7 C29, C38 \u00b7 day 13",
+            "donors": [
+              "C29",
+              "C38"
+            ],
+            "days": [
+              13
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 13
+              },
+              {
+                "donor": "C38",
+                "day": 13
+              }
+            ],
+            "multiplexed": false,
+            "slide": 6,
+            "n_files": 5,
+            "bytes": 10184074594,
+            "raw_files": 1,
+            "raw_bytes": 103227530153,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5238AJCW/"
+          }
+        ]
+      },
+      "measurement": {
+        "n_sets": 6,
+        "n_files": 6,
+        "bytes": 451456719972,
+        "accessions": [
+          "IGVFDS0428XVMY",
+          "IGVFDS3696RYEX",
+          "IGVFDS1291OUJP",
+          "IGVFDS7077XANO",
+          "IGVFDS2615TOUW",
+          "IGVFDS3964LWWZ"
+        ],
+        "files_search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS0428XVMY&file_set.accession=IGVFDS3696RYEX&file_set.accession=IGVFDS1291OUJP&file_set.accession=IGVFDS7077XANO&file_set.accession=IGVFDS2615TOUW&file_set.accession=IGVFDS3964LWWZ",
+        "sets_search": "https://data.igvf.org/search/?type=MeasurementSet&accession=IGVFDS0428XVMY&accession=IGVFDS3696RYEX&accession=IGVFDS1291OUJP&accession=IGVFDS7077XANO&accession=IGVFDS2615TOUW&accession=IGVFDS3964LWWZ",
+        "manifest": "https://api.data.igvf.org/metadata/?type=MeasurementSet&accession=IGVFDS0428XVMY&accession=IGVFDS3696RYEX&accession=IGVFDS1291OUJP&accession=IGVFDS7077XANO&accession=IGVFDS2615TOUW&accession=IGVFDS3964LWWZ",
+        "manifest_file": "data/manifests/IGVFDS6501PVZQ-raw.tsv",
+        "types": [
+          {
+            "content_type": "raw field of view images",
+            "file_format": "tar",
+            "n": 6,
+            "bytes": 451456719972,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS0428XVMY&file_set.accession=IGVFDS3696RYEX&file_set.accession=IGVFDS1291OUJP&file_set.accession=IGVFDS7077XANO&file_set.accession=IGVFDS2615TOUW&file_set.accession=IGVFDS3964LWWZ&content_type=raw+field+of+view+images",
+            "manifest": "https://api.data.igvf.org/metadata/?type=MeasurementSet&accession=IGVFDS0428XVMY&accession=IGVFDS3696RYEX&accession=IGVFDS1291OUJP&accession=IGVFDS7077XANO&accession=IGVFDS2615TOUW&accession=IGVFDS3964LWWZ&files.content_type=raw+field+of+view+images"
+          }
+        ]
+      }
+    },
+    {
+      "accession": "IGVFDS1270EUID",
+      "label": "WGS",
+      "sublabel": "genotypes",
+      "order": 5,
+      "summary": "WGS",
+      "description": "This is the principal analysis set consisting of files relevant to the WGS component of a fibroblast-to-iPSC reprogramming trajectory profiling four individuals from the Personal Genomes Project (PGP), as part of the Luo award in the Networks group. This set includes the VCF used for genotype-based demultiplexing in the 10X Multiome component of the project.",
+      "assay_titles": [
+        "whole genome sequencing assay"
+      ],
+      "preferred_assay_titles": [
+        "WGS"
+      ],
+      "lab": "Kathrin Plath, UCLA",
+      "doi": "10.65695/IGVFDS1270EUID",
+      "portal": "https://data.igvf.org/analysis-sets/IGVFDS1270EUID/",
+      "status": "released",
+      "controlled_access": false,
+      "sample_summary": "human fibroblast cell line from donor(s) IGVFDO0351NYZH, IGVFDO2328XGNY and 2 more",
+      "donors": [
+        "IGVFDO0351NYZH",
+        "IGVFDO2328XGNY",
+        "IGVFDO3754NCBP",
+        "IGVFDO4068JJIT"
+      ],
+      "n_samples": 4,
+      "workflows": [
+        "Luo WGS Workflow"
+      ],
+      "files": [
+        {
+          "accession": "IGVFFI8289BASG",
+          "content_type": "variants",
+          "file_format": "vcf",
+          "href": "/tabular-files/IGVFFI8289BASG/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI8289BASG/@@download/IGVFFI8289BASG.vcf.gz",
+          "s3_uri": "s3://igvf-public/2026/08/03/bcc60103-be67-46fd-9bd1-cf301db16d2f/IGVFFI8289BASG.vcf.gz",
+          "size": 834075228,
+          "md5": "ff764710d6bcce7d77883e2f35bc30aa",
+          "summary": "GRCh38 variants",
+          "assembly": "GRCh38",
+          "alias": "pgp_wgs_principal_vcf",
+          "filename": "pgp_filt1.rm_missing.reheader.vcf.gz",
+          "tier": "analysis-ready",
+          "file_set": "IGVFDS1270EUID",
+          "donors": [
+            "C29",
+            "C37",
+            "C38",
+            "C39"
+          ],
+          "days": [
+            0
+          ],
+          "mux": false
+        }
+      ],
+      "bytes": 834075228,
+      "files_search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS1270EUID",
+      "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS1270EUID",
+      "types": [
+        {
+          "content_type": "variants",
+          "file_format": "vcf",
+          "n": 1,
+          "bytes": 834075228,
+          "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS1270EUID&content_type=variants",
+          "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&accession=IGVFDS1270EUID&files.content_type=variants"
+        }
+      ],
+      "manifest_file": "data/manifests/IGVFDS1270EUID-analysis-ready.tsv",
+      "intermediate": {
+        "n_sets": 4,
+        "n_files": 4,
+        "bytes": 17735686606,
+        "accessions": [
+          "IGVFDS5909SEWH",
+          "IGVFDS5549VCFM",
+          "IGVFDS9862HFSY",
+          "IGVFDS1947BIGJ"
+        ],
+        "files_search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS5909SEWH&file_set.accession=IGVFDS5549VCFM&file_set.accession=IGVFDS9862HFSY&file_set.accession=IGVFDS1947BIGJ",
+        "sets_search": "https://data.igvf.org/search/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS1270EUID%2F",
+        "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS1270EUID%2F",
+        "manifest_file": "data/manifests/IGVFDS1270EUID-processed.tsv",
+        "types": [
+          {
+            "content_type": "variants",
+            "file_format": "gvcf",
+            "n": 4,
+            "bytes": 17735686606,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS5909SEWH&file_set.accession=IGVFDS5549VCFM&file_set.accession=IGVFDS9862HFSY&file_set.accession=IGVFDS1947BIGJ&content_type=variants",
+            "manifest": "https://api.data.igvf.org/metadata/?type=AnalysisSet&input_for=%2Fanalysis-sets%2FIGVFDS1270EUID%2F&files.content_type=variants"
+          }
+        ],
+        "groups": [
+          {
+            "accession": "IGVFDS5909SEWH",
+            "alias": "C29_wgs_aset",
+            "code": null,
+            "label": "C29 \u00b7 day 0",
+            "donors": [
+              "C29"
+            ],
+            "days": [
+              0
+            ],
+            "donor_days": [
+              {
+                "donor": "C29",
+                "day": 0
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 1,
+            "bytes": 4628756172,
+            "raw_files": 32,
+            "raw_bytes": 53771862689,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5909SEWH/"
+          },
+          {
+            "accession": "IGVFDS5549VCFM",
+            "alias": "C37_wgs_aset",
+            "code": null,
+            "label": "C37 \u00b7 day 0",
+            "donors": [
+              "C37"
+            ],
+            "days": [
+              0
+            ],
+            "donor_days": [
+              {
+                "donor": "C37",
+                "day": 0
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 1,
+            "bytes": 4260784038,
+            "raw_files": 32,
+            "raw_bytes": 53018993773,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS5549VCFM/"
+          },
+          {
+            "accession": "IGVFDS9862HFSY",
+            "alias": "C38_wgs_aset",
+            "code": null,
+            "label": "C38 \u00b7 day 0",
+            "donors": [
+              "C38"
+            ],
+            "days": [
+              0
+            ],
+            "donor_days": [
+              {
+                "donor": "C38",
+                "day": 0
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 1,
+            "bytes": 4262620579,
+            "raw_files": 32,
+            "raw_bytes": 51799718560,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS9862HFSY/"
+          },
+          {
+            "accession": "IGVFDS1947BIGJ",
+            "alias": "C39_wgs_aset",
+            "code": null,
+            "label": "C39 \u00b7 day 0",
+            "donors": [
+              "C39"
+            ],
+            "days": [
+              0
+            ],
+            "donor_days": [
+              {
+                "donor": "C39",
+                "day": 0
+              }
+            ],
+            "multiplexed": false,
+            "slide": null,
+            "n_files": 1,
+            "bytes": 4583525817,
+            "raw_files": 32,
+            "raw_bytes": 56578959564,
+            "portal": "https://data.igvf.org/analysis-sets/IGVFDS1947BIGJ/"
+          }
+        ]
+      },
+      "measurement": {
+        "n_sets": 4,
+        "n_files": 128,
+        "bytes": 215169534586,
+        "accessions": [
+          "IGVFDS6578UICO",
+          "IGVFDS6826TRQB",
+          "IGVFDS6852SKAC",
+          "IGVFDS7691YADM"
+        ],
+        "files_search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS6578UICO&file_set.accession=IGVFDS6826TRQB&file_set.accession=IGVFDS6852SKAC&file_set.accession=IGVFDS7691YADM",
+        "sets_search": "https://data.igvf.org/search/?type=MeasurementSet&accession=IGVFDS6578UICO&accession=IGVFDS6826TRQB&accession=IGVFDS6852SKAC&accession=IGVFDS7691YADM",
+        "manifest": "https://api.data.igvf.org/metadata/?type=MeasurementSet&accession=IGVFDS6578UICO&accession=IGVFDS6826TRQB&accession=IGVFDS6852SKAC&accession=IGVFDS7691YADM",
+        "manifest_file": "data/manifests/IGVFDS1270EUID-raw.tsv",
+        "types": [
+          {
+            "content_type": "reads",
+            "file_format": "fastq",
+            "n": 128,
+            "bytes": 215169534586,
+            "search": "https://data.igvf.org/search/?type=File&file_set.accession=IGVFDS6578UICO&file_set.accession=IGVFDS6826TRQB&file_set.accession=IGVFDS6852SKAC&file_set.accession=IGVFDS7691YADM&content_type=reads",
+            "manifest": "https://api.data.igvf.org/metadata/?type=MeasurementSet&accession=IGVFDS6578UICO&accession=IGVFDS6826TRQB&accession=IGVFDS6852SKAC&accession=IGVFDS7691YADM&files.content_type=reads"
+          }
+        ]
+      }
+    }
+  ],
+  "downstream": [
+    {
+      "id": "/pseudobulk-sets/IGVFDS0105UETZ/",
+      "accession": "IGVFDS0105UETZ",
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ]
+    },
+    {
+      "id": "/pseudobulk-sets/IGVFDS0705YDXZ/",
+      "accession": "IGVFDS0705YDXZ",
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ]
+    },
+    {
+      "id": "/pseudobulk-sets/IGVFDS0859HASU/",
+      "accession": "IGVFDS0859HASU",
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ]
+    },
+    {
+      "id": "/pseudobulk-sets/IGVFDS2032ZBFY/",
+      "accession": "IGVFDS2032ZBFY",
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ]
+    },
+    {
+      "id": "/pseudobulk-sets/IGVFDS3073IAMP/",
+      "accession": "IGVFDS3073IAMP",
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ]
+    },
+    {
+      "id": "/pseudobulk-sets/IGVFDS3437KZGE/",
+      "accession": "IGVFDS3437KZGE",
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ]
+    },
+    {
+      "id": "/pseudobulk-sets/IGVFDS3624SKQC/",
+      "accession": "IGVFDS3624SKQC",
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ]
+    },
+    {
+      "id": "/pseudobulk-sets/IGVFDS5743ODRA/",
+      "accession": "IGVFDS5743ODRA",
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ]
+    },
+    {
+      "id": "/pseudobulk-sets/IGVFDS6562SHQJ/",
+      "accession": "IGVFDS6562SHQJ",
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ]
+    },
+    {
+      "id": "/pseudobulk-sets/IGVFDS6705UTPG/",
+      "accession": "IGVFDS6705UTPG",
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ]
+    },
+    {
+      "id": "/pseudobulk-sets/IGVFDS7866QGNI/",
+      "accession": "IGVFDS7866QGNI",
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ]
+    },
+    {
+      "id": "/pseudobulk-sets/IGVFDS8036HBPA/",
+      "accession": "IGVFDS8036HBPA",
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ]
+    },
+    {
+      "id": "/pseudobulk-sets/IGVFDS8169WRMA/",
+      "accession": "IGVFDS8169WRMA",
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ]
+    },
+    {
+      "id": "/pseudobulk-sets/IGVFDS9695XCTR/",
+      "accession": "IGVFDS9695XCTR",
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ]
+    }
+  ],
+  "totals": {
+    "principal": 5,
+    "intermediate": 90,
+    "measurement": 100,
+    "files": 1813,
+    "bytes": 11737420203568,
+    "search": {
+      "measurement": "https://data.igvf.org/search/?type=File&lab.title=Chongyuan+Luo%2C+UCLA&lab.title=Kathrin+Plath%2C+UCLA&file_set.file_set_type=experimental+data",
+      "intermediate": "https://data.igvf.org/search/?type=File&lab.title=Chongyuan+Luo%2C+UCLA&lab.title=Kathrin+Plath%2C+UCLA&file_set.file_set_type=intermediate+analysis",
+      "principal": "https://data.igvf.org/search/?type=File&lab.title=Chongyuan+Luo%2C+UCLA&lab.title=Kathrin+Plath%2C+UCLA&file_set.file_set_type=principal+analysis",
+      "all": "https://data.igvf.org/search/?type=File&lab.title=Chongyuan+Luo%2C+UCLA&lab.title=Kathrin+Plath%2C+UCLA"
+    },
+    "manifest_file": "data/manifests/all-files.tsv"
+  }
+}

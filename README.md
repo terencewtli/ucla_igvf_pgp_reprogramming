@@ -1,0 +1,100 @@
+# Landing page — *Epigenomic heterogeneity and spatial organization during human reprogramming*
+
+Static site. No build step, no framework: `index.html` + `css/style.css` + `js/app.js`,
+with all content driven by generated JSON. Light theme only.
+
+## Layout
+
+```
+index.html              page shell
+css/style.css           all styling
+js/app.js               renders the figure, data tiers, donor matrix,
+                        download tables and the download builder
+img/                    UCLA and IGVF logos (trimmed from ../misc/)
+figures/fig1.png        Figure 1, full resolution (5,180 px wide)
+figures/fig1-web.png    Figure 1, 2,400 px, shown inline
+data/filesets.json      generated — IGVF portal crawl
+data/files.json         generated — flat index of all 1,813 files
+data/manifests/*.tsv    generated — download manifests, per set per tier
+data/figures.json       generated — Figure 1's legend from the manuscript PDF
+build/                  the generators (see below)
+```
+
+## Regenerating
+
+Run from this directory. Each script is independent.
+
+```bash
+# 1. Re-crawl the IGVF portal (5 principal -> 90 intermediate -> 100 measurement
+#    sets) and write filesets.json, files.json and data/manifests/*.tsv.
+#    Responses are cached in build/.cache; delete it to force a fresh pull.
+python3 build/fetch_igvf.py
+
+# 2. Re-read Figure 1's legend from ../manuscript/pdf/pgp_lines_manuscript.pdf
+python3 build/extract_legends.py
+
+# 3. Re-render Figure 1 from ../manuscript/pdf/Figure1*.pdf to PNG
+#    (needs sips, ImageMagick, Pillow, NumPy)
+python3 build/render_figure1.py
+
+# 4. Confirm the portal URLs the page hands out still work
+python3 build/verify_links.py
+```
+
+`verify_links.py` exits non-zero on any mismatch, so it can gate a deploy. It
+checks three things: every search URL resolves to the count shown on the page,
+every metadata manifest returns that many rows with the `File download URL`
+column the recipes cut on, and a sample of `@@download` URLs still serves bytes.
+It is the check to run if the IGVF portal changes its search or download routes.
+
+Figure 1's short "what this shows" blurb is authored in the `BLURB` dict at the
+top of `build/extract_legends.py` — edit it there, not in `data/figures.json`,
+which is overwritten.
+
+## How downloads work
+
+Every file record carries `https://api.data.igvf.org/<type>/<accession>/@@download/<name>`,
+which 307s to a presigned URL on the public `igvf-public` S3 bucket. No login, no
+access request, and resumable with `curl -C -`. Two things to know:
+
+* `data.igvf.org` (the UI host) refuses `@@download`; only `api.data.igvf.org` serves it.
+* The portal's `/metadata/?type=AnalysisSet&…` endpoint returns the same rows as our
+  static manifests but regenerated on request, so it picks up newly released files.
+  It accepts `accession=`, `input_for=` and `files.content_type=` filters. It sends no
+  CORS headers, which is why the page ships static manifests and a local file index
+  instead of querying it from the browser.
+
+The 10x Multiome libraries are genetically multiplexed: **one library pools four
+donors sampled on four different reprogramming days**, so its files cannot be
+split by donor or day before demultiplexing with the WGS VCF. snMCT-seq,
+snM3C-seq and WGS are one donor and one day per library; the spatial slides are
+pooled sections at one day. `build/fetch_igvf.py` derives this from the portal's
+own sample summaries — see `donor_days()`.
+
+## Preview locally
+
+```bash
+python3 -m http.server 8765
+# http://127.0.0.1:8765
+```
+
+Opening `index.html` via `file://` will not work — the page fetches `data/*.json`.
+
+## Deploying to GitHub Pages
+
+This directory is the repository root, so **Settings → Pages → Deploy from branch
+→ `main` / `/` (root)**. `.nojekyll` is present so GitHub serves the files as-is.
+The site is public and indexable, which is intended — it goes up alongside the
+preprint.
+
+## Still to fill in
+
+- `Preprint`, `Genome browser`, `Spatial explorer`, `Code` buttons in `index.html`
+  are marked `aria-disabled="true"` and render as "pending" — remove that
+  attribute and set the real `href` as each becomes available.
+- Decide whether to host the manuscript PDF here (not copied in by default).
+- The 14 cross-modal pseudobulk sets are not yet released; once they are,
+  `fetch_igvf.py` will pick them up and the note in `js/app.js` can be removed.
+- The spatial slides carry the portal's induction days (6, 13 and 30 days for the
+  pilots); the manuscript describes the in situ timepoints differently. Worth
+  reconciling before the preprint, since the page now shows the portal's numbers.

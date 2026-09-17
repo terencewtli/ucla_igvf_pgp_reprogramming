@@ -1,0 +1,9 @@
+{
+  "figure": {
+    "id": "fig1",
+    "number": "1",
+    "title": "Multi-modal Profiling of Cellular Reprogramming",
+    "legend": "(A) The reprogramming of four adult human fibroblast lines to iPSCs were profiled using 10x Multiome, snmCT-seq, snm3C-seq, and CosMx, sampling up to 11 time points throughout reprogramming, including one mature-iPS clone from each donor. (B) Strategy for creating a unified multi-modal cell type annotation. (C) Proportion of cell states observed at each time point, determined from 10x Multiome RNA profiles. UMAP dimensionality reduction using different input features: (D) 10x Multiome RNA profiles, (E) snmCT-seq RNA profiles, and (F) snm3C-seq 3C profiles, labeled by major cell states. (G) Browser view of known reprogramming loci SOX2 (top) and DPPA2/4 (bottom) highlights strengths of quadruple-modality interrogation.",
+    "blurb": "Four donor fibroblast lines tracked to iPSC across up to 11 time points with four single-cell modalities, unified under one cell-state annotation."
+  }
+}

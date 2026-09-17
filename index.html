@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Epigenomic heterogeneity and spatial organization during human reprogramming</title>
+<meta name="description" content="Single-cell gene expression, chromatin accessibility, DNA methylation, 3D genome organization and spatial transcriptomics across fibroblast-to-iPSC reprogramming in four individuals.">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Epigenomic heterogeneity and spatial organization during human reprogramming">
+<meta property="og:description" content="Four molecular layers plus spatial transcriptomics across densely sampled fibroblast-to-iPSC reprogramming in four individuals.">
+<meta property="og:image" content="figures/fig1-web.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Google Scholar -->
+<meta name="citation_title" content="Epigenomic heterogeneity and spatial organization during human reprogramming">
+<meta name="citation_author" content="Li, Terence W.">
+<meta name="citation_author" content="Langerman, Justin">
+<meta name="citation_author" content="Liu, Cuining">
+<meta name="citation_author" content="Sun, Yu">
+<meta name="citation_author" content="Balliu, Brunilda">
+<meta name="citation_author" content="Ernst, Jason">
+<meta name="citation_author" content="Luo, Chongyuan">
+<meta name="citation_author" content="Plath, Kathrin">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <span class="brand">Epigenomic heterogeneity in human reprogramming</span>
+    <a class="navlink" href="#summary">Summary</a>
+    <a class="navlink" href="#figure">Figure</a>
+    <a class="navlink" href="#data">Data</a>
+    <a class="navlink" href="#download">Download</a>
+  </div>
+</nav>
+
+<!-- ===================================================== hero -->
+<header class="hero">
+  <div class="wrap">
+    <div class="logos">
+      <a href="https://www.ucla.edu" target="_blank" rel="noopener">
+        <img src="img/ucla.png" alt="UCLA" width="257" height="120"></a>
+      <a href="https://igvf.org" target="_blank" rel="noopener">
+        <img src="img/igvf.png" alt="IGVF Consortium" width="366" height="120"></a>
+    </div>
+
+    <div class="eyebrow">Preprint in preparation · IGVF Consortium · UCLA</div>
+    <h1>Epigenomic heterogeneity and spatial organization during human reprogramming</h1>
+
+    <p class="authors">
+      <b class="cofirst">Terence W. Li<sup>1,2,3,*</sup>,
+      Justin Langerman<sup>4,*</sup>, Cuining Liu<sup>1,3,*</sup>, Yu Sun<sup>4,*</sup></b>,
+      Mohammad S. Baig<sup>1,5</sup>, Gianna Kim<sup>1</sup>, Jingyuan Fu<sup>4,6</sup>,
+      Rayyan Irfan Ghoor<sup>1</sup>, Yi Zhang<sup>1</sup>, Zach Von Behren<sup>1</sup>,
+      Min Jen Tsai<sup>1</sup>, Malina Elena Cantemir<sup>1</sup>, Kevin D. Abuhanna<sup>1,5</sup>,
+      Edward Chen<sup>1</sup>, Jon Paino<sup>6</sup>, Gideon Shaked<sup>4</sup>, Lily Zhao<sup>4</sup>,
+      Lisa Barooah<sup>4</sup>, Amy Sun<sup>4</sup>, Andrea Garcia Angulo<sup>4</sup>,
+      Alexander Lee<sup>4</sup>, Sophia Peavy<sup>4</sup>, Eleazar Eskin<sup>1,2,6</sup>,
+      Noah Zaitlen<sup>1,2,7</sup>, Brunilda Balliu<sup>2,8,9,†</sup>, Jason Ernst<sup>2,4,6,†</sup>,
+      Chongyuan Luo<sup>1,†</sup>, Kathrin Plath<sup>4,†</sup>
+    </p>
+    <details class="affil">
+      <summary>Affiliations · <sup>*</sup>co-first authors · <sup>†</sup>co-corresponding authors</summary>
+      <ol>
+        <li>Department of Human Genetics, David Geffen School of Medicine, UCLA</li>
+        <li>Department of Computational Medicine, David Geffen School of Medicine, UCLA</li>
+        <li>Bioinformatics Interdepartmental Program, UCLA</li>
+        <li>Department of Biological Chemistry, David Geffen School of Medicine, UCLA</li>
+        <li>Genetics and Genomics Graduate Program, UCLA</li>
+        <li>Computer Science Department, Henry Samueli School of Engineering and Applied Science, UCLA</li>
+        <li>Department of Neurology, David Geffen School of Medicine, UCLA</li>
+        <li>Department of Pathology and Laboratory Medicine, David Geffen School of Medicine, UCLA</li>
+        <li>Department of Biostatistics, Fielding School of Public Health, UCLA</li>
+      </ol>
+    </details>
+
+    <div class="links">
+      <a class="btn primary" href="#download"><span class="ic">↓</span> Download the data</a>
+      <a class="btn" href="#" aria-disabled="true"><span class="ic">▤</span> Preprint</a>
+      <a class="btn" href="https://data.igvf.org/search/?type=AnalysisSet&amp;file_set_type=principal+analysis&amp;award.component=networks&amp;lab.title=Chongyuan+Luo%2C+UCLA&amp;lab.title=Kathrin+Plath%2C+UCLA" target="_blank" rel="noopener"><span class="ic">⬢</span> IGVF portal</a>
+      <a class="btn" href="#" aria-disabled="true"><span class="ic">≡</span> Genome browser</a>
+      <a class="btn" href="#" aria-disabled="true"><span class="ic">◱</span> Spatial explorer</a>
+      <a class="btn" href="#" aria-disabled="true"><span class="ic">❮❯</span> Code</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================================================== summary -->
+<section id="summary">
+  <div class="wrap">
+    <div class="sec-head"><h2>Summary</h2></div>
+
+    <p class="lede">
+      Reprogramming somatic cells to pluripotency requires extensive remodeling of transcriptional
+      and epigenetic states, yet <strong>most cells never complete the transition</strong>. We
+      integrated single-cell gene expression, chromatin accessibility, DNA methylation and
+      three-dimensional genome organization across densely sampled reprogramming time courses of
+      fibroblasts from four individuals, together with highly multiplexed spatial transcriptomics.
+    </p>
+
+    <ol class="keypoints">
+      <li><span class="n">1</span><span><b>DNA methylation carries individual identity that other layers miss.</b>
+        Starting fibroblasts show extensive inter- and intra-individual methylation heterogeneity —
+        concentrated in partially methylated domains — that is far less apparent in RNA, ATAC or 3D
+        contacts, and diminishes only along the productive trajectory.</span></li>
+      <li><span class="n">2</span><span><b>The two failure branches fail differently.</b>
+        Cells diverging early acquire inflammatory and antiviral transcription while their
+        methylation and 3D-genome changes revert toward the fibroblast state. Cells that stall later
+        advance transcriptionally but leave methylation remodeling incomplete.</span></li>
+      <li><span class="n">3</span><span><b>An early-iPSC transcriptome is not one endpoint.</b>
+        Cells reaching a similar early iPSC transcriptional state separate into two distinct
+        methylation and 3D-genome configurations, one far closer to mature iPSCs — with 80.9% of
+        differentially methylated regions overlapping differential TAD boundaries.</span></li>
+      <li><span class="n">4</span><span><b>Fate is spatially organized by day 3.</b>
+        In situ profiling of 139,407 cells shows productive cells already concentrated in hotspots
+        at the earliest sampled stage, with fewer hotspots in the low-efficiency donor.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================================================== figure -->
+<section id="figure">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Figure 1</h2>
+      <p>Click the figure for the full-resolution PNG.</p>
+    </div>
+    <div id="fig1"></div>
+  </div>
+</section>
+
+<!-- ===================================================== data -->
+<section id="data">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Data</h2>
+      <p>Every file in this study is deposited on the IGVF portal and publicly released — no login,
+         no access request. The five principal analysis sets below are the analysis-ready endpoints;
+         each traces back through processed and raw layers.</p>
+    </div>
+
+    <div class="flow">
+      <b>Raw</b> <span>measurement sets — FASTQ + seqspec</span>
+      <span class="arw">→</span>
+      <b>Processed</b> <span>intermediate analysis sets — alignments, matrices, fragments</span>
+      <span class="arw">→</span>
+      <b>Analysis-ready</b> <span>principal analysis sets — final matrices + cell annotations</span>
+    </div>
+
+    <div class="scroller"><div class="tiers" id="tiers"></div></div>
+
+    <div class="sec-head" style="margin-top:44px">
+      <h3>Which donor is in which assay</h3>
+      <p>The portal identifies donors by accession; the manuscript calls them C29, C37, C38 and C39.</p>
+    </div>
+    <div class="scroller"><table class="matrix" id="matrix"></table></div>
+
+    <div id="notes"></div>
+  </div>
+</section>
+
+<!-- ===================================================== download -->
+<section id="download">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Download</h2>
+      <p>Direct links, one file at a time or a whole tier at once. Every link points at
+         <code>api.data.igvf.org/…/@@download/…</code>, which redirects to public S3 — it works in a
+         browser, in <code>curl</code>, and on a cluster with no credentials.</p>
+    </div>
+
+    <!-- 1. analysis-ready: every file, by type, with a real download link -->
+    <div class="sec-head sub">
+      <h3>Start here — analysis-ready files</h3>
+      <p>The final per-modality outputs: <span id="ar-count">—</span>. Grouped by file type, one
+         click per file.</p>
+    </div>
+    <div id="ready"></div>
+
+    <!-- 2. processed + raw: bulk, by type -->
+    <div class="sec-head sub" style="margin-top:44px">
+      <h3>Processed and raw files, by type</h3>
+      <p>Whole-tier pulls. Each row gives you a manifest — a TSV with one row per file including its
+         download URL, size and md5 — either live from the portal or as a static copy shipped with
+         this page.</p>
+    </div>
+    <div id="bulk"></div>
+
+    <!-- 3. the builder -->
+    <div class="sec-head sub" style="margin-top:44px">
+      <h3>Build a download set</h3>
+      <p>Pick a modality, tier, file types and time points; get back a URL list or a ready-to-run
+         script. Everything is computed in your browser from
+         <code>data/files.json</code> — nothing is sent anywhere.</p>
+    </div>
+    <div id="builder"></div>
+
+    <!-- 4. recipes -->
+    <div class="sec-head sub" style="margin-top:44px">
+      <h3>Recipes</h3>
+      <p>Patterns that work on a login node or in a job script.</p>
+    </div>
+    <div id="recipes"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Data generated by the <a href="https://igvf.org" target="_blank" rel="noopener">IGVF Consortium</a>
+         (Networks component) — Luo and Plath labs, UCLA.</div>
+    <div>Data panel generated from the IGVF portal API on <span id="gen-date">—</span>.
+         Regenerate with <code>python3 build/fetch_igvf.py</code>.</div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
