@@ -1,6 +1,6 @@
 # Landing page — *Epigenomic heterogeneity and spatial organization during human reprogramming*
 
-Live: <https://ucla-igvf-pgp-reprogramming.terencewtli.workers.dev>
+Live: <https://ucla-igvf-pgp-reprogramming.pages.dev>
 
 Static site. No build step, no framework: `index.html` + `css/style.css` + `js/app.js`,
 with all content driven by generated JSON. Light theme only.
@@ -104,10 +104,16 @@ Opening `index.html` via `file://` will not work — the page fetches `data/*.js
 
 ## Deploying
 
-Hosted on Cloudflare (Workers static assets), connected to this GitHub repo:
-**every push to `main` triggers a redeploy**, no build command, output directory
-`.`. The whole repo root is uploaded, `build/` and this README included, so treat
-anything committed here as public.
+Hosted on **Cloudflare Pages**, connected to this GitHub repo: **every push to
+`main` triggers a redeploy**, no build command, output directory `/`. The whole
+repo root is uploaded, `build/` and this README included, so treat anything
+committed here as public.
+
+A Cloudflare *Workers* project for the same repo also existed briefly at
+`ucla-igvf-pgp-reprogramming.terencewtli.workers.dev` — Cloudflare defaults new
+Git connections to Workers, whose hostnames carry the account subdomain. Pages
+gives the shorter `*.pages.dev`. Delete the Worker project if it is still there,
+so there is only one live copy to keep in sync.
 
 The site is public and indexable, which is intended — it goes up alongside the
 preprint.
