@@ -13,8 +13,8 @@ css/style.css           all styling
 js/app.js               renders the figure, data tiers, donor matrix,
                         download tables and the download builder
 img/                    UCLA and IGVF logos (trimmed from ../misc/)
-figures/fig1.png        Figure 1, full resolution (5,180 px wide)
-figures/fig1-web.png    Figure 1, 2,400 px, shown inline
+figures/fig1.png        Figure 1, full render, 5,861 px wide (800 DPI)
+figures/fig1-{1600,2400,3200}.png   responsive set used inline
 data/filesets.json      generated — IGVF portal crawl
 data/files.json         generated — flat index of all 1,813 files
 data/manifests/*.tsv    generated — download manifests, per set per tier
@@ -36,7 +36,7 @@ python3 build/fetch_igvf.py
 python3 build/extract_legends.py
 
 # 3. Re-render Figure 1 from ../manuscript/pdf/Figure1*.pdf to PNG
-#    (needs sips, ImageMagick, Pillow, NumPy)
+#    (needs PyMuPDF, Pillow, NumPy — NOT sips, see the script's docstring)
 python3 build/render_figure1.py
 
 # 4. Confirm the portal URLs the page hands out still work
@@ -52,6 +52,26 @@ It is the check to run if the IGVF portal changes its search or download routes.
 Figure 1's short "what this shows" blurb is authored in the `BLURB` dict at the
 top of `build/extract_legends.py` — edit it there, not in `data/figures.json`,
 which is overwritten.
+
+## Editing the page by hand
+
+Prose lives in `index.html` — the summary, the key points, each section's
+heading and intro paragraph. Edit it directly; there is no templating.
+
+Anything that reports a number, a file or an accession is generated in
+`js/app.js` from `data/*.json`, so edit the renderer (or the `BLURB`/note text
+inside it), not the JSON, which `build/fetch_igvf.py` overwrites. The page notes
+under the donor matrix are in `renderNotes()`; the download recipes are in
+`renderRecipes()`.
+
+Then `git commit && git push` — Cloudflare redeploys within about ten seconds.
+
+## Figure 1 resolution
+
+The ceiling is the figure PDF, not the render. Its panels are embedded rasters
+at 717-1298 DPI effective resolution, but the six culture-dish cartoons in panel
+A are only 190x109 px (297 DPI as placed). No rendering setting sharpens those —
+they need re-exporting upstream. The labels are vector text and are sharp.
 
 ## How downloads work
 
@@ -101,9 +121,10 @@ survive a change of host.
 
 ## Still to fill in
 
-- `Preprint`, `Genome browser`, `Spatial explorer`, `Code` buttons in `index.html`
-  are marked `aria-disabled="true"` and render as "pending" — remove that
-  attribute and set the real `href` as each becomes available.
+- `Preprint` and `Genome browser` buttons in `index.html` are marked
+  `aria-disabled="true"` and render as "pending" — remove that attribute and set
+  the real `href` as each becomes available. (Spatial explorer and Code buttons
+  were dropped.)
 - Decide whether to host the manuscript PDF here (not copied in by default).
 - The 14 cross-modal pseudobulk sets are not yet released; once they are,
   `fetch_igvf.py` will pick them up and the note in `js/app.js` can be removed.

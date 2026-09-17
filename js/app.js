@@ -103,7 +103,11 @@ function renderFigure(f) {
   document.getElementById("fig1").innerHTML = `
     <figure class="figcard">
       <a href="figures/fig1.png" target="_blank" rel="noopener">
-        <img src="figures/fig1-web.png" width="2400" height="1970"
+        <img src="figures/fig1-2400.png" width="2400" height="1971"
+             srcset="figures/fig1-1600.png 1600w,
+                     figures/fig1-2400.png 2400w,
+                     figures/fig1-3200.png 3200w"
+             sizes="(max-width: 1120px) calc(100vw - 48px), 1072px"
              alt="Figure 1. ${esc(f.title)}">
       </a>
       <figcaption class="figmeta">
@@ -113,8 +117,8 @@ function renderFigure(f) {
         ${f.legend ? `<details><summary>Full legend</summary>
            <div class="legend">${esc(f.legend)}</div></details>` : ""}
         <p class="dlline">
-          <a href="figures/fig1.png" download>Download PNG</a>
-          <span class="muted">5,180 × 4,251 px</span>
+          <a href="figures/fig1.png" download>Download full PNG</a>
+          <span class="muted">5,861 × 4,813 px · 800 DPI · 6.8 MB</span>
         </p>
       </figcaption>
     </figure>`;
