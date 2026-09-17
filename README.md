@@ -1,5 +1,7 @@
 # Landing page — *Epigenomic heterogeneity and spatial organization during human reprogramming*
 
+Live: <https://ucla-igvf-pgp-reprogramming.terencewtli.workers.dev>
+
 Static site. No build step, no framework: `index.html` + `css/style.css` + `js/app.js`,
 with all content driven by generated JSON. Light theme only.
 
@@ -80,12 +82,22 @@ python3 -m http.server 8765
 
 Opening `index.html` via `file://` will not work — the page fetches `data/*.json`.
 
-## Deploying to GitHub Pages
+## Deploying
 
-This directory is the repository root, so **Settings → Pages → Deploy from branch
-→ `main` / `/` (root)**. `.nojekyll` is present so GitHub serves the files as-is.
+Hosted on Cloudflare (Workers static assets), connected to this GitHub repo:
+**every push to `main` triggers a redeploy**, no build command, output directory
+`.`. The whole repo root is uploaded, `build/` and this README included, so treat
+anything committed here as public.
+
 The site is public and indexable, which is intended — it goes up alongside the
 preprint.
+
+It is plain static files with relative paths, so it runs unchanged anywhere else:
+GitHub Pages on this repo (**Settings → Pages → Deploy from branch → `main` /
+`/` (root)**; `.nojekyll` is already present), Netlify, or a lab web server. Only
+the URL changes — and the URL cited in the preprint is the one thing here worth
+choosing for the long term, since a custom domain is what would let the address
+survive a change of host.
 
 ## Still to fill in
 
