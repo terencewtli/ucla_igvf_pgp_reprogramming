@@ -547,9 +547,10 @@ function renderBuilder(d, index) {
         ${copyBtn(files.map((f) => f.s3_uri).filter(Boolean).join("\n"), "Copy S3 URIs")}
       </div>
       ${mux ? `<div class="bnote">Some selected files come from genetically
-        multiplexed libraries: one file holds several donors sampled on different
-        days, so a day or donor filter returns the whole library. Demultiplex with
-        the WGS VCF and the cell annotations.</div>` : ""}
+        multiplexed libraries — one file holds four donors sampled on four
+        different reprogramming days, so it cannot be narrowed to a single donor
+        or day before demultiplexing with the WGS VCF and the cell
+        annotations.</div>` : ""}
       ${codeBlock(`# after saving urls.txt next to this shell\nxargs -n1 -P4 curl -fL -C - -O --retry 3 < igvf-${state.set}-urls.txt`,
                   "download in four parallel streams")}
       <details class="bfiles">
@@ -601,6 +602,7 @@ function renderBuilder(d, index) {
 
 /* ==================================================== download: recipes */
 function renderRecipes(d) {
+  const base = location.origin + location.pathname.replace(/[^/]*$/, "");
   const mo = d.sets.find((s) => s.accession === "IGVFDS3268OMJN");
   const h5ad = mo.files.find((f) => f.file_format === "h5ad") || mo.files[0];
   const all = d.totals;
@@ -653,7 +655,7 @@ md5sum -c --ignore-missing md5s.txt   # macOS: brew install coreutils, then gmd5
         <h4>The whole study</h4>
         <p>${num(all.files)} files, ${bytes(all.bytes)}. The static manifest
            below is the crawl behind this page.</p>
-        ${codeBlock(`curl -O "${location.href.split("#")[0].replace(/\/$/, "")}/${all.manifest_file}"
+        ${codeBlock(`curl -O "${base}${all.manifest_file}"
 awk -F'\\t' 'NR>1 && $2=="analysis-ready"{print $10}' all-files.tsv \\
   | xargs -n1 -P4 curl -fL -C - -O`)}
       </div>
