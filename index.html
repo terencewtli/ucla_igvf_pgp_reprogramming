@@ -81,7 +81,6 @@
       <a class="btn primary" href="#download"><span class="ic">↓</span> Download the data</a>
       <a class="btn" href="#" aria-disabled="true"><span class="ic">▤</span> Preprint</a>
       <a class="btn" href="https://data.igvf.org/search/?type=AnalysisSet&amp;file_set_type=principal+analysis&amp;award.component=networks&amp;lab.title=Chongyuan+Luo%2C+UCLA&amp;lab.title=Kathrin+Plath%2C+UCLA" target="_blank" rel="noopener"><span class="ic">⬢</span> IGVF portal</a>
-      <a class="btn" href="#" aria-disabled="true"><span class="ic">≡</span> Genome browser</a>
     </div>
   </div>
 </header>
@@ -133,14 +132,11 @@
   <div class="wrap">
     <div class="sec-head">
       <h2>Download</h2>
-      <p>Direct links, one file at a time or a whole tier at once. Every link points at
-         <code>api.data.igvf.org/…/@@download/…</code>, which redirects to public S3 — it works in a
-         browser, in <code>curl</code>, and on a cluster with no credentials.</p>
     </div>
 
     <!-- 1. analysis-ready: every file, by type, with a real download link -->
     <div class="sec-head sub">
-      <h3>Start here — analysis-ready files</h3>
+      <h3>Analysis-ready files</h3>
       <p>The final per-modality outputs: <span id="ar-count">—</span>. Grouped by file type, one
          click per file.</p>
     </div>
@@ -149,9 +145,8 @@
     <!-- 2. processed + raw: bulk, by type -->
     <div class="sec-head sub" style="margin-top:44px">
       <h3>Processed and raw files, by type</h3>
-      <p>Whole-tier pulls. Each row gives you a manifest — a TSV with one row per file including its
-         download URL, size and md5 — either live from the portal or as a static copy shipped with
-         this page.</p>
+      <p>Each row gives you a manifest — a TSV with one row per file including its
+         download URL, size and md5.</p>
     </div>
     <div id="bulk"></div>
 

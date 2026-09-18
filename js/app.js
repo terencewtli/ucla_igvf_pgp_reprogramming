@@ -567,7 +567,6 @@ function renderBuilder(d, index) {
 
 /* ------------------------------------------------------------ page notes */
 function renderNotes(d) {
-  const gated = d.downstream.length;
   const spatial = d.sets.find((s) => s.accession === "IGVFDS6501PVZQ");
   const extra = Object.values(d.donor_meta)
     .filter((m) => m.efficiency === "not in manuscript").map((m) => m.name);
@@ -579,22 +578,6 @@ function renderNotes(d) {
       main run reported in the manuscript (donors C29 and C38). Donor
       ${extra.map(esc).join(", ")} appears in the set's metadata because of the pilot
       runs only, and is not a manuscript line.</div>`);
-  }
-  bits.push(`<div class="note"><b>Genotype demultiplexing.</b> The WGS VCF
-      (${esc(d.sets.find((s) => s.accession === "IGVFDS1270EUID").files[0].accession)})
-      was used to demultiplex the genetically multiplexed 10x Multiome libraries. This
-      dependency is described in the set descriptions but is not encoded as a portal
-      link, so it will not appear when traversing <code>input_file_sets</code>
-      programmatically.</div>`);
-  bits.push(`<div class="note"><b>Multiome libraries are pooled across time points.</b>
-      Each 10x Multiome library carries four donors sampled on four different
-      reprogramming days, so its files cannot be split by day or donor before
-      demultiplexing. The other modalities are one donor and one day per library.</div>`);
-  if (gated) {
-    bits.push(`<div class="note"><b>Cross-modal pseudobulk sets — in preparation.</b>
-      ${gated} pseudobulk sets take the Multiome, snMCT-seq and snM3C-seq principal sets
-      as input. They are not yet released: the portal refuses them for anonymous
-      visitors, so they are listed here without links until release.</div>`);
   }
   document.getElementById("notes").innerHTML = bits.join("");
 }

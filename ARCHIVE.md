@@ -14,13 +14,27 @@ the pages.dev URL"), the last commit before the cut.
 | **"Which donor is in which assay"** — donor × modality matrix with efficiency pills, mapping portal accessions to C29/C37/C38/C39 | `index.html` (`#matrix`), `js/app.js` `renderMatrix()`, CSS `.matrix`, `.pill` |
 | **Recipes** — six shell snippets: one file, one type live from the portal, S3, md5 verification, walking the tiers via the JSON API, the whole study | `index.html` (`#recipes`), `js/app.js` `renderRecipes()`, CSS `.recipes`, `.recipe` |
 
+## Removed 2026-09-17, second pass
+
+Starting point: commit **`e0c5df4`**.
+
+| Section | Where it lived at `e0c5df4` |
+|---|---|
+| **Genome browser button** (pending) in the hero | `index.html` `.links` |
+| **Page notes**: genotype demultiplexing, Multiome libraries pooled across time points, cross-modal pseudobulk sets in preparation. The spatial-set note stays. | `js/app.js` `renderNotes()` |
+| **Download intro**: "Direct links, one file at a time or a whole tier at once… no credentials." | `index.html` `#download .sec-head` |
+| **Heading/intro wording**: "Start here — analysis-ready files" became "Analysis-ready files"; "Whole-tier pulls." and "— either live from the portal or as a static copy shipped with this page." were cut from the processed/raw intro | `index.html` |
+
+The multiplexing caveat still appears in the download builder when a selection
+includes multiplexed Multiome files.
+
 `build/extract_legends.py` and `data/figures.json` are kept but the page no
 longer reads them. `data/filesets.json` still carries `donor_meta`, which the
 spatial-set note uses.
 
 ## Restoring
 
-View the old page:
+Use `0984cf7` for the first pass and `e0c5df4` for the second. View the old page:
 
 ```bash
 git show 0984cf7:index.html      # or js/app.js, css/style.css

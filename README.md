@@ -57,7 +57,7 @@ inside it), not the JSON, which `build/fetch_igvf.py` overwrites. The page notes
 under the data tiers are in `renderNotes()`.
 
 Sections cut to declutter the page (summary key points, figure legend, donor
-matrix, download recipes) are listed in `ARCHIVE.md` with how to restore them.
+matrix, download recipes, most page notes) are listed in `ARCHIVE.md` with how to restore them.
 
 Then `git commit && git push` — Cloudflare redeploys within about ten seconds.
 
@@ -122,13 +122,12 @@ survive a change of host.
 
 ## Still to fill in
 
-- `Preprint` and `Genome browser` buttons in `index.html` are marked
-  `aria-disabled="true"` and render as "pending" — remove that attribute and set
-  the real `href` as each becomes available. (Spatial explorer and Code buttons
-  were dropped.)
+- The `Preprint` button in `index.html` is marked `aria-disabled="true"` and
+  renders as "pending" — remove that attribute and set the real `href` when it
+  is available. (Genome browser, Spatial explorer and Code buttons were dropped.)
 - Decide whether to host the manuscript PDF here (not copied in by default).
 - The 14 cross-modal pseudobulk sets are not yet released; once they are,
-  `fetch_igvf.py` will pick them up and the note in `js/app.js` can be removed.
+  `fetch_igvf.py` will pick them up.
 - The spatial slides carry the portal's induction days (6, 13 and 30 days for the
   pilots); the manuscript describes the in situ timepoints differently. Worth
   reconciling before the preprint, since the page now shows the portal's numbers.
