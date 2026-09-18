@@ -10,7 +10,7 @@ with all content driven by generated JSON. Light theme only.
 ```
 index.html              page shell
 css/style.css           all styling
-js/app.js               renders the figure, data tiers, notes,
+js/app.js               renders the figure, data tiers,
                         download tables and the download builder
 img/                    UCLA and IGVF logos (trimmed from ../misc/)
 figures/fig1.png        Figure 1, full render, 5,861 px wide (800 DPI)
@@ -53,11 +53,10 @@ heading and intro paragraph. Edit it directly; there is no templating.
 
 Anything that reports a number, a file or an accession is generated in
 `js/app.js` from `data/*.json`, so edit the renderer (or the `BLURB`/note text
-inside it), not the JSON, which `build/fetch_igvf.py` overwrites. The page notes
-under the data tiers are in `renderNotes()`.
+inside it), not the JSON, which `build/fetch_igvf.py` overwrites.
 
 Sections cut to declutter the page (summary key points, figure legend, donor
-matrix, download recipes, most page notes) are listed in `ARCHIVE.md` with how to restore them.
+matrix, download recipes, page notes) are listed in `ARCHIVE.md` with how to restore them.
 
 Then `git commit && git push` — Cloudflare redeploys within about ten seconds.
 

@@ -565,23 +565,6 @@ function renderBuilder(d, index) {
   draw();
 }
 
-/* ------------------------------------------------------------ page notes */
-function renderNotes(d) {
-  const spatial = d.sets.find((s) => s.accession === "IGVFDS6501PVZQ");
-  const extra = Object.values(d.donor_meta)
-    .filter((m) => m.efficiency === "not in manuscript").map((m) => m.name);
-
-  const bits = [];
-  if (extra.length && spatial) {
-    bits.push(`<div class="note"><b>Note on the spatial set.</b> ${esc(spatial.accession)}
-      bundles three experiments: two pilot runs used for orthogonal validation and the
-      main run reported in the manuscript (donors C29 and C38). Donor
-      ${extra.map(esc).join(", ")} appears in the set's metadata because of the pilot
-      runs only, and is not a manuscript line.</div>`);
-  }
-  document.getElementById("notes").innerHTML = bits.join("");
-}
-
 /* ------------------------------------------------------------------- boot */
 Promise.all([
   fetch("data/filesets.json").then((r) => r.json()),
@@ -589,7 +572,6 @@ Promise.all([
 ]).then(([d, index]) => {
   renderFigure();
   renderTiers(d);
-  renderNotes(d);
   renderReady(d);
   renderBulk(d);
   renderBuilder(d, index);

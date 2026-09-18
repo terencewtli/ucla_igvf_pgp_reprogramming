@@ -29,12 +29,20 @@ The multiplexing caveat still appears in the download builder when a selection
 includes multiplexed Multiome files.
 
 `build/extract_legends.py` and `data/figures.json` are kept but the page no
-longer reads them. `data/filesets.json` still carries `donor_meta`, which the
-spatial-set note uses.
+longer reads them. `data/filesets.json` still carries `donor_meta`, though the page no longer
+shows it.
+
+## Removed 2026-09-17, third pass
+
+Starting point: commit **`4ab8e8d`**.
+
+| Section | Where it lived at `4ab8e8d` |
+|---|---|
+| **Note on the spatial set**: IGVFDS6501PVZQ bundles two pilot runs and the main run (C29, C38); donor A8 is from the pilots only. This was the last page note, so the notes slot is gone too. | `js/app.js` `renderNotes()`, `index.html` `#notes` |
 
 ## Restoring
 
-Use `0984cf7` for the first pass and `e0c5df4` for the second. View the old page:
+Use `0984cf7` for the first pass, `e0c5df4` for the second and `4ab8e8d` for the third. View the old page:
 
 ```bash
 git show 0984cf7:index.html      # or js/app.js, css/style.css
