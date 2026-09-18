@@ -32,7 +32,6 @@
   <div class="wrap">
     <span class="brand">Epigenomic heterogeneity in human reprogramming</span>
     <a class="navlink" href="#summary">Summary</a>
-    <a class="navlink" href="#figure">Figure</a>
     <a class="navlink" href="#data">Data</a>
     <a class="navlink" href="#download">Download</a>
   </div>
@@ -93,40 +92,14 @@
     <div class="sec-head"><h2>Summary</h2></div>
 
     <p class="lede">
-      Reprogramming somatic cells to pluripotency requires extensive remodeling of transcriptional
-      and epigenetic states, yet <strong>most cells never complete the transition</strong>. We
-      integrated single-cell gene expression, chromatin accessibility, DNA methylation and
-      three-dimensional genome organization across densely sampled reprogramming time courses of
-      fibroblasts from four individuals, together with highly multiplexed spatial transcriptomics.
+      Fibroblasts from four individuals were reprogrammed to induced pluripotent stem cells and
+      sampled at up to 11 time points. Cells were profiled for single-nucleus gene expression and
+      chromatin accessibility (10x Multiome), DNA methylation with transcriptome (snMCT-seq), and DNA
+      methylation with 3D genome organization (snM3C-seq). Highly multiplexed spatial
+      transcriptomics (CosMx) was performed on selected time points, and each donor was
+      whole-genome sequenced.
     </p>
 
-    <ol class="keypoints">
-      <li><span class="n">1</span><span><b>DNA methylation carries individual identity that other layers miss.</b>
-        Starting fibroblasts show extensive inter- and intra-individual methylation heterogeneity —
-        concentrated in partially methylated domains — that is far less apparent in RNA, ATAC or 3D
-        contacts, and diminishes only along the productive trajectory.</span></li>
-      <li><span class="n">2</span><span><b>The two failure branches fail differently.</b>
-        Cells diverging early acquire inflammatory and antiviral transcription while their
-        methylation and 3D-genome changes revert toward the fibroblast state. Cells that stall later
-        advance transcriptionally but leave methylation remodeling incomplete.</span></li>
-      <li><span class="n">3</span><span><b>An early-iPSC transcriptome is not one endpoint.</b>
-        Cells reaching a similar early iPSC transcriptional state separate into two distinct
-        methylation and 3D-genome configurations, one far closer to mature iPSCs — with 80.9% of
-        differentially methylated regions overlapping differential TAD boundaries.</span></li>
-      <li><span class="n">4</span><span><b>Fate is spatially organized by day 3.</b>
-        In situ profiling of 139,407 cells shows productive cells already concentrated in hotspots
-        at the earliest sampled stage, with fewer hotspots in the low-efficiency donor.</span></li>
-    </ol>
-  </div>
-</section>
-
-<!-- ===================================================== figure -->
-<section id="figure">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>Figure 1</h2>
-      <p>Click the figure for the full-resolution PNG.</p>
-    </div>
     <div id="fig1"></div>
   </div>
 </section>
@@ -150,12 +123,6 @@
     </div>
 
     <div class="scroller"><div class="tiers" id="tiers"></div></div>
-
-    <div class="sec-head" style="margin-top:44px">
-      <h3>Which donor is in which assay</h3>
-      <p>The portal identifies donors by accession; the manuscript calls them C29, C37, C38 and C39.</p>
-    </div>
-    <div class="scroller"><table class="matrix" id="matrix"></table></div>
 
     <div id="notes"></div>
   </div>
@@ -196,13 +163,6 @@
          <code>data/files.json</code> — nothing is sent anywhere.</p>
     </div>
     <div id="builder"></div>
-
-    <!-- 4. recipes -->
-    <div class="sec-head sub" style="margin-top:44px">
-      <h3>Recipes</h3>
-      <p>Patterns that work on a login node or in a job script.</p>
-    </div>
-    <div id="recipes"></div>
   </div>
 </section>
 

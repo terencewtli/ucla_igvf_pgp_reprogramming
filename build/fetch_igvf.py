@@ -8,7 +8,7 @@ Layer model on the portal:
         -> principal analysis set   (final, per-modality)
 
 Outputs (all under site/data/):
-    filesets.json          page content: tiers, donor matrix, per-set file lists
+    filesets.json          page content: tiers, donor metadata, per-set file lists
     files.json             flat file index the in-page download builder filters
     manifests/*.tsv        pre-built download manifests, one per set per tier
     manifests/all-files.tsv    every file in the study

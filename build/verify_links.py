@@ -4,7 +4,7 @@
 Three kinds of check:
   * every search URL still resolves to the count the page displays;
   * every metadata manifest URL still returns a TSV with that many rows, with
-    the 'File download URL' column the recipes cut on;
+    the 'File download URL' column the copy-command buttons cut on;
   * a sample of direct @@download URLs still serves bytes.
 
 Exit status is the number of mismatches, so it works in CI.

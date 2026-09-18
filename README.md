@@ -10,7 +10,7 @@ with all content driven by generated JSON. Light theme only.
 ```
 index.html              page shell
 css/style.css           all styling
-js/app.js               renders the figure, data tiers, donor matrix,
+js/app.js               renders the figure, data tiers, notes,
                         download tables and the download builder
 img/                    UCLA and IGVF logos (trimmed from ../misc/)
 figures/fig1.png        Figure 1, full render, 5,861 px wide (800 DPI)
@@ -18,7 +18,7 @@ figures/fig1-{1600,2400,3200}.png   responsive set used inline
 data/filesets.json      generated — IGVF portal crawl
 data/files.json         generated — flat index of all 1,813 files
 data/manifests/*.tsv    generated — download manifests, per set per tier
-data/figures.json       generated — Figure 1's legend from the manuscript PDF
+data/figures.json       generated — Figure 1's legend (no longer shown; see ARCHIVE.md)
 build/                  the generators (see below)
 ```
 
@@ -32,37 +32,32 @@ Run from this directory. Each script is independent.
 #    Responses are cached in build/.cache; delete it to force a fresh pull.
 python3 build/fetch_igvf.py
 
-# 2. Re-read Figure 1's legend from ../manuscript/pdf/pgp_lines_manuscript.pdf
-python3 build/extract_legends.py
-
-# 3. Re-render Figure 1 from ../manuscript/pdf/Figure1*.pdf to PNG
+# 2. Re-render Figure 1 from ../manuscript/pdf/Figure1*.pdf to PNG
 #    (needs PyMuPDF, Pillow, NumPy — NOT sips, see the script's docstring)
 python3 build/render_figure1.py
 
-# 4. Confirm the portal URLs the page hands out still work
+# 3. Confirm the portal URLs the page hands out still work
 python3 build/verify_links.py
 ```
 
 `verify_links.py` exits non-zero on any mismatch, so it can gate a deploy. It
 checks three things: every search URL resolves to the count shown on the page,
 every metadata manifest returns that many rows with the `File download URL`
-column the recipes cut on, and a sample of `@@download` URLs still serves bytes.
+column the copy-command buttons cut on, and a sample of `@@download` URLs still serves bytes.
 It is the check to run if the IGVF portal changes its search or download routes.
-
-Figure 1's short "what this shows" blurb is authored in the `BLURB` dict at the
-top of `build/extract_legends.py` — edit it there, not in `data/figures.json`,
-which is overwritten.
 
 ## Editing the page by hand
 
-Prose lives in `index.html` — the summary, the key points, each section's
+Prose lives in `index.html` — the summary, each section's
 heading and intro paragraph. Edit it directly; there is no templating.
 
 Anything that reports a number, a file or an accession is generated in
 `js/app.js` from `data/*.json`, so edit the renderer (or the `BLURB`/note text
 inside it), not the JSON, which `build/fetch_igvf.py` overwrites. The page notes
-under the donor matrix are in `renderNotes()`; the download recipes are in
-`renderRecipes()`.
+under the data tiers are in `renderNotes()`.
+
+Sections cut to declutter the page (summary key points, figure legend, donor
+matrix, download recipes) are listed in `ARCHIVE.md` with how to restore them.
 
 Then `git commit && git push` — Cloudflare redeploys within about ten seconds.
 

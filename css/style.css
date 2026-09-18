@@ -129,47 +129,14 @@ section { padding: 54px 0; border-bottom: 1px solid var(--rule); }
 .lede strong { font-weight: 640; }
 .lede + .lede { margin-top: 16px; }
 
-.keypoints { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 12px; }
-.keypoints li {
-  display: grid; grid-template-columns: 22px 1fr; gap: 12px;
-  font-size: 15px; color: var(--ink-2); line-height: 1.55;
-}
-.keypoints .n {
-  font-family: var(--mono); font-size: 11px; color: var(--accent);
-  border: 1px solid var(--rule-2); border-radius: 4px; height: 20px;
-  display: grid; place-items: center; margin-top: 2px;
-}
-.keypoints b { color: var(--ink); font-weight: 620; }
-
 /* ---------------------------------------------------------------- figure */
+#fig1 { margin-top: 28px; }
 .figcard {
   background: var(--panel); border: 1px solid var(--rule); border-radius: 12px;
   overflow: hidden; margin: 0;
 }
 .figcard > a { display: block; background: #fff; }
 .figcard img { width: 100%; }
-.figmeta { padding: 16px 20px 18px; }
-.figmeta .tag {
-  font-family: var(--mono); font-size: 11px; color: var(--accent);
-  letter-spacing: .04em; font-weight: 600;
-}
-.figmeta h3 { font-size: 16.5px; margin: 6px 0 0; font-weight: 620; }
-.figmeta .blurb { margin: 9px 0 0; font-size: 14.5px; color: var(--ink-2); line-height: 1.55; }
-.figmeta details { margin-top: 12px; }
-.figmeta summary {
-  cursor: pointer; font-size: 12.5px; color: var(--ink-3);
-  list-style: none; display: inline-flex; align-items: center; gap: 6px;
-}
-.figmeta summary::-webkit-details-marker { display: none; }
-.figmeta summary::before { content: "▸"; font-size: 10px; transition: transform .15s; }
-.figmeta details[open] summary::before { transform: rotate(90deg); }
-.figmeta .legend {
-  margin-top: 10px; font-size: 13px; color: var(--ink-2); line-height: 1.6;
-  padding-left: 14px; border-left: 2px solid var(--rule);
-}
-.figmeta .dlline {
-  margin: 14px 0 0; font-size: 12.5px; display: flex; gap: 10px; align-items: baseline;
-}
 
 /* ------------------------------------------------------------------ data */
 .tiers { display: grid; gap: 0; margin-top: 6px; }
@@ -225,22 +192,6 @@ section { padding: 54px 0; border-bottom: 1px solid var(--rule); }
 }
 .flow b { color: var(--ink-2); font-weight: 620; }
 .flow .arw { color: var(--rule-2); }
-
-/* donor matrix */
-.matrix { border-collapse: collapse; margin-top: 8px; font-size: 13.5px; width: 100%; }
-.matrix th, .matrix td { padding: 9px 10px; border-bottom: 1px solid var(--rule); text-align: center; }
-.matrix thead th { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); font-weight: 640; }
-.matrix tbody th { text-align: left; font-weight: 600; }
-.matrix tbody th small { display: block; font-weight: 400; color: var(--ink-3); font-size: 11px; font-family: var(--mono); }
-.matrix .yes { color: var(--t-prod); font-size: 15px; }
-.matrix .no { color: var(--rule-2); }
-.matrix tr.flag th, .matrix tr.flag td { background: var(--warn-bg); }
-.pill {
-  display: inline-block; font-size: 10.5px; padding: 1px 7px; border-radius: 10px;
-  border: 1px solid var(--rule-2); color: var(--ink-3);
-}
-.pill.eff { color: var(--t-prod); border-color: color-mix(in srgb, var(--t-prod) 45%, transparent); }
-.pill.ineff { color: var(--t-f2); border-color: color-mix(in srgb, var(--t-f2) 45%, transparent); }
 
 .note {
   background: var(--warn-bg); border: 1px solid var(--warn-rule); color: var(--warn-ink);
@@ -438,29 +389,17 @@ section { padding: 54px 0; border-bottom: 1px solid var(--rule); }
 .bfiles .ftable { background: var(--panel); margin-top: 10px; }
 .bfiles .scroller > .ftable { min-width: 680px; }
 
-/* recipes */
-.recipes { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 18px; }
-.recipe {
-  border: 1px solid var(--rule); border-radius: 11px; background: var(--panel);
-  padding: 15px 17px 17px;
-}
-.recipe h4 { margin: 0; font-size: 14.5px; font-weight: 620; }
-.recipe p { margin: 7px 0 0; font-size: 13px; color: var(--ink-2); line-height: 1.55; }
-.recipe .code { margin-top: 11px; }
-
 footer { padding: 40px 0 64px; font-size: 13px; color: var(--ink-3); }
 footer .wrap > div + div { margin-top: 8px; }
 footer a { color: var(--ink-2); }
 
 /* Wide content scrolls inside its own box so the page body never does. */
 .scroller { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.scroller > .matrix { min-width: 560px; }
 .scroller > .tiers { min-width: 760px; }
 
 @media (max-width: 860px) {
   .tierhead, .trow { grid-template-columns: 160px repeat(3, 1fr) 180px; }
   .brow { grid-template-columns: 1fr; gap: 7px; }
   .blbl { padding-top: 0; }
-  .recipes { grid-template-columns: 1fr; }
   .dfoot, .tbhead { font-size: 11.5px; }
 }
