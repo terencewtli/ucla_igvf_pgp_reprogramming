@@ -3,7 +3,9 @@
 Live: <https://ucla-igvf-pgp-reprogramming.pages.dev>
 
 Static site. No build step, no framework: `index.html` + `css/style.css` + `js/app.js`,
-with all content driven by generated JSON. Light theme only.
+with all content driven by generated JSON. Light theme only, Arial throughout
+(`--sans`) with a monospace stack (`--mono`) for code, accessions and paths —
+there is no third family, so headings are Arial too.
 
 ## Layout
 
