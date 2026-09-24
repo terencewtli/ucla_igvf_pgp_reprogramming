@@ -241,251 +241,6 @@ function renderReady(d) {
   }).join("");
 }
 
-/* ======================================= download: by donor and time point */
-
-/* A cell of this grid is one sample: one donor on one reprogramming day.
-   Every file carries its library's exact (donor, day) pairs, which for a
-   multiplexed Multiome library are not the cross product of its donor and day
-   lists — one library holds C29 at day 0, C37 at day 1, C38 at day 3 and C39
-   at day 5. Keying on the pairs is what lets a cell mean one sample rather
-   than one library. */
-function renderDonorDays(d, index) {
-  const cols = index.columns;
-  const rec = (row) => Object.fromEntries(cols.map((c, i) => [c, row[i]]));
-
-  /* Which library a file came from: a processed file belongs to the
-     intermediate set itself, a raw file to one of its measurement sets. */
-  const libOf = new Map();       // file_set accession -> library accession
-  const lib = new Map();         // library accession -> {g, set}
-  for (const s of d.sets) {
-    for (const g of s.intermediate.groups) {
-      lib.set(g.accession, { g, set: s });
-      libOf.set(g.accession, g.accession);
-      for (const m of g.measurement_accessions || []) libOf.set(m, g.accession);
-    }
-  }
-
-  /* Analysis-ready files are left out: each one pools the whole time course,
-     so there is no honest way to cut it to a single donor-day. */
-  const cellFiles = new Map();   // "C29:0" -> [file, ...]
-  for (const [setAcc, rows] of Object.entries(index.sets)) {
-    for (const row of rows) {
-      const f = rec(row);
-      if (f.tier === "analysis-ready") continue;
-      f.set = setAcc;
-      f.lib = libOf.get(f.file_set);
-      for (const k of f.donor_days || []) {
-        const a = cellFiles.get(k);
-        if (a) a.push(f); else cellFiles.set(k, [f]);
-      }
-    }
-  }
-
-  const nameOf = {};
-  for (const m of Object.values(d.donor_meta || {})) nameOf[m.name] = m;
-
-  /* The four reprogramming lines the study follows. A8 is excluded: it is not a
-     manuscript line, it appears only in the two pilot spatial runs, and it has a
-     single time point, so it would add a near-empty row and a day-30 column to
-     the grid. Its files stay reachable from the sections below. */
-  const donors = [...new Set([...cellFiles.keys()].map((k) => k.split(":")[0]))]
-    .filter((dn) => nameOf[dn]?.in_manuscript !== false)
-    .sort();
-  for (const k of [...cellFiles.keys()])
-    if (!donors.includes(k.split(":")[0])) cellFiles.delete(k);
-  const days = [...new Set([...cellFiles.keys()].map((k) => +k.split(":")[1]))]
-    .sort((a, b) => a - b);
-  const setsOf = (k) => [...new Set((cellFiles.get(k) || []).map((f) => f.set))];
-  const has = (dn, dy) => cellFiles.has(`${dn}:${dy}`);
-
-  const state = { cells: new Set(["C29:0"]), tiers: new Set(["processed"]) };
-
-  const root = document.getElementById("bydonor");
-  root.innerHTML = `
-    <div class="ddwrap">
-      <div class="scroller">
-        <div class="ddgrid" id="dd-grid"
-             style="grid-template-columns:108px repeat(${days.length},minmax(60px,1fr))"></div>
-      </div>
-      <div class="ddbar">
-        <div class="ddlegend">${d.sets.map((s) =>
-          `<span><i style="background:${MOD_COLOR[s.accession]}"></i>${esc(s.label)}</span>`).join("")}</div>
-        <div class="ddsel">
-          <span class="blbl">Tier</span>
-          <div class="chips" id="dd-tier"></div>
-          <button class="cbtn" id="dd-all">Select all</button>
-          <button class="cbtn" id="dd-none">Clear</button>
-        </div>
-      </div>
-      <div class="bout" id="dd-out"></div>
-    </div>`;
-
-  function drawGrid() {
-    const out = [`<div class="ddcorner">donor · day</div>`];
-    for (const dy of days) {
-      const on = donors.every((dn) => !has(dn, dy) || state.cells.has(`${dn}:${dy}`)) &&
-                 donors.some((dn) => has(dn, dy) && state.cells.has(`${dn}:${dy}`));
-      out.push(`<button class="ddhead ${on ? "on" : ""}" data-day="${dy}"
-        title="Select every sample taken on day ${dy}">${dy}</button>`);
-    }
-    for (const dn of donors) {
-      const meta = nameOf[dn] || {};
-      const on = days.every((dy) => !has(dn, dy) || state.cells.has(`${dn}:${dy}`));
-      out.push(`<button class="ddname ${on ? "on" : ""}" data-donor="${esc(dn)}"
-          title="Select every time point for ${esc(dn)}">
-          <b>${esc(dn)}</b><span>${esc(meta.efficiency || "")}</span></button>`);
-      for (const dy of days) {
-        const k = `${dn}:${dy}`;
-        const fs = cellFiles.get(k);
-        if (!fs) { out.push(`<span class="ddcell empty"></span>`); continue; }
-        const sets = setsOf(k);
-        // Counts follow the tier chips, so a cell says what clicking it adds.
-        const inTier = fs.filter((f) => state.tiers.has(f.tier));
-        const size = inTier.reduce((a, f) => a + (f.size || 0), 0);
-        out.push(`<button class="ddcell ${state.cells.has(k) ? "on" : ""}" data-k="${k}"
-          title="${esc(dn)} day ${dy} — ${sets.length} ${
-            sets.length === 1 ? "modality" : "modalities"}, ${inTier.length} files, ${bytes(size)}">
-          <span class="dots">${sets.map((a) =>
-            `<i style="background:${MOD_COLOR[a]}"></i>`).join("")}</span>
-          <span class="n">${inTier.length}</span></button>`);
-      }
-    }
-    document.getElementById("dd-grid").innerHTML = out.join("");
-
-    const tally = {};
-    for (const [k, fs] of cellFiles)
-      if (state.cells.has(k))
-        for (const f of fs) {
-          const e = tally[f.tier] || (tally[f.tier] = { n: 0, b: 0 });
-          e.n++; e.b += f.size || 0;
-        }
-    document.getElementById("dd-tier").innerHTML = ["processed", "raw"]
-      .map((t) => `<button class="chip ${state.tiers.has(t) ? "on" : ""}" data-t="${t}">
-        ${TIER_LABEL[t]}<span>${tally[t] ? `${num(tally[t].n)} · ${bytes(tally[t].b)}` : "—"}</span>
-      </button>`).join("");
-  }
-
-  /* Files for the current selection, deduplicated: a multiplexed library is
-     one file set reached from four different cells. */
-  function picked() {
-    const seen = new Map();
-    for (const k of state.cells)
-      for (const f of cellFiles.get(k) || [])
-        if (state.tiers.has(f.tier)) seen.set(f.accession, f);
-    return [...seen.values()];
-  }
-
-  const cellLabel = (k) => `${k.split(":")[0]} day ${k.split(":")[1]}`;
-
-  function drawOut() {
-    const out = document.getElementById("dd-out");
-    const keys = [...state.cells].sort();
-    if (!keys.length) {
-      out.innerHTML = `<div class="bsum"><b>No samples selected</b>
-        <span>Click a cell, a donor or a day above.</span></div>`;
-      return;
-    }
-    const files = picked();
-    const total = files.reduce((a, f) => a + (f.size || 0), 0);
-    const what = keys.length <= 4 ? keys.map(cellLabel).join(", ")
-      : `${keys.length} samples`;
-    const title = `${what} · ${[...state.tiers].map((t) => TIER_LABEL[t]).join(" + ")}`;
-
-    if (!files.length) {
-      out.innerHTML = `<div class="bsum"><b>No files</b>
-        <span>${esc(what)} has nothing in the selected tier.</span></div>`;
-      return;
-    }
-
-    // Libraries behind the selection, and what each one holds beyond it.
-    const byLib = new Map();
-    for (const f of files) {
-      let e = byLib.get(f.lib);
-      if (!e) { e = { n: 0, b: 0, files: [] }; byLib.set(f.lib, e); }
-      e.n++; e.b += f.size || 0; e.files.push(f);
-    }
-    const extra = new Set();
-    for (const acc of byLib.keys())
-      for (const k of (lib.get(acc)?.g.donor_day_keys) || [])
-        if (!state.cells.has(k)) extra.add(k);
-
-    const rows = [...byLib.entries()].map(([acc, e]) => {
-      const { g, set } = lib.get(acc) || {};
-      if (!g) return "";
-      const holds = g.donor_day_keys.map((k) =>
-        state.cells.has(k) ? `<b>${esc(cellLabel(k))}</b>` : esc(cellLabel(k)))
-        .join(", ");
-      return `<tr>
-        <td class="ct"><span class="swatch sm" style="background:${MOD_COLOR[set.accession]}"></span>
-          ${esc(set.label)}</td>
-        <td>${holds}${g.multiplexed ? ' <span class="fmt">pooled</span>' : ""}</td>
-        <td class="sz">${num(e.n)}</td>
-        <td class="sz">${bytes(e.b)}</td>
-        <td class="acc"><a href="${esc(g.portal)}" target="_blank" rel="noopener">${esc(acc)} ↗</a></td>
-        <td class="act">
-          ${saveBtn(e.files.map((f) => f.download).join("\n") + "\n",
-                    `${acc}-urls.txt`, "urls.txt")}
-          ${copyBtn(e.files.map((f) => f.download).join("\n"), "URLs")}
-        </td></tr>`;
-    }).join("");
-
-    out.innerHTML = `
-      <div class="bsum">
-        <b>${num(files.length)} files · ${bytes(total)}</b>
-        <span>${esc(title)}</span>
-      </div>
-      <div class="bacts">
-        ${saveBtn(files.map((f) => f.download).join("\n") + "\n",
-                  `igvf-${keys.join("_").replace(/:/g, "d")}-urls.txt`, "↓ urls.txt")}
-        ${saveBtn(curlScript(files, title), "igvf-samples-curl.sh", "↓ curl script")}
-        ${saveBtn(awsScript(files, title), "igvf-samples-aws.sh", "↓ aws s3 script")}
-        ${saveBtn(manifestTsv(files), "igvf-samples-manifest.tsv", "↓ manifest.tsv")}
-        ${copyBtn(files.map((f) => f.download).join("\n"), "Copy URLs")}
-        ${copyBtn(files.map((f) => f.s3_uri).filter(Boolean).join("\n"), "Copy S3 URIs")}
-      </div>
-      ${extra.size ? `<div class="bnote">The 10x Multiome libraries are genetically
-        multiplexed — one library pools four donors sampled on four different days —
-        so these files also carry ${[...extra].sort().map(cellLabel).join(", ")}.
-        Split them by donor with the WGS genotypes and the cell annotations from the
-        analysis-ready set.</div>` : ""}
-      <div class="scroller"><table class="ftable dl ddlibs">
-        <thead><tr><th>Modality</th><th>Library holds</th><th>Files</th><th>Size</th>
-          <th>Analysis set</th><th></th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table></div>
-      <p class="ddfoot">Analysis-ready files are not listed here: each one spans the
-        whole time course and every donor, so it cannot be cut to one sample —
-        take those from the section above.</p>`;
-  }
-
-  function draw() { drawGrid(); drawOut(); }
-
-  root.addEventListener("click", (e) => {
-    const t = e.target.closest("[data-k],[data-donor],[data-day],[data-t],#dd-all,#dd-none");
-    if (!t) return;
-    const toggle = (keys) => {
-      const on = keys.every((k) => state.cells.has(k));
-      keys.forEach((k) => on ? state.cells.delete(k) : state.cells.add(k));
-    };
-    if (t.dataset.k) toggle([t.dataset.k]);
-    else if (t.dataset.donor)
-      toggle(days.filter((dy) => has(t.dataset.donor, dy))
-        .map((dy) => `${t.dataset.donor}:${dy}`));
-    else if (t.dataset.day)
-      toggle(donors.filter((dn) => has(dn, +t.dataset.day))
-        .map((dn) => `${dn}:${t.dataset.day}`));
-    else if (t.dataset.t) {
-      const s = state.tiers;
-      if (s.has(t.dataset.t)) s.delete(t.dataset.t); else s.add(t.dataset.t);
-      if (!s.size) s.add(t.dataset.t);            // never empty
-    } else if (t.id === "dd-all") cellFiles.forEach((_, k) => state.cells.add(k));
-    else if (t.id === "dd-none") state.cells.clear();
-    draw();
-  });
-
-  draw();
-}
-
 /* ==================================== download: processed + raw, by type */
 
 /* The portal's metadata TSV is the manifest; column 'File download URL' is the
@@ -558,6 +313,17 @@ function renderBulk(d) {
 
 /* ==================================================== download: builder */
 
+/* One tool over four dimensions: sample (donor x reprogramming day), modality,
+   tier and file type. Each is optional and empty means all, so the page answers
+   both "give me C29 day 0" and "give me every fragment file in the study".
+
+   The sample axis keys on exact (donor, day) pairs rather than the cross product
+   of a file's donor and day lists. The distinction only matters for the
+   multiplexed Multiome libraries, and there it matters completely: one library
+   carries C29, C37, C38, C39 and days 0, 1, 3, 5, but holds C29 at day 0, C37 at
+   day 1, C38 at day 3 and C39 at day 5 — crossing the lists would offer it for
+   twelve samples it does not contain. */
+
 /* Scripts are emitted with a header so a file found later on a cluster still
    says where it came from. */
 function scriptHeader(title, n, size) {
@@ -605,91 +371,94 @@ echo "done: ${files.length} files in $DEST"
 
 function manifestTsv(files) {
   const cols = ["file_accession", "tier", "file_set", "donors", "days",
-                "content_type", "file_format", "size_bytes", "md5sum",
-                "download_url", "s3_uri"];
+                "donor_days", "content_type", "file_format", "size_bytes",
+                "md5sum", "download_url", "s3_uri"];
   return cols.join("\t") + "\n" + files.map((f) => [
     f.accession, f.tier, f.file_set, (f.donors || []).join(";"),
-    (f.days || []).join(";"), f.content_type, f.file_format, f.size ?? "",
-    f.md5 || "", f.download, f.s3_uri || "",
+    (f.days || []).join(";"), (f.donor_days || []).join(";"), f.content_type,
+    f.file_format, f.size ?? "", f.md5 || "", f.download, f.s3_uri || "",
   ].join("\t")).join("\n") + "\n";
 }
 
 function renderBuilder(d, index) {
-  const root = document.getElementById("builder");
   const cols = index.columns;
   const rec = (row) => Object.fromEntries(cols.map((c, i) => [c, row[i]]));
-  const bySet = Object.fromEntries(
-    Object.entries(index.sets).map(([k, rows]) => [k, rows.map(rec)]));
 
-  const state = {
-    set: d.sets[0].accession,
-    tiers: new Set(["analysis-ready"]),
-    types: new Set(),      // empty = all
-    days: new Set(),       // empty = all
-    donors: new Set(),     // empty = all
-  };
-
-  root.innerHTML = `
-    <div class="builder">
-      <div class="brow">
-        <span class="blbl">Modality</span>
-        <div class="chips" id="b-set"></div>
-      </div>
-      <div class="brow">
-        <span class="blbl">Tier</span>
-        <div class="chips" id="b-tier"></div>
-      </div>
-      <div class="brow">
-        <span class="blbl">File type</span>
-        <div class="chips" id="b-type"></div>
-      </div>
-      <div class="brow" id="b-day-row">
-        <span class="blbl">Day</span>
-        <div class="chips" id="b-day"></div>
-      </div>
-      <div class="brow" id="b-donor-row">
-        <span class="blbl">Donor</span>
-        <div class="chips" id="b-donor"></div>
-      </div>
-      <div class="bout" id="b-out"></div>
-    </div>`;
-
-  const chip = (label, on, key, sub = "") =>
-    `<button class="chip ${on ? "on" : ""}" data-k="${esc(key)}">${esc(label)}${
-      sub ? `<span>${esc(sub)}</span>` : ""}</button>`;
-
-  function pool() {
-    return bySet[state.set] || [];
+  /* Which library a file came from: a processed file belongs to the
+     intermediate set itself, a raw file to one of its measurement sets. */
+  const libOf = new Map();
+  const lib = new Map();
+  for (const s of d.sets) {
+    for (const g of s.intermediate.groups) {
+      lib.set(g.accession, { g, set: s });
+      libOf.set(g.accession, g.accession);
+      for (const m of g.measurement_accessions || []) libOf.set(m, g.accession);
+    }
   }
 
-  /* Files matching everything except the given dimension, so each dimension's
-     counts reflect the rest of the selection. */
+  const files = [];
+  for (const [setAcc, rows] of Object.entries(index.sets)) {
+    for (const row of rows) {
+      const f = rec(row);
+      f.set = setAcc;
+      f.lib = libOf.get(f.file_set);
+      files.push(f);
+    }
+  }
+
+  const nameOf = {};
+  for (const m of Object.values(d.donor_meta || {})) nameOf[m.name] = m;
+
+  /* Grid axes come from the per-sample tiers only. A8 is left out: not a
+     manuscript line, one time point, pilot spatial runs only. */
+  const cellKeys = new Set();
+  for (const f of files)
+    if (f.tier !== "analysis-ready")
+      for (const k of f.donor_days || []) cellKeys.add(k);
+  const donors = [...new Set([...cellKeys].map((k) => k.split(":")[0]))]
+    .filter((dn) => nameOf[dn]?.in_manuscript !== false).sort();
+  const has = (dn, dy) => cellKeys.has(`${dn}:${dy}`);
+  const days = [...new Set([...cellKeys].map((k) => +k.split(":")[1]))]
+    .filter((dy) => donors.some((dn) => has(dn, dy))).sort((a, b) => a - b);
+  const gridCells = [];
+  for (const dn of donors)
+    for (const dy of days) if (has(dn, dy)) gridCells.push(`${dn}:${dy}`);
+
+  /* Modalities that touch a sample at all, for the dots on each cell. */
+  const cellSets = new Map();
+  for (const f of files) {
+    if (f.tier === "analysis-ready") continue;
+    for (const k of f.donor_days || []) {
+      let s = cellSets.get(k);
+      if (!s) { s = new Set(); cellSets.set(k, s); }
+      s.add(f.set);
+    }
+  }
+
+  /* Every dimension: empty means all. Processed is the opening tier because it
+     is the one the grid resolves — analysis-ready files are whole-study, so
+     defaulting to them would show a grid of dashes, and they already have a
+     one-click section of their own above. */
+  const state = { cells: new Set(), sets: new Set(), tiers: new Set(["processed"]),
+                  types: new Set() };
+
+  /* An analysis-ready file is one matrix over the whole study, so it is not
+     filtered by sample — it contains every donor and day there is. The other
+     tiers are per-library and do answer to the grid. */
   function match(f, skip) {
+    if (skip !== "set" && state.sets.size && !state.sets.has(f.set)) return false;
     if (skip !== "tier" && state.tiers.size && !state.tiers.has(f.tier)) return false;
     if (skip !== "type" && state.types.size && !state.types.has(f.content_type)) return false;
-    // With both a donor and a day picked, match the pair the file actually
-    // holds: a pooled Multiome library carries C29 and day 1, but its C29 is
-    // day 0, so the cross product would hand back the wrong library.
-    const pairwise = skip !== "day" && skip !== "donor" &&
-                     state.days.size && state.donors.size;
-    if (pairwise) {
-      return (f.donor_days || []).some((k) => {
-        const [dn, dy] = k.split(":");
-        return state.donors.has(dn) && state.days.has(dy);
-      });
-    }
-    if (skip !== "day" && state.days.size &&
-        !(f.days || []).some((y) => state.days.has(String(y)))) return false;
-    if (skip !== "donor" && state.donors.size &&
-        !(f.donors || []).some((x) => state.donors.has(x))) return false;
+    if (skip !== "cell" && state.cells.size && f.tier !== "analysis-ready" &&
+        !(f.donor_days || []).some((k) => state.cells.has(k))) return false;
     return true;
   }
 
-  const selected = () => pool().filter((f) => match(f, null));
+  const selected = () => files.filter((f) => match(f, null));
 
   function facet(key, value) {
     const t = {};
-    for (const f of pool()) {
+    for (const f of files) {
       if (!match(f, key)) continue;
       for (const v of value(f)) {
         const e = t[v] || (t[v] = { n: 0, b: 0 });
@@ -700,86 +469,297 @@ function renderBuilder(d, index) {
     return t;
   }
 
-  function draw() {
+  /* Faceted browser, after the ENCODE matrix: filters down the left, the sample
+     matrix and the result in the main column. Every facet term carries the count
+     it would yield, so the next click is always informed. */
+  const root = document.getElementById("builder");
+  root.innerHTML = `
+    <div class="fbrowse">
+      <aside class="facets">
+        <div class="fhead">
+          <b>Filters</b>
+          <button class="flink" id="b-clear">Clear all</button>
+        </div>
+        <details class="fgroup" open>
+          <summary>Modality</summary>
+          <div class="fterms" id="b-set"></div>
+        </details>
+        <details class="fgroup" open>
+          <summary>Tier</summary>
+          <div class="fterms" id="b-tier"></div>
+        </details>
+        <details class="fgroup" open>
+          <summary>File type</summary>
+          <div class="fterms" id="b-type"></div>
+        </details>
+        <details class="fgroup">
+          <summary>Donor</summary>
+          <div class="fterms" id="b-donor"></div>
+        </details>
+        <details class="fgroup">
+          <summary>Time point</summary>
+          <div class="fterms" id="b-day"></div>
+        </details>
+      </aside>
+
+      <div class="fmain">
+        <div class="fbar">
+          <div class="fcount" id="b-count"></div>
+          <div class="fpills" id="b-pills"></div>
+        </div>
+
+        <div class="matrix">
+          <div class="mhead">
+            <b>Samples</b>
+            <span class="ddlegend">${d.sets.map((s) =>
+              `<span><i style="background:${MOD_COLOR[s.accession]}"></i>${esc(s.label)}</span>`).join("")}</span>
+            <button class="flink" id="b-allcells">Select all</button>
+            <button class="flink" id="b-nocells">Clear</button>
+          </div>
+          <div class="scroller">
+            <div class="ddgrid" id="b-grid"
+                 style="grid-template-columns:92px repeat(${days.length},minmax(50px,1fr))"></div>
+          </div>
+          <p class="ddfoot" id="b-gridnote"></p>
+        </div>
+
+        <div class="bout" id="b-out"></div>
+      </div>
+    </div>`;
+
+  /* One facet term: a tick, its name, and the number of files it would yield
+     given everything else already picked. */
+  const term = (group, key, label, on, n, b) =>
+    `<button class="fterm ${on ? "on" : ""}" data-g="${group}" data-k="${esc(key)}"
+       title="${esc(label)} — ${num(n)} files, ${bytes(b)}">
+       <span class="tick"></span><span class="lbl">${esc(label)}</span>
+       <span class="cnt">${num(n)}</span></button>`;
+
+  function drawGrid(tally) {
+    const out = [`<div class="ddcorner">donor · day</div>`];
+    for (const dy of days) {
+      const on = donors.every((dn) => !has(dn, dy) || state.cells.has(`${dn}:${dy}`)) &&
+                 donors.some((dn) => has(dn, dy) && state.cells.has(`${dn}:${dy}`));
+      out.push(`<button class="ddhead ${on ? "on" : ""}" data-day="${dy}"
+        title="Select every sample taken on day ${dy}">${dy}</button>`);
+    }
+    for (const dn of donors) {
+      const meta = nameOf[dn] || {};
+      const on = days.every((dy) => !has(dn, dy) || state.cells.has(`${dn}:${dy}`));
+      out.push(`<button class="ddname ${on ? "on" : ""}" data-donor="${esc(dn)}"
+          title="Select every time point for ${esc(dn)}">
+          <b>${esc(dn)}</b><span>${esc(meta.efficiency || "")}</span></button>`);
+      for (const dy of days) {
+        const k = `${dn}:${dy}`;
+        if (!has(dn, dy)) { out.push(`<span class="ddcell empty"></span>`); continue; }
+        const e = tally.get(k);
+        const mods = [...(cellSets.get(k) || [])]
+          .filter((a) => !state.sets.size || state.sets.has(a));
+        const cls = ["ddcell", state.cells.has(k) ? "on" : "", e ? "" : "none"]
+          .filter(Boolean).join(" ");
+        out.push(`<button class="${cls}" data-g="cell" data-k="${k}"
+          title="${esc(dn)} day ${dy}${e ? ` — ${e.n} files, ${bytes(e.b)}`
+            : " — nothing in the current selection"}">
+          <span class="dots">${mods.map((a) =>
+            `<i style="background:${MOD_COLOR[a]}"></i>`).join("")}</span>
+          <span class="n">${e ? e.n : "—"}</span></button>`);
+      }
+    }
+    document.getElementById("b-grid").innerHTML = out.join("");
+
+    const onlyFinal = state.tiers.size === 1 && state.tiers.has("analysis-ready");
+    document.getElementById("b-gridnote").innerHTML = onlyFinal
+      ? `Analysis-ready files are one matrix over the whole study, so they are not
+         per-sample and the grid does not narrow them. Add the processed or raw
+         tier to pick samples.`
+      : (state.cells.size ? "" : "No samples picked — every sample is included.");
+  }
+
+  /* Per-sample file tally for one cell, honouring every filter but the sample
+     one, so the matrix and the donor/day facets say what a click would add. */
+  function cellTally() {
+    const t = new Map();
+    for (const f of files) {
+      if (f.tier === "analysis-ready") continue;
+      if (!match(f, "cell")) continue;
+      for (const k of f.donor_days || []) {
+        const e = t.get(k) || { n: 0, b: 0 };
+        e.n++; e.b += f.size || 0;
+        t.set(k, e);
+      }
+    }
+    return t;
+  }
+
+  function drawFacets(tally) {
+    const sets = facet("set", (f) => [f.set]);
     document.getElementById("b-set").innerHTML = d.sets.map((s) =>
-      chip(s.label, state.set === s.accession, s.accession)).join("");
+      term("set", s.accession, s.label, state.sets.has(s.accession),
+           sets[s.accession] ? sets[s.accession].n : 0,
+           sets[s.accession] ? sets[s.accession].b : 0)).join("");
 
     const tiers = facet("tier", (f) => [f.tier]);
     document.getElementById("b-tier").innerHTML =
-      ["analysis-ready", "processed", "raw"].filter((k) => tiers[k]).map((k) =>
-        chip(TIER_LABEL[k], state.tiers.has(k), k,
-             `${num(tiers[k].n)} · ${bytes(tiers[k].b)}`)).join("");
+      ["analysis-ready", "processed", "raw"].map((k) =>
+        term("tier", k, TIER_LABEL[k], state.tiers.has(k),
+             tiers[k] ? tiers[k].n : 0, tiers[k] ? tiers[k].b : 0)).join("");
 
     const types = facet("type", (f) => [f.content_type]);
     document.getElementById("b-type").innerHTML =
       Object.keys(types).sort().map((k) =>
-        chip(k, state.types.has(k), k,
-             `${num(types[k].n)} · ${bytes(types[k].b)}`)).join("")
-      || '<span class="muted">—</span>';
+        term("type", k, k, state.types.has(k), types[k].n, types[k].b)).join("")
+      || '<span class="fnone">nothing in this selection</span>';
 
-    // A principal set's files span the whole time course, so per-day and
-    // per-donor filtering only means something for the upstream tiers.
-    const upstream = [...state.tiers].some((t) => t !== "analysis-ready");
-    const days = facet("day", (f) => (f.days || []).map(String));
-    const dayKeys = upstream ? Object.keys(days).sort((a, b) => a - b) : [];
-    document.getElementById("b-day-row").style.display = dayKeys.length ? "" : "none";
-    document.getElementById("b-day").innerHTML =
-      dayKeys.map((k) => chip("day " + k, state.days.has(k), k, num(days[k].n))).join("");
+    // Donor and time point are the matrix's own axes, offered as lists too.
+    const rowOn = (dn) => days.every((dy) => !has(dn, dy) || state.cells.has(`${dn}:${dy}`));
+    const colOn = (dy) => donors.every((dn) => !has(dn, dy) || state.cells.has(`${dn}:${dy}`));
+    const sumOver = (keys) => keys.reduce((a, k) => {
+      const e = tally.get(k);
+      return { n: a.n + (e ? e.n : 0), b: a.b + (e ? e.b : 0) };
+    }, { n: 0, b: 0 });
 
-    const donors = facet("donor", (f) => f.donors || []);
-    const donorKeys = upstream ? Object.keys(donors).sort() : [];
-    document.getElementById("b-donor-row").style.display = donorKeys.length ? "" : "none";
-    document.getElementById("b-donor").innerHTML =
-      donorKeys.map((k) => chip(k, state.donors.has(k), k, num(donors[k].n))).join("");
+    document.getElementById("b-donor").innerHTML = donors.map((dn) => {
+      const t = sumOver(days.filter((dy) => has(dn, dy)).map((dy) => `${dn}:${dy}`));
+      return term("donor", dn, dn, rowOn(dn), t.n, t.b);
+    }).join("");
 
-    drawOut();
+    document.getElementById("b-day").innerHTML = days.map((dy) => {
+      const t = sumOver(donors.filter((dn) => has(dn, dy)).map((dn) => `${dn}:${dy}`));
+      return term("day", String(dy), `day ${dy}`, colOn(dy), t.n, t.b);
+    }).join("");
   }
 
-  function drawOut() {
-    const files = selected();
-    const set = d.sets.find((s) => s.accession === state.set);
-    const total = files.reduce((a, f) => a + (f.size || 0), 0);
-    const title = [set.label,
-                   [...state.tiers].map((t) => TIER_LABEL[t]).join(" + "),
-                   state.types.size ? [...state.types].join(", ") : "all file types",
-                   state.days.size ? "days " + [...state.days].join(", ") : null,
-                   state.donors.size ? [...state.donors].join(", ") : null]
-      .filter(Boolean).join(" · ");
+  /* The selection as removable pills, so what is currently on is readable
+     without scanning five facet lists. */
+  function drawBar(picked) {
+    const total = picked.reduce((a, f) => a + (f.size || 0), 0);
+    document.getElementById("b-count").innerHTML =
+      `<b>${num(picked.length)}</b> file${picked.length === 1 ? "" : "s"}
+       <span>${bytes(total)}</span>`;
 
-    const mux = files.some((f) => f.mux);
+    const pills = [];
+    const keys = [...state.cells].sort();
+    if (keys.length <= 6)
+      for (const k of keys) pills.push(["cell", k, cellLabel(k)]);
+    else pills.push(["cells", "", `${keys.length} samples`]);
+    for (const a of state.sets)
+      pills.push(["set", a, d.sets.find((x) => x.accession === a).label]);
+    for (const t of state.tiers) pills.push(["tier", t, TIER_LABEL[t]]);
+    for (const t of state.types) pills.push(["type", t, t]);
+
+    document.getElementById("b-pills").innerHTML = pills.length
+      ? pills.map(([g, k, label]) =>
+          `<button class="fpill" data-g="${g}" data-k="${esc(k)}">${esc(label)}
+             <i>×</i></button>`).join("")
+      : `<span class="fnone">no filters — every file in the study</span>`;
+  }
+
+  const cellLabel = (k) => `${k.split(":")[0]} day ${k.split(":")[1]}`;
+
+  function drawOut(picked) {
     const out = document.getElementById("b-out");
-    if (!files.length) {
-      out.innerHTML = '<div class="bsum"><b>No files match</b>' +
-        '<span>Widen the selection — tiers and file types are ANDed.</span></div>';
+    const total = picked.reduce((a, f) => a + (f.size || 0), 0);
+    const keys = [...state.cells].sort();
+
+    const title = [
+      keys.length ? (keys.length <= 4 ? keys.map(cellLabel).join(", ")
+                                      : `${keys.length} samples`) : "all samples",
+      state.sets.size ? [...state.sets].map((a) =>
+        d.sets.find((s) => s.accession === a).label).join(" + ") : "all modalities",
+      state.tiers.size ? [...state.tiers].map((t) => TIER_LABEL[t]).join(" + ")
+                       : "all tiers",
+      state.types.size ? [...state.types].join(", ") : "all file types",
+    ].join(" · ");
+
+    if (!picked.length) {
+      out.innerHTML = `<div class="bsum"><b>No files match</b>
+        <span>Widen the selection — the four dimensions are ANDed.</span></div>`;
       return;
     }
+
+    // Per-sample files can drag in samples you did not ask for, because the
+    // Multiome libraries are pooled. Say which, and how many.
+    const extra = new Set();
+    if (state.cells.size)
+      for (const f of picked)
+        if (f.tier !== "analysis-ready")
+          for (const k of f.donor_days || [])
+            if (!state.cells.has(k)) extra.add(k);
+    const nFinal = picked.filter((f) => f.tier === "analysis-ready").length;
+
+    // The libraries behind a sample selection, and what else each one holds.
+    let libTable = "";
+    if (state.cells.size) {
+      const byLib = new Map();
+      for (const f of picked) {
+        if (f.tier === "analysis-ready") continue;
+        let e = byLib.get(f.lib);
+        if (!e) { e = { n: 0, b: 0, files: [] }; byLib.set(f.lib, e); }
+        e.n++; e.b += f.size || 0; e.files.push(f);
+      }
+      const rows = [...byLib.entries()].map(([acc, e]) => {
+        const entry = lib.get(acc);
+        if (!entry) return "";
+        const { g, set } = entry;
+        const holds = g.donor_day_keys.map((k) =>
+          state.cells.has(k) ? `<b>${esc(cellLabel(k))}</b>` : esc(cellLabel(k)))
+          .join(", ");
+        return `<tr>
+          <td class="ct"><span class="swatch sm" style="background:${MOD_COLOR[set.accession]}"></span>
+            ${esc(set.label)}</td>
+          <td>${holds}${g.multiplexed ? ' <span class="fmt">pooled</span>' : ""}</td>
+          <td class="sz">${num(e.n)}</td>
+          <td class="sz">${bytes(e.b)}</td>
+          <td class="acc"><a href="${esc(g.portal)}" target="_blank" rel="noopener">${esc(acc)} ↗</a></td>
+          <td class="act">
+            ${saveBtn(e.files.map((f) => f.download).join("\n") + "\n",
+                      `${acc}-urls.txt`, "urls.txt")}
+            ${copyBtn(e.files.map((f) => f.download).join("\n"), "URLs")}
+          </td></tr>`;
+      }).join("");
+      if (rows) libTable = `
+        <details class="bfiles" open>
+          <summary>${byLib.size} ${byLib.size === 1 ? "library" : "libraries"} behind this selection</summary>
+          <div class="scroller"><table class="ftable dl ddlibs">
+            <thead><tr><th>Modality</th><th>Library holds</th><th>Files</th><th>Size</th>
+              <th>Analysis set</th><th></th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table></div>
+        </details>`;
+    }
+
+    const slug = keys.length && keys.length <= 3
+      ? keys.join("_").replace(/:/g, "d") : "selection";
+
     out.innerHTML = `
-      <div class="bsum">
-        <b>${num(files.length)} files · ${bytes(total)}</b>
-        <span>${esc(title)}</span>
-      </div>
       <div class="bacts">
-        ${saveBtn(files.map((f) => f.download).join("\n") + "\n",
-                  `igvf-${state.set}-urls.txt`, "↓ urls.txt")}
-        ${saveBtn(curlScript(files, title), `igvf-${state.set}-curl.sh`, "↓ curl script")}
-        ${saveBtn(awsScript(files, title), `igvf-${state.set}-aws.sh`, "↓ aws s3 script")}
-        ${saveBtn(manifestTsv(files), `igvf-${state.set}-manifest.tsv`, "↓ manifest.tsv")}
-        ${copyBtn(files.map((f) => f.download).join("\n"), "Copy URLs")}
-        ${copyBtn(files.map((f) => f.s3_uri).filter(Boolean).join("\n"), "Copy S3 URIs")}
+        ${saveBtn(picked.map((f) => f.download).join("\n") + "\n",
+                  `igvf-${slug}-urls.txt`, "↓ urls.txt")}
+        ${saveBtn(curlScript(picked, title), `igvf-${slug}-curl.sh`, "↓ curl script")}
+        ${saveBtn(awsScript(picked, title), `igvf-${slug}-aws.sh`, "↓ aws s3 script")}
+        ${saveBtn(manifestTsv(picked), `igvf-${slug}-manifest.tsv`, "↓ manifest.tsv")}
+        ${copyBtn(picked.map((f) => f.download).join("\n"), "Copy URLs")}
+        ${copyBtn(picked.map((f) => f.s3_uri).filter(Boolean).join("\n"), "Copy S3 URIs")}
       </div>
-      ${mux ? `<div class="bnote">Some selected files come from genetically
-        multiplexed libraries — one file holds four donors sampled on four
-        different reprogramming days, so it cannot be narrowed to a single donor
-        or day before demultiplexing with the WGS VCF and the cell
-        annotations.</div>` : ""}
-      ${codeBlock(`# after saving urls.txt next to this shell\nxargs -n1 -P4 curl -fL -C - -O --retry 3 < igvf-${state.set}-urls.txt`,
+      ${extra.size ? `<div class="bnote">The 10x Multiome libraries are genetically
+        multiplexed — one library pools four donors sampled on four different days —
+        so these files also carry ${extra.size <= 6
+          ? [...extra].sort().map(cellLabel).join(", ")
+          : `${extra.size} samples you did not pick`}. Split them by donor with the
+        WGS genotypes and the cell annotations from the analysis-ready set.</div>` : ""}
+      ${state.cells.size && nFinal ? `<div class="bnote">${nFinal}
+        analysis-ready ${nFinal === 1 ? "file spans" : "files span"} the whole time
+        course and every donor, so ${nFinal === 1 ? "it is" : "they are"} included in
+        full rather than cut to the samples you picked.</div>` : ""}
+      ${libTable}
+      ${codeBlock(`# after saving urls.txt next to this shell\nxargs -n1 -P4 curl -fL -C - -O --retry 3 < igvf-${slug}-urls.txt`,
                   "download in four parallel streams")}
       <details class="bfiles">
-        <summary>${num(files.length)} files</summary>
+        <summary>${num(picked.length)} files</summary>
         <div class="scroller"><table class="ftable">
           <thead><tr><th>Accession</th><th>Tier</th><th>File type</th><th>Format</th>
             <th>Size</th><th>Set</th><th></th></tr></thead>
-          <tbody>${files.slice(0, 400).map((f) => `<tr>
+          <tbody>${picked.slice(0, 400).map((f) => `<tr>
             <td class="acc"><a href="${esc(f.download)}">${esc(f.accession)}</a></td>
             <td>${esc(TIER_LABEL[f.tier])}</td>
             <td class="ct">${esc(f.content_type)}</td>
@@ -789,31 +769,55 @@ function renderBuilder(d, index) {
             <td class="act"><a class="dbtn" href="${esc(f.download)}">↓</a></td>
           </tr>`).join("")}</tbody>
         </table></div>
-        ${files.length > 400 ? `<p class="muted">Showing the first 400 of
-          ${num(files.length)}; the manifest and scripts include all of them.</p>` : ""}
+        ${picked.length > 400 ? `<p class="muted">Showing the first 400 of
+          ${num(picked.length)}; the manifest and scripts include all of them.</p>` : ""}
       </details>`;
   }
 
+  function draw() {
+    const tally = cellTally();
+    const picked = selected();
+    drawGrid(tally);
+    drawFacets(tally);
+    drawBar(picked);
+    drawOut(picked);
+  }
+
+  /* Everything that changes the selection is a button carrying data-g (which
+     dimension) and data-k (which term), so the matrix, the sidebar and the
+     pills all go through one path. */
+  const toggle = (set, k) => { if (set.has(k)) set.delete(k); else set.add(k); };
+  const toggleCells = (keys) => {
+    const on = keys.every((k) => state.cells.has(k));
+    keys.forEach((k) => on ? state.cells.delete(k) : state.cells.add(k));
+  };
+  const rowKeys = (dn) => days.filter((dy) => has(dn, dy)).map((dy) => `${dn}:${dy}`);
+  const colKeys = (dy) => donors.filter((dn) => has(dn, +dy)).map((dn) => `${dn}:${dy}`);
+
   root.addEventListener("click", (e) => {
-    const b = e.target.closest(".chip");
-    if (!b) return;
-    const k = b.dataset.k;
-    const group = b.closest(".chips").id;
-    if (group === "b-set") {
-      state.set = k;
-      state.types.clear(); state.days.clear(); state.donors.clear();
-    } else {
-      const s = { "b-tier": state.tiers, "b-type": state.types,
-                  "b-day": state.days, "b-donor": state.donors }[group];
-      if (s.has(k)) s.delete(k); else s.add(k);
-      if (group === "b-tier") {
-        if (!state.tiers.size) state.tiers.add(k);   // never empty
-        state.types.clear();
-        if (![...state.tiers].some((t) => t !== "analysis-ready")) {
-          state.days.clear();                        // filters just hidden
-          state.donors.clear();
-        }
-      }
+    const t = e.target.closest("[data-g],[data-k],[data-donor],[data-day],"
+      + "#b-allcells,#b-nocells,#b-clear");
+    if (!t) return;
+    const k = t.dataset.k;
+
+    if (t.id === "b-allcells") gridCells.forEach((c) => state.cells.add(c));
+    else if (t.id === "b-nocells") state.cells.clear();
+    else if (t.id === "b-clear") {
+      state.cells.clear(); state.sets.clear(); state.types.clear();
+      state.tiers.clear(); state.tiers.add("processed");
+    } else if (t.dataset.donor) toggleCells(rowKeys(t.dataset.donor));
+    else if (t.dataset.day) toggleCells(colKeys(t.dataset.day));
+    else switch (t.dataset.g) {
+      case "cell":  toggleCells([k]); break;
+      case "cells": state.cells.clear(); break;      // the "N samples" pill
+      case "donor": toggleCells(rowKeys(k)); break;
+      case "day":   toggleCells(colKeys(k)); break;
+      case "set":   toggle(state.sets, k); break;
+      case "type":  toggle(state.types, k); break;
+      case "tier":
+        toggle(state.tiers, k);
+        state.types.clear();            // file types are tier-specific
+        break;
     }
     draw();
   });
@@ -829,7 +833,6 @@ Promise.all([
   renderFigure();
   renderTiers(d);
   renderReady(d);
-  renderDonorDays(d, index);
   renderBulk(d);
   renderBuilder(d, index);
   document.getElementById("gen-date").textContent = d.generated;

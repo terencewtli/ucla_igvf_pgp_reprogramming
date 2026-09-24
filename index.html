@@ -31,9 +31,9 @@
 <nav class="nav">
   <div class="wrap">
     <span class="brand">Epigenomic heterogeneity in human reprogramming</span>
+    <a class="navlink" href="#get">Get the data</a>
     <a class="navlink" href="#summary">Summary</a>
-    <a class="navlink" href="#data">Data</a>
-    <a class="navlink" href="#download">Download</a>
+    <a class="navlink" href="#download">All files</a>
   </div>
 </nav>
 
@@ -78,95 +78,96 @@
     </details>
 
     <div class="links">
-      <a class="btn primary" href="#download"><span class="ic">↓</span> Download the data</a>
+      <a class="btn primary" href="#get"><span class="ic">↓</span> Download the data</a>
       <a class="btn" href="#" aria-disabled="true"><span class="ic">▤</span> Preprint</a>
       <a class="btn" href="https://data.igvf.org/search/?type=AnalysisSet&amp;file_set_type=principal+analysis&amp;award.component=networks&amp;lab.title=Chongyuan+Luo%2C+UCLA&amp;lab.title=Kathrin+Plath%2C+UCLA" target="_blank" rel="noopener"><span class="ic">⬢</span> IGVF portal</a>
     </div>
   </div>
 </header>
 
+<!-- ===================================================== get the data -->
+<!-- First on the page: the critique the page exists to answer is "how do I get
+     the files for one donor at one time point", so the builder leads and every
+     other section folds away. -->
+<section id="get">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Get the data</h2>
+      <p>Click a series of things to define a set: samples on the grid — C29 day 0,
+         C29 day 1, … C37 day 0 — narrowed by modality, tier and file type on the left.
+         Every filter is optional and leaving one alone means all of it. You get back a
+         URL list, a ready-to-run script or a manifest; it is all computed in your
+         browser from <code>data/files.json</code> and nothing is sent anywhere.</p>
+    </div>
+    <div id="builder"></div>
+  </div>
+</section>
+
 <!-- ===================================================== summary -->
 <section id="summary">
   <div class="wrap">
-    <div class="sec-head"><h2>Summary</h2></div>
-
-    <p class="lede">
-      Fibroblasts from four individuals were reprogrammed to induced pluripotent stem cells and
-      sampled at up to 11 time points. Cells were profiled for single-nucleus gene expression and
-      chromatin accessibility (10x Multiome), DNA methylation with transcriptome (snMCT-seq), and DNA
-      methylation with 3D genome organization (snM3C-seq). Highly multiplexed spatial
-      transcriptomics (CosMx) was performed on selected time points, and each donor was
-      whole-genome sequenced.
-    </p>
-
-    <div id="fig1"></div>
+    <details class="fold" open>
+      <summary><h2>Summary</h2><span class="foldhint">the study</span></summary>
+      <div class="foldbody">
+        <p class="lede">
+          Fibroblasts from four individuals were reprogrammed to induced pluripotent stem cells and
+          sampled at up to 11 time points. Cells were profiled for single-nucleus gene expression and
+          chromatin accessibility (10x Multiome), DNA methylation with transcriptome (snMCT-seq), and DNA
+          methylation with 3D genome organization (snM3C-seq). Highly multiplexed spatial
+          transcriptomics (CosMx) was performed on selected time points, and each donor was
+          whole-genome sequenced.
+        </p>
+        <div id="fig1"></div>
+      </div>
+    </details>
   </div>
 </section>
 
 <!-- ===================================================== data -->
 <section id="data">
   <div class="wrap">
-    <div class="sec-head">
-      <h2>Data</h2>
-      <p>Raw/processed data is deposited on the IGVF portal and publicly released. The five
-         principal analysis sets below are post-QC, and we provide download links for all
-         raw/intermediate files used to generate them.</p>
-    </div>
+    <details class="fold">
+      <summary><h2>How the data is organised</h2><span class="foldhint">three tiers, five modalities</span></summary>
+      <div class="foldbody">
+        <p class="foldlede">Raw/processed data is deposited on the IGVF portal and publicly released.
+           The five principal analysis sets below are post-QC, and we provide download links for all
+           raw/intermediate files used to generate them.</p>
 
-    <div class="flow">
-      <b>Raw</b> <span>measurement sets — FASTQ + seqspec</span>
-      <span class="arw">→</span>
-      <b>Processed</b> <span>intermediate analysis sets — alignments, matrices, fragments</span>
-      <span class="arw">→</span>
-      <b>Analysis-ready</b> <span>principal analysis sets — final matrices + cell annotations</span>
-    </div>
+        <div class="flow">
+          <b>Raw</b> <span>measurement sets — FASTQ + seqspec</span>
+          <span class="arw">→</span>
+          <b>Processed</b> <span>intermediate analysis sets — alignments, matrices, fragments</span>
+          <span class="arw">→</span>
+          <b>Analysis-ready</b> <span>principal analysis sets — final matrices + cell annotations</span>
+        </div>
 
-    <div class="scroller"><div class="tiers" id="tiers"></div></div>
-
+        <div class="scroller"><div class="tiers" id="tiers"></div></div>
+      </div>
+    </details>
   </div>
 </section>
 
-<!-- ===================================================== download -->
+<!-- ===================================================== the other ways in -->
 <section id="download">
   <div class="wrap">
-    <div class="sec-head">
-      <h2>Download</h2>
-    </div>
+    <details class="fold">
+      <summary><h2>Analysis-ready files</h2>
+        <span class="foldhint">final per-modality outputs · <span id="ar-count">—</span></span></summary>
+      <div class="foldbody">
+        <p class="foldlede">Grouped by file type, one click per file.</p>
+        <div id="ready"></div>
+      </div>
+    </details>
 
-    <!-- 1. analysis-ready: every file, by type, with a real download link -->
-    <div class="sec-head sub">
-      <h3>Analysis-ready files</h3>
-      <p>The final per-modality outputs: <span id="ar-count">—</span>. Grouped by file type, one
-         click per file.</p>
-    </div>
-    <div id="ready"></div>
-
-    <!-- 2. by donor and time point -->
-    <div class="sec-head sub" style="margin-top:44px">
-      <h3>Files by donor and time point</h3>
-      <p>Every sample in the study as a donor × reprogramming-day grid. Click a cell —
-         C29 day 0, C29 day 1, … C37 day 0 — for its files in every modality that
-         profiled it; click more cells to add them, or a donor or day label to take a
-         whole row or column.</p>
-    </div>
-    <div id="bydonor"></div>
-
-    <!-- 3. processed + raw: bulk, by type -->
-    <div class="sec-head sub" style="margin-top:44px">
-      <h3>Processed and raw files, by type</h3>
-      <p>Each row gives you a manifest — a TSV with one row per file including its
-         download URL, size and md5.</p>
-    </div>
-    <div id="bulk"></div>
-
-    <!-- 4. the builder -->
-    <div class="sec-head sub" style="margin-top:44px">
-      <h3>Build a download set</h3>
-      <p>Pick a modality, tier, file types and time points; get back a URL list or a ready-to-run
-         script. Everything is computed in your browser from
-         <code>data/files.json</code> — nothing is sent anywhere.</p>
-    </div>
-    <div id="builder"></div>
+    <details class="fold">
+      <summary><h2>Processed and raw files, by type</h2>
+        <span class="foldhint">whole-tier manifests</span></summary>
+      <div class="foldbody">
+        <p class="foldlede">Each row gives you a manifest — a TSV with one row per file including its
+           download URL, size and md5.</p>
+        <div id="bulk"></div>
+      </div>
+    </details>
   </div>
 </section>
 

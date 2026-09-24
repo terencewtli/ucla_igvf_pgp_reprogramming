@@ -10,8 +10,8 @@ with all content driven by generated JSON. Light theme only.
 ```
 index.html              page shell
 css/style.css           all styling
-js/app.js               renders the figure, data tiers, download tables,
-                        the donor x time point grid and the download builder
+js/app.js               renders the faceted browser (the main tool), plus the
+                        figure, data tiers and the download tables
 img/                    UCLA and IGVF logos (trimmed from ../misc/)
 figures/fig1.png        Figure 1, full render, 5,861 px wide (800 DPI)
 figures/fig1-{1600,2400,3200}.png   responsive set used inline
@@ -48,8 +48,9 @@ It is the check to run if the IGVF portal changes its search or download routes.
 
 ## Editing the page by hand
 
-Prose lives in `index.html` — the summary, each section's
-heading and intro paragraph. Edit it directly; there is no templating.
+Prose lives in `index.html` — the summary, each section's heading and intro
+paragraph, and which sections start folded open (`<details class="fold" open>`).
+Edit it directly; there is no templating.
 
 Anything that reports a number, a file or an accession is generated in
 `js/app.js` from `data/*.json`, so edit the renderer (or the `BLURB`/note text
@@ -87,36 +88,41 @@ snM3C-seq and WGS are one donor and one day per library; the spatial slides are
 pooled sections at one day. `build/fetch_igvf.py` derives this from the portal's
 own sample summaries — see `donor_days()`.
 
-## Donor and time point
+## The faceted browser
 
-"Files by donor and time point" (`renderDonorDays` in `js/app.js`) is a
-donor × reprogramming-day grid — 44 samples across the 4 manuscript lines and 12
-days. A cell selects one sample and hands back every processed and raw file for
-it, in every modality, as urls.txt, a curl or aws script, or a manifest.
+"Get the data" (`renderBuilder` in `js/app.js`) is the page's centrepiece and its
+first section: filters down the left, a donor x reprogramming-day matrix and the
+result on the right, after the ENCODE matrix pages. Four dimensions —
+**sample x modality x tier x file type** — each optional, each empty meaning all,
+every facet term carrying the count it would yield. The result is a URL list, a
+curl or aws script, or a manifest, built in the browser.
 
-The grid shows only the four reprogramming lines. A8 is excluded — it is not a
-manuscript line, it appears only in the two pilot spatial runs, and it has a
-single time point, so it would add a near-empty row plus a day-30 column of its
-own. `DONOR_NOTES` in `fetch_igvf.py` is what decides this, via the
-`in_manuscript` flag on each donor in `filesets.json`; A8's files stay reachable
-from the by-type section and the builder below.
+Everything else on the page folds away (`<details class="fold">`), so the page
+opens on the tool rather than on prose. Summary is open by default; the tier
+table, the analysis-ready list and the by-type manifests start closed.
 
-It keys on **(donor, day) pairs, not the cross product** of a file's donor and
-day lists. The distinction only matters for the Multiome libraries, and there it
-matters completely: `IGVFDS3826NTFN` carries C29, C37, C38 and C39 *and* days 0,
-1, 3 and 5, but what it actually holds is C29 at day 0, C37 at day 1, C38 at day
-3 and C39 at day 5. Crossing the two lists would offer it for twelve samples it
-does not contain. The pairs come from `describe_group()` as `donor_day_keys`,
-and ride on every file record as the `donor_days` column of `files.json` and of
-the manifest TSVs.
+The sample axis keys on **(donor, day) pairs, not the cross product** of a file's
+donor and day lists. The distinction only matters for the Multiome libraries, and
+there it matters completely: `IGVFDS3826NTFN` carries C29, C37, C38 and C39 *and*
+days 0, 1, 3 and 5, but what it holds is C29 at day 0, C37 at day 1, C38 at day 3
+and C39 at day 5. Crossing the two lists would offer it for twelve samples it does
+not contain. The pairs come from `describe_group()` as `donor_day_keys`, and ride
+on every file record as the `donor_days` column of `files.json` and of the
+manifest TSVs.
 
-Two consequences the page states on screen:
+Three rules the UI states on screen rather than hiding:
 
 * Selecting one donor-day of a pooled Multiome library still downloads the whole
   library, so the panel lists what else is in it and links the WGS genotypes.
-* Analysis-ready files are left out of the grid — each one spans the whole time
-  course and every donor, so there is no honest way to cut it to one sample.
-  They stay in "Analysis-ready files" above.
+* **Analysis-ready files are never cut by sample.** Each is one matrix over the
+  whole study, so the sample filter does not apply to them; they join a selection
+  whole, and the panel says so. This is why the browser opens on the Processed
+  tier — opening on analysis-ready would show a matrix of dashes.
+* The matrix shows only the four manuscript lines. A8 is excluded — not a
+  manuscript line, pilot spatial runs only, one time point, so it would add a
+  near-empty row and a day-30 column of its own. `DONOR_NOTES` in
+  `fetch_igvf.py` decides this via the `in_manuscript` flag on each donor;
+  A8's files stay reachable from the by-type section.
 
 ## Preview locally
 

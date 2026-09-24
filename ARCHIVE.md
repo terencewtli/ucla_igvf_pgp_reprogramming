@@ -40,6 +40,23 @@ Starting point: commit **`4ab8e8d`**.
 |---|---|
 | **Note on the spatial set**: IGVFDS6501PVZQ bundles two pilot runs and the main run (C29, C38); donor A8 is from the pilots only. This was the last page note, so the notes slot is gone too. | `js/app.js` `renderNotes()`, `index.html` `#notes` |
 
+## Restructured 2026-09-23
+
+Starting point: commit **`399de12`**.
+
+The donor x time point grid and the standalone "Build a download set" were merged
+into one faceted browser ("Get the data"), moved to the top of the page as its
+first section, and every other section was wrapped in `<details class="fold">`.
+Nothing was deleted: the grid and the builder both live on inside
+`renderBuilder`, and the analysis-ready, by-type and tier sections are all still
+there, just folded. The page-order before the merge is at `399de12`.
+
+| Gone | Where it lived at `399de12` |
+|---|---|
+| **`renderDonorDays`** — the standalone donor x day section with its own output panel | `js/app.js`, `index.html` `#bydonor`, CSS `.ddwrap` |
+| **Horizontal chip rows** (`.brow`/`.chips`/`.chip`, `Modality` as a single-select) — replaced by the sidebar facets, which are multi-select | `js/app.js` `renderBuilder`, CSS `.builder`, `.brow`, `.blbl`, `.chip` |
+| **`Download` section heading** — the three subsections it held are now top-level folds | `index.html` `#download .sec-head` |
+
 ## Restoring
 
 Use `0984cf7` for the first pass, `e0c5df4` for the second and `4ab8e8d` for the third. View the old page:
