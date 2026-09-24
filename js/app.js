@@ -281,17 +281,22 @@ function renderDonorDays(d, index) {
     }
   }
 
+  const nameOf = {};
+  for (const m of Object.values(d.donor_meta || {})) nameOf[m.name] = m;
+
+  /* The four reprogramming lines the study follows. A8 is excluded: it is not a
+     manuscript line, it appears only in the two pilot spatial runs, and it has a
+     single time point, so it would add a near-empty row and a day-30 column to
+     the grid. Its files stay reachable from the sections below. */
   const donors = [...new Set([...cellFiles.keys()].map((k) => k.split(":")[0]))]
-    // The C-lines are the manuscript's four; A8 appears only in the spatial pilots.
-    .sort((a, b) => (a[0] === "C" ? 0 : 1) - (b[0] === "C" ? 0 : 1) ||
-                    a.localeCompare(b));
+    .filter((dn) => nameOf[dn]?.in_manuscript !== false)
+    .sort();
+  for (const k of [...cellFiles.keys()])
+    if (!donors.includes(k.split(":")[0])) cellFiles.delete(k);
   const days = [...new Set([...cellFiles.keys()].map((k) => +k.split(":")[1]))]
     .sort((a, b) => a - b);
   const setsOf = (k) => [...new Set((cellFiles.get(k) || []).map((f) => f.set))];
   const has = (dn, dy) => cellFiles.has(`${dn}:${dy}`);
-
-  const nameOf = {};
-  for (const m of Object.values(d.donor_meta || {})) nameOf[m.name] = m;
 
   const state = { cells: new Set(["C29:0"]), tiers: new Set(["processed"]) };
 

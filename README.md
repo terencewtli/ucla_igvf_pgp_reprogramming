@@ -90,9 +90,16 @@ own sample summaries — see `donor_days()`.
 ## Donor and time point
 
 "Files by donor and time point" (`renderDonorDays` in `js/app.js`) is a
-donor × reprogramming-day grid — 45 samples across 5 donors and 13 days. A cell
-selects one sample and hands back every processed and raw file for it, in every
-modality, as urls.txt, a curl or aws script, or a manifest.
+donor × reprogramming-day grid — 44 samples across the 4 manuscript lines and 12
+days. A cell selects one sample and hands back every processed and raw file for
+it, in every modality, as urls.txt, a curl or aws script, or a manifest.
+
+The grid shows only the four reprogramming lines. A8 is excluded — it is not a
+manuscript line, it appears only in the two pilot spatial runs, and it has a
+single time point, so it would add a near-empty row plus a day-30 column of its
+own. `DONOR_NOTES` in `fetch_igvf.py` is what decides this, via the
+`in_manuscript` flag on each donor in `filesets.json`; A8's files stay reachable
+from the by-type section and the builder below.
 
 It keys on **(donor, day) pairs, not the cross product** of a file's donor and
 day lists. The distinction only matters for the Multiome libraries, and there it

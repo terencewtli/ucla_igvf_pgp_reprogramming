@@ -58,6 +58,9 @@ DONOR_NOTES = {
     "A8": ("not in manuscript", "pilot spatial runs only"),
 }
 
+# The four reprogramming lines the study follows through the time course.
+MANUSCRIPT_DONORS = ["C29", "C37", "C38", "C39"]
+
 MODALITY = {
     "IGVFDS3268OMJN": ("10x Multiome", "snRNA + snATAC", 1),
     "IGVFDS9439VWMI": ("snMCT-seq",    "snRNA + mC",     2),
@@ -361,6 +364,10 @@ def main():
             "sex": rec.get("sex"),
             "efficiency": eff,
             "note": note,
+            # A8 is not a manuscript line: it appears only in the two pilot
+            # spatial runs. The donor-and-timepoint grid shows the four
+            # reprogramming lines and leaves it out.
+            "in_manuscript": alias in MANUSCRIPT_DONORS,
             "portal": f"https://data.igvf.org/human-donors/{acc}/",
         }
     name_of = {a: m["name"] for a, m in donors_meta.items()}

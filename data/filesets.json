@@ -14,6 +14,7 @@
       "sex": "male",
       "efficiency": "inefficient",
       "note": "",
+      "in_manuscript": true,
       "portal": "https://data.igvf.org/human-donors/IGVFDO0351NYZH/"
     },
     "IGVFDO2328XGNY": {
@@ -22,6 +23,7 @@
       "sex": "male",
       "efficiency": "inefficient",
       "note": "profiled in all five modalities",
+      "in_manuscript": true,
       "portal": "https://data.igvf.org/human-donors/IGVFDO2328XGNY/"
     },
     "IGVFDO3754NCBP": {
@@ -30,6 +32,7 @@
       "sex": "male",
       "efficiency": "efficient",
       "note": "profiled in all five modalities",
+      "in_manuscript": true,
       "portal": "https://data.igvf.org/human-donors/IGVFDO3754NCBP/"
     },
     "IGVFDO4068JJIT": {
@@ -38,6 +41,7 @@
       "sex": "female",
       "efficiency": "efficient",
       "note": "",
+      "in_manuscript": true,
       "portal": "https://data.igvf.org/human-donors/IGVFDO4068JJIT/"
     },
     "IGVFDO3565PTIO": {
@@ -46,6 +50,7 @@
       "sex": "female",
       "efficiency": "not in manuscript",
       "note": "pilot spatial runs only",
+      "in_manuscript": false,
       "portal": "https://data.igvf.org/human-donors/IGVFDO3565PTIO/"
     }
   },
