@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-17",
+  "generated": "2026-09-23",
   "donors": [
     "IGVFDO0351NYZH",
     "IGVFDO2328XGNY",
@@ -115,6 +115,48 @@
             16,
             18
           ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C37:14",
+            "C37:16",
+            "C37:18",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C38:14",
+            "C38:16",
+            "C38:18",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
+          ],
           "mux": true
         },
         {
@@ -149,6 +191,48 @@
             14,
             16,
             18
+          ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C37:14",
+            "C37:16",
+            "C37:18",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C38:14",
+            "C38:16",
+            "C38:18",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
           ],
           "mux": true
         },
@@ -185,6 +269,48 @@
             16,
             18
           ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C37:14",
+            "C37:16",
+            "C37:18",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C38:14",
+            "C38:16",
+            "C38:18",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
+          ],
           "mux": true
         },
         {
@@ -219,6 +345,48 @@
             14,
             16,
             18
+          ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C37:14",
+            "C37:16",
+            "C37:18",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C38:14",
+            "C38:16",
+            "C38:18",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
           ],
           "mux": true
         },
@@ -255,6 +423,48 @@
             16,
             18
           ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C37:14",
+            "C37:16",
+            "C37:18",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C38:14",
+            "C38:16",
+            "C38:18",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
+          ],
           "mux": true
         },
         {
@@ -290,6 +500,48 @@
             16,
             18
           ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C37:14",
+            "C37:16",
+            "C37:18",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C38:14",
+            "C38:16",
+            "C38:18",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
+          ],
           "mux": true
         },
         {
@@ -324,6 +576,48 @@
             14,
             16,
             18
+          ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C37:14",
+            "C37:16",
+            "C37:18",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C38:14",
+            "C38:16",
+            "C38:18",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
           ],
           "mux": true
         }
@@ -504,8 +798,18 @@
                 "day": 5
               }
             ],
+            "donor_day_keys": [
+              "C29:0",
+              "C37:1",
+              "C38:3",
+              "C39:5"
+            ],
             "multiplexed": true,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS3063GOYX",
+              "IGVFDS1459GLSU"
+            ],
             "n_files": 8,
             "bytes": 66093331864,
             "raw_files": 17,
@@ -547,8 +851,18 @@
                 "day": 3
               }
             ],
+            "donor_day_keys": [
+              "C29:7",
+              "C37:0",
+              "C38:1",
+              "C39:3"
+            ],
             "multiplexed": true,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS1157ISDS",
+              "IGVFDS3441CZQC"
+            ],
             "n_files": 8,
             "bytes": 82195450013,
             "raw_files": 17,
@@ -590,8 +904,18 @@
                 "day": 1
               }
             ],
+            "donor_day_keys": [
+              "C29:5",
+              "C37:7",
+              "C38:0",
+              "C39:1"
+            ],
             "multiplexed": true,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS8008ALDH",
+              "IGVFDS6282JZAK"
+            ],
             "n_files": 8,
             "bytes": 71180812318,
             "raw_files": 17,
@@ -633,8 +957,18 @@
                 "day": 0
               }
             ],
+            "donor_day_keys": [
+              "C29:3",
+              "C37:5",
+              "C38:7",
+              "C39:0"
+            ],
             "multiplexed": true,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS1744AXNS",
+              "IGVFDS9237LVHW"
+            ],
             "n_files": 8,
             "bytes": 81077149689,
             "raw_files": 17,
@@ -676,8 +1010,18 @@
                 "day": 7
               }
             ],
+            "donor_day_keys": [
+              "C29:1",
+              "C37:3",
+              "C38:5",
+              "C39:7"
+            ],
             "multiplexed": true,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS4458BDLN",
+              "IGVFDS2231YIUR"
+            ],
             "n_files": 8,
             "bytes": 84012770048,
             "raw_files": 17,
@@ -719,8 +1063,18 @@
                 "day": 16
               }
             ],
+            "donor_day_keys": [
+              "C29:9",
+              "C37:12",
+              "C38:14",
+              "C39:16"
+            ],
             "multiplexed": true,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS8285DFYN",
+              "IGVFDS3717ZQOY"
+            ],
             "n_files": 8,
             "bytes": 77847283970,
             "raw_files": 17,
@@ -762,8 +1116,18 @@
                 "day": 14
               }
             ],
+            "donor_day_keys": [
+              "C29:18",
+              "C37:9",
+              "C38:12",
+              "C39:14"
+            ],
             "multiplexed": true,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS9374IPYD",
+              "IGVFDS4275VNMS"
+            ],
             "n_files": 8,
             "bytes": 90762046850,
             "raw_files": 17,
@@ -805,8 +1169,18 @@
                 "day": 12
               }
             ],
+            "donor_day_keys": [
+              "C29:16",
+              "C37:18",
+              "C38:9",
+              "C39:12"
+            ],
             "multiplexed": true,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS4662AALG",
+              "IGVFDS9564UMAZ"
+            ],
             "n_files": 8,
             "bytes": 97803320868,
             "raw_files": 17,
@@ -848,8 +1222,18 @@
                 "day": 9
               }
             ],
+            "donor_day_keys": [
+              "C29:14",
+              "C37:16",
+              "C38:18",
+              "C39:9"
+            ],
             "multiplexed": true,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS2539NGEA",
+              "IGVFDS1708HBUM"
+            ],
             "n_files": 8,
             "bytes": 82973638101,
             "raw_files": 17,
@@ -891,8 +1275,18 @@
                 "day": 18
               }
             ],
+            "donor_day_keys": [
+              "C29:12",
+              "C37:14",
+              "C38:16",
+              "C39:18"
+            ],
             "multiplexed": true,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS0328BSUV",
+              "IGVFDS8199DMOG"
+            ],
             "n_files": 8,
             "bytes": 86549130331,
             "raw_files": 17,
@@ -1015,6 +1409,42 @@
             16,
             18
           ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
+          ],
           "mux": false
         },
         {
@@ -1049,6 +1479,42 @@
             14,
             16,
             18
+          ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
           ],
           "mux": false
         },
@@ -1085,6 +1551,42 @@
             16,
             18
           ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
+          ],
           "mux": false
         },
         {
@@ -1120,6 +1622,42 @@
             16,
             18
           ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
+          ],
           "mux": false
         },
         {
@@ -1154,6 +1692,42 @@
             14,
             16,
             18
+          ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
           ],
           "mux": false
         }
@@ -1316,8 +1890,14 @@
                 "day": 0
               }
             ],
+            "donor_day_keys": [
+              "C29:0"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS8144USAL"
+            ],
             "n_files": 7,
             "bytes": 53825349422,
             "raw_files": 8,
@@ -1341,8 +1921,14 @@
                 "day": 0
               }
             ],
+            "donor_day_keys": [
+              "C37:0"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS6281FISI"
+            ],
             "n_files": 7,
             "bytes": 58819326688,
             "raw_files": 8,
@@ -1366,8 +1952,14 @@
                 "day": 0
               }
             ],
+            "donor_day_keys": [
+              "C38:0"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS0606THGC"
+            ],
             "n_files": 7,
             "bytes": 64829997165,
             "raw_files": 8,
@@ -1391,8 +1983,14 @@
                 "day": 0
               }
             ],
+            "donor_day_keys": [
+              "C39:0"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS2552IDIF"
+            ],
             "n_files": 7,
             "bytes": 52107933371,
             "raw_files": 8,
@@ -1416,8 +2014,14 @@
                 "day": 1
               }
             ],
+            "donor_day_keys": [
+              "C29:1"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS4826YNLK"
+            ],
             "n_files": 7,
             "bytes": 58051350323,
             "raw_files": 8,
@@ -1441,8 +2045,14 @@
                 "day": 1
               }
             ],
+            "donor_day_keys": [
+              "C37:1"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS9857AQIO"
+            ],
             "n_files": 7,
             "bytes": 65500550198,
             "raw_files": 8,
@@ -1466,8 +2076,14 @@
                 "day": 1
               }
             ],
+            "donor_day_keys": [
+              "C38:1"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS8365ZNKH"
+            ],
             "n_files": 7,
             "bytes": 52579301048,
             "raw_files": 8,
@@ -1491,8 +2107,14 @@
                 "day": 1
               }
             ],
+            "donor_day_keys": [
+              "C39:1"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS4550ZOKS"
+            ],
             "n_files": 7,
             "bytes": 62201923227,
             "raw_files": 8,
@@ -1516,8 +2138,14 @@
                 "day": 3
               }
             ],
+            "donor_day_keys": [
+              "C29:3"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS0174SXAX"
+            ],
             "n_files": 7,
             "bytes": 67399554449,
             "raw_files": 8,
@@ -1541,8 +2169,14 @@
                 "day": 3
               }
             ],
+            "donor_day_keys": [
+              "C37:3"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS3304YLTM"
+            ],
             "n_files": 7,
             "bytes": 66529689439,
             "raw_files": 8,
@@ -1566,8 +2200,14 @@
                 "day": 3
               }
             ],
+            "donor_day_keys": [
+              "C38:3"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS0017MVPN"
+            ],
             "n_files": 7,
             "bytes": 62797081430,
             "raw_files": 8,
@@ -1591,8 +2231,14 @@
                 "day": 3
               }
             ],
+            "donor_day_keys": [
+              "C39:3"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS7889GEQS"
+            ],
             "n_files": 7,
             "bytes": 63082577608,
             "raw_files": 8,
@@ -1616,8 +2262,14 @@
                 "day": 5
               }
             ],
+            "donor_day_keys": [
+              "C29:5"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS4753QHJH"
+            ],
             "n_files": 7,
             "bytes": 55711105249,
             "raw_files": 8,
@@ -1641,8 +2293,14 @@
                 "day": 5
               }
             ],
+            "donor_day_keys": [
+              "C37:5"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS0268SPTG"
+            ],
             "n_files": 7,
             "bytes": 55925581916,
             "raw_files": 8,
@@ -1666,8 +2324,14 @@
                 "day": 5
               }
             ],
+            "donor_day_keys": [
+              "C38:5"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS9238PCPJ"
+            ],
             "n_files": 7,
             "bytes": 48735740554,
             "raw_files": 8,
@@ -1691,8 +2355,14 @@
                 "day": 5
               }
             ],
+            "donor_day_keys": [
+              "C39:5"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS8414QFVF"
+            ],
             "n_files": 7,
             "bytes": 58213418409,
             "raw_files": 8,
@@ -1716,8 +2386,14 @@
                 "day": 7
               }
             ],
+            "donor_day_keys": [
+              "C29:7"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS6095UGQM"
+            ],
             "n_files": 7,
             "bytes": 66160894886,
             "raw_files": 8,
@@ -1741,8 +2417,14 @@
                 "day": 7
               }
             ],
+            "donor_day_keys": [
+              "C37:7"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS5116RXOC"
+            ],
             "n_files": 7,
             "bytes": 64723061762,
             "raw_files": 8,
@@ -1766,8 +2448,14 @@
                 "day": 7
               }
             ],
+            "donor_day_keys": [
+              "C38:7"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS4090VRQX"
+            ],
             "n_files": 7,
             "bytes": 63017798874,
             "raw_files": 8,
@@ -1791,8 +2479,14 @@
                 "day": 7
               }
             ],
+            "donor_day_keys": [
+              "C39:7"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS5388FFIX"
+            ],
             "n_files": 7,
             "bytes": 62019623652,
             "raw_files": 8,
@@ -1816,8 +2510,14 @@
                 "day": 9
               }
             ],
+            "donor_day_keys": [
+              "C29:9"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS3795XIJK"
+            ],
             "n_files": 7,
             "bytes": 56313461843,
             "raw_files": 8,
@@ -1841,8 +2541,14 @@
                 "day": 9
               }
             ],
+            "donor_day_keys": [
+              "C37:9"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS9193ENEI"
+            ],
             "n_files": 7,
             "bytes": 64885260521,
             "raw_files": 8,
@@ -1866,8 +2572,14 @@
                 "day": 9
               }
             ],
+            "donor_day_keys": [
+              "C38:9"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS1293SYJM"
+            ],
             "n_files": 7,
             "bytes": 54005887349,
             "raw_files": 8,
@@ -1891,8 +2603,14 @@
                 "day": 9
               }
             ],
+            "donor_day_keys": [
+              "C39:9"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS2095EPAX"
+            ],
             "n_files": 7,
             "bytes": 47756966373,
             "raw_files": 8,
@@ -1916,8 +2634,14 @@
                 "day": 12
               }
             ],
+            "donor_day_keys": [
+              "C29:12"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS5782BLYM"
+            ],
             "n_files": 7,
             "bytes": 60213727265,
             "raw_files": 8,
@@ -1941,8 +2665,14 @@
                 "day": 12
               }
             ],
+            "donor_day_keys": [
+              "C37:12"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS0527PPHQ"
+            ],
             "n_files": 7,
             "bytes": 54002521984,
             "raw_files": 8,
@@ -1966,8 +2696,14 @@
                 "day": 12
               }
             ],
+            "donor_day_keys": [
+              "C38:12"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS5179UOKT"
+            ],
             "n_files": 7,
             "bytes": 59086916049,
             "raw_files": 8,
@@ -1991,8 +2727,14 @@
                 "day": 12
               }
             ],
+            "donor_day_keys": [
+              "C39:12"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS2186PCOF"
+            ],
             "n_files": 7,
             "bytes": 67993293694,
             "raw_files": 8,
@@ -2016,8 +2758,14 @@
                 "day": 14
               }
             ],
+            "donor_day_keys": [
+              "C29:14"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS2660YHFN"
+            ],
             "n_files": 7,
             "bytes": 51845763461,
             "raw_files": 8,
@@ -2041,8 +2789,14 @@
                 "day": 14
               }
             ],
+            "donor_day_keys": [
+              "C39:14"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS8308NSRV"
+            ],
             "n_files": 7,
             "bytes": 61041354587,
             "raw_files": 8,
@@ -2066,8 +2820,14 @@
                 "day": 16
               }
             ],
+            "donor_day_keys": [
+              "C29:16"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS9519MTBB"
+            ],
             "n_files": 7,
             "bytes": 67629227718,
             "raw_files": 8,
@@ -2091,8 +2851,14 @@
                 "day": 16
               }
             ],
+            "donor_day_keys": [
+              "C39:16"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS6555BIHA"
+            ],
             "n_files": 7,
             "bytes": 58681271876,
             "raw_files": 8,
@@ -2116,8 +2882,14 @@
                 "day": 18
               }
             ],
+            "donor_day_keys": [
+              "C29:18"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS2571VVCI"
+            ],
             "n_files": 7,
             "bytes": 70061082270,
             "raw_files": 8,
@@ -2141,8 +2913,14 @@
                 "day": 18
               }
             ],
+            "donor_day_keys": [
+              "C39:18"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS7181HIBH"
+            ],
             "n_files": 7,
             "bytes": 59214092450,
             "raw_files": 8,
@@ -2271,6 +3049,44 @@
             16,
             18
           ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C37:14",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C38:14",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
+          ],
           "mux": false
         },
         {
@@ -2305,6 +3121,44 @@
             14,
             16,
             18
+          ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C37:14",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C38:14",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
           ],
           "mux": false
         },
@@ -2341,6 +3195,44 @@
             16,
             18
           ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C37:14",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C38:14",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
+          ],
           "mux": false
         },
         {
@@ -2375,6 +3267,44 @@
             14,
             16,
             18
+          ],
+          "donor_days": [
+            "C29:0",
+            "C29:1",
+            "C29:3",
+            "C29:5",
+            "C29:7",
+            "C29:9",
+            "C29:12",
+            "C29:14",
+            "C29:16",
+            "C29:18",
+            "C37:0",
+            "C37:1",
+            "C37:3",
+            "C37:5",
+            "C37:7",
+            "C37:9",
+            "C37:12",
+            "C37:14",
+            "C38:0",
+            "C38:1",
+            "C38:3",
+            "C38:5",
+            "C38:7",
+            "C38:9",
+            "C38:12",
+            "C38:14",
+            "C39:0",
+            "C39:1",
+            "C39:3",
+            "C39:5",
+            "C39:7",
+            "C39:9",
+            "C39:12",
+            "C39:14",
+            "C39:16",
+            "C39:18"
           ],
           "mux": false
         }
@@ -2547,8 +3477,14 @@
                 "day": 0
               }
             ],
+            "donor_day_keys": [
+              "C29:0"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS3330GATY"
+            ],
             "n_files": 8,
             "bytes": 73183026881,
             "raw_files": 16,
@@ -2572,8 +3508,14 @@
                 "day": 0
               }
             ],
+            "donor_day_keys": [
+              "C37:0"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS3755JEOE"
+            ],
             "n_files": 8,
             "bytes": 78813821458,
             "raw_files": 16,
@@ -2597,8 +3539,14 @@
                 "day": 0
               }
             ],
+            "donor_day_keys": [
+              "C38:0"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS5562PVFA"
+            ],
             "n_files": 8,
             "bytes": 62565327909,
             "raw_files": 16,
@@ -2622,8 +3570,14 @@
                 "day": 0
               }
             ],
+            "donor_day_keys": [
+              "C39:0"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS8729LTAJ"
+            ],
             "n_files": 8,
             "bytes": 78487757274,
             "raw_files": 16,
@@ -2647,8 +3601,14 @@
                 "day": 1
               }
             ],
+            "donor_day_keys": [
+              "C29:1"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS0357HJRR"
+            ],
             "n_files": 8,
             "bytes": 73388701547,
             "raw_files": 16,
@@ -2672,8 +3632,14 @@
                 "day": 1
               }
             ],
+            "donor_day_keys": [
+              "C37:1"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS5502HMZW"
+            ],
             "n_files": 8,
             "bytes": 82355129506,
             "raw_files": 16,
@@ -2697,8 +3663,14 @@
                 "day": 1
               }
             ],
+            "donor_day_keys": [
+              "C38:1"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS7395LBWF"
+            ],
             "n_files": 8,
             "bytes": 71036817783,
             "raw_files": 16,
@@ -2722,8 +3694,14 @@
                 "day": 1
               }
             ],
+            "donor_day_keys": [
+              "C39:1"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS4418VLDF"
+            ],
             "n_files": 8,
             "bytes": 66993732564,
             "raw_files": 16,
@@ -2747,8 +3725,14 @@
                 "day": 3
               }
             ],
+            "donor_day_keys": [
+              "C29:3"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS0964QENG"
+            ],
             "n_files": 8,
             "bytes": 68306992633,
             "raw_files": 16,
@@ -2772,8 +3756,14 @@
                 "day": 3
               }
             ],
+            "donor_day_keys": [
+              "C37:3"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS6255OZNL"
+            ],
             "n_files": 8,
             "bytes": 69142191508,
             "raw_files": 16,
@@ -2797,8 +3787,14 @@
                 "day": 3
               }
             ],
+            "donor_day_keys": [
+              "C38:3"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS1989TSQP"
+            ],
             "n_files": 8,
             "bytes": 78454740199,
             "raw_files": 16,
@@ -2822,8 +3818,14 @@
                 "day": 3
               }
             ],
+            "donor_day_keys": [
+              "C39:3"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS3823QNVI"
+            ],
             "n_files": 8,
             "bytes": 74476715559,
             "raw_files": 16,
@@ -2847,8 +3849,14 @@
                 "day": 5
               }
             ],
+            "donor_day_keys": [
+              "C29:5"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS1011YMSG"
+            ],
             "n_files": 8,
             "bytes": 68868033082,
             "raw_files": 16,
@@ -2872,8 +3880,14 @@
                 "day": 5
               }
             ],
+            "donor_day_keys": [
+              "C37:5"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS7371DIJR"
+            ],
             "n_files": 8,
             "bytes": 77269947413,
             "raw_files": 16,
@@ -2897,8 +3911,14 @@
                 "day": 5
               }
             ],
+            "donor_day_keys": [
+              "C38:5"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS1811BKZP"
+            ],
             "n_files": 8,
             "bytes": 68403921717,
             "raw_files": 16,
@@ -2922,8 +3942,14 @@
                 "day": 5
               }
             ],
+            "donor_day_keys": [
+              "C39:5"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS2160BCQF"
+            ],
             "n_files": 8,
             "bytes": 125634926334,
             "raw_files": 16,
@@ -2947,8 +3973,14 @@
                 "day": 7
               }
             ],
+            "donor_day_keys": [
+              "C29:7"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS9901QUGC"
+            ],
             "n_files": 8,
             "bytes": 83212533531,
             "raw_files": 16,
@@ -2972,8 +4004,14 @@
                 "day": 7
               }
             ],
+            "donor_day_keys": [
+              "C37:7"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS3140XYDB"
+            ],
             "n_files": 8,
             "bytes": 73342629254,
             "raw_files": 16,
@@ -2997,8 +4035,14 @@
                 "day": 7
               }
             ],
+            "donor_day_keys": [
+              "C38:7"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS4954EITX"
+            ],
             "n_files": 8,
             "bytes": 78517155325,
             "raw_files": 16,
@@ -3022,8 +4066,14 @@
                 "day": 7
               }
             ],
+            "donor_day_keys": [
+              "C39:7"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS4922GNDX"
+            ],
             "n_files": 8,
             "bytes": 65581914250,
             "raw_files": 16,
@@ -3047,8 +4097,14 @@
                 "day": 9
               }
             ],
+            "donor_day_keys": [
+              "C29:9"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS8972AAEC"
+            ],
             "n_files": 8,
             "bytes": 63550242783,
             "raw_files": 16,
@@ -3072,8 +4128,14 @@
                 "day": 9
               }
             ],
+            "donor_day_keys": [
+              "C37:9"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS6481RUDF"
+            ],
             "n_files": 8,
             "bytes": 61146023750,
             "raw_files": 16,
@@ -3097,8 +4159,14 @@
                 "day": 9
               }
             ],
+            "donor_day_keys": [
+              "C38:9"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS8293KTMP"
+            ],
             "n_files": 8,
             "bytes": 66601859228,
             "raw_files": 16,
@@ -3122,8 +4190,14 @@
                 "day": 9
               }
             ],
+            "donor_day_keys": [
+              "C39:9"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS9196PDRB"
+            ],
             "n_files": 8,
             "bytes": 77956633425,
             "raw_files": 16,
@@ -3147,8 +4221,14 @@
                 "day": 12
               }
             ],
+            "donor_day_keys": [
+              "C29:12"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS7289ZOYE"
+            ],
             "n_files": 8,
             "bytes": 64604836691,
             "raw_files": 16,
@@ -3172,8 +4252,14 @@
                 "day": 12
               }
             ],
+            "donor_day_keys": [
+              "C37:12"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS3086GMBH"
+            ],
             "n_files": 8,
             "bytes": 66695746966,
             "raw_files": 16,
@@ -3197,8 +4283,14 @@
                 "day": 12
               }
             ],
+            "donor_day_keys": [
+              "C38:12"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS6022TZAV"
+            ],
             "n_files": 8,
             "bytes": 75842325597,
             "raw_files": 16,
@@ -3222,8 +4314,14 @@
                 "day": 12
               }
             ],
+            "donor_day_keys": [
+              "C39:12"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS4429VWLZ"
+            ],
             "n_files": 8,
             "bytes": 76964846517,
             "raw_files": 16,
@@ -3247,8 +4345,14 @@
                 "day": 14
               }
             ],
+            "donor_day_keys": [
+              "C29:14"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS6752GRBU"
+            ],
             "n_files": 8,
             "bytes": 82939496688,
             "raw_files": 16,
@@ -3272,8 +4376,14 @@
                 "day": 14
               }
             ],
+            "donor_day_keys": [
+              "C37:14"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS5995LBLA"
+            ],
             "n_files": 8,
             "bytes": 87064417734,
             "raw_files": 16,
@@ -3297,8 +4407,14 @@
                 "day": 14
               }
             ],
+            "donor_day_keys": [
+              "C38:14"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS4538IFHF"
+            ],
             "n_files": 8,
             "bytes": 66130534003,
             "raw_files": 16,
@@ -3322,8 +4438,14 @@
                 "day": 14
               }
             ],
+            "donor_day_keys": [
+              "C39:14"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS7606ECSX"
+            ],
             "n_files": 8,
             "bytes": 70050649573,
             "raw_files": 16,
@@ -3347,8 +4469,14 @@
                 "day": 16
               }
             ],
+            "donor_day_keys": [
+              "C29:16"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS9131TLJM"
+            ],
             "n_files": 8,
             "bytes": 72673605127,
             "raw_files": 16,
@@ -3372,8 +4500,14 @@
                 "day": 16
               }
             ],
+            "donor_day_keys": [
+              "C39:16"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS0635LULZ"
+            ],
             "n_files": 8,
             "bytes": 88391898493,
             "raw_files": 16,
@@ -3397,8 +4531,14 @@
                 "day": 18
               }
             ],
+            "donor_day_keys": [
+              "C29:18"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS7377KJJR"
+            ],
             "n_files": 8,
             "bytes": 70084681985,
             "raw_files": 16,
@@ -3422,8 +4562,14 @@
                 "day": 18
               }
             ],
+            "donor_day_keys": [
+              "C39:18"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS1180HGHV"
+            ],
             "n_files": 8,
             "bytes": 72601474389,
             "raw_files": 16,
@@ -3544,6 +4690,13 @@
             13,
             30
           ],
+          "donor_days": [
+            "A8:30",
+            "C29:6",
+            "C29:13",
+            "C38:6",
+            "C38:13"
+          ],
           "mux": false
         },
         {
@@ -3570,6 +4723,13 @@
             6,
             13,
             30
+          ],
+          "donor_days": [
+            "A8:30",
+            "C29:6",
+            "C29:13",
+            "C38:6",
+            "C38:13"
           ],
           "mux": false
         },
@@ -3598,6 +4758,13 @@
             13,
             30
           ],
+          "donor_days": [
+            "A8:30",
+            "C29:6",
+            "C29:13",
+            "C38:6",
+            "C38:13"
+          ],
           "mux": false
         },
         {
@@ -3624,6 +4791,13 @@
             6,
             13,
             30
+          ],
+          "donor_days": [
+            "A8:30",
+            "C29:6",
+            "C29:13",
+            "C38:6",
+            "C38:13"
           ],
           "mux": false
         }
@@ -3726,8 +4900,14 @@
                 "day": 30
               }
             ],
+            "donor_day_keys": [
+              "A8:30"
+            ],
             "multiplexed": false,
             "slide": 1,
+            "measurement_accessions": [
+              "IGVFDS0428XVMY"
+            ],
             "n_files": 5,
             "bytes": 1110932740,
             "raw_files": 1,
@@ -3751,8 +4931,14 @@
                 "day": 30
               }
             ],
+            "donor_day_keys": [
+              "A8:30"
+            ],
             "multiplexed": false,
             "slide": 2,
+            "measurement_accessions": [
+              "IGVFDS3696RYEX"
+            ],
             "n_files": 5,
             "bytes": 1236951082,
             "raw_files": 1,
@@ -3781,8 +4967,15 @@
                 "day": 6
               }
             ],
+            "donor_day_keys": [
+              "C29:6",
+              "C38:6"
+            ],
             "multiplexed": false,
             "slide": 3,
+            "measurement_accessions": [
+              "IGVFDS1291OUJP"
+            ],
             "n_files": 5,
             "bytes": 4156630701,
             "raw_files": 1,
@@ -3811,8 +5004,15 @@
                 "day": 13
               }
             ],
+            "donor_day_keys": [
+              "C29:13",
+              "C38:13"
+            ],
             "multiplexed": false,
             "slide": 4,
+            "measurement_accessions": [
+              "IGVFDS7077XANO"
+            ],
             "n_files": 5,
             "bytes": 5897489566,
             "raw_files": 1,
@@ -3841,8 +5041,15 @@
                 "day": 6
               }
             ],
+            "donor_day_keys": [
+              "C29:6",
+              "C38:6"
+            ],
             "multiplexed": false,
             "slide": 5,
+            "measurement_accessions": [
+              "IGVFDS2615TOUW"
+            ],
             "n_files": 5,
             "bytes": 10722348128,
             "raw_files": 1,
@@ -3871,8 +5078,15 @@
                 "day": 13
               }
             ],
+            "donor_day_keys": [
+              "C29:13",
+              "C38:13"
+            ],
             "multiplexed": false,
             "slide": 6,
+            "measurement_accessions": [
+              "IGVFDS3964LWWZ"
+            ],
             "n_files": 5,
             "bytes": 10184074594,
             "raw_files": 1,
@@ -3963,6 +5177,12 @@
           "days": [
             0
           ],
+          "donor_days": [
+            "C29:0",
+            "C37:0",
+            "C38:0",
+            "C39:0"
+          ],
           "mux": false
         }
       ],
@@ -4022,8 +5242,14 @@
                 "day": 0
               }
             ],
+            "donor_day_keys": [
+              "C29:0"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS6578UICO"
+            ],
             "n_files": 1,
             "bytes": 4628756172,
             "raw_files": 32,
@@ -4047,8 +5273,14 @@
                 "day": 0
               }
             ],
+            "donor_day_keys": [
+              "C37:0"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS6826TRQB"
+            ],
             "n_files": 1,
             "bytes": 4260784038,
             "raw_files": 32,
@@ -4072,8 +5304,14 @@
                 "day": 0
               }
             ],
+            "donor_day_keys": [
+              "C38:0"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS6852SKAC"
+            ],
             "n_files": 1,
             "bytes": 4262620579,
             "raw_files": 32,
@@ -4097,8 +5335,14 @@
                 "day": 0
               }
             ],
+            "donor_day_keys": [
+              "C39:0"
+            ],
             "multiplexed": false,
             "slide": null,
+            "measurement_accessions": [
+              "IGVFDS7691YADM"
+            ],
             "n_files": 1,
             "bytes": 4583525817,
             "raw_files": 32,

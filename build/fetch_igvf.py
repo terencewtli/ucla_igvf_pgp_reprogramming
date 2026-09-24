@@ -133,8 +133,15 @@ def manifest_url(portal_type, accessions=None, input_for=None, content_type=None
     return f"{API}/metadata/?" + "&".join(q)
 
 
-def files_of(d, tier, donor_names=None, days=None, mux=False):
-    """Per-file records with everything needed to download the file directly."""
+def files_of(d, tier, donor_names=None, days=None, mux=False, pairs=None):
+    """Per-file records with everything needed to download the file directly.
+
+    `pairs` is the (donor, day) list of the library the file came from, kept
+    alongside the flat donor and day lists because for a multiplexed Multiome
+    library the two are not a cross product: one library holds C29 at day 0,
+    C37 at day 1, C38 at day 3 and C39 at day 5, not all four donors at all
+    four days. The donor-and-timepoint browser keys on these pairs.
+    """
     out = []
     for f in d.get("files", []) or []:
         if not isinstance(f, dict) or not f.get("href"):
@@ -159,6 +166,8 @@ def files_of(d, tier, donor_names=None, days=None, mux=False):
             "file_set": d.get("accession"),
             "donors": donor_names or [],
             "days": days or [],
+            "donor_days": [f"{d_}:{y_}" for d_, y_ in (pairs or [])
+                           if y_ is not None],
             "mux": mux,
         })
     return sorted(out, key=lambda x: (x["content_type"] or "",
@@ -282,6 +291,9 @@ def describe_group(inter, upstream_ms, sample_recs, name_of):
         "donors": donors,
         "days": days,
         "donor_days": [{"donor": d, "day": y} for d, y in pairs],
+        # The same pairs as flat "donor:day" keys, which is what the page's
+        # donor-and-timepoint browser indexes on.
+        "donor_day_keys": [f"{d}:{y}" for d, y in pairs if y is not None],
         "multiplexed": multiplexed,
         "slide": slide,
     }
@@ -289,8 +301,8 @@ def describe_group(inter, upstream_ms, sample_recs, name_of):
 
 def write_tsv(path, rows):
     cols = ["file_accession", "tier", "file_set", "donors", "days",
-            "content_type", "file_format", "size_bytes", "md5sum",
-            "download_url", "s3_uri"]
+            "donor_days", "content_type", "file_format", "size_bytes",
+            "md5sum", "download_url", "s3_uri"]
     with open(path, "w") as fh:
         fh.write("\t".join(cols) + "\n")
         for r in rows:
@@ -300,6 +312,7 @@ def write_tsv(path, rows):
                 r["file_set"] or "",
                 ";".join(r["donors"] or []),
                 ";".join(str(x) for x in r["days"] or []),
+                ";".join(r.get("donor_days") or []),
                 r["content_type"] or "",
                 r["file_format"] or "",
                 str(r["size"] or ""),
@@ -378,10 +391,17 @@ def main():
             dnames = g["donors"] or sorted(
                 {name_of.get(x["accession"], x["accession"])
                  for x in i.get("donors", []) if isinstance(x, dict)})
-            proc = files_of(i, "processed", dnames, g["days"], g["multiplexed"])
+            gpairs = [(p["donor"], p["day"]) for p in g["donor_days"]]
+            proc = files_of(i, "processed", dnames, g["days"], g["multiplexed"],
+                            gpairs)
             raw = []
             for m in up_recs:
-                raw += files_of(m, "raw", dnames, g["days"], g["multiplexed"])
+                raw += files_of(m, "raw", dnames, g["days"], g["multiplexed"],
+                                gpairs)
+            # The raw sets behind this library, so the page can attribute a raw
+            # file to the donor-day library it was sequenced for.
+            g["measurement_accessions"] = [q.strip("/").split("/")[-1]
+                                           for q in up]
             g["n_files"] = len(proc)
             g["bytes"] = sum(f["size"] or 0 for f in proc)
             g["raw_files"] = len(raw)
@@ -399,7 +419,10 @@ def main():
         final_files = files_of(d, "analysis-ready",
                                sorted({name_of.get(a, a) for a in donors}),
                                sorted({y for g in groups for y in g["days"]}),
-                               any(g["multiplexed"] for g in groups))
+                               any(g["multiplexed"] for g in groups),
+                               sorted({(p["donor"], p["day"]) for g in groups
+                                       for p in g["donor_days"]
+                                       if p["day"] is not None}))
         all_files += final_files + proc_files + raw_files
 
         out_sets.append({
@@ -500,7 +523,8 @@ def main():
     # Flat file index for the in-page download builder. Column-oriented rows
     # keep it small enough to fetch on load (~1,800 files).
     cols = ["accession", "tier", "file_set", "content_type", "file_format",
-            "size", "md5", "download", "s3_uri", "days", "donors", "mux"]
+            "size", "md5", "download", "s3_uri", "days", "donors", "mux",
+            "donor_days"]
     by_set = {}
     for s in out_sets:
         recs = [f for f in all_files
@@ -511,7 +535,8 @@ def main():
                                    f["content_type"], f["file_format"],
                                    f["size"], f["md5"], f["download"],
                                    f["s3_uri"], f["days"],
-                                   f["donors"], 1 if f["mux"] else 0]
+                                   f["donors"], 1 if f["mux"] else 0,
+                                   f["donor_days"]]
                                   for f in recs]
     with open(OUT_FILES, "w") as fh:
         json.dump({"generated": payload["generated"], "columns": cols,

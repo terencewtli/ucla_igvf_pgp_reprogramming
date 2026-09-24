@@ -1,2 +1,2 @@
-file_accession	tier	file_set	donors	days	content_type	file_format	size_bytes	md5sum	download_url	s3_uri
-IGVFFI8289BASG	analysis-ready	IGVFDS1270EUID	C29;C37;C38;C39	0	variants	vcf	834075228	ff764710d6bcce7d77883e2f35bc30aa	https://api.data.igvf.org/tabular-files/IGVFFI8289BASG/@@download/IGVFFI8289BASG.vcf.gz	s3://igvf-public/2026/08/03/bcc60103-be67-46fd-9bd1-cf301db16d2f/IGVFFI8289BASG.vcf.gz
+file_accession	tier	file_set	donors	days	donor_days	content_type	file_format	size_bytes	md5sum	download_url	s3_uri
+IGVFFI8289BASG	analysis-ready	IGVFDS1270EUID	C29;C37;C38;C39	0	C29:0;C37:0;C38:0;C39:0	variants	vcf	834075228	ff764710d6bcce7d77883e2f35bc30aa	https://api.data.igvf.org/tabular-files/IGVFFI8289BASG/@@download/IGVFFI8289BASG.vcf.gz	s3://igvf-public/2026/08/03/bcc60103-be67-46fd-9bd1-cf301db16d2f/IGVFFI8289BASG.vcf.gz

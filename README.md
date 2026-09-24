@@ -10,8 +10,8 @@ with all content driven by generated JSON. Light theme only.
 ```
 index.html              page shell
 css/style.css           all styling
-js/app.js               renders the figure, data tiers,
-                        download tables and the download builder
+js/app.js               renders the figure, data tiers, download tables,
+                        the donor x time point grid and the download builder
 img/                    UCLA and IGVF logos (trimmed from ../misc/)
 figures/fig1.png        Figure 1, full render, 5,861 px wide (800 DPI)
 figures/fig1-{1600,2400,3200}.png   responsive set used inline
@@ -86,6 +86,30 @@ split by donor or day before demultiplexing with the WGS VCF. snMCT-seq,
 snM3C-seq and WGS are one donor and one day per library; the spatial slides are
 pooled sections at one day. `build/fetch_igvf.py` derives this from the portal's
 own sample summaries — see `donor_days()`.
+
+## Donor and time point
+
+"Files by donor and time point" (`renderDonorDays` in `js/app.js`) is a
+donor × reprogramming-day grid — 45 samples across 5 donors and 13 days. A cell
+selects one sample and hands back every processed and raw file for it, in every
+modality, as urls.txt, a curl or aws script, or a manifest.
+
+It keys on **(donor, day) pairs, not the cross product** of a file's donor and
+day lists. The distinction only matters for the Multiome libraries, and there it
+matters completely: `IGVFDS3826NTFN` carries C29, C37, C38 and C39 *and* days 0,
+1, 3 and 5, but what it actually holds is C29 at day 0, C37 at day 1, C38 at day
+3 and C39 at day 5. Crossing the two lists would offer it for twelve samples it
+does not contain. The pairs come from `describe_group()` as `donor_day_keys`,
+and ride on every file record as the `donor_days` column of `files.json` and of
+the manifest TSVs.
+
+Two consequences the page states on screen:
+
+* Selecting one donor-day of a pooled Multiome library still downloads the whole
+  library, so the panel lists what else is in it and links the WGS genotypes.
+* Analysis-ready files are left out of the grid — each one spans the whole time
+  course and every donor, so there is no honest way to cut it to one sample.
+  They stay in "Analysis-ready files" above.
 
 ## Preview locally
 
