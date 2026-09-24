@@ -12,7 +12,7 @@
       "accession": "IGVFDO0351NYZH",
       "name": "C37",
       "sex": "male",
-      "efficiency": "inefficient",
+      "efficiency": "inefficient reprogrammer",
       "note": "",
       "in_manuscript": true,
       "portal": "https://data.igvf.org/human-donors/IGVFDO0351NYZH/"
@@ -21,7 +21,7 @@
       "accession": "IGVFDO2328XGNY",
       "name": "C38",
       "sex": "male",
-      "efficiency": "inefficient",
+      "efficiency": "inefficient reprogrammer",
       "note": "profiled in all five modalities",
       "in_manuscript": true,
       "portal": "https://data.igvf.org/human-donors/IGVFDO2328XGNY/"
@@ -30,7 +30,7 @@
       "accession": "IGVFDO3754NCBP",
       "name": "C29",
       "sex": "male",
-      "efficiency": "efficient",
+      "efficiency": "efficient reprogrammer",
       "note": "profiled in all five modalities",
       "in_manuscript": true,
       "portal": "https://data.igvf.org/human-donors/IGVFDO3754NCBP/"
@@ -39,7 +39,7 @@
       "accession": "IGVFDO4068JJIT",
       "name": "C39",
       "sex": "female",
-      "efficiency": "efficient",
+      "efficiency": "efficient reprogrammer",
       "note": "",
       "in_manuscript": true,
       "portal": "https://data.igvf.org/human-donors/IGVFDO4068JJIT/"

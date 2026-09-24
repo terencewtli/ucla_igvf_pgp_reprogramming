@@ -51,10 +51,10 @@ PRINCIPAL = [
 # clone counts at day 12). A8 is not a manuscript line -- it appears only in the
 # two pilot spatial runs bundled into the spatial principal set.
 DONOR_NOTES = {
-    "C29": ("efficient", "profiled in all five modalities"),
-    "C39": ("efficient", ""),
-    "C37": ("inefficient", ""),
-    "C38": ("inefficient", "profiled in all five modalities"),
+    "C29": ("efficient reprogrammer", "profiled in all five modalities"),
+    "C39": ("efficient reprogrammer", ""),
+    "C37": ("inefficient reprogrammer", ""),
+    "C38": ("inefficient reprogrammer", "profiled in all five modalities"),
     "A8": ("not in manuscript", "pilot spatial runs only"),
 }
 
