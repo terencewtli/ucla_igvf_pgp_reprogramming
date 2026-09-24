@@ -41,8 +41,8 @@ MANIFESTS = os.path.join(DATA, "manifests")
 PRINCIPAL = [
     "IGVFDS1270EUID",  # WGS
     "IGVFDS3268OMJN",  # 10x Multiome
-    "IGVFDS9439VWMI",  # snMCT-seq
-    "IGVFDS8004ZFOL",  # snM3C-seq
+    "IGVFDS9439VWMI",  # snmCT-seq
+    "IGVFDS8004ZFOL",  # sn-m3C-seq
     "IGVFDS6501PVZQ",  # Spatial
 ]
 
@@ -63,8 +63,8 @@ MANUSCRIPT_DONORS = ["C29", "C37", "C38", "C39"]
 
 MODALITY = {
     "IGVFDS3268OMJN": ("10x Multiome", "snRNA + snATAC", 1),
-    "IGVFDS9439VWMI": ("snMCT-seq",    "snRNA + mC",     2),
-    "IGVFDS8004ZFOL": ("snM3C-seq",    "mC + 3C",        3),
+    "IGVFDS9439VWMI": ("snmCT-seq",    "snRNA + mC",     2),
+    "IGVFDS8004ZFOL": ("sn-m3C-seq",   "mC + 3C",        3),
     "IGVFDS6501PVZQ": ("Spatial (CosMx)", "in situ RNA", 4),
     "IGVFDS1270EUID": ("WGS",          "genotypes",      5),
 }
@@ -231,7 +231,7 @@ def donor_days(upstream_ms, sample_recs, name_of):
 
     The Multiome libraries are genetically multiplexed: one library pools four
     donors sampled on four *different* days, so a library has a set of
-    donor-days rather than a single timepoint. snMCT-seq, snM3C-seq and WGS
+    donor-days rather than a single timepoint. snmCT-seq, sn-m3C-seq and WGS
     libraries are one donor at one day; the spatial slides are pooled sections
     at a single day.
     """

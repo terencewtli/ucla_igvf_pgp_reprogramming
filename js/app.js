@@ -101,12 +101,12 @@ function renderFigure() {
   document.getElementById("fig1").innerHTML = `
     <figure class="figcard">
       <a href="figures/fig1.png" target="_blank" rel="noopener">
-        <img src="figures/fig1-2400.png" width="2400" height="1971"
+        <img src="figures/fig1-2400.png" width="2400" height="696"
              srcset="figures/fig1-1600.png 1600w,
                      figures/fig1-2400.png 2400w,
                      figures/fig1-3200.png 3200w"
-             sizes="(max-width: 1120px) calc(100vw - 48px), 1072px"
-             alt="Figure 1. Multi-modal profiling of cellular reprogramming">
+             sizes="(max-width: 1320px) calc(100vw - 40px), 1280px"
+             alt="Figure 1A. Fibroblasts from four donors reprogrammed to iPSC and sampled across 11 time points, profiled by 10x Multiome, snmCT-seq, sn-m3C-seq and CosMx SMI">
       </a>
     </figure>`;
 }

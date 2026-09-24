@@ -27,7 +27,7 @@
   --t-f1:   #c4574f;
   --t-f2:   #d39a3f;
 
-  --maxw: 1120px;
+  --maxw: 1320px;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
@@ -43,7 +43,7 @@ body {
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
 a:hover { color: var(--accent-2); }
-.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
 h1, h2, h3 { line-height: 1.25; margin: 0; font-weight: 620; }
 code, .mono { font-family: var(--mono); font-size: 0.86em; }
 .muted { color: var(--ink-3); }

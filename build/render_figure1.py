@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rasterise Figure 1 from the manuscript PDF into the PNGs the page uses.
+"""Rasterise the page's header figure from the manuscript PDF.
 
     figures/fig1.png        full render, ~5,860 px wide (800 DPI at letter width)
     figures/fig1-3200.png   for 2x displays
@@ -20,8 +20,15 @@ rasters at 717-1298 DPI effective resolution (the six culture-dish cartoons in
 panel A are only 297 DPI), so rendering much above 800 buys file size and no
 detail. Sharpening those cartoons would mean re-exporting Figure 1 upstream.
 
-The block pass below drops the isolated "Figure 1" page label, which sits far
-below the artwork and would otherwise leave a tall band of whitespace.
+The page shows panel A alone (`fig1a_small.pdf`), an experiment schematic wide
+enough to sit above the fold without pushing the download tool down the page.
+Set SOURCE to a full `Figure1*.pdf` to go back to the whole figure.
+
+DROP_DETACHED controls the block pass that removes the isolated "Figure 1" page
+label, which on the full figure sits far below the artwork and leaves a tall band
+of whitespace. It is off for the panel-A crop: that figure has no page label, and
+its artwork is two horizontal bands with white between them, exactly what the
+block pass would mistake for a detached label and crop away.
 
 Needs: PyMuPDF, Pillow, NumPy.
 Run:   python3 build/render_figure1.py
@@ -36,6 +43,8 @@ Image.MAX_IMAGE_PIXELS = None
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC_DIR = os.path.join(HERE, os.pardir, os.pardir, "manuscript", "pdf")
 DST = os.path.join(HERE, os.pardir, "figures")
+SOURCE = "fig1a_small.pdf"     # or e.g. "Figure1*.pdf" for the whole figure
+DROP_DETACHED = False          # see the docstring
 DPI = 800
 WEB_WIDTHS = (1600, 2400, 3200)
 INK = 247             # below this grey value counts as ink
@@ -43,17 +52,24 @@ MIN_FRAC = 0.0015     # a row/column must be this non-white to count as content
 
 
 def source_pdf():
-    hits = sorted(glob.glob(os.path.join(SRC_DIR, "Figure1*.pdf")))
+    hits = sorted(glob.glob(os.path.join(SRC_DIR, SOURCE)))
     if not hits:
-        sys.exit(f"no Figure1*.pdf in {os.path.normpath(SRC_DIR)}")
+        sys.exit(f"no {SOURCE} in {os.path.normpath(SRC_DIR)}")
     return hits[-1]  # latest revision, filenames carry a date suffix
 
 
 def content_box(a):
-    """Bounding box of the main artwork block, excluding detached page labels."""
+    """Bounding box of the artwork, optionally excluding detached page labels."""
     rows = np.flatnonzero((a < INK).mean(axis=1) > MIN_FRAC)
     if not rows.size:
         sys.exit("rendered page is blank")
+    if not DROP_DETACHED:
+        top, bot = rows[0], rows[-1]
+        cols = np.flatnonzero((a[top:bot + 1] < INK).mean(axis=0) > MIN_FRAC)
+        left, right = (cols[0], cols[-1]) if cols.size else (0, a.shape[1] - 1)
+        pad = round(DPI / 66)
+        return (max(0, left - pad), max(0, top - pad),
+                min(a.shape[1], right + 1 + pad), min(a.shape[0], bot + 1 + pad))
 
     # Group content rows into blocks separated by >3% of page height of white.
     gap = max(20, int(0.03 * a.shape[0]))
@@ -99,7 +115,7 @@ def main():
         w, h = Image.open(p).size
         sys.stderr.write(f"{os.path.relpath(p, os.path.join(HERE, os.pardir))}: "
                          f"{w}x{h}, {os.path.getsize(p) / 1e6:.1f} MB\n")
-    sys.stderr.write("remember: index.html hard-codes fig1's width/height\n")
+    sys.stderr.write("remember: js/app.js hard-codes fig1's width/height\n")
 
 
 if __name__ == "__main__":

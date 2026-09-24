@@ -13,7 +13,7 @@ css/style.css           all styling
 js/app.js               renders the faceted browser (the main tool), plus the
                         figure, data tiers and the download tables
 img/                    UCLA and IGVF logos (trimmed from ../misc/)
-figures/fig1.png        Figure 1, full render, 5,861 px wide (800 DPI)
+figures/fig1.png        Figure 1A, full render, 6,669 px wide (800 DPI)
 figures/fig1-{1600,2400,3200}.png   responsive set used inline
 data/filesets.json      generated — IGVF portal crawl
 data/files.json         generated — flat index of all 1,813 files
@@ -32,7 +32,7 @@ Run from this directory. Each script is independent.
 #    Responses are cached in build/.cache; delete it to force a fresh pull.
 python3 build/fetch_igvf.py
 
-# 2. Re-render Figure 1 from ../manuscript/pdf/Figure1*.pdf to PNG
+# 2. Re-render the header figure from ../manuscript/pdf/fig1a_small.pdf to PNG
 #    (needs PyMuPDF, Pillow, NumPy — NOT sips, see the script's docstring)
 python3 build/render_figure1.py
 
@@ -61,12 +61,23 @@ matrix, download recipes, page notes) are listed in `ARCHIVE.md` with how to res
 
 Then `git commit && git push` — Cloudflare redeploys within about ten seconds.
 
-## Figure 1 resolution
+## The header figure
 
-The ceiling is the figure PDF, not the render. Its panels are embedded rasters
-at 717-1298 DPI effective resolution, but the six culture-dish cartoons in panel
-A are only 190x109 px (297 DPI as placed). No rendering setting sharpens those —
-they need re-exporting upstream. The labels are vector text and are sharp.
+The page shows **panel A alone** (`fig1a_small.pdf`), a 3.4:1 schematic that sits
+above the fold without pushing the download tool off the screen. `SOURCE` and
+`DROP_DETACHED` at the top of `build/render_figure1.py` switch back to the whole
+figure; `js/app.js` hard-codes the rendered aspect in `renderFigure()`, so update
+`width`/`height` there if the source changes.
+
+`DROP_DETACHED` is off for panel A and must stay off: the block pass it controls
+exists to drop the full figure's detached "Figure 1" label, and panel A is two
+horizontal bands with white between them — exactly what that pass would mistake
+for a label and crop away.
+
+The ceiling is the PDF, not the render. The artwork is embedded raster at
+717-1298 DPI effective resolution, but the culture-dish cartoons are only
+190x109 px (297 DPI as placed). No rendering setting sharpens those — they need
+re-exporting upstream. The labels are vector text and are sharp.
 
 ## How downloads work
 
@@ -83,8 +94,8 @@ access request, and resumable with `curl -C -`. Two things to know:
 
 The 10x Multiome libraries are genetically multiplexed: **one library pools four
 donors sampled on four different reprogramming days**, so its files cannot be
-split by donor or day before demultiplexing with the WGS VCF. snMCT-seq,
-snM3C-seq and WGS are one donor and one day per library; the spatial slides are
+split by donor or day before demultiplexing with the WGS VCF. snmCT-seq,
+sn-m3C-seq and WGS are one donor and one day per library; the spatial slides are
 pooled sections at one day. `build/fetch_igvf.py` derives this from the portal's
 own sample summaries — see `donor_days()`.
 

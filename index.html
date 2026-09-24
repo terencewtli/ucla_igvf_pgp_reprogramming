@@ -31,8 +31,8 @@
 <nav class="nav">
   <div class="wrap">
     <span class="brand">Epigenomic heterogeneity in human reprogramming</span>
-    <a class="navlink" href="#get">Get the data</a>
     <a class="navlink" href="#summary">Summary</a>
+    <a class="navlink" href="#get">Get the data</a>
     <a class="navlink" href="#download">All files</a>
   </div>
 </nav>
@@ -85,10 +85,30 @@
   </div>
 </header>
 
+<!-- ===================================================== summary -->
+<section id="summary">
+  <div class="wrap">
+    <details class="fold" open>
+      <summary><h2>Summary</h2><span class="foldhint">the study</span></summary>
+      <div class="foldbody">
+        <p class="lede">
+          Fibroblasts from four individuals were reprogrammed to induced pluripotent stem cells and
+          sampled at up to 11 time points. Cells were profiled for single-nucleus gene expression and
+          chromatin accessibility (10x Multiome), DNA methylation with transcriptome (snmCT-seq), and DNA
+          methylation with 3D genome organization (sn-m3C-seq). Highly multiplexed spatial
+          transcriptomics (CosMx) was performed on selected time points, and each donor was
+          whole-genome sequenced.
+        </p>
+        <div id="fig1"></div>
+      </div>
+    </details>
+  </div>
+</section>
+
 <!-- ===================================================== get the data -->
-<!-- First on the page: the critique the page exists to answer is "how do I get
-     the files for one donor at one time point", so the builder leads and every
-     other section folds away. -->
+<!-- Directly under the summary: the critique the page exists to answer is "how
+     do I get the files for one donor at one time point", so the tool comes
+     before every other way in, and the rest folds away. -->
 <section id="get">
   <div class="wrap">
     <div class="sec-head">
@@ -100,26 +120,6 @@
          browser from <code>data/files.json</code> and nothing is sent anywhere.</p>
     </div>
     <div id="builder"></div>
-  </div>
-</section>
-
-<!-- ===================================================== summary -->
-<section id="summary">
-  <div class="wrap">
-    <details class="fold" open>
-      <summary><h2>Summary</h2><span class="foldhint">the study</span></summary>
-      <div class="foldbody">
-        <p class="lede">
-          Fibroblasts from four individuals were reprogrammed to induced pluripotent stem cells and
-          sampled at up to 11 time points. Cells were profiled for single-nucleus gene expression and
-          chromatin accessibility (10x Multiome), DNA methylation with transcriptome (snMCT-seq), and DNA
-          methylation with 3D genome organization (snM3C-seq). Highly multiplexed spatial
-          transcriptomics (CosMx) was performed on selected time points, and each donor was
-          whole-genome sequenced.
-        </p>
-        <div id="fig1"></div>
-      </div>
-    </details>
   </div>
 </section>
 

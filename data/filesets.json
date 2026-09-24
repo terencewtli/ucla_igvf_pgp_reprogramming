@@ -1352,7 +1352,7 @@
     },
     {
       "accession": "IGVFDS9439VWMI",
-      "label": "snMCT-seq",
+      "label": "snmCT-seq",
       "sublabel": "snRNA + mC",
       "order": 2,
       "summary": "snMCT-seq",
@@ -2992,7 +2992,7 @@
     },
     {
       "accession": "IGVFDS8004ZFOL",
-      "label": "snM3C-seq",
+      "label": "sn-m3C-seq",
       "sublabel": "mC + 3C",
       "order": 3,
       "summary": "snM3C-seq",
