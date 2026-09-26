@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-23",
+  "generated": "2026-09-26",
   "donors": [
     "IGVFDO0351NYZH",
     "IGVFDO2328XGNY",
@@ -4691,18 +4691,26 @@
             "C38"
           ],
           "days": [
+            0,
+            3,
             6,
+            9,
             13,
             30
           ],
           "donor_days": [
+            "A8:0",
             "A8:30",
+            "C29:3",
             "C29:6",
+            "C29:9",
             "C29:13",
+            "C38:3",
             "C38:6",
+            "C38:9",
             "C38:13"
           ],
-          "mux": false
+          "mux": true
         },
         {
           "accession": "IGVFFI2804FOOR",
@@ -4725,18 +4733,26 @@
             "C38"
           ],
           "days": [
+            0,
+            3,
             6,
+            9,
             13,
             30
           ],
           "donor_days": [
+            "A8:0",
             "A8:30",
+            "C29:3",
             "C29:6",
+            "C29:9",
             "C29:13",
+            "C38:3",
             "C38:6",
+            "C38:9",
             "C38:13"
           ],
-          "mux": false
+          "mux": true
         },
         {
           "accession": "IGVFFI3564FUQJ",
@@ -4759,18 +4775,26 @@
             "C38"
           ],
           "days": [
+            0,
+            3,
             6,
+            9,
             13,
             30
           ],
           "donor_days": [
+            "A8:0",
             "A8:30",
+            "C29:3",
             "C29:6",
+            "C29:9",
             "C29:13",
+            "C38:3",
             "C38:6",
+            "C38:9",
             "C38:13"
           ],
-          "mux": false
+          "mux": true
         },
         {
           "accession": "IGVFFI9846GOMO",
@@ -4793,18 +4817,26 @@
             "C38"
           ],
           "days": [
+            0,
+            3,
             6,
+            9,
             13,
             30
           ],
           "donor_days": [
+            "A8:0",
             "A8:30",
+            "C29:3",
             "C29:6",
+            "C29:9",
             "C29:13",
+            "C38:3",
             "C38:6",
+            "C38:9",
             "C38:13"
           ],
-          "mux": false
+          "mux": true
         }
       ],
       "bytes": 6383567548,
@@ -4892,23 +4924,29 @@
             "accession": "IGVFDS2554EAVT",
             "alias": "pgp_spatial_slide1_aset",
             "code": null,
-            "label": "slide 1 \u00b7 A8 \u00b7 day 30",
+            "label": "slide 1 \u00b7 A8 \u00b7 days 0, 30",
             "donors": [
               "A8"
             ],
             "days": [
+              0,
               30
             ],
             "donor_days": [
+              {
+                "donor": "A8",
+                "day": 0
+              },
               {
                 "donor": "A8",
                 "day": 30
               }
             ],
             "donor_day_keys": [
+              "A8:0",
               "A8:30"
             ],
-            "multiplexed": false,
+            "multiplexed": true,
             "slide": 1,
             "measurement_accessions": [
               "IGVFDS0428XVMY"
@@ -4923,23 +4961,29 @@
             "accession": "IGVFDS9028YESM",
             "alias": "pgp_spatial_slide2_aset",
             "code": null,
-            "label": "slide 2 \u00b7 A8 \u00b7 day 30",
+            "label": "slide 2 \u00b7 A8 \u00b7 days 0, 30",
             "donors": [
               "A8"
             ],
             "days": [
+              0,
               30
             ],
             "donor_days": [
+              {
+                "donor": "A8",
+                "day": 0
+              },
               {
                 "donor": "A8",
                 "day": 30
               }
             ],
             "donor_day_keys": [
+              "A8:0",
               "A8:30"
             ],
-            "multiplexed": false,
+            "multiplexed": true,
             "slide": 2,
             "measurement_accessions": [
               "IGVFDS3696RYEX"
@@ -4954,18 +4998,27 @@
             "accession": "IGVFDS5719MCCP",
             "alias": "pgp_spatial_slide3_aset",
             "code": null,
-            "label": "slide 3 \u00b7 C29, C38 \u00b7 day 6",
+            "label": "slide 3 \u00b7 C29, C38 \u00b7 days 3, 6",
             "donors": [
               "C29",
               "C38"
             ],
             "days": [
+              3,
               6
             ],
             "donor_days": [
               {
                 "donor": "C29",
+                "day": 3
+              },
+              {
+                "donor": "C29",
                 "day": 6
+              },
+              {
+                "donor": "C38",
+                "day": 3
               },
               {
                 "donor": "C38",
@@ -4973,10 +5026,12 @@
               }
             ],
             "donor_day_keys": [
+              "C29:3",
               "C29:6",
+              "C38:3",
               "C38:6"
             ],
-            "multiplexed": false,
+            "multiplexed": true,
             "slide": 3,
             "measurement_accessions": [
               "IGVFDS1291OUJP"
@@ -4991,18 +5046,27 @@
             "accession": "IGVFDS1602JMXG",
             "alias": "pgp_spatial_slide4_aset",
             "code": null,
-            "label": "slide 4 \u00b7 C29, C38 \u00b7 day 13",
+            "label": "slide 4 \u00b7 C29, C38 \u00b7 days 9, 13",
             "donors": [
               "C29",
               "C38"
             ],
             "days": [
+              9,
               13
             ],
             "donor_days": [
               {
                 "donor": "C29",
+                "day": 9
+              },
+              {
+                "donor": "C29",
                 "day": 13
+              },
+              {
+                "donor": "C38",
+                "day": 9
               },
               {
                 "donor": "C38",
@@ -5010,10 +5074,12 @@
               }
             ],
             "donor_day_keys": [
+              "C29:9",
               "C29:13",
+              "C38:9",
               "C38:13"
             ],
-            "multiplexed": false,
+            "multiplexed": true,
             "slide": 4,
             "measurement_accessions": [
               "IGVFDS7077XANO"
@@ -5028,18 +5094,27 @@
             "accession": "IGVFDS0554SOFJ",
             "alias": "pgp_spatial_slide5_aset",
             "code": null,
-            "label": "slide 5 \u00b7 C29, C38 \u00b7 day 6",
+            "label": "slide 5 \u00b7 C29, C38 \u00b7 days 3, 6",
             "donors": [
               "C29",
               "C38"
             ],
             "days": [
+              3,
               6
             ],
             "donor_days": [
               {
                 "donor": "C29",
+                "day": 3
+              },
+              {
+                "donor": "C29",
                 "day": 6
+              },
+              {
+                "donor": "C38",
+                "day": 3
               },
               {
                 "donor": "C38",
@@ -5047,10 +5122,12 @@
               }
             ],
             "donor_day_keys": [
+              "C29:3",
               "C29:6",
+              "C38:3",
               "C38:6"
             ],
-            "multiplexed": false,
+            "multiplexed": true,
             "slide": 5,
             "measurement_accessions": [
               "IGVFDS2615TOUW"
@@ -5065,18 +5142,27 @@
             "accession": "IGVFDS5238AJCW",
             "alias": "pgp_spatial_slide6_aset",
             "code": null,
-            "label": "slide 6 \u00b7 C29, C38 \u00b7 day 13",
+            "label": "slide 6 \u00b7 C29, C38 \u00b7 days 9, 13",
             "donors": [
               "C29",
               "C38"
             ],
             "days": [
+              9,
               13
             ],
             "donor_days": [
               {
                 "donor": "C29",
+                "day": 9
+              },
+              {
+                "donor": "C29",
                 "day": 13
+              },
+              {
+                "donor": "C38",
+                "day": 9
               },
               {
                 "donor": "C38",
@@ -5084,10 +5170,12 @@
               }
             ],
             "donor_day_keys": [
+              "C29:9",
               "C29:13",
+              "C38:9",
               "C38:13"
             ],
-            "multiplexed": false,
+            "multiplexed": true,
             "slide": 6,
             "measurement_accessions": [
               "IGVFDS3964LWWZ"

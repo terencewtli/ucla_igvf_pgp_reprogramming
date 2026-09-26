@@ -410,7 +410,7 @@ function renderBuilder(d, index) {
   for (const m of Object.values(d.donor_meta || {})) nameOf[m.name] = m;
 
   /* Grid axes come from the per-sample tiers only. A8 is left out: not a
-     manuscript line, one time point, pilot spatial runs only. */
+     manuscript line, pilot spatial runs only (days 0 + 30). */
   const cellKeys = new Set();
   for (const f of files)
     if (f.tier !== "analysis-ready")
@@ -678,13 +678,26 @@ function renderBuilder(d, index) {
     }
 
     // Per-sample files can drag in samples you did not ask for, because the
-    // Multiome libraries are pooled. Say which, and how many.
-    const extra = new Set();
+    // Multiome libraries and the spatial slides are pooled. Say which, how
+    // many, and which modality brought them in.
+    const extra = new Set(), extraFrom = new Set();
     if (state.cells.size)
       for (const f of picked)
         if (f.tier !== "analysis-ready")
           for (const k of f.donor_days || [])
-            if (!state.cells.has(k)) extra.add(k);
+            if (!state.cells.has(k)) {
+              extra.add(k);
+              const e = lib.get(f.lib);
+              if (e) extraFrom.add(e.set.accession);
+            }
+    const POOL_NOTE = {
+      IGVFDS3268OMJN: `The 10x Multiome libraries are genetically multiplexed —
+        one library pools four donors sampled on four different days. Split them
+        by donor with the WGS genotypes.`,
+      IGVFDS6501PVZQ: `Each spatial slide holds pooled sections from two time
+        points (days 3 + 6, or 9 + 13), and both donors.`,
+    };
+    const poolWhy = [...extraFrom].map((a) => POOL_NOTE[a]).filter(Boolean).join(" ");
     const nFinal = picked.filter((f) => f.tier === "analysis-ready").length;
 
     // The libraries behind a sample selection, and what else each one holds.
@@ -741,12 +754,11 @@ function renderBuilder(d, index) {
         ${copyBtn(picked.map((f) => f.download).join("\n"), "Copy URLs")}
         ${copyBtn(picked.map((f) => f.s3_uri).filter(Boolean).join("\n"), "Copy S3 URIs")}
       </div>
-      ${extra.size ? `<div class="bnote">The 10x Multiome libraries are genetically
-        multiplexed — one library pools four donors sampled on four different days —
-        so these files also carry ${extra.size <= 6
+      ${extra.size ? `<div class="bnote">${poolWhy} So these files also carry
+        ${extra.size <= 6
           ? [...extra].sort().map(cellLabel).join(", ")
-          : `${extra.size} samples you did not pick`}. Split them by donor with the
-        WGS genotypes and the cell annotations from the analysis-ready set.</div>` : ""}
+          : `${extra.size} samples you did not pick`}; use the cell annotations
+        from the analysis-ready set to separate them.</div>` : ""}
       ${state.cells.size && nFinal ? `<div class="bnote">${nFinal}
         analysis-ready ${nFinal === 1 ? "file spans" : "files span"} the whole time
         course and every donor, so ${nFinal === 1 ? "it is" : "they are"} included in

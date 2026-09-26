@@ -231,17 +231,22 @@ def donor_days(upstream_ms, sample_recs, name_of):
 
     The Multiome libraries are genetically multiplexed: one library pools four
     donors sampled on four *different* days, so a library has a set of
-    donor-days rather than a single timepoint. snmCT-seq, sn-m3C-seq and WGS
-    libraries are one donor at one day; the spatial slides are pooled sections
-    at a single day.
+    donor-days rather than a single timepoint. The spatial slides are pooled
+    too, through the sample's `pooled_from`: slides 3 and 5 hold C29 and C38 at
+    days 3 and 6. The pooled record's own summary and time_post_change give only
+    the latest day, so the components are what carry the timepoints.
+    snmCT-seq, sn-m3C-seq and WGS libraries are one donor at one day.
     """
     pairs, multiplexed = [], False
     for m in upstream_ms:
         for s in m.get("samples", []) or []:
             if not isinstance(s, dict):
                 continue
-            rec = sample_recs.get(s.get("@id"))
-            comps = (rec or {}).get("multiplexed_samples") or []
+            rec = sample_recs.get(s.get("@id")) or {}
+            comps = rec.get("multiplexed_samples") or []
+            if not comps and rec.get("pooled_from"):
+                comps = [sample_recs.get(p if isinstance(p, str) else p.get("@id"))
+                         or {} for p in rec["pooled_from"]]
             if comps:
                 multiplexed = True
                 for c in comps:
@@ -280,6 +285,8 @@ def describe_group(inter, upstream_ms, sample_recs, name_of):
         bits.append(", ".join(donors) if len(donors) <= 2 else f"{len(donors)} donors")
         if len(days) == 1:
             bits.append(f"day {days[0]}")
+        elif days:
+            bits.append("days " + ", ".join(str(x) for x in days))
     elif len(donors) == 1 and len(days) <= 1:
         bits = [donors[0]] + ([f"day {days[0]}"] if days else [])
     else:
@@ -341,12 +348,18 @@ def main():
     sys.stderr.write(f"measurement sets: {len(set(ms_paths))}\n")
     ms = fetch_many(ms_paths)
 
-    # Multiplexed samples hold the reprogramming day for the pooled Multiome
-    # libraries, which the set aliases do not carry.
+    # Full sample records: multiplexed samples hold the per-donor days of the
+    # pooled Multiome libraries, and pooled samples (the spatial slides) list
+    # their per-donor, per-day components in pooled_from. Neither is embedded
+    # in the measurement set, so fetch every sample, then the components.
     sample_paths = [s["@id"] for m in ms.values()
                     for s in m.get("samples", []) or []
-                    if isinstance(s, dict) and "multiplexed" in s.get("@id", "")]
+                    if isinstance(s, dict)]
     sample_recs = fetch_many(sample_paths) if sample_paths else {}
+    pooled = [p if isinstance(p, str) else p.get("@id")
+              for r in sample_recs.values() for p in r.get("pooled_from") or []]
+    if pooled:
+        sample_recs.update(fetch_many(pooled))
 
     # Resolve donor accessions to the manuscript's line names via portal aliases.
     donor_paths = []
