@@ -695,7 +695,7 @@ function renderBuilder(d, index) {
         one library pools four donors sampled on four different days. Split them
         by donor with the WGS genotypes.`,
       IGVFDS6501PVZQ: `Each spatial slide holds pooled sections from two time
-        points (days 3 + 6, or 9 + 13), and both donors.`,
+        points (days 3 + 7, or 9 + 13), and both donors.`,
     };
     const poolWhy = [...extraFrom].map((a) => POOL_NOTE[a]).filter(Boolean).join(" ");
     const nFinal = picked.filter((f) => f.tier === "analysis-ready").length;

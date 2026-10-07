@@ -233,7 +233,7 @@ def donor_days(upstream_ms, sample_recs, name_of):
     donors sampled on four *different* days, so a library has a set of
     donor-days rather than a single timepoint. The spatial slides are pooled
     too, through the sample's `pooled_from`: slides 3 and 5 hold C29 and C38 at
-    days 3 and 6. The pooled record's own summary and time_post_change give only
+    days 3 and 7. The pooled record's own summary and time_post_change give only
     the latest day, so the components are what carry the timepoints.
     snmCT-seq, sn-m3C-seq and WGS libraries are one donor at one day.
     """

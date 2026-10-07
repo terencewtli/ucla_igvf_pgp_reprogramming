@@ -177,6 +177,6 @@ survive a change of host.
 - Decide whether to host the manuscript PDF here (not copied in by default).
 - The 14 cross-modal pseudobulk sets are not yet released; once they are,
   `fetch_igvf.py` will pick them up.
-- The spatial slides carry the portal's induction days (6, 13 and 30 days for the
+- The spatial slides carry the portal's induction days (7, 13 and 30 days for the
   pilots); the manuscript describes the in situ timepoints differently. Worth
   reconciling before the preprint, since the page now shows the portal's numbers.
