@@ -484,24 +484,46 @@ section { padding: 30px 0; border-bottom: 1px solid var(--rule); }
 .bfiles > summary::before { content: "▸ "; font-size: 10px; }
 .bfiles .ftable { background: var(--panel); margin-top: 10px; }
 .bfiles .scroller > .ftable { min-width: 680px; }
-/* pseudobulk: cell state x file type, every cell a download */
+/* pseudobulk: the same faceted browser, its matrix cell state x file type */
 .pbnote { margin: 0 0 14px; }
-.pbtable { min-width: 940px; }
+.pbhint { font-size: 11.5px; color: var(--ink-3); }
+.pbtable { min-width: 700px; }
 .pbtable th.pbt, .pbtable td.pbf { text-align: right; }
 .pbtable th.pbt .fmt { display: block; width: fit-content; margin: 4px 0 0 auto; text-transform: none; letter-spacing: 0; }
-.pbtable td.ct { min-width: 210px; }
-.pbtable .pbq, .pbtable .pbacc, .pbtable .pbfrom span, .pbtable .pbcol td.pbf span {
-  display: block; font-weight: 400; font-size: 11px; color: var(--ink-3); margin-top: 2px;
+.pbtable td { padding-top: 6px; padding-bottom: 6px; }
+/* Two short lines per state: the name, then one line of its description,
+   clipped. max-width: 0 lets the cell take the table's spare width rather than
+   the description's full length; the file columns shrink to their content. */
+.pbtable td.ct { max-width: 0; }
+.pbtable th.pbt, .pbtable td.pbf { width: 1%; }
+.pbrow { display: flex; flex-wrap: wrap; align-items: baseline; gap: 1px 7px; min-width: 0; white-space: nowrap; }
+/* row and column headings are the state and file-type facets */
+.pbh {
+  background: none; border: 0; padding: 0; cursor: pointer;
+  font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit;
+  text-align: inherit;
 }
-.pbtable .pbacc { font-family: var(--mono); font-size: 10.5px; text-decoration: none; width: fit-content; }
+.pbh:hover { color: var(--accent); text-decoration: underline; }
+.pbh.on { color: var(--accent); }
+.pbh.on::before { content: "✓ "; }
+.pbtable .pbq {
+  order: 1; flex: 0 0 100%; min-width: 0; overflow: hidden; text-overflow: ellipsis;
+  font-weight: 400; font-size: 11px; color: var(--ink-3);
+}
+.pbtable .pbacc { flex: none; font-size: 11px; text-decoration: none; color: var(--ink-3); }
 .pbtable .pbacc:hover { color: var(--accent); }
-.pbtable td.pbfrom { white-space: nowrap; color: var(--ink-2); }
+/* all fourteen states show at once, so the sidebar ends level with the matrix */
+#p-state { max-height: none; }
 .pbtable td.pbf { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .pbtable td.pbf a { text-decoration: none; font-weight: 560; }
 .pbtable td.pbf a:hover { text-decoration: underline; }
 .pbtable td.pbf.none { color: var(--rule-2); }
-.pbtable tbody tr:not(.pbcol):hover { background: var(--accent-bg); }
-.pbtable .pbcol td { background: var(--panel-2); border-top: 1px solid var(--rule-2); }
+.pbtable td.pbf.on { background: var(--accent-bg); }
+.pbtable td.pbf.off a, .pbtable tr.off td.ct { opacity: .38; }
+.pbtable td.pbf.off a:hover, .pbtable tr.off td.ct:hover { opacity: 1; }
+.pbout { border-bottom: 1px solid var(--rule); }
+.pbout .bacts { margin-top: 0; }
+.pbportal { font-size: 12px; text-decoration: none; align-self: center; }
 .embargo {
   font: 500 10px/1 var(--sans); color: var(--warn-ink); background: var(--warn-bg);
   border: 1px solid var(--warn-rule); border-radius: 4px; padding: 2px 5px;
@@ -547,6 +569,10 @@ footer a { color: var(--ink-2); }
   .facets { border-right: 0; border-bottom: 1px solid var(--rule); }
   .fterms { display: flex; flex-wrap: wrap; gap: 2px; }
   .fterm { width: auto; }
+  /* no room for the description beside seven columns; it stays in the tooltip */
+  .pbtable td.ct { max-width: none; }
+  .pbtable th.pbt, .pbtable td.pbf { width: auto; }
+  .pbtable .pbq { display: none; }
 }
 @media (max-width: 860px) {
   .tierhead, .trow { grid-template-columns: 160px repeat(3, 1fr) 180px; }

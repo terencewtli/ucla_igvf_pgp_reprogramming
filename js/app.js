@@ -380,6 +380,14 @@ function manifestTsv(files) {
   ].join("\t")).join("\n") + "\n";
 }
 
+/* One facet term: a tick, its name, and the number of files it would yield
+   given everything else already picked. Shared by both faceted browsers. */
+const term = (group, key, label, on, n, b) =>
+  `<button class="fterm ${on ? "on" : ""}" data-g="${group}" data-k="${esc(key)}"
+     title="${esc(label)} — ${num(n)} files, ${bytes(b)}">
+     <span class="tick"></span><span class="lbl">${esc(label)}</span>
+     <span class="cnt">${num(n)}</span></button>`;
+
 function renderBuilder(d, index) {
   const cols = index.columns;
   const rec = (row) => Object.fromEntries(cols.map((c, i) => [c, row[i]]));
@@ -526,14 +534,6 @@ function renderBuilder(d, index) {
         <div class="bout" id="b-out"></div>
       </div>
     </div>`;
-
-  /* One facet term: a tick, its name, and the number of files it would yield
-     given everything else already picked. */
-  const term = (group, key, label, on, n, b) =>
-    `<button class="fterm ${on ? "on" : ""}" data-g="${group}" data-k="${esc(key)}"
-       title="${esc(label)} — ${num(n)} files, ${bytes(b)}">
-       <span class="tick"></span><span class="lbl">${esc(label)}</span>
-       <span class="cnt">${num(n)}</span></button>`;
 
   function drawGrid(tally) {
     const out = [`<div class="ddcorner">donor · day</div>`];
@@ -839,9 +839,12 @@ function renderBuilder(d, index) {
 
 /* ================================================ download: pseudobulk */
 
-/* The pseudobulk sets are few enough (14 states x up to 7 file types) to lay
-   out whole, so there is nothing to filter: every cell of the table is one
-   file, and each row, each column and the table itself can be taken at once.
+/* The same faceted browser as "Get donor/timepoint data", over the pseudobulk sets: filters
+   down the left, a cell state x file type matrix and the result on the right.
+   Every dimension is optional and empty means all, so a selection can cut across
+   states ("every loop file", "all 3D genome files for the day 0 states") rather
+   than stopping at one row. Each cell of the matrix is still one file and still
+   downloads on its own.
 
    Until the sets are released the portal answers 403 to an anonymous request,
    so the links are real but only work with IGVF access keys. The script below
@@ -855,6 +858,18 @@ const PB_TYPE = {
   "chromatin conformation compartments": "Compartments",
   "topologically associating domains": "TADs",
   "chromatin conformation loops": "Loops",
+};
+
+/* The molecular layer a file type reads out, so the four 3D genome types (or
+   the two accessibility ones) can be taken together. */
+const PB_LAYER = {
+  "alignments": "Chromatin accessibility",
+  "ATAC-seq signal": "Chromatin accessibility",
+  "methylation counts": "DNA methylation",
+  "contact matrix": "3D genome",
+  "chromatin conformation compartments": "3D genome",
+  "topologically associating domains": "3D genome",
+  "chromatin conformation loops": "3D genome",
 };
 
 function pbScript(files, title, anyEmbargoed) {
@@ -901,10 +916,10 @@ function renderPseudobulk(pb) {
   sec.hidden = false;
   document.getElementById("nav-pb").hidden = false;
 
-  const types = pb.types.map((t) => t.content_type);
   const waiting = pb.sets.filter((s) => !s.released);
-  const urls = (files) => files.map((f) => f.download).join("\n") + "\n";
   const all = pb.sets.flatMap((s) => s.files.map((f) => ({ s, f })));
+  const typeLabel = (t) => PB_TYPE[t] || t;
+  const layerOf = (t) => PB_LAYER[t] || "Other";
 
   // A set drawn from a single donor is that donor's own copy of a state.
   const own = pb.sets.filter((s) => s.donors.length === 1).length;
@@ -914,69 +929,226 @@ function renderPseudobulk(pb) {
     + `${num(pb.n_files)} files · ${bytes(pb.bytes)}`
     + (waiting.length ? " · not yet released" : "");
 
-  const days = (s) => !s.days.length ? ""
-    : s.days.length === 1 ? `day ${s.days[0]}`
-    : `days ${s.days.join(", ")}`;
+  /* A row is one line; what does not fit — the full description, who the cells
+     came from and when — is the row's tooltip. */
+  const about = (s) => [
+    `${s.name} — ${s.qualifier || s.summary || ""}`,
+    s.donors.length === 1 ? `donor ${s.donors[0]}` : `${s.donors.length} donors pooled`,
+    !s.days.length ? "" : `day${s.days.length === 1 ? "" : "s"} ${s.days.join(", ")}`,
+    s.accession,
+  ].filter(Boolean).join(" · ");
 
-  const head = `<tr><th>Cell state</th><th>Cells from</th>
-    ${pb.types.map((t) => `<th class="pbt">${esc(PB_TYPE[t.content_type] || t.content_type)}
-        <span class="fmt">${esc(t.file_format)}</span></th>`).join("")}
-    <th></th></tr>`;
+  /* The dimensions: what each one reads off a (set, file) pair, and its terms
+     in display order. State belongs to the set; layer and file type to the
+     file. */
+  const DIM = {
+    state: ({ s }) => [s.accession],
+    layer: ({ f }) => [layerOf(f.content_type)],
+    type:  ({ f }) => [f.content_type],
+  };
+  const uniq = (xs) => [...new Set(xs)];
+  const TERMS = {
+    state: pb.sets.map((s) => [s.accession, s.name]),
+    layer: uniq(pb.types.map((t) => layerOf(t.content_type))).map((k) => [k, k]),
+    type:  pb.types.map((t) => [t.content_type, typeLabel(t.content_type)]),
+  };
+  const labelOf = (g, k) => (TERMS[g].find(([key]) => key === k) || [k, k])[1];
 
-  const rows = pb.sets.map((s) => {
-    const byType = Object.fromEntries(s.files.map((f) => [f.content_type, f]));
-    return `<tr>
-      <td class="ct">${esc(s.name)}
-        ${s.released ? "" : '<span class="embargo">not released</span>'}
-        <span class="pbq">${esc(s.qualifier || s.summary || "")}</span>
-        <a class="pbacc" href="${esc(s.portal)}" target="_blank" rel="noopener">${esc(s.accession)} ↗</a></td>
-      <td class="pbfrom">${esc(s.donors.length === 1 ? s.donors[0] : `${s.donors.length} donors`)}
-        <span>${esc(days(s))}</span></td>
-      ${types.map((t) => {
-        const f = byType[t];
-        return f
-          ? `<td class="pbf"><a href="${esc(f.download)}"
-               title="${esc(`${f.filename || f.accession} — ${f.accession}, md5 ${f.md5 || "?"}`)}">↓ ${bytes(f.size)}</a></td>`
-          : `<td class="pbf none">—</td>`;
-      }).join("")}
-      <td class="act">${saveBtn(urls(s.files), `${s.accession}-${s.name}-urls.txt`,
-                                `all ${s.files.length}`)}</td>
-    </tr>`;
-  }).join("");
+  // Every dimension: empty means all.
+  const state = Object.fromEntries(Object.keys(DIM).map((g) => [g, new Set()]));
+  const match = (r, skip) => Object.keys(DIM).every((g) =>
+    g === skip || !state[g].size || DIM[g](r).some((v) => state[g].has(v)));
 
-  // One button per column: every state's file of that type.
-  const foot = `<tr class="pbcol"><td class="ct" colspan="2">Whole column</td>
-    ${pb.types.map((t) => {
-      const fs = all.filter(({ f }) => f.content_type === t.content_type).map(({ f }) => f);
-      const slug = (PB_TYPE[t.content_type] || t.content_type).toLowerCase().replace(/\W+/g, "-");
-      return `<td class="pbf">${saveBtn(urls(fs), `pseudobulk-${slug}-urls.txt`, `all ${fs.length}`)}
-        <span>${bytes(t.bytes)}</span></td>`;
-    }).join("")}
-    <td></td></tr>`;
-
-  const files = all.map(({ f }) => f);
-  document.getElementById("pb").innerHTML = `
+  const root = document.getElementById("pb");
+  root.innerHTML = `
     ${waiting.length ? `<div class="bnote pbnote"><b>Not yet released.</b>
       ${waiting.length === pb.sets.length ? "These sets are" : `${waiting.length} of these sets are`}
       deposited on the IGVF portal but not public, so the links below return 403 until
       release unless the request carries IGVF access keys. The curl script uses
       <code>IGVF_API_KEY</code> and <code>IGVF_SECRET_KEY</code> when they are set.
       Last checked ${esc(pb.generated)}.</div>` : ""}
-    <div class="dcard">
-      <div class="scroller"><table class="ftable pbtable">
-        <thead>${head}</thead>
-        <tbody>${rows}${foot}</tbody>
-      </table></div>
-      <div class="dfoot">
-        <span class="lbl">All ${num(files.length)} files, ${bytes(pb.bytes)}:</span>
-        ${saveBtn(urls(files), "pseudobulk-urls.txt", "urls.txt")}
-        ${saveBtn(pbScript(files, "All pseudobulk files", waiting.length > 0),
-                  "download-pseudobulk.sh", "curl script")}
-        ${saveBtn(pbManifest(all), "pseudobulk-manifest.tsv", "manifest.tsv")}
-        ${copyBtn(files.map((f) => f.download).join("\n"), "Copy URLs")}
-        <a href="${esc(pb.sets_search)}" target="_blank" rel="noopener">browse on the portal ↗</a>
+    <div class="fbrowse">
+      <aside class="facets">
+        <div class="fhead">
+          <b>Filters</b>
+          <button class="flink" id="p-clear">Clear all</button>
+        </div>
+        <details class="fgroup" open>
+          <summary>Cell state</summary>
+          <div class="fterms" id="p-state"></div>
+        </details>
+        <details class="fgroup" open>
+          <summary>Molecular layer</summary>
+          <div class="fterms" id="p-layer"></div>
+        </details>
+        <details class="fgroup" open>
+          <summary>File type</summary>
+          <div class="fterms" id="p-type"></div>
+        </details>
+      </aside>
+
+      <div class="fmain">
+        <div class="fbar">
+          <div class="fcount" id="p-count"></div>
+          <div class="fpills" id="p-pills"></div>
+        </div>
+        <!-- the result sits above the matrix: fourteen rows would push it off screen -->
+        <div class="bout pbout" id="p-out"></div>
+        <div class="matrix">
+          <div class="mhead">
+            <b>Cell state × file type</b>
+            <span class="pbhint">Click a state or a column heading to select it;
+              click a size to download that one file. Hover a state for its details.</span>
+          </div>
+          <div class="scroller"><table class="ftable pbtable" id="p-table"></table></div>
+        </div>
       </div>
     </div>`;
+
+  function drawFacets() {
+    for (const g of Object.keys(DIM)) {
+      const t = {};
+      for (const r of all) {
+        if (!match(r, g)) continue;
+        for (const v of DIM[g](r)) {
+          const e = t[v] || (t[v] = { n: 0, b: 0 });
+          e.n++;
+          e.b += r.f.size || 0;
+        }
+      }
+      document.getElementById(`p-${g}`).innerHTML = TERMS[g].map(([k, label]) =>
+        term(g, k, label, state[g].has(k), t[k] ? t[k].n : 0, t[k] ? t[k].b : 0)).join("");
+    }
+  }
+
+  const pills = () => Object.keys(DIM).flatMap((g) =>
+    TERMS[g].filter(([k]) => state[g].has(k)).map(([k, label]) => [g, k, label]));
+
+  function drawBar(picked) {
+    const total = picked.reduce((a, r) => a + (r.f.size || 0), 0);
+    document.getElementById("p-count").innerHTML =
+      `<b>${num(picked.length)}</b> file${picked.length === 1 ? "" : "s"}
+       <span>${bytes(total)}</span>`;
+    const ps = pills();
+    document.getElementById("p-pills").innerHTML = ps.length
+      ? ps.map(([g, k, label]) =>
+          `<button class="fpill" data-g="${g}" data-k="${esc(k)}">${esc(label)}
+             <i>×</i></button>`).join("")
+      : `<span class="fnone">no filters — every pseudobulk file</span>`;
+  }
+
+  /* The matrix doubles as the selection's picture: with any filter on, the files
+     it keeps are tinted and the rest fade, and the row and column headings are
+     the state and file-type facets again. */
+  function drawTable(picked) {
+    const any = Object.values(state).some((s) => s.size);
+    const inSel = new Set(picked.map((r) => r.f.accession));
+
+    const head = `<tr><th>Cell state</th>
+      ${pb.types.map((t) => `<th class="pbt">
+        <button class="pbh ${state.type.has(t.content_type) ? "on" : ""}" data-g="type"
+          data-k="${esc(t.content_type)}"
+          title="Select ${esc(typeLabel(t.content_type))} for every state">${esc(typeLabel(t.content_type))}</button>
+        <span class="fmt">${esc(t.file_format)}</span></th>`).join("")}</tr>`;
+
+    const rows = pb.sets.map((s) => {
+      const byType = Object.fromEntries(s.files.map((f) => [f.content_type, f]));
+      const kept = s.files.some((f) => inSel.has(f.accession));
+      return `<tr class="${any && !kept ? "off" : ""}">
+        <td class="ct"><div class="pbrow" title="${esc(about(s))}">
+          <button class="pbh ${state.state.has(s.accession) ? "on" : ""}" data-g="state"
+            data-k="${esc(s.accession)}">${esc(s.name)}</button>
+          ${s.released ? "" : '<span class="embargo">not released</span>'}
+          <span class="pbq">${esc(s.qualifier || s.summary || "")}</span>
+          <a class="pbacc" href="${esc(s.portal)}" target="_blank" rel="noopener"
+             title="${esc(s.accession)} on the IGVF portal">↗</a></div></td>
+        ${pb.types.map((t) => {
+          const f = byType[t.content_type];
+          if (!f) return `<td class="pbf none">—</td>`;
+          const cls = !any ? "" : inSel.has(f.accession) ? "on" : "off";
+          return `<td class="pbf ${cls}"><a href="${esc(f.download)}"
+            title="${esc(`${f.filename || f.accession} — ${f.accession}, md5 ${f.md5 || "?"}`)}">↓ ${bytes(f.size)}</a></td>`;
+        }).join("")}
+      </tr>`;
+    }).join("");
+
+    document.getElementById("p-table").innerHTML =
+      `<thead>${head}</thead><tbody>${rows}</tbody>`;
+  }
+
+  function drawOut(picked) {
+    const out = document.getElementById("p-out");
+    if (!picked.length) {
+      out.innerHTML = `<div class="bsum"><b>No files match</b>
+        <span>Widen the selection — the filters are ANDed, and not every state
+          has every file type.</span></div>`;
+      return;
+    }
+    const files = picked.map((r) => r.f);
+    const sets = uniq(picked.map((r) => r.s));
+    const ps = pills();
+    const title = ps.length
+      ? `Pseudobulk — ${Object.keys(DIM).filter((g) => state[g].size).map((g) =>
+          ps.filter((p) => p[0] === g).map((p) => p[2]).join(" + ")).join(" · ")}`
+      : "All pseudobulk files";
+    const slug = !ps.length ? "pseudobulk"
+      : "pseudobulk-" + (ps.length <= 3
+        ? ps.map((p) => p[2]).join("-").toLowerCase().replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-|-$/g, "")
+        : "selection");
+    const urls = files.map((f) => f.download).join("\n");
+    const portal = "https://data.igvf.org/search/?type=PseudobulkSet&"
+      + sets.map((s) => `accession=${s.accession}`).join("&");
+
+    out.innerHTML = `
+      <div class="bacts">
+        ${saveBtn(urls + "\n", `${slug}-urls.txt`, "↓ urls.txt")}
+        ${saveBtn(pbScript(files, title, picked.some((r) => !r.s.released)),
+                  `download-${slug}.sh`, "↓ curl script")}
+        ${saveBtn(pbManifest(picked), `${slug}-manifest.tsv`, "↓ manifest.tsv")}
+        ${copyBtn(urls, "Copy URLs")}
+        <a class="pbportal" href="${esc(portal)}" target="_blank" rel="noopener">
+          ${sets.length} ${sets.length === 1 ? "set" : "sets"} on the portal ↗</a>
+      </div>
+      <details class="bfiles">
+        <summary>${num(picked.length)} file${picked.length === 1 ? "" : "s"}</summary>
+        <div class="scroller"><table class="ftable">
+          <thead><tr><th>Accession</th><th>Cell state</th><th>File type</th><th>Format</th>
+            <th>Size</th><th>Submitted as</th><th></th></tr></thead>
+          <tbody>${picked.map(({ s, f }) => `<tr>
+            <td class="acc"><a href="${esc(f.download)}">${esc(f.accession)}</a></td>
+            <td>${esc(s.name)}</td>
+            <td class="ct">${esc(typeLabel(f.content_type))}</td>
+            <td><span class="fmt">${esc(f.file_format)}</span></td>
+            <td class="sz">${bytes(f.size)}</td>
+            <td class="acc">${esc(f.filename || "")}</td>
+            <td class="act"><a class="dbtn" href="${esc(f.download)}">↓</a></td>
+          </tr>`).join("")}</tbody>
+        </table></div>
+      </details>`;
+  }
+
+  function draw() {
+    const picked = all.filter((r) => match(r, null));
+    drawFacets();
+    drawBar(picked);
+    drawTable(picked);
+    drawOut(picked);
+  }
+
+  // Facet terms, pills and the matrix headings all carry data-g and data-k.
+  root.addEventListener("click", (e) => {
+    const t = e.target.closest("[data-g],#p-clear");
+    if (!t) return;
+    if (t.id === "p-clear") Object.values(state).forEach((s) => s.clear());
+    else {
+      const s = state[t.dataset.g], k = t.dataset.k;
+      if (s.has(k)) s.delete(k); else s.add(k);
+    }
+    draw();
+  });
+
+  draw();
 }
 
 /* ------------------------------------------------------------------- boot */

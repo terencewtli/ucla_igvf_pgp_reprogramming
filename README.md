@@ -111,7 +111,7 @@ own sample summaries — see `donor_days()`.
 
 ## The faceted browser
 
-"Get the data" (`renderBuilder` in `js/app.js`) is the page's centrepiece and its
+"Get donor/timepoint data" (`renderBuilder` in `js/app.js`) is the page's centrepiece and its
 first section: filters down the left, a donor x reprogramming-day matrix and the
 result on the right, after the ENCODE matrix pages. Four dimensions —
 **sample x modality x tier x file type** — each optional, each empty meaning all,
@@ -144,6 +144,28 @@ Three rules the UI states on screen rather than hiding:
   near-empty row and a day-30 column of its own. `DONOR_NOTES` in
   `fetch_igvf.py` decides this via the `in_manuscript` flag on each donor;
   A8's files stay reachable from the by-type section.
+
+## The pseudobulk browser
+
+"Processed pseudobulk data" (`renderPseudobulk`) is the same faceted browser over
+the 14 pseudobulk sets, so a download can cut across cell states instead of
+stopping at one row. Three dimensions, each optional, empty meaning all, ANDed:
+**cell state x molecular layer x file type**. Its
+matrix is cell state x file type; the row and column headings toggle the same
+state and file-type terms as the sidebar, and each cell is still a direct
+download of that one file. With a filter on, the matrix tints the files the
+selection keeps and fades the rest.
+
+Molecular layer (`PB_LAYER`) groups the file types by what they read out —
+accessibility, methylation, 3D genome.
+
+Each matrix row is two short lines — the state's name, then one clipped line of
+its description — which keeps the matrix about as tall as the sidebar. The full
+description, donors, days and accession are the row's tooltip, and the manifest
+carries them too. Below 900px the description line is dropped.
+
+The result panel sits above the matrix, not below it as in "Get donor/timepoint data",
+because fourteen rows would push the download buttons off the screen.
 
 ## Preview locally
 
