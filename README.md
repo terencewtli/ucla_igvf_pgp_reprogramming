@@ -118,8 +118,9 @@ result on the right, after the ENCODE matrix pages. Four dimensions —
 every facet term carrying the count it would yield. The result is a URL list, a
 curl or aws script, or a manifest, built in the browser.
 
-Everything else on the page folds away (`<details class="fold">`), so the page
-opens on the tool rather than on prose. Summary is open by default; the tier
+Every section folds (`<details class="fold">`), the browser included; it and
+the pseudobulk browser start open, so the page opens on the tools rather than on
+prose. A nav link or the hero button that points at a folded section opens it. Summary is open by default; the tier
 table, the analysis-ready list and the by-type manifests start closed.
 
 The sample axis keys on **(donor, day) pairs, not the cross product** of a file's

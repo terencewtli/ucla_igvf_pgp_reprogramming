@@ -1151,6 +1151,15 @@ function renderPseudobulk(pb) {
   draw();
 }
 
+/* A nav link or the hero button that points at a folded section opens it, so
+   the jump never lands on a closed heading. */
+document.addEventListener("click", (e) => {
+  const a = e.target.closest('a[href^="#"]');
+  const fold = a && a.getAttribute("href").length > 1
+    && document.querySelector(`${a.getAttribute("href")} details.fold`);
+  if (fold) fold.open = true;
+});
+
 /* ------------------------------------------------------------------- boot */
 /* Optional: the section stays hidden if the file is not there. */
 fetch("data/pseudobulk.json").then((r) => r.ok ? r.json() : null)
