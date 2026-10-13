@@ -906,8 +906,12 @@ function renderPseudobulk(pb) {
   const urls = (files) => files.map((f) => f.download).join("\n") + "\n";
   const all = pb.sets.flatMap((s) => s.files.map((f) => ({ s, f })));
 
+  // A set drawn from a single donor is that donor's own copy of a state.
+  const own = pb.sets.filter((s) => s.donors.length === 1).length;
   document.getElementById("pb-count").textContent =
-    `${pb.sets.length} cell states · ${num(pb.n_files)} files · ${bytes(pb.bytes)}`
+    `${pb.sets.length - own} cell states · `
+    + (own ? `${own} donor-specific cell states · ` : "")
+    + `${num(pb.n_files)} files · ${bytes(pb.bytes)}`
     + (waiting.length ? " · not yet released" : "");
 
   const days = (s) => !s.days.length ? ""
