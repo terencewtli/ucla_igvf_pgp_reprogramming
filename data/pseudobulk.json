@@ -1,0 +1,1919 @@
+{
+  "generated": "2026-10-13",
+  "n_files": 80,
+  "bytes": 146248729734,
+  "n_released": 14,
+  "types": [
+    {
+      "content_type": "alignments",
+      "file_format": "bam",
+      "n": 14,
+      "bytes": 125228816356
+    },
+    {
+      "content_type": "ATAC-seq signal",
+      "file_format": "bigWig",
+      "n": 14,
+      "bytes": 3451316491
+    },
+    {
+      "content_type": "methylation counts",
+      "file_format": "tsv",
+      "n": 14,
+      "bytes": 2156742085
+    },
+    {
+      "content_type": "contact matrix",
+      "file_format": "mcool",
+      "n": 14,
+      "bytes": 15402255493
+    },
+    {
+      "content_type": "chromatin conformation compartments",
+      "file_format": "bed",
+      "n": 8,
+      "bytes": 8471580
+    },
+    {
+      "content_type": "topologically associating domains",
+      "file_format": "bed",
+      "n": 8,
+      "bytes": 267754
+    },
+    {
+      "content_type": "chromatin conformation loops",
+      "file_format": "bedpe",
+      "n": 8,
+      "bytes": 859975
+    }
+  ],
+  "sets": [
+    {
+      "accession": "IGVFDS0105UETZ",
+      "alias": "pgp_start_pseudobulk",
+      "code": "start",
+      "name": "Start",
+      "qualifier": "Primarily Day 0 (before OSKM treatment)",
+      "cell_type": "fibroblast",
+      "summary": "10x multiome, snM3C-seq, snMCT-seq pseudobulk of Homo sapiens Primarily Day 0 (before OSKM treatment) fibroblast",
+      "assays": [
+        "10x multiome",
+        "snM3C-seq",
+        "snMCT-seq"
+      ],
+      "workflows": [
+        "Luo PGP ATAC Workflow",
+        "Luo PGP HiC Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ],
+      "donors": [
+        "C29",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "days": [
+        0
+      ],
+      "donor_days": [
+        "C29:0",
+        "C37:0",
+        "C38:0",
+        "C39:0"
+      ],
+      "status": "released",
+      "portal": "https://data.igvf.org/pseudobulk-sets/IGVFDS0105UETZ/",
+      "files": [
+        {
+          "accession": "IGVFFI2870NXMS",
+          "content_type": "alignments",
+          "file_format": "bam",
+          "size": 10711858741,
+          "md5": "4bdf60b489eec42a5d9290469baf1f5f",
+          "href": "/alignment-files/IGVFFI2870NXMS/",
+          "download": "https://api.data.igvf.org/alignment-files/IGVFFI2870NXMS/@@download/IGVFFI2870NXMS.bam",
+          "s3_uri": "s3://igvf-private/2026/07/30/b2dd519f-d134-45ef-af73-7cb6e951525f/IGVFFI2870NXMS.bam",
+          "summary": "GRCh38 GENCODE 44 unfiltered alignments",
+          "assembly": "GRCh38",
+          "filename": "Start.bam",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI0295SKVS",
+          "content_type": "ATAC-seq signal",
+          "file_format": "bigWig",
+          "size": 282585453,
+          "md5": "a6feedd7059cb428a021c507a7377840",
+          "href": "/signal-files/IGVFFI0295SKVS/",
+          "download": "https://api.data.igvf.org/signal-files/IGVFFI0295SKVS/@@download/IGVFFI0295SKVS.bigWig",
+          "s3_uri": "s3://igvf-private/2026/07/27/ebb98a12-ef5c-4265-8a27-bececb514e4c/IGVFFI0295SKVS.bigWig",
+          "summary": "GRCh38 unstranded ATAC-seq signal",
+          "assembly": "GRCh38",
+          "filename": "Start.bw",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI1976RNLP",
+          "content_type": "methylation counts",
+          "file_format": "tsv",
+          "size": 176322637,
+          "md5": "7ac181349b2af7160e5a10c63368e579",
+          "href": "/tabular-files/IGVFFI1976RNLP/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI1976RNLP/@@download/IGVFFI1976RNLP.tsv.gz",
+          "s3_uri": "s3://igvf-private/2026/07/24/034a7406-65b7-439d-a485-e2bf394e2beb/IGVFFI1976RNLP.tsv.gz",
+          "summary": "GRCh38 GENCODE 44 methylation counts",
+          "assembly": "GRCh38",
+          "filename": "Start.CGN-Merge.allc.tsv.gz",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI5838UXEB",
+          "content_type": "contact matrix",
+          "file_format": "mcool",
+          "size": 1770146177,
+          "md5": "e9dbd2922ab872e45c7bd907145472c5",
+          "href": "/matrix-files/IGVFFI5838UXEB/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI5838UXEB/@@download/IGVFFI5838UXEB.mcool",
+          "s3_uri": "s3://igvf-private/2026/07/24/f8bf0a7f-a048-49f1-a86f-61c4ec777382/IGVFFI5838UXEB.mcool",
+          "summary": "contact matrix",
+          "assembly": "GRCh38",
+          "filename": "Start.mcool",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI5610HTEY",
+          "content_type": "chromatin conformation compartments",
+          "file_format": "bed",
+          "size": 1055939,
+          "md5": "c91709cc94a3c94d1a556f8663743dcb",
+          "href": "/tabular-files/IGVFFI5610HTEY/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI5610HTEY/@@download/IGVFFI5610HTEY.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/b2292097-3784-425d-a7b1-5141682e92df/IGVFFI5610HTEY.tsv.gz",
+          "summary": "GRCh38 chromatin conformation compartments",
+          "assembly": "GRCh38",
+          "filename": "Start_compartments.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI4783JYCL",
+          "content_type": "topologically associating domains",
+          "file_format": "bed",
+          "size": 32156,
+          "md5": "4907c5a68d1baedb2de80c0c2fb44be9",
+          "href": "/tabular-files/IGVFFI4783JYCL/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI4783JYCL/@@download/IGVFFI4783JYCL.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/642b2154-0736-4a60-bb28-205063f09bfd/IGVFFI4783JYCL.tsv.gz",
+          "summary": "GRCh38 topologically associating domains",
+          "assembly": "GRCh38",
+          "filename": "Start_tads.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI5944YIXO",
+          "content_type": "chromatin conformation loops",
+          "file_format": "bedpe",
+          "size": 122939,
+          "md5": "1e0a4c5c201b4f46ffe8fe3c8c25dfbf",
+          "href": "/tabular-files/IGVFFI5944YIXO/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI5944YIXO/@@download/IGVFFI5944YIXO.bedpe.gz",
+          "s3_uri": "s3://igvf-private/2026/10/01/a11626fa-f3e3-4b78-b593-689777450f63/IGVFFI5944YIXO.bedpe.gz",
+          "summary": "GRCh38 chromatin conformation loops",
+          "assembly": "GRCh38",
+          "filename": "Start_loops.bedpe.gz",
+          "status": "released"
+        }
+      ],
+      "bytes": 12942124042,
+      "released": true,
+      "http_anonymous": 200
+    },
+    {
+      "accession": "IGVFDS5743ODRA",
+      "alias": "pgp_sendai_pseudobulk",
+      "code": "sendai",
+      "name": "Sendai",
+      "qualifier": "Post-OSKM infection, primarily days 1-3",
+      "cell_type": "fibroblast",
+      "summary": "10x multiome, snM3C-seq, snMCT-seq pseudobulk of Homo sapiens Post-OSKM infection, primarily days 1-3 fibroblast",
+      "assays": [
+        "10x multiome",
+        "snM3C-seq",
+        "snMCT-seq"
+      ],
+      "workflows": [
+        "Luo PGP ATAC Workflow",
+        "Luo PGP HiC Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ],
+      "donors": [
+        "C29",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "days": [
+        1,
+        3
+      ],
+      "donor_days": [
+        "C29:1",
+        "C29:3",
+        "C37:1",
+        "C37:3",
+        "C38:1",
+        "C38:3",
+        "C39:1",
+        "C39:3"
+      ],
+      "status": "released",
+      "portal": "https://data.igvf.org/pseudobulk-sets/IGVFDS5743ODRA/",
+      "files": [
+        {
+          "accession": "IGVFFI5373GQAL",
+          "content_type": "alignments",
+          "file_format": "bam",
+          "size": 8439021561,
+          "md5": "87981457e667ea5c0dc7e38a0a995760",
+          "href": "/alignment-files/IGVFFI5373GQAL/",
+          "download": "https://api.data.igvf.org/alignment-files/IGVFFI5373GQAL/@@download/IGVFFI5373GQAL.bam",
+          "s3_uri": "s3://igvf-private/2026/07/30/4e59f99a-78be-4e53-b78b-0bf4a5e7d947/IGVFFI5373GQAL.bam",
+          "summary": "GRCh38 GENCODE 44 unfiltered alignments",
+          "assembly": "GRCh38",
+          "filename": "Sendai.bam",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI9353CJXV",
+          "content_type": "ATAC-seq signal",
+          "file_format": "bigWig",
+          "size": 254968337,
+          "md5": "a863b365acdc810184b0876e5a0f692d",
+          "href": "/signal-files/IGVFFI9353CJXV/",
+          "download": "https://api.data.igvf.org/signal-files/IGVFFI9353CJXV/@@download/IGVFFI9353CJXV.bigWig",
+          "s3_uri": "s3://igvf-private/2026/07/27/8151e0a1-7cee-48f6-832f-85968c93b541/IGVFFI9353CJXV.bigWig",
+          "summary": "GRCh38 unstranded ATAC-seq signal",
+          "assembly": "GRCh38",
+          "filename": "Sendai.bw",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI2069PULO",
+          "content_type": "methylation counts",
+          "file_format": "tsv",
+          "size": 177999332,
+          "md5": "7f664c77c47bfbd8ce25dd3ca1ecb6d7",
+          "href": "/tabular-files/IGVFFI2069PULO/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI2069PULO/@@download/IGVFFI2069PULO.tsv.gz",
+          "s3_uri": "s3://igvf-private/2026/07/24/488317ae-974e-4988-bc06-a255a115ea5d/IGVFFI2069PULO.tsv.gz",
+          "summary": "GRCh38 GENCODE 44 methylation counts",
+          "assembly": "GRCh38",
+          "filename": "Sendai.CGN-Merge.allc.tsv.gz",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI2825RNCV",
+          "content_type": "contact matrix",
+          "file_format": "mcool",
+          "size": 2125719209,
+          "md5": "be1fb32635f7e7274f32133a6321adff",
+          "href": "/matrix-files/IGVFFI2825RNCV/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI2825RNCV/@@download/IGVFFI2825RNCV.mcool",
+          "s3_uri": "s3://igvf-private/2026/07/24/b191d092-d7e4-4a07-a1a1-39b121792584/IGVFFI2825RNCV.mcool",
+          "summary": "contact matrix",
+          "assembly": "GRCh38",
+          "filename": "Sendai.mcool",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI5986UFJL",
+          "content_type": "chromatin conformation compartments",
+          "file_format": "bed",
+          "size": 1057588,
+          "md5": "76040a84977c1822660560e2ec115dc2",
+          "href": "/tabular-files/IGVFFI5986UFJL/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI5986UFJL/@@download/IGVFFI5986UFJL.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/7d613652-4dae-41e9-9afd-45a3917480ad/IGVFFI5986UFJL.tsv.gz",
+          "summary": "GRCh38 chromatin conformation compartments",
+          "assembly": "GRCh38",
+          "filename": "Sendai_compartments.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI6795SZTB",
+          "content_type": "topologically associating domains",
+          "file_format": "bed",
+          "size": 33038,
+          "md5": "a57d74314221ef5dafbb8c18a275489b",
+          "href": "/tabular-files/IGVFFI6795SZTB/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI6795SZTB/@@download/IGVFFI6795SZTB.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/1299f5d8-b637-495a-ae05-624fb80f1585/IGVFFI6795SZTB.tsv.gz",
+          "summary": "GRCh38 topologically associating domains",
+          "assembly": "GRCh38",
+          "filename": "Sendai_tads.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI8159RBQD",
+          "content_type": "chromatin conformation loops",
+          "file_format": "bedpe",
+          "size": 98559,
+          "md5": "89249303c2c875c7910b1e7241093ec4",
+          "href": "/tabular-files/IGVFFI8159RBQD/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI8159RBQD/@@download/IGVFFI8159RBQD.bedpe.gz",
+          "s3_uri": "s3://igvf-private/2026/10/01/a74d96d2-e83f-4572-ae38-c3e2248b582a/IGVFFI8159RBQD.bedpe.gz",
+          "summary": "GRCh38 chromatin conformation loops",
+          "assembly": "GRCh38",
+          "filename": "Sendai_loops.bedpe.gz",
+          "status": "released"
+        }
+      ],
+      "bytes": 10998897624,
+      "released": true,
+      "http_anonymous": 200
+    },
+    {
+      "accession": "IGVFDS8169WRMA",
+      "alias": "pgp_skin_pseudobulk",
+      "code": "skin",
+      "name": "Skin",
+      "qualifier": "KLF4-enriched (terminal failure state)",
+      "cell_type": "fibroblast",
+      "summary": "10x multiome, snM3C-seq, snMCT-seq pseudobulk of Homo sapiens KLF4-enriched (terminal failure state) fibroblast",
+      "assays": [
+        "10x multiome",
+        "snM3C-seq",
+        "snMCT-seq"
+      ],
+      "workflows": [
+        "Luo PGP ATAC Workflow",
+        "Luo PGP HiC Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ],
+      "donors": [
+        "C29",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "days": [
+        3,
+        5,
+        7
+      ],
+      "donor_days": [
+        "C29:3",
+        "C29:5",
+        "C29:7",
+        "C37:3",
+        "C37:5",
+        "C37:7",
+        "C38:3",
+        "C38:5",
+        "C38:7",
+        "C39:3",
+        "C39:5",
+        "C39:7"
+      ],
+      "status": "released",
+      "portal": "https://data.igvf.org/pseudobulk-sets/IGVFDS8169WRMA/",
+      "files": [
+        {
+          "accession": "IGVFFI7619EFHM",
+          "content_type": "alignments",
+          "file_format": "bam",
+          "size": 2300876017,
+          "md5": "d4c640d37038ed465b2524e4f7c93774",
+          "href": "/alignment-files/IGVFFI7619EFHM/",
+          "download": "https://api.data.igvf.org/alignment-files/IGVFFI7619EFHM/@@download/IGVFFI7619EFHM.bam",
+          "s3_uri": "s3://igvf-private/2026/07/30/afb6cf3f-85ba-4ea9-becd-dea71248a335/IGVFFI7619EFHM.bam",
+          "summary": "GRCh38 GENCODE 44 unfiltered alignments",
+          "assembly": "GRCh38",
+          "filename": "Skin.bam",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI2649USVD",
+          "content_type": "ATAC-seq signal",
+          "file_format": "bigWig",
+          "size": 87891558,
+          "md5": "5107f7d27f40744024edbc7ffe8b30ef",
+          "href": "/signal-files/IGVFFI2649USVD/",
+          "download": "https://api.data.igvf.org/signal-files/IGVFFI2649USVD/@@download/IGVFFI2649USVD.bigWig",
+          "s3_uri": "s3://igvf-private/2026/07/27/0c4c676a-1873-4e60-9740-6b4ec2bb05cb/IGVFFI2649USVD.bigWig",
+          "summary": "GRCh38 unstranded ATAC-seq signal",
+          "assembly": "GRCh38",
+          "filename": "Skin.bw",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI1507LYOA",
+          "content_type": "methylation counts",
+          "file_format": "tsv",
+          "size": 116261297,
+          "md5": "abb04a8e2f094512584bf1d07fbb6fca",
+          "href": "/tabular-files/IGVFFI1507LYOA/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI1507LYOA/@@download/IGVFFI1507LYOA.tsv.gz",
+          "s3_uri": "s3://igvf-private/2026/07/24/4d58c247-e2aa-4c2f-873f-480543b6462b/IGVFFI1507LYOA.tsv.gz",
+          "summary": "GRCh38 GENCODE 44 methylation counts",
+          "assembly": "GRCh38",
+          "filename": "Skin.CGN-Merge.allc.tsv.gz",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI3000UKHY",
+          "content_type": "contact matrix",
+          "file_format": "mcool",
+          "size": 10073287,
+          "md5": "ce3502db13a40d8c0bebeec4ce8804ac",
+          "href": "/matrix-files/IGVFFI3000UKHY/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI3000UKHY/@@download/IGVFFI3000UKHY.mcool",
+          "s3_uri": "s3://igvf-private/2026/07/24/d54393b7-dbda-4737-a94b-0ad97293578a/IGVFFI3000UKHY.mcool",
+          "summary": "contact matrix",
+          "assembly": "GRCh38",
+          "filename": "Skin.mcool",
+          "status": "released"
+        }
+      ],
+      "bytes": 2515102159,
+      "released": true,
+      "http_anonymous": 200
+    },
+    {
+      "accession": "IGVFDS0705YDXZ",
+      "alias": "pgp_inflamed_pseudobulk",
+      "code": "inflamed",
+      "name": "Inflamed",
+      "qualifier": "Inflammation signature (terminal failure state)",
+      "cell_type": "fibroblast",
+      "summary": "10x multiome, snM3C-seq, snMCT-seq pseudobulk of Homo sapiens Inflammation signature (terminal failure state) fibroblast",
+      "assays": [
+        "10x multiome",
+        "snM3C-seq",
+        "snMCT-seq"
+      ],
+      "workflows": [
+        "Luo PGP ATAC Workflow",
+        "Luo PGP HiC Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ],
+      "donors": [
+        "C29",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "days": [
+        3,
+        5,
+        7,
+        12,
+        14
+      ],
+      "donor_days": [
+        "C29:3",
+        "C29:5",
+        "C29:7",
+        "C29:12",
+        "C29:14",
+        "C37:3",
+        "C37:5",
+        "C37:7",
+        "C37:12",
+        "C37:14",
+        "C38:3",
+        "C38:5",
+        "C38:7",
+        "C38:12",
+        "C38:14",
+        "C39:3",
+        "C39:5",
+        "C39:7",
+        "C39:12",
+        "C39:14"
+      ],
+      "status": "released",
+      "portal": "https://data.igvf.org/pseudobulk-sets/IGVFDS0705YDXZ/",
+      "files": [
+        {
+          "accession": "IGVFFI1692HNMQ",
+          "content_type": "alignments",
+          "file_format": "bam",
+          "size": 4349674436,
+          "md5": "abfd81186fb15260a1e76bbf6bad629d",
+          "href": "/alignment-files/IGVFFI1692HNMQ/",
+          "download": "https://api.data.igvf.org/alignment-files/IGVFFI1692HNMQ/@@download/IGVFFI1692HNMQ.bam",
+          "s3_uri": "s3://igvf-private/2026/07/30/a2ee4202-fbf4-4417-b483-de8cb2530421/IGVFFI1692HNMQ.bam",
+          "summary": "GRCh38 GENCODE 44 unfiltered alignments",
+          "assembly": "GRCh38",
+          "filename": "Inflamed.bam",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI4508DXBL",
+          "content_type": "ATAC-seq signal",
+          "file_format": "bigWig",
+          "size": 153502044,
+          "md5": "ca184cbd04feb131dcec8b0d2d85ee67",
+          "href": "/signal-files/IGVFFI4508DXBL/",
+          "download": "https://api.data.igvf.org/signal-files/IGVFFI4508DXBL/@@download/IGVFFI4508DXBL.bigWig",
+          "s3_uri": "s3://igvf-private/2026/07/27/172eca94-2b35-4ee6-9885-496b97720b56/IGVFFI4508DXBL.bigWig",
+          "summary": "GRCh38 unstranded ATAC-seq signal",
+          "assembly": "GRCh38",
+          "filename": "Inflamed.bw",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI5879NMLM",
+          "content_type": "methylation counts",
+          "file_format": "tsv",
+          "size": 140758030,
+          "md5": "92cf164940aa9d04200e33c9f38aab16",
+          "href": "/tabular-files/IGVFFI5879NMLM/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI5879NMLM/@@download/IGVFFI5879NMLM.tsv.gz",
+          "s3_uri": "s3://igvf-private/2026/07/24/d176e1b7-2ac9-40ba-b376-08b0eaecdd79/IGVFFI5879NMLM.tsv.gz",
+          "summary": "GRCh38 GENCODE 44 methylation counts",
+          "assembly": "GRCh38",
+          "filename": "Inflamed.CGN-Merge.allc.tsv.gz",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI5951WTRQ",
+          "content_type": "contact matrix",
+          "file_format": "mcool",
+          "size": 14183356,
+          "md5": "e85868a53ada1481e0064673f99fa13e",
+          "href": "/matrix-files/IGVFFI5951WTRQ/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI5951WTRQ/@@download/IGVFFI5951WTRQ.mcool",
+          "s3_uri": "s3://igvf-private/2026/07/24/64acdfb8-19ea-4f61-960b-abf6bebd8bcb/IGVFFI5951WTRQ.mcool",
+          "summary": "contact matrix",
+          "assembly": "GRCh38",
+          "filename": "Inflamed.mcool",
+          "status": "released"
+        }
+      ],
+      "bytes": 4658117866,
+      "released": true,
+      "http_anonymous": 200
+    },
+    {
+      "accession": "IGVFDS3073IAMP",
+      "alias": "pgp_delayed_pseudobulk",
+      "code": "delayed",
+      "name": "Delayed",
+      "qualifier": "Unproductive reprogramming intermediate, primarily days 3-7",
+      "cell_type": "fibroblast",
+      "summary": "10x multiome, snM3C-seq, snMCT-seq pseudobulk of Homo sapiens Unproductive reprogramming intermediate, primarily days 3-7 fibroblast",
+      "assays": [
+        "10x multiome",
+        "snM3C-seq",
+        "snMCT-seq"
+      ],
+      "workflows": [
+        "Luo PGP ATAC Workflow",
+        "Luo PGP HiC Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ],
+      "donors": [
+        "C29",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "days": [
+        3,
+        5,
+        7
+      ],
+      "donor_days": [
+        "C29:3",
+        "C29:5",
+        "C29:7",
+        "C37:3",
+        "C37:5",
+        "C37:7",
+        "C38:3",
+        "C38:5",
+        "C38:7",
+        "C39:3",
+        "C39:5",
+        "C39:7"
+      ],
+      "status": "released",
+      "portal": "https://data.igvf.org/pseudobulk-sets/IGVFDS3073IAMP/",
+      "files": [
+        {
+          "accession": "IGVFFI4098MGRO",
+          "content_type": "alignments",
+          "file_format": "bam",
+          "size": 9473867740,
+          "md5": "28a58ffe480bb25c15668b3104e526c7",
+          "href": "/alignment-files/IGVFFI4098MGRO/",
+          "download": "https://api.data.igvf.org/alignment-files/IGVFFI4098MGRO/@@download/IGVFFI4098MGRO.bam",
+          "s3_uri": "s3://igvf-private/2026/07/30/d658a0e2-ec61-4e47-b359-ba36ebee23ab/IGVFFI4098MGRO.bam",
+          "summary": "GRCh38 GENCODE 44 unfiltered alignments",
+          "assembly": "GRCh38",
+          "filename": "Delayed.bam",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI1633JIOX",
+          "content_type": "ATAC-seq signal",
+          "file_format": "bigWig",
+          "size": 272809255,
+          "md5": "c29487e68133e088f079ec3e3c75ab2d",
+          "href": "/signal-files/IGVFFI1633JIOX/",
+          "download": "https://api.data.igvf.org/signal-files/IGVFFI1633JIOX/@@download/IGVFFI1633JIOX.bigWig",
+          "s3_uri": "s3://igvf-private/2026/07/27/ddbe07e8-7370-408e-9495-02eada39eb14/IGVFFI1633JIOX.bigWig",
+          "summary": "GRCh38 unstranded ATAC-seq signal",
+          "assembly": "GRCh38",
+          "filename": "Delayed.bw",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI9500CFVP",
+          "content_type": "methylation counts",
+          "file_format": "tsv",
+          "size": 145879543,
+          "md5": "41a2f64cadef7bf54e88e5a840815ebb",
+          "href": "/tabular-files/IGVFFI9500CFVP/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI9500CFVP/@@download/IGVFFI9500CFVP.tsv.gz",
+          "s3_uri": "s3://igvf-private/2026/07/24/4d9c253f-374d-4c7d-a531-831aad29e0f5/IGVFFI9500CFVP.tsv.gz",
+          "summary": "GRCh38 GENCODE 44 methylation counts",
+          "assembly": "GRCh38",
+          "filename": "Delayed.CGN-Merge.allc.tsv.gz",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI3021RCRW",
+          "content_type": "contact matrix",
+          "file_format": "mcool",
+          "size": 1719459643,
+          "md5": "9c40c90e1dc2741f353c5e74be368096",
+          "href": "/matrix-files/IGVFFI3021RCRW/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI3021RCRW/@@download/IGVFFI3021RCRW.mcool",
+          "s3_uri": "s3://igvf-private/2026/07/24/2397d0ad-8bea-498e-b023-344468652678/IGVFFI3021RCRW.mcool",
+          "summary": "contact matrix",
+          "assembly": "GRCh38",
+          "filename": "Delayed.mcool",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI7565UZCP",
+          "content_type": "chromatin conformation compartments",
+          "file_format": "bed",
+          "size": 1055789,
+          "md5": "55de651dcd59953f7c17c242f30f9795",
+          "href": "/tabular-files/IGVFFI7565UZCP/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI7565UZCP/@@download/IGVFFI7565UZCP.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/63cbfeb5-e3b1-469a-a97e-48023e628efb/IGVFFI7565UZCP.tsv.gz",
+          "summary": "GRCh38 chromatin conformation compartments",
+          "assembly": "GRCh38",
+          "filename": "Delayed_compartments.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI1107VAIK",
+          "content_type": "topologically associating domains",
+          "file_format": "bed",
+          "size": 32276,
+          "md5": "c2bcc172a803bd6a4551597c1b74a6be",
+          "href": "/tabular-files/IGVFFI1107VAIK/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI1107VAIK/@@download/IGVFFI1107VAIK.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/a8da9c8b-1574-4ee6-94c5-00f836ca576e/IGVFFI1107VAIK.tsv.gz",
+          "summary": "GRCh38 topologically associating domains",
+          "assembly": "GRCh38",
+          "filename": "Delayed_tads.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI0968XAVY",
+          "content_type": "chromatin conformation loops",
+          "file_format": "bedpe",
+          "size": 96570,
+          "md5": "9d097c3a66f9d66528a74f400b2814ea",
+          "href": "/tabular-files/IGVFFI0968XAVY/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI0968XAVY/@@download/IGVFFI0968XAVY.bedpe.gz",
+          "s3_uri": "s3://igvf-private/2026/10/01/f63ff5fc-9d27-4e88-a882-b3a08ba5a953/IGVFFI0968XAVY.bedpe.gz",
+          "summary": "GRCh38 chromatin conformation loops",
+          "assembly": "GRCh38",
+          "filename": "Delayed_loops.bedpe.gz",
+          "status": "released"
+        }
+      ],
+      "bytes": 11613200816,
+      "released": true,
+      "http_anonymous": 200
+    },
+    {
+      "accession": "IGVFDS3437KZGE",
+      "alias": "pgp_fail1_pseudobulk",
+      "code": "fail1",
+      "name": "Fail1",
+      "qualifier": "Terminal failure state - primarily days 9-18",
+      "cell_type": "fibroblast",
+      "summary": "10x multiome, snM3C-seq, snMCT-seq pseudobulk of Homo sapiens Terminal failure state - primarily days 9-18 fibroblast",
+      "assays": [
+        "10x multiome",
+        "snM3C-seq",
+        "snMCT-seq"
+      ],
+      "workflows": [
+        "Luo PGP ATAC Workflow",
+        "Luo PGP HiC Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ],
+      "donors": [
+        "C29",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "days": [
+        9,
+        12,
+        14,
+        16,
+        18
+      ],
+      "donor_days": [
+        "C29:9",
+        "C29:12",
+        "C29:14",
+        "C29:16",
+        "C29:18",
+        "C37:9",
+        "C37:12",
+        "C37:14",
+        "C37:16",
+        "C37:18",
+        "C38:9",
+        "C38:12",
+        "C38:14",
+        "C38:16",
+        "C38:18",
+        "C39:9",
+        "C39:12",
+        "C39:14",
+        "C39:16",
+        "C39:18"
+      ],
+      "status": "released",
+      "portal": "https://data.igvf.org/pseudobulk-sets/IGVFDS3437KZGE/",
+      "files": [
+        {
+          "accession": "IGVFFI0136XLBP",
+          "content_type": "alignments",
+          "file_format": "bam",
+          "size": 19244210814,
+          "md5": "f2bdb326d26d56241cd1a095cdecf6e6",
+          "href": "/alignment-files/IGVFFI0136XLBP/",
+          "download": "https://api.data.igvf.org/alignment-files/IGVFFI0136XLBP/@@download/IGVFFI0136XLBP.bam",
+          "s3_uri": "s3://igvf-private/2026/07/30/26920ee2-b659-4213-870e-8baa5f31f7cb/IGVFFI0136XLBP.bam",
+          "summary": "GRCh38 GENCODE 44 unfiltered alignments",
+          "assembly": "GRCh38",
+          "filename": "Fail1.bam",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI7441IWGQ",
+          "content_type": "ATAC-seq signal",
+          "file_format": "bigWig",
+          "size": 498137641,
+          "md5": "bdee6383d6b7111bdd732ce49d4d2e1e",
+          "href": "/signal-files/IGVFFI7441IWGQ/",
+          "download": "https://api.data.igvf.org/signal-files/IGVFFI7441IWGQ/@@download/IGVFFI7441IWGQ.bigWig",
+          "s3_uri": "s3://igvf-private/2026/07/27/6809275e-69d3-4d0f-ba96-d9324af80f41/IGVFFI7441IWGQ.bigWig",
+          "summary": "GRCh38 unstranded ATAC-seq signal",
+          "assembly": "GRCh38",
+          "filename": "Fail1.bw",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI7433LSCD",
+          "content_type": "methylation counts",
+          "file_format": "tsv",
+          "size": 150256797,
+          "md5": "d5d53e42c2e2ec5992f4a4e0f144a414",
+          "href": "/tabular-files/IGVFFI7433LSCD/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI7433LSCD/@@download/IGVFFI7433LSCD.tsv.gz",
+          "s3_uri": "s3://igvf-private/2026/07/24/b511fe95-e4df-4840-8ec8-721b949c10d4/IGVFFI7433LSCD.tsv.gz",
+          "summary": "GRCh38 GENCODE 44 methylation counts",
+          "assembly": "GRCh38",
+          "filename": "Fail1.CGN-Merge.allc.tsv.gz",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI2482JIGK",
+          "content_type": "contact matrix",
+          "file_format": "mcool",
+          "size": 1113182292,
+          "md5": "01c4043a19f4d5fc7bc32c0352c63044",
+          "href": "/matrix-files/IGVFFI2482JIGK/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI2482JIGK/@@download/IGVFFI2482JIGK.mcool",
+          "s3_uri": "s3://igvf-private/2026/07/24/2d43c93e-d75b-4364-a589-7590ce97cc57/IGVFFI2482JIGK.mcool",
+          "summary": "contact matrix",
+          "assembly": "GRCh38",
+          "filename": "Fail1.mcool",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI8121NHJA",
+          "content_type": "chromatin conformation compartments",
+          "file_format": "bed",
+          "size": 1058815,
+          "md5": "d5df1699d6b50c75cee81e23dfb4ab2d",
+          "href": "/tabular-files/IGVFFI8121NHJA/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI8121NHJA/@@download/IGVFFI8121NHJA.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/f24bc691-b75d-406a-a482-f79ec0c11cfe/IGVFFI8121NHJA.tsv.gz",
+          "summary": "GRCh38 chromatin conformation compartments",
+          "assembly": "GRCh38",
+          "filename": "Fail1_compartments.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI4473IWEY",
+          "content_type": "topologically associating domains",
+          "file_format": "bed",
+          "size": 32634,
+          "md5": "af0c51f2bbc59dd738d1fbd112689452",
+          "href": "/tabular-files/IGVFFI4473IWEY/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI4473IWEY/@@download/IGVFFI4473IWEY.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/95122fb7-9673-4c45-aa78-dffbbf4b3502/IGVFFI4473IWEY.tsv.gz",
+          "summary": "GRCh38 topologically associating domains",
+          "assembly": "GRCh38",
+          "filename": "Fail1_tads.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI3573AYCV",
+          "content_type": "chromatin conformation loops",
+          "file_format": "bedpe",
+          "size": 167961,
+          "md5": "9d21d89f7c92206c0bed3c066bf1299c",
+          "href": "/tabular-files/IGVFFI3573AYCV/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI3573AYCV/@@download/IGVFFI3573AYCV.bedpe.gz",
+          "s3_uri": "s3://igvf-private/2026/10/01/2644084a-be85-4151-88c7-e251d3fa69c6/IGVFFI3573AYCV.bedpe.gz",
+          "summary": "GRCh38 chromatin conformation loops",
+          "assembly": "GRCh38",
+          "filename": "Fail1_loops.bedpe.gz",
+          "status": "released"
+        }
+      ],
+      "bytes": 21007046954,
+      "released": true,
+      "http_anonymous": 200
+    },
+    {
+      "accession": "IGVFDS6562SHQJ",
+      "alias": "pgp_inter1_pseudobulk",
+      "code": "inter1",
+      "name": "Inter1",
+      "qualifier": "Productive reprogramming intermediate (pre media switch), primarily days 3-7",
+      "cell_type": "fibroblast",
+      "summary": "10x multiome, snM3C-seq, snMCT-seq pseudobulk of Homo sapiens Productive reprogramming intermediate (pre media switch), primarily days 3-7 fibroblast",
+      "assays": [
+        "10x multiome",
+        "snM3C-seq",
+        "snMCT-seq"
+      ],
+      "workflows": [
+        "Luo PGP ATAC Workflow",
+        "Luo PGP HiC Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ],
+      "donors": [
+        "C29",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "days": [
+        3,
+        5,
+        7
+      ],
+      "donor_days": [
+        "C29:3",
+        "C29:5",
+        "C29:7",
+        "C37:3",
+        "C37:5",
+        "C37:7",
+        "C38:3",
+        "C38:5",
+        "C38:7",
+        "C39:3",
+        "C39:5",
+        "C39:7"
+      ],
+      "status": "released",
+      "portal": "https://data.igvf.org/pseudobulk-sets/IGVFDS6562SHQJ/",
+      "files": [
+        {
+          "accession": "IGVFFI0246ZFQQ",
+          "content_type": "alignments",
+          "file_format": "bam",
+          "size": 19713999270,
+          "md5": "9de693d8d7f5a41e58eff7bbaa491141",
+          "href": "/alignment-files/IGVFFI0246ZFQQ/",
+          "download": "https://api.data.igvf.org/alignment-files/IGVFFI0246ZFQQ/@@download/IGVFFI0246ZFQQ.bam",
+          "s3_uri": "s3://igvf-private/2026/07/30/474f8e88-3a9a-4b84-b69f-448242e6761e/IGVFFI0246ZFQQ.bam",
+          "summary": "GRCh38 GENCODE 44 unfiltered alignments",
+          "assembly": "GRCh38",
+          "filename": "Inter1.bam",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI2514MZFY",
+          "content_type": "ATAC-seq signal",
+          "file_format": "bigWig",
+          "size": 459248820,
+          "md5": "7c4ab1d6df9092329102a2b6118f7d93",
+          "href": "/signal-files/IGVFFI2514MZFY/",
+          "download": "https://api.data.igvf.org/signal-files/IGVFFI2514MZFY/@@download/IGVFFI2514MZFY.bigWig",
+          "s3_uri": "s3://igvf-private/2026/07/27/c53d6d23-d169-4302-93f6-2cc09e0497e9/IGVFFI2514MZFY.bigWig",
+          "summary": "GRCh38 unstranded ATAC-seq signal",
+          "assembly": "GRCh38",
+          "filename": "Inter1.bw",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI9819XSKS",
+          "content_type": "methylation counts",
+          "file_format": "tsv",
+          "size": 180051523,
+          "md5": "3280f24f5b4ed3d18f6944e95774b48c",
+          "href": "/tabular-files/IGVFFI9819XSKS/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI9819XSKS/@@download/IGVFFI9819XSKS.tsv.gz",
+          "s3_uri": "s3://igvf-private/2026/07/24/e6d4a9c5-20e2-481a-849e-4b3ac3f4f4c5/IGVFFI9819XSKS.tsv.gz",
+          "summary": "GRCh38 GENCODE 44 methylation counts",
+          "assembly": "GRCh38",
+          "filename": "Inter1.CGN-Merge.allc.tsv.gz",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI1577PPJG",
+          "content_type": "contact matrix",
+          "file_format": "mcool",
+          "size": 2829443607,
+          "md5": "d54df8b7dab5b0af3fb6409855582fc8",
+          "href": "/matrix-files/IGVFFI1577PPJG/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI1577PPJG/@@download/IGVFFI1577PPJG.mcool",
+          "s3_uri": "s3://igvf-private/2026/07/24/3832e132-5825-4571-8e0a-3c1d6b7b7140/IGVFFI1577PPJG.mcool",
+          "summary": "contact matrix",
+          "assembly": "GRCh38",
+          "filename": "Inter1.mcool",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI3923AZUS",
+          "content_type": "chromatin conformation compartments",
+          "file_format": "bed",
+          "size": 1054296,
+          "md5": "eb63c98bca21d8a0f00d08b4b4339df4",
+          "href": "/tabular-files/IGVFFI3923AZUS/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI3923AZUS/@@download/IGVFFI3923AZUS.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/3c9e64fe-95cd-4df7-81c1-8875a9b689f8/IGVFFI3923AZUS.tsv.gz",
+          "summary": "GRCh38 chromatin conformation compartments",
+          "assembly": "GRCh38",
+          "filename": "Inter1_compartments.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI3517CNVC",
+          "content_type": "topologically associating domains",
+          "file_format": "bed",
+          "size": 33532,
+          "md5": "5b9fada9ba93a8dab63ab48b9bce27d2",
+          "href": "/tabular-files/IGVFFI3517CNVC/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI3517CNVC/@@download/IGVFFI3517CNVC.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/9d08b64e-7b5c-435b-8950-2dc255969598/IGVFFI3517CNVC.tsv.gz",
+          "summary": "GRCh38 topologically associating domains",
+          "assembly": "GRCh38",
+          "filename": "Inter1_tads.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI3302MFNF",
+          "content_type": "chromatin conformation loops",
+          "file_format": "bedpe",
+          "size": 88515,
+          "md5": "1a2590bc3bfedec5b91fc2ed17f4a9a5",
+          "href": "/tabular-files/IGVFFI3302MFNF/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI3302MFNF/@@download/IGVFFI3302MFNF.bedpe.gz",
+          "s3_uri": "s3://igvf-private/2026/10/01/1a31942b-9bd4-4efe-8f1c-5df3c5f8c4a5/IGVFFI3302MFNF.bedpe.gz",
+          "summary": "GRCh38 chromatin conformation loops",
+          "assembly": "GRCh38",
+          "filename": "Inter1_loops.bedpe.gz",
+          "status": "released"
+        }
+      ],
+      "bytes": 23183919563,
+      "released": true,
+      "http_anonymous": 200
+    },
+    {
+      "accession": "IGVFDS6705UTPG",
+      "alias": "pgp_inter2_pseudobulk",
+      "code": "inter2",
+      "name": "Inter2",
+      "qualifier": "Productive reprogramming intermediate - primarily days 9-12",
+      "cell_type": "fibroblast",
+      "summary": "10x multiome, snM3C-seq, snMCT-seq pseudobulk of Homo sapiens Productive reprogramming intermediate - primarily days 9-12 fibroblast",
+      "assays": [
+        "10x multiome",
+        "snM3C-seq",
+        "snMCT-seq"
+      ],
+      "workflows": [
+        "Luo PGP ATAC Workflow",
+        "Luo PGP HiC Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ],
+      "donors": [
+        "C29",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "days": [
+        9,
+        12,
+        14,
+        16
+      ],
+      "donor_days": [
+        "C29:9",
+        "C29:12",
+        "C29:14",
+        "C29:16",
+        "C37:9",
+        "C37:12",
+        "C37:14",
+        "C37:16",
+        "C38:9",
+        "C38:12",
+        "C38:14",
+        "C38:16",
+        "C39:9",
+        "C39:12",
+        "C39:14",
+        "C39:16"
+      ],
+      "status": "released",
+      "portal": "https://data.igvf.org/pseudobulk-sets/IGVFDS6705UTPG/",
+      "files": [
+        {
+          "accession": "IGVFFI9020YRLU",
+          "content_type": "alignments",
+          "file_format": "bam",
+          "size": 18215579802,
+          "md5": "fc7e8e4c03a3fa3cc2d6b16f8f80f19b",
+          "href": "/alignment-files/IGVFFI9020YRLU/",
+          "download": "https://api.data.igvf.org/alignment-files/IGVFFI9020YRLU/@@download/IGVFFI9020YRLU.bam",
+          "s3_uri": "s3://igvf-private/2026/07/30/e432bc3d-8d4b-4714-ba82-1348247139c3/IGVFFI9020YRLU.bam",
+          "summary": "GRCh38 GENCODE 44 unfiltered alignments",
+          "assembly": "GRCh38",
+          "filename": "Inter2.bam",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI3206UPKI",
+          "content_type": "ATAC-seq signal",
+          "file_format": "bigWig",
+          "size": 463248815,
+          "md5": "11a55563a897e93883fe90f23dbbbe5c",
+          "href": "/signal-files/IGVFFI3206UPKI/",
+          "download": "https://api.data.igvf.org/signal-files/IGVFFI3206UPKI/@@download/IGVFFI3206UPKI.bigWig",
+          "s3_uri": "s3://igvf-private/2026/07/27/adaea0dc-0006-449c-8238-8b7046429a4f/IGVFFI3206UPKI.bigWig",
+          "summary": "GRCh38 unstranded ATAC-seq signal",
+          "assembly": "GRCh38",
+          "filename": "Inter2.bw",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI9713CZLS",
+          "content_type": "methylation counts",
+          "file_format": "tsv",
+          "size": 142999481,
+          "md5": "af89dfab257bd54225b953904c0a52e9",
+          "href": "/tabular-files/IGVFFI9713CZLS/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI9713CZLS/@@download/IGVFFI9713CZLS.tsv.gz",
+          "s3_uri": "s3://igvf-private/2026/07/24/7ab8983b-47c9-459e-b5e5-beab212449bf/IGVFFI9713CZLS.tsv.gz",
+          "summary": "GRCh38 GENCODE 44 methylation counts",
+          "assembly": "GRCh38",
+          "filename": "Inter2.CGN-Merge.allc.tsv.gz",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI0486VSRO",
+          "content_type": "contact matrix",
+          "file_format": "mcool",
+          "size": 1881172923,
+          "md5": "a2789d17e991813b716b175ae3b44ca7",
+          "href": "/matrix-files/IGVFFI0486VSRO/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI0486VSRO/@@download/IGVFFI0486VSRO.mcool",
+          "s3_uri": "s3://igvf-private/2026/07/24/5bd96a97-7186-4762-a4a9-0c1910eff7c4/IGVFFI0486VSRO.mcool",
+          "summary": "contact matrix",
+          "assembly": "GRCh38",
+          "filename": "Inter2.mcool",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI7688BNUI",
+          "content_type": "chromatin conformation compartments",
+          "file_format": "bed",
+          "size": 1059394,
+          "md5": "0af05bc2f467376db7d8db7379a918f6",
+          "href": "/tabular-files/IGVFFI7688BNUI/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI7688BNUI/@@download/IGVFFI7688BNUI.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/abf1ca42-46cb-4327-9b61-6b0b20c862fa/IGVFFI7688BNUI.tsv.gz",
+          "summary": "GRCh38 chromatin conformation compartments",
+          "assembly": "GRCh38",
+          "filename": "Inter2_compartments.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI1994WQVH",
+          "content_type": "topologically associating domains",
+          "file_format": "bed",
+          "size": 34974,
+          "md5": "8b12fff736be7802ba09abe96a7f47a0",
+          "href": "/tabular-files/IGVFFI1994WQVH/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI1994WQVH/@@download/IGVFFI1994WQVH.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/a4033be7-c194-4480-aa68-205d32a8c490/IGVFFI1994WQVH.tsv.gz",
+          "summary": "GRCh38 topologically associating domains",
+          "assembly": "GRCh38",
+          "filename": "Inter2_tads.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI4851CFDN",
+          "content_type": "chromatin conformation loops",
+          "file_format": "bedpe",
+          "size": 88716,
+          "md5": "2e5cb78bdce0edf72bf5dfdd1bbfe56b",
+          "href": "/tabular-files/IGVFFI4851CFDN/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI4851CFDN/@@download/IGVFFI4851CFDN.bedpe.gz",
+          "s3_uri": "s3://igvf-private/2026/10/01/14fa0ed2-d3a3-40f9-b93f-a3013d306baf/IGVFFI4851CFDN.bedpe.gz",
+          "summary": "GRCh38 chromatin conformation loops",
+          "assembly": "GRCh38",
+          "filename": "Inter2_loops.bedpe.gz",
+          "status": "released"
+        }
+      ],
+      "bytes": 20704184105,
+      "released": true,
+      "http_anonymous": 200
+    },
+    {
+      "accession": "IGVFDS9695XCTR",
+      "alias": "pgp_fail2_pseudobulk",
+      "code": "fail2",
+      "name": "Fail2",
+      "qualifier": "Unproductive terminal state - ectopic signature",
+      "cell_type": "fibroblast",
+      "summary": "10x multiome, snM3C-seq, snMCT-seq pseudobulk of Homo sapiens Unproductive terminal state - ectopic signature fibroblast",
+      "assays": [
+        "10x multiome",
+        "snM3C-seq",
+        "snMCT-seq"
+      ],
+      "workflows": [
+        "Luo PGP ATAC Workflow",
+        "Luo PGP HiC Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ],
+      "donors": [
+        "C29",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "days": [
+        9,
+        12,
+        14,
+        16,
+        18
+      ],
+      "donor_days": [
+        "C29:9",
+        "C29:12",
+        "C29:14",
+        "C29:16",
+        "C29:18",
+        "C37:9",
+        "C37:12",
+        "C37:14",
+        "C37:16",
+        "C37:18",
+        "C38:9",
+        "C38:12",
+        "C38:14",
+        "C38:16",
+        "C38:18",
+        "C39:9",
+        "C39:12",
+        "C39:14",
+        "C39:16",
+        "C39:18"
+      ],
+      "status": "released",
+      "portal": "https://data.igvf.org/pseudobulk-sets/IGVFDS9695XCTR/",
+      "files": [
+        {
+          "accession": "IGVFFI9714WFWY",
+          "content_type": "alignments",
+          "file_format": "bam",
+          "size": 8980138307,
+          "md5": "1b0b64320ee6c6e8529d7ee3f0a7bbe6",
+          "href": "/alignment-files/IGVFFI9714WFWY/",
+          "download": "https://api.data.igvf.org/alignment-files/IGVFFI9714WFWY/@@download/IGVFFI9714WFWY.bam",
+          "s3_uri": "s3://igvf-private/2026/07/30/ddf7fc6c-4524-40cf-b4d3-d3efc0347869/IGVFFI9714WFWY.bam",
+          "summary": "GRCh38 GENCODE 44 unfiltered alignments",
+          "assembly": "GRCh38",
+          "filename": "Fail2.bam",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI6290PBIG",
+          "content_type": "ATAC-seq signal",
+          "file_format": "bigWig",
+          "size": 286168447,
+          "md5": "355bce216bfdcec31ad3f12bf91f1c25",
+          "href": "/signal-files/IGVFFI6290PBIG/",
+          "download": "https://api.data.igvf.org/signal-files/IGVFFI6290PBIG/@@download/IGVFFI6290PBIG.bigWig",
+          "s3_uri": "s3://igvf-private/2026/07/27/9c8ab1ef-517a-4e24-8487-9065fcb6c6e6/IGVFFI6290PBIG.bigWig",
+          "summary": "GRCh38 unstranded ATAC-seq signal",
+          "assembly": "GRCh38",
+          "filename": "Fail2.bw",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI8903TWEC",
+          "content_type": "methylation counts",
+          "file_format": "tsv",
+          "size": 160487152,
+          "md5": "5aa6ba5010d842d31b4c6b6f5f5a57a8",
+          "href": "/tabular-files/IGVFFI8903TWEC/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI8903TWEC/@@download/IGVFFI8903TWEC.tsv.gz",
+          "s3_uri": "s3://igvf-private/2026/07/24/b0cef7ae-0844-4c9a-8758-e9aca6c93ef1/IGVFFI8903TWEC.tsv.gz",
+          "summary": "GRCh38 GENCODE 44 methylation counts",
+          "assembly": "GRCh38",
+          "filename": "Fail2.CGN-Merge.allc.tsv.gz",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI7483CGJH",
+          "content_type": "contact matrix",
+          "file_format": "mcool",
+          "size": 932167605,
+          "md5": "4f7075e2011b7bfef014c61960bd5acb",
+          "href": "/matrix-files/IGVFFI7483CGJH/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI7483CGJH/@@download/IGVFFI7483CGJH.mcool",
+          "s3_uri": "s3://igvf-private/2026/07/24/746c92be-3aca-4aa7-9b21-c462c9d6716f/IGVFFI7483CGJH.mcool",
+          "summary": "contact matrix",
+          "assembly": "GRCh38",
+          "filename": "Fail2.mcool",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI0056UJCX",
+          "content_type": "chromatin conformation compartments",
+          "file_format": "bed",
+          "size": 1061831,
+          "md5": "e43638fde5357c83613c203ba3779a6d",
+          "href": "/tabular-files/IGVFFI0056UJCX/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI0056UJCX/@@download/IGVFFI0056UJCX.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/c8a75014-fe07-4dce-998c-80f075e559f8/IGVFFI0056UJCX.tsv.gz",
+          "summary": "GRCh38 chromatin conformation compartments",
+          "assembly": "GRCh38",
+          "filename": "Fail2_compartments.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI8799OBHY",
+          "content_type": "topologically associating domains",
+          "file_format": "bed",
+          "size": 34543,
+          "md5": "1aa4762abb04f4f9266e1c6e11016c74",
+          "href": "/tabular-files/IGVFFI8799OBHY/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI8799OBHY/@@download/IGVFFI8799OBHY.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/6957288d-d8af-4860-8312-a880b4a5f306/IGVFFI8799OBHY.tsv.gz",
+          "summary": "GRCh38 topologically associating domains",
+          "assembly": "GRCh38",
+          "filename": "Fail2_tads.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI7083VAEW",
+          "content_type": "chromatin conformation loops",
+          "file_format": "bedpe",
+          "size": 165564,
+          "md5": "e167cbdfd5eafb88fbf6b4289c2eed28",
+          "href": "/tabular-files/IGVFFI7083VAEW/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI7083VAEW/@@download/IGVFFI7083VAEW.bedpe.gz",
+          "s3_uri": "s3://igvf-private/2026/10/01/4f6cffb4-74ee-4f33-b7cb-6bdd5ab5ee1d/IGVFFI7083VAEW.bedpe.gz",
+          "summary": "GRCh38 chromatin conformation loops",
+          "assembly": "GRCh38",
+          "filename": "Fail2_loops.bedpe.gz",
+          "status": "released"
+        }
+      ],
+      "bytes": 10360223449,
+      "released": true,
+      "http_anonymous": 200
+    },
+    {
+      "accession": "IGVFDS2032ZBFY",
+      "alias": "pgp_ips_pseudobulk",
+      "code": "ips",
+      "name": "early-iPSC",
+      "qualifier": "Primarily days 12-18",
+      "cell_type": "induced pluripotent stem cell",
+      "summary": "10x multiome, snM3C-seq, snMCT-seq pseudobulk of Homo sapiens Primarily days 12-18 induced pluripotent stem cell",
+      "assays": [
+        "10x multiome",
+        "snM3C-seq",
+        "snMCT-seq"
+      ],
+      "workflows": [
+        "Luo PGP ATAC Workflow",
+        "Luo PGP HiC Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ],
+      "donors": [
+        "C29",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "days": [
+        12,
+        14,
+        16,
+        18
+      ],
+      "donor_days": [
+        "C29:12",
+        "C29:14",
+        "C29:16",
+        "C29:18",
+        "C37:12",
+        "C37:14",
+        "C37:16",
+        "C37:18",
+        "C38:12",
+        "C38:14",
+        "C38:16",
+        "C38:18",
+        "C39:12",
+        "C39:14",
+        "C39:16",
+        "C39:18"
+      ],
+      "status": "released",
+      "portal": "https://data.igvf.org/pseudobulk-sets/IGVFDS2032ZBFY/",
+      "files": [
+        {
+          "accession": "IGVFFI8078BMBY",
+          "content_type": "alignments",
+          "file_format": "bam",
+          "size": 12862727393,
+          "md5": "c8d00a2b7765f9df24b9b5b276d13985",
+          "href": "/alignment-files/IGVFFI8078BMBY/",
+          "download": "https://api.data.igvf.org/alignment-files/IGVFFI8078BMBY/@@download/IGVFFI8078BMBY.bam",
+          "s3_uri": "s3://igvf-private/2026/07/30/a3b723d2-5dfe-4f88-85e0-233c6eac00ea/IGVFFI8078BMBY.bam",
+          "summary": "GRCh38 GENCODE 44 unfiltered alignments",
+          "assembly": "GRCh38",
+          "filename": "IPS.bam",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI6131VBNC",
+          "content_type": "ATAC-seq signal",
+          "file_format": "bigWig",
+          "size": 316276909,
+          "md5": "8ce6fa0450844b63e4c4a4ed129d100b",
+          "href": "/signal-files/IGVFFI6131VBNC/",
+          "download": "https://api.data.igvf.org/signal-files/IGVFFI6131VBNC/@@download/IGVFFI6131VBNC.bigWig",
+          "s3_uri": "s3://igvf-private/2026/07/27/fa017d02-aa85-4c2b-a5f0-7546c5241ad1/IGVFFI6131VBNC.bigWig",
+          "summary": "GRCh38 unstranded ATAC-seq signal",
+          "assembly": "GRCh38",
+          "filename": "IPS.bw",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI9224NILU",
+          "content_type": "methylation counts",
+          "file_format": "tsv",
+          "size": 157518738,
+          "md5": "34dc6c2ab9c763e01134b0c91f47b173",
+          "href": "/tabular-files/IGVFFI9224NILU/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI9224NILU/@@download/IGVFFI9224NILU.tsv.gz",
+          "s3_uri": "s3://igvf-private/2026/07/24/935723b0-9bc8-4c98-8904-f5391b8388f0/IGVFFI9224NILU.tsv.gz",
+          "summary": "GRCh38 GENCODE 44 methylation counts",
+          "assembly": "GRCh38",
+          "filename": "IPS.CGN-Merge.allc.tsv.gz",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI5433XGNK",
+          "content_type": "contact matrix",
+          "file_format": "mcool",
+          "size": 2386265743,
+          "md5": "136d946555a4245a53119ec56e752e1b",
+          "href": "/matrix-files/IGVFFI5433XGNK/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI5433XGNK/@@download/IGVFFI5433XGNK.mcool",
+          "s3_uri": "s3://igvf-private/2026/07/24/3f8944fb-9c0b-4f83-9a8b-44978b652033/IGVFFI5433XGNK.mcool",
+          "summary": "contact matrix",
+          "assembly": "GRCh38",
+          "filename": "IPS.mcool",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI4983XTRF",
+          "content_type": "chromatin conformation compartments",
+          "file_format": "bed",
+          "size": 1067928,
+          "md5": "e3716847c677a7211526e4519abbbae6",
+          "href": "/tabular-files/IGVFFI4983XTRF/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI4983XTRF/@@download/IGVFFI4983XTRF.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/343e7412-8452-4dea-9b29-0bd34a868aeb/IGVFFI4983XTRF.tsv.gz",
+          "summary": "GRCh38 chromatin conformation compartments",
+          "assembly": "GRCh38",
+          "filename": "IPS_compartments.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI8297JUOX",
+          "content_type": "topologically associating domains",
+          "file_format": "bed",
+          "size": 34601,
+          "md5": "a770ab3e62a532354663dbf5e21ae9a8",
+          "href": "/tabular-files/IGVFFI8297JUOX/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI8297JUOX/@@download/IGVFFI8297JUOX.bed.gz",
+          "s3_uri": "s3://igvf-private/2026/09/19/d6f8fa6d-c32a-4c05-ae46-4b2d7b3683d0/IGVFFI8297JUOX.tsv.gz",
+          "summary": "GRCh38 topologically associating domains",
+          "assembly": "GRCh38",
+          "filename": "IPS_tads.bed",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI1182GATV",
+          "content_type": "chromatin conformation loops",
+          "file_format": "bedpe",
+          "size": 31151,
+          "md5": "1167bd3b6bc3829158bcb0a746959ea4",
+          "href": "/tabular-files/IGVFFI1182GATV/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI1182GATV/@@download/IGVFFI1182GATV.bedpe.gz",
+          "s3_uri": "s3://igvf-private/2026/10/01/464d5dda-e662-4d17-b78d-8350acaf169b/IGVFFI1182GATV.bedpe.gz",
+          "summary": "GRCh38 chromatin conformation loops",
+          "assembly": "GRCh38",
+          "filename": "IPS_loops.bedpe.gz",
+          "status": "released"
+        }
+      ],
+      "bytes": 15723922463,
+      "released": true,
+      "http_anonymous": 200
+    },
+    {
+      "accession": "IGVFDS0859HASU",
+      "alias": "pgp_start_C29_pseudobulk",
+      "code": "start_C29",
+      "name": "Start_C29",
+      "qualifier": "Primarily Day 0 (before OSKM treatment), donor C29",
+      "cell_type": "fibroblast",
+      "summary": "10x multiome, snM3C-seq, snMCT-seq pseudobulk of Homo sapiens Primarily Day 0 (before OSKM treatment), donor C29 fibroblast",
+      "assays": [
+        "10x multiome",
+        "snM3C-seq",
+        "snMCT-seq"
+      ],
+      "workflows": [
+        "Luo PGP ATAC Workflow",
+        "Luo PGP HiC Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ],
+      "donors": [
+        "C29"
+      ],
+      "days": [
+        0
+      ],
+      "donor_days": [
+        "C29:0"
+      ],
+      "status": "released",
+      "portal": "https://data.igvf.org/pseudobulk-sets/IGVFDS0859HASU/",
+      "files": [
+        {
+          "accession": "IGVFFI0102UMZK",
+          "content_type": "alignments",
+          "file_format": "bam",
+          "size": 2313937419,
+          "md5": "358fe2ede6c2131b9371166b6acc677a",
+          "href": "/alignment-files/IGVFFI0102UMZK/",
+          "download": "https://api.data.igvf.org/alignment-files/IGVFFI0102UMZK/@@download/IGVFFI0102UMZK.bam",
+          "s3_uri": "s3://igvf-private/2026/07/30/acdaf0f2-f8c0-4c77-b8d5-bf0951d1e42e/IGVFFI0102UMZK.bam",
+          "summary": "GRCh38 GENCODE 44 unfiltered alignments",
+          "assembly": "GRCh38",
+          "filename": "Start_C29.bam",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI6656PFJM",
+          "content_type": "ATAC-seq signal",
+          "file_format": "bigWig",
+          "size": 83548480,
+          "md5": "21901ec0651c1c1be8b946dd243d239b",
+          "href": "/signal-files/IGVFFI6656PFJM/",
+          "download": "https://api.data.igvf.org/signal-files/IGVFFI6656PFJM/@@download/IGVFFI6656PFJM.bigWig",
+          "s3_uri": "s3://igvf-private/2026/07/30/65fc7ebd-5237-4440-bf09-f665daef9ae4/IGVFFI6656PFJM.bigWig",
+          "summary": "GRCh38 unstranded ATAC-seq signal",
+          "assembly": "GRCh38",
+          "filename": "Start_C29.bw",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI2074RMGF",
+          "content_type": "methylation counts",
+          "file_format": "tsv",
+          "size": 150781737,
+          "md5": "4f3da73f8fe791322ef171fdc9bd30a1",
+          "href": "/tabular-files/IGVFFI2074RMGF/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI2074RMGF/@@download/IGVFFI2074RMGF.tsv.gz",
+          "s3_uri": "s3://igvf-private/2026/07/30/8c7e2931-0271-4717-b5d4-512f19a3fa73/IGVFFI2074RMGF.tsv.gz",
+          "summary": "GRCh38 GENCODE 44 methylation counts",
+          "assembly": "GRCh38",
+          "filename": "Start_C29.CGN-Merge.allc.tsv.gz",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI9410NGZP",
+          "content_type": "contact matrix",
+          "file_format": "mcool",
+          "size": 165253652,
+          "md5": "6b060378493c5f07d32c50eb00815dd0",
+          "href": "/matrix-files/IGVFFI9410NGZP/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI9410NGZP/@@download/IGVFFI9410NGZP.mcool",
+          "s3_uri": "s3://igvf-private/2026/07/30/25e634de-95d7-4640-a0e9-b1272a1c4861/IGVFFI9410NGZP.mcool",
+          "summary": "contact matrix",
+          "assembly": "GRCh38",
+          "filename": "Start_C29.mcool",
+          "status": "released"
+        }
+      ],
+      "bytes": 2713521288,
+      "released": true,
+      "http_anonymous": 200
+    },
+    {
+      "accession": "IGVFDS7866QGNI",
+      "alias": "pgp_start_C37_pseudobulk",
+      "code": "start_C37",
+      "name": "Start_C37",
+      "qualifier": "Primarily Day 0 (before OSKM treatment), donor C37",
+      "cell_type": "fibroblast",
+      "summary": "10x multiome, snM3C-seq, snMCT-seq pseudobulk of Homo sapiens Primarily Day 0 (before OSKM treatment), donor C37 fibroblast",
+      "assays": [
+        "10x multiome",
+        "snM3C-seq",
+        "snMCT-seq"
+      ],
+      "workflows": [
+        "Luo PGP ATAC Workflow",
+        "Luo PGP HiC Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ],
+      "donors": [
+        "C37"
+      ],
+      "days": [
+        0
+      ],
+      "donor_days": [
+        "C37:0"
+      ],
+      "status": "released",
+      "portal": "https://data.igvf.org/pseudobulk-sets/IGVFDS7866QGNI/",
+      "files": [
+        {
+          "accession": "IGVFFI3369PEFX",
+          "content_type": "alignments",
+          "file_format": "bam",
+          "size": 2556201544,
+          "md5": "166c792e934b10dafcbcf0ad63444413",
+          "href": "/alignment-files/IGVFFI3369PEFX/",
+          "download": "https://api.data.igvf.org/alignment-files/IGVFFI3369PEFX/@@download/IGVFFI3369PEFX.bam",
+          "s3_uri": "s3://igvf-private/2026/07/30/bad98f57-d0af-4b5b-8e15-c9299ad3e7dd/IGVFFI3369PEFX.bam",
+          "summary": "GRCh38 GENCODE 44 unfiltered alignments",
+          "assembly": "GRCh38",
+          "filename": "Start_C37.bam",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI1011CBUL",
+          "content_type": "ATAC-seq signal",
+          "file_format": "bigWig",
+          "size": 92799636,
+          "md5": "78e5182ee50c396eb90a04e68caf47a8",
+          "href": "/signal-files/IGVFFI1011CBUL/",
+          "download": "https://api.data.igvf.org/signal-files/IGVFFI1011CBUL/@@download/IGVFFI1011CBUL.bigWig",
+          "s3_uri": "s3://igvf-private/2026/07/30/19161268-af68-49aa-880c-69d7dd676400/IGVFFI1011CBUL.bigWig",
+          "summary": "GRCh38 unstranded ATAC-seq signal",
+          "assembly": "GRCh38",
+          "filename": "Start_C37.bw",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI0598ADTO",
+          "content_type": "methylation counts",
+          "file_format": "tsv",
+          "size": 153436085,
+          "md5": "135701bf213bc394b1df2829b96fdadd",
+          "href": "/tabular-files/IGVFFI0598ADTO/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI0598ADTO/@@download/IGVFFI0598ADTO.tsv.gz",
+          "s3_uri": "s3://igvf-private/2026/07/30/3730944a-8337-4a7b-94b9-4ea514dafed7/IGVFFI0598ADTO.tsv.gz",
+          "summary": "GRCh38 GENCODE 44 methylation counts",
+          "assembly": "GRCh38",
+          "filename": "Start_C37.CGN-Merge.allc.tsv.gz",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI9083FPIC",
+          "content_type": "contact matrix",
+          "file_format": "mcool",
+          "size": 161235156,
+          "md5": "f121267a8eb62765570452c993ced7c4",
+          "href": "/matrix-files/IGVFFI9083FPIC/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI9083FPIC/@@download/IGVFFI9083FPIC.mcool",
+          "s3_uri": "s3://igvf-private/2026/07/30/a8a9a70f-38be-4114-963b-eb3221a2ae24/IGVFFI9083FPIC.mcool",
+          "summary": "contact matrix",
+          "assembly": "GRCh38",
+          "filename": "Start_C37.mcool",
+          "status": "released"
+        }
+      ],
+      "bytes": 2963672421,
+      "released": true,
+      "http_anonymous": 200
+    },
+    {
+      "accession": "IGVFDS8036HBPA",
+      "alias": "pgp_start_C38_pseudobulk",
+      "code": "start_C38",
+      "name": "Start_C38",
+      "qualifier": "Primarily Day 0 (before OSKM treatment), donor C38",
+      "cell_type": "fibroblast",
+      "summary": "10x multiome, snM3C-seq, snMCT-seq pseudobulk of Homo sapiens Primarily Day 0 (before OSKM treatment), donor C38 fibroblast",
+      "assays": [
+        "10x multiome",
+        "snM3C-seq",
+        "snMCT-seq"
+      ],
+      "workflows": [
+        "Luo PGP ATAC Workflow",
+        "Luo PGP HiC Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ],
+      "donors": [
+        "C38"
+      ],
+      "days": [
+        0
+      ],
+      "donor_days": [
+        "C38:0"
+      ],
+      "status": "released",
+      "portal": "https://data.igvf.org/pseudobulk-sets/IGVFDS8036HBPA/",
+      "files": [
+        {
+          "accession": "IGVFFI3957WALC",
+          "content_type": "alignments",
+          "file_format": "bam",
+          "size": 4342660994,
+          "md5": "0fb69f22dc6cd34eca74597a065974a6",
+          "href": "/alignment-files/IGVFFI3957WALC/",
+          "download": "https://api.data.igvf.org/alignment-files/IGVFFI3957WALC/@@download/IGVFFI3957WALC.bam",
+          "s3_uri": "s3://igvf-private/2026/07/30/71ab4f5f-f93d-4a46-ad97-ee5a0ccf9570/IGVFFI3957WALC.bam",
+          "summary": "GRCh38 GENCODE 44 unfiltered alignments",
+          "assembly": "GRCh38",
+          "filename": "Start_C38.bam",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI5828EODJ",
+          "content_type": "ATAC-seq signal",
+          "file_format": "bigWig",
+          "size": 135647836,
+          "md5": "d652c76f82425f7d398585c121f77b9c",
+          "href": "/signal-files/IGVFFI5828EODJ/",
+          "download": "https://api.data.igvf.org/signal-files/IGVFFI5828EODJ/@@download/IGVFFI5828EODJ.bigWig",
+          "s3_uri": "s3://igvf-private/2026/07/30/89126f0d-eaf9-431c-8893-ceb0c12b87a2/IGVFFI5828EODJ.bigWig",
+          "summary": "GRCh38 unstranded ATAC-seq signal",
+          "assembly": "GRCh38",
+          "filename": "Start_C38.bw",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI3599LQAR",
+          "content_type": "methylation counts",
+          "file_format": "tsv",
+          "size": 154337007,
+          "md5": "eab9bfbfa921e54621819a400d76abca",
+          "href": "/tabular-files/IGVFFI3599LQAR/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI3599LQAR/@@download/IGVFFI3599LQAR.tsv.gz",
+          "s3_uri": "s3://igvf-private/2026/07/30/67bf74bc-213f-4b2c-bdbe-8eb778ec5193/IGVFFI3599LQAR.tsv.gz",
+          "summary": "GRCh38 GENCODE 44 methylation counts",
+          "assembly": "GRCh38",
+          "filename": "Start_C38.CGN-Merge.allc.tsv.gz",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI4215XZIC",
+          "content_type": "contact matrix",
+          "file_format": "mcool",
+          "size": 117143796,
+          "md5": "ae6c52fe8c71f71f066f8d29cd57787c",
+          "href": "/matrix-files/IGVFFI4215XZIC/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI4215XZIC/@@download/IGVFFI4215XZIC.mcool",
+          "s3_uri": "s3://igvf-private/2026/07/30/fb6da764-563a-4a9f-b19b-07bba0d9c160/IGVFFI4215XZIC.mcool",
+          "summary": "contact matrix",
+          "assembly": "GRCh38",
+          "filename": "Start_C38.mcool",
+          "status": "released"
+        }
+      ],
+      "bytes": 4749789633,
+      "released": true,
+      "http_anonymous": 200
+    },
+    {
+      "accession": "IGVFDS3624SKQC",
+      "alias": "pgp_start_C39_pseudobulk",
+      "code": "start_C39",
+      "name": "Start_C39",
+      "qualifier": "Primarily Day 0 (before OSKM treatment), donor C39",
+      "cell_type": "fibroblast",
+      "summary": "10x multiome, snM3C-seq, snMCT-seq pseudobulk of Homo sapiens Primarily Day 0 (before OSKM treatment), donor C39 fibroblast",
+      "assays": [
+        "10x multiome",
+        "snM3C-seq",
+        "snMCT-seq"
+      ],
+      "workflows": [
+        "Luo PGP ATAC Workflow",
+        "Luo PGP HiC Workflow",
+        "Luo PGP Methylation Workflow"
+      ],
+      "from": [
+        "IGVFDS3268OMJN",
+        "IGVFDS9439VWMI",
+        "IGVFDS8004ZFOL"
+      ],
+      "donors": [
+        "C39"
+      ],
+      "days": [
+        0
+      ],
+      "donor_days": [
+        "C39:0"
+      ],
+      "status": "released",
+      "portal": "https://data.igvf.org/pseudobulk-sets/IGVFDS3624SKQC/",
+      "files": [
+        {
+          "accession": "IGVFFI2282TJNO",
+          "content_type": "alignments",
+          "file_format": "bam",
+          "size": 1724062318,
+          "md5": "a9f541ba007c45fd5c2cfb137fc088aa",
+          "href": "/alignment-files/IGVFFI2282TJNO/",
+          "download": "https://api.data.igvf.org/alignment-files/IGVFFI2282TJNO/@@download/IGVFFI2282TJNO.bam",
+          "s3_uri": "s3://igvf-private/2026/07/30/3ec523b8-edc9-4bae-9cc9-7705080965b1/IGVFFI2282TJNO.bam",
+          "summary": "GRCh38 GENCODE 44 unfiltered alignments",
+          "assembly": "GRCh38",
+          "filename": "Start_C39.bam",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI1062SITH",
+          "content_type": "ATAC-seq signal",
+          "file_format": "bigWig",
+          "size": 64483260,
+          "md5": "5f1678b2f0b7b0233d77252e0c67d21e",
+          "href": "/signal-files/IGVFFI1062SITH/",
+          "download": "https://api.data.igvf.org/signal-files/IGVFFI1062SITH/@@download/IGVFFI1062SITH.bigWig",
+          "s3_uri": "s3://igvf-private/2026/07/30/2d586bbb-5ad9-4430-99e8-d35849b6390e/IGVFFI1062SITH.bigWig",
+          "summary": "GRCh38 unstranded ATAC-seq signal",
+          "assembly": "GRCh38",
+          "filename": "Start_C39.bw",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI6850SLFV",
+          "content_type": "methylation counts",
+          "file_format": "tsv",
+          "size": 149652726,
+          "md5": "86cee771cbdba778296b4b005dd8db40",
+          "href": "/tabular-files/IGVFFI6850SLFV/",
+          "download": "https://api.data.igvf.org/tabular-files/IGVFFI6850SLFV/@@download/IGVFFI6850SLFV.tsv.gz",
+          "s3_uri": "s3://igvf-private/2026/07/30/aa2929f4-c802-430f-85cc-07a76f6551c4/IGVFFI6850SLFV.tsv.gz",
+          "summary": "GRCh38 GENCODE 44 methylation counts",
+          "assembly": "GRCh38",
+          "filename": "Start_C39.CGN-Merge.allc.tsv.gz",
+          "status": "released"
+        },
+        {
+          "accession": "IGVFFI7798XUNF",
+          "content_type": "contact matrix",
+          "file_format": "mcool",
+          "size": 176809047,
+          "md5": "2cb0cfe2a716614a02a1d95a06658c5a",
+          "href": "/matrix-files/IGVFFI7798XUNF/",
+          "download": "https://api.data.igvf.org/matrix-files/IGVFFI7798XUNF/@@download/IGVFFI7798XUNF.mcool",
+          "s3_uri": "s3://igvf-private/2026/07/30/c00f8bdf-f31e-4f4d-8c19-f64b3f29d6fe/IGVFFI7798XUNF.mcool",
+          "summary": "contact matrix",
+          "assembly": "GRCh38",
+          "filename": "Start_C39.mcool",
+          "status": "released"
+        }
+      ],
+      "bytes": 2115007351,
+      "released": true,
+      "http_anonymous": 200
+    }
+  ],
+  "manifest_file": "data/manifests/pseudobulk.tsv",
+  "sets_search": "https://data.igvf.org/search/?type=PseudobulkSet&accession=IGVFDS0105UETZ&accession=IGVFDS5743ODRA&accession=IGVFDS8169WRMA&accession=IGVFDS0705YDXZ&accession=IGVFDS3073IAMP&accession=IGVFDS3437KZGE&accession=IGVFDS6562SHQJ&accession=IGVFDS6705UTPG&accession=IGVFDS9695XCTR&accession=IGVFDS2032ZBFY&accession=IGVFDS0859HASU&accession=IGVFDS7866QGNI&accession=IGVFDS8036HBPA&accession=IGVFDS3624SKQC"
+}

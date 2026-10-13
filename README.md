@@ -20,6 +20,8 @@ figures/fig1-{1600,2400,3200}.png   responsive set used inline
 data/filesets.json      generated — IGVF portal crawl
 data/files.json         generated — flat index of all 1,813 files
 data/manifests/*.tsv    generated — download manifests, per set per tier
+data/pseudobulk.json    generated — the 14 pseudobulk sets and their 80 files
+data/manifests/pseudobulk.tsv   generated — one row per pseudobulk file
 data/figures.json       generated — Figure 1's legend (no longer shown; see ARCHIVE.md)
 build/                  the generators (see below)
 ```
@@ -33,6 +35,12 @@ Run from this directory. Each script is independent.
 #    sets) and write filesets.json, files.json and data/manifests/*.tsv.
 #    Responses are cached in build/.cache; delete it to force a fresh pull.
 python3 build/fetch_igvf.py
+
+# 1b. Re-fetch the pseudobulk sets (reads the list step 1 wrote) and write
+#    pseudobulk.json and data/manifests/pseudobulk.tsv. While the sets are
+#    unreleased this needs portal access keys in the environment; without them
+#    it keeps the existing records and only refreshes the released flags.
+IGVF_API_KEY=... IGVF_SECRET_KEY=... python3 build/fetch_pseudobulk.py
 
 # 2. Re-render the header figure from ../manuscript/pdf/fig1a_small.pdf to PNG
 #    (needs PyMuPDF, Pillow, NumPy — NOT sips, see the script's docstring)
@@ -175,8 +183,10 @@ survive a change of host.
   renders as "pending" — remove that attribute and set the real `href` when it
   is available. (Genome browser, Spatial explorer and Code buttons were dropped.)
 - Decide whether to host the manuscript PDF here (not copied in by default).
-- The 14 cross-modal pseudobulk sets are not yet released; once they are,
-  `fetch_igvf.py` will pick them up.
+- The 14 cross-modal pseudobulk sets were released on 2026-10-13, and "Processed
+  pseudobulk data" (`renderPseudobulk` in `js/app.js`) lists all 80 files as
+  public. The section hides itself if `data/pseudobulk.json` is missing.
+  `verify_links.py` does not cover it yet.
 - The spatial slides carry the portal's induction days (7, 13 and 30 days for the
   pilots); the manuscript describes the in situ timepoints differently. Worth
   reconciling before the preprint, since the page now shows the portal's numbers.

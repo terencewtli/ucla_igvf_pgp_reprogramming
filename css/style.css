@@ -484,6 +484,29 @@ section { padding: 30px 0; border-bottom: 1px solid var(--rule); }
 .bfiles > summary::before { content: "▸ "; font-size: 10px; }
 .bfiles .ftable { background: var(--panel); margin-top: 10px; }
 .bfiles .scroller > .ftable { min-width: 680px; }
+/* pseudobulk: cell state x file type, every cell a download */
+.pbnote { margin: 0 0 14px; }
+.pbtable { min-width: 940px; }
+.pbtable th.pbt, .pbtable td.pbf { text-align: right; }
+.pbtable th.pbt .fmt { display: block; width: fit-content; margin: 4px 0 0 auto; text-transform: none; letter-spacing: 0; }
+.pbtable td.ct { min-width: 210px; }
+.pbtable .pbq, .pbtable .pbacc, .pbtable .pbfrom span, .pbtable .pbcol td.pbf span {
+  display: block; font-weight: 400; font-size: 11px; color: var(--ink-3); margin-top: 2px;
+}
+.pbtable .pbacc { font-family: var(--mono); font-size: 10.5px; text-decoration: none; width: fit-content; }
+.pbtable .pbacc:hover { color: var(--accent); }
+.pbtable td.pbfrom { white-space: nowrap; color: var(--ink-2); }
+.pbtable td.pbf { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.pbtable td.pbf a { text-decoration: none; font-weight: 560; }
+.pbtable td.pbf a:hover { text-decoration: underline; }
+.pbtable td.pbf.none { color: var(--rule-2); }
+.pbtable tbody tr:not(.pbcol):hover { background: var(--accent-bg); }
+.pbtable .pbcol td { background: var(--panel-2); border-top: 1px solid var(--rule-2); }
+.embargo {
+  font: 500 10px/1 var(--sans); color: var(--warn-ink); background: var(--warn-bg);
+  border: 1px solid var(--warn-rule); border-radius: 4px; padding: 2px 5px;
+  margin-left: 6px; white-space: nowrap; vertical-align: 1px;
+}
 footer { padding: 26px 0 40px; font-size: 13px; color: var(--ink-3); }
 footer .wrap > div + div { margin-top: 8px; }
 footer a { color: var(--ink-2); }

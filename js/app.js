@@ -837,7 +837,149 @@ function renderBuilder(d, index) {
   draw();
 }
 
+/* ================================================ download: pseudobulk */
+
+/* The pseudobulk sets are few enough (14 states x up to 7 file types) to lay
+   out whole, so there is nothing to filter: every cell of the table is one
+   file, and each row, each column and the table itself can be taken at once.
+
+   Until the sets are released the portal answers 403 to an anonymous request,
+   so the links are real but only work with IGVF access keys. The script below
+   sends keys when the environment has them and nothing otherwise, which makes
+   the same script right before and after release. */
+const PB_TYPE = {
+  "alignments": "ATAC alignments",
+  "ATAC-seq signal": "ATAC signal",
+  "methylation counts": "Methylation counts",
+  "contact matrix": "Contact matrix",
+  "chromatin conformation compartments": "Compartments",
+  "topologically associating domains": "TADs",
+  "chromatin conformation loops": "Loops",
+};
+
+function pbScript(files, title, anyEmbargoed) {
+  const total = files.reduce((a, f) => a + (f.size || 0), 0);
+  return `#!/usr/bin/env bash
+# ${title}
+# ${files.length} files, ${bytes(total)} — IGVF PGP reprogramming study, pseudobulk
+# generated ${new Date().toISOString().slice(0, 10)} from ${location.href.split("#")[0]}
+${anyEmbargoed ? `# Files not yet released need IGVF portal access keys in the environment:
+#   export IGVF_API_KEY=...  IGVF_SECRET_KEY=...
+# Without them the portal answers 403. Released files need none.` :
+`# Public files: no credentials, no portal login.`} Re-run to resume.
+set -euo pipefail
+DEST="\${1:-.}"
+mkdir -p "$DEST" && cd "$DEST"
+
+AUTH=()
+[ -n "\${IGVF_API_KEY:-}" ] && AUTH=(-u "$IGVF_API_KEY:\${IGVF_SECRET_KEY:-}")
+
+while read -r url; do
+  [ -z "$url" ] && continue
+  curl -fL -C - -O --retry 3 --retry-delay 5 \${AUTH[@]+"\${AUTH[@]}"} "$url"
+done <<'URLS'
+${files.map((f) => f.download).join("\n")}
+URLS
+echo "done: ${files.length} files in $PWD"
+`;
+}
+
+function pbManifest(rows) {
+  const cols = ["file_accession", "file_set", "state", "description", "donors",
+                "days", "content_type", "file_format", "size_bytes", "md5sum",
+                "download_url", "submitted_file_name"];
+  return cols.join("\t") + "\n" + rows.map(({ s, f }) => [
+    f.accession, s.accession, s.name, s.qualifier || "", s.donors.join(";"),
+    s.days.join(";"), f.content_type, f.file_format, f.size ?? "", f.md5 || "",
+    f.download, f.filename || "",
+  ].join("\t")).join("\n") + "\n";
+}
+
+function renderPseudobulk(pb) {
+  const sec = document.getElementById("pseudobulk");
+  if (!pb || !pb.sets || !pb.sets.length) return;
+  sec.hidden = false;
+  document.getElementById("nav-pb").hidden = false;
+
+  const types = pb.types.map((t) => t.content_type);
+  const waiting = pb.sets.filter((s) => !s.released);
+  const urls = (files) => files.map((f) => f.download).join("\n") + "\n";
+  const all = pb.sets.flatMap((s) => s.files.map((f) => ({ s, f })));
+
+  document.getElementById("pb-count").textContent =
+    `${pb.sets.length} cell states · ${num(pb.n_files)} files · ${bytes(pb.bytes)}`
+    + (waiting.length ? " · not yet released" : "");
+
+  const days = (s) => !s.days.length ? ""
+    : s.days.length === 1 ? `day ${s.days[0]}`
+    : `days ${s.days.join(", ")}`;
+
+  const head = `<tr><th>Cell state</th><th>Cells from</th>
+    ${pb.types.map((t) => `<th class="pbt">${esc(PB_TYPE[t.content_type] || t.content_type)}
+        <span class="fmt">${esc(t.file_format)}</span></th>`).join("")}
+    <th></th></tr>`;
+
+  const rows = pb.sets.map((s) => {
+    const byType = Object.fromEntries(s.files.map((f) => [f.content_type, f]));
+    return `<tr>
+      <td class="ct">${esc(s.name)}
+        ${s.released ? "" : '<span class="embargo">not released</span>'}
+        <span class="pbq">${esc(s.qualifier || s.summary || "")}</span>
+        <a class="pbacc" href="${esc(s.portal)}" target="_blank" rel="noopener">${esc(s.accession)} ↗</a></td>
+      <td class="pbfrom">${esc(s.donors.length === 1 ? s.donors[0] : `${s.donors.length} donors`)}
+        <span>${esc(days(s))}</span></td>
+      ${types.map((t) => {
+        const f = byType[t];
+        return f
+          ? `<td class="pbf"><a href="${esc(f.download)}"
+               title="${esc(`${f.filename || f.accession} — ${f.accession}, md5 ${f.md5 || "?"}`)}">↓ ${bytes(f.size)}</a></td>`
+          : `<td class="pbf none">—</td>`;
+      }).join("")}
+      <td class="act">${saveBtn(urls(s.files), `${s.accession}-${s.name}-urls.txt`,
+                                `all ${s.files.length}`)}</td>
+    </tr>`;
+  }).join("");
+
+  // One button per column: every state's file of that type.
+  const foot = `<tr class="pbcol"><td class="ct" colspan="2">Whole column</td>
+    ${pb.types.map((t) => {
+      const fs = all.filter(({ f }) => f.content_type === t.content_type).map(({ f }) => f);
+      const slug = (PB_TYPE[t.content_type] || t.content_type).toLowerCase().replace(/\W+/g, "-");
+      return `<td class="pbf">${saveBtn(urls(fs), `pseudobulk-${slug}-urls.txt`, `all ${fs.length}`)}
+        <span>${bytes(t.bytes)}</span></td>`;
+    }).join("")}
+    <td></td></tr>`;
+
+  const files = all.map(({ f }) => f);
+  document.getElementById("pb").innerHTML = `
+    ${waiting.length ? `<div class="bnote pbnote"><b>Not yet released.</b>
+      ${waiting.length === pb.sets.length ? "These sets are" : `${waiting.length} of these sets are`}
+      deposited on the IGVF portal but not public, so the links below return 403 until
+      release unless the request carries IGVF access keys. The curl script uses
+      <code>IGVF_API_KEY</code> and <code>IGVF_SECRET_KEY</code> when they are set.
+      Last checked ${esc(pb.generated)}.</div>` : ""}
+    <div class="dcard">
+      <div class="scroller"><table class="ftable pbtable">
+        <thead>${head}</thead>
+        <tbody>${rows}${foot}</tbody>
+      </table></div>
+      <div class="dfoot">
+        <span class="lbl">All ${num(files.length)} files, ${bytes(pb.bytes)}:</span>
+        ${saveBtn(urls(files), "pseudobulk-urls.txt", "urls.txt")}
+        ${saveBtn(pbScript(files, "All pseudobulk files", waiting.length > 0),
+                  "download-pseudobulk.sh", "curl script")}
+        ${saveBtn(pbManifest(all), "pseudobulk-manifest.tsv", "manifest.tsv")}
+        ${copyBtn(files.map((f) => f.download).join("\n"), "Copy URLs")}
+        <a href="${esc(pb.sets_search)}" target="_blank" rel="noopener">browse on the portal ↗</a>
+      </div>
+    </div>`;
+}
+
 /* ------------------------------------------------------------------- boot */
+/* Optional: the section stays hidden if the file is not there. */
+fetch("data/pseudobulk.json").then((r) => r.ok ? r.json() : null)
+  .then(renderPseudobulk).catch((e) => console.error(e));
+
 Promise.all([
   fetch("data/filesets.json").then((r) => r.json()),
   fetch("data/files.json").then((r) => r.json()),

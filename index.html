@@ -33,6 +33,7 @@
     <span class="brand">Epigenomic heterogeneity in human reprogramming</span>
     <a class="navlink" href="#summary">Summary</a>
     <a class="navlink" href="#get">Get the data</a>
+    <a class="navlink" href="#pseudobulk" id="nav-pb" hidden>Pseudobulk</a>
     <a class="navlink" href="#download">All files</a>
   </div>
 </nav>
@@ -117,6 +118,24 @@
          C29 day 1, … C37 day 0 — narrowed by modality, tier and file type on the left.</p>
     </div>
     <div id="builder"></div>
+  </div>
+</section>
+
+<!-- ===================================================== pseudobulk -->
+<!-- Small enough to show whole: one row per cell state, one column per file
+     type, every cell a download. Hidden until data/pseudobulk.json exists. -->
+<section id="pseudobulk" hidden>
+  <div class="wrap">
+    <details class="fold" open>
+      <summary><h2>Processed pseudobulk data</h2>
+        <span class="foldhint" id="pb-count">—</span></summary>
+      <div class="foldbody">
+        <p class="foldlede">Cells from the 10x Multiome, snmCT-seq and sn-m3C-seq sets merged by
+           cell state. One row per state, one column per file type; click a size to download
+           that file.</p>
+        <div id="pb"></div>
+      </div>
+    </details>
   </div>
 </section>
 
